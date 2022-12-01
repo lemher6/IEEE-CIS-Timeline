@@ -1,0 +1,33 @@
+
+body{
+  margin:0
+}
+
+body,p {
+  font-family: Tahoma, "Trebuchet MS", sans-serif;
+  color: #ccc;
+}
+
+h1 { padding: 0 20px; }
+h2 { padding: 0 18px; }
+h3 { padding: 0 15px; }
+h4,h5,h6 { padding: 0 12px; }
+
+.button {
+  border: none;
+  display: inline-block;
+  padding: 48px 28px;
+  vertical-align: middle;
+  overflow: hidden;
+  text-decoration: none;
+  color: white;
+  background-color: gray;
+  text-align: center;
+  cursor: pointer;
+}
+
+.bar{
+  display: inline-block;
+  width: auto;
+  padding: 0 60px;
+}
