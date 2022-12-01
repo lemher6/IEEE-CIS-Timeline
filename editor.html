@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <title>IEEE-CIS TIMELINE EDITOR</title>
+    <link rel="stylesheet" type="text/css" href="./css/style.css">
+    <script src="./js/titleSlideEditor.js"></script>
+    <script src="./js/erasEditor.js"></script>
+    <script src="./js/eventsEditor.js"></script>
+  </head>
+
+  <body>
+    <img src="https://cis.ieee.org/images/files/template/cis-logo.png" alt="(IEEE) Computational Intelligence Society">
+
+    <h1>EDIT TIMELINE</h1>
+
+      <div class="bar">
+        <button onclick="document.location='index.html'">Home Page</button>
+        <button onclick="loadTitleSlideEditor()">Edit Title Slide</button>
+        <button onclick="loadErasEditor()">Edit Eras</button>
+        <button onclick="loadEventsEditor()">Edit Events</button>
+        <button onclick="document.location='approve.html'">Approve Changes</button>
+      </div>
+
+      <p style="clear:both"></p>
+
+      <div id="edit-container"></div>
+
+      <div class="container">
+          <iframe src='https://cdn.knightlab.com/libs/timeline3/latest/embed/index.html?source=1bnWSLK26LM6jSDlE2M5rnc5OKtCXj2IV0VO8VlvdIfc&font=Default&lang=en&initial_zoom=2&height=650' width='100%' height='650' webkitallowfullscreen mozallowfullscreen allowfullscreen frameborder='0'></iframe>
+      </div>
+  </body>
+
+</html>
