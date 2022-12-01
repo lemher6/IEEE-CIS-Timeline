@@ -1,19 +1,21 @@
 
 body{
-  margin:0
+  margin: auto;
+  padding: 20px;
+  width: 800px;
 }
 
 body,p {
   font-family: Tahoma, "Trebuchet MS", sans-serif;
-  color: #ccc;
+  color: #666;
 }
 
-h1 { padding: 0 20px; }
-h2 { padding: 0 18px; }
-h3 { padding: 0 15px; }
-h4,h5,h6 { padding: 0 12px; }
+h1 { padding: 25px 0; }
+h2 { padding: 18px 0; }
+h3 { padding: 15px 0; }
+h4,h5,h6 { padding: 12px 0; }
 
-.button {
+button {
   border: none;
   display: inline-block;
   padding: 48px 28px;
@@ -21,13 +23,20 @@ h4,h5,h6 { padding: 0 12px; }
   overflow: hidden;
   text-decoration: none;
   color: white;
-  background-color: gray;
+  background-color: #20b2e2;
   text-align: center;
   cursor: pointer;
+  font-size: large;
+}
+
+button:hover {
+    color: #fff!important;
+    background-color: #000!important;
 }
 
 .bar{
   display: inline-block;
-  width: auto;
-  padding: 0 60px;
+  width: 100%;
+  text-align: center!important;
+  font-family: Tahoma, "Trebuchet MS", sans-serif;
 }
