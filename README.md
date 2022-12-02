@@ -1,11 +1,11 @@
 # IEEE-CIS Timeline
 
-  Timeline project for IEEE CIS
+  Timeline project for IEEE-CIS
 
   Using TimelineJS tool from Knight Lab IEEE-CIS events will be displayed. Additional parts of this project are:
 
 
-  1) Create/Update events friendly using an entry form. TimelineJS uses a Google sheet.
+  1) Create/Update events friendly using an entry form. TimelineJS uses a Google sheet or JSON.
 
   2) Manage levels of users. Types of users:  
           a) general user, who can only see the timeline;
@@ -15,10 +15,11 @@
 
   3) Authentication of the login of the users. Use IEEE to authenticate the identity and level of the users above.
 
-  ==============================================================================
+  ===============================================================
 
   Instructions:
 
-  Download the TimelineJS folder from this repository
-  Open the TimelineJS folder and open index.html with Chrome
+  Download the IEEE-CIS-Timeline folder from this repository.
+  Open the IEEE-CIS-Timeline folder and open index.html with Chrome.
+  Select the options.s
   Close the web browser when you are done
