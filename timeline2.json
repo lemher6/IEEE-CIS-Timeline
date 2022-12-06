@@ -1,327 +1,502 @@
 {
-    "timeline":
-    {
-        "headline":"Elizabeth Taylor<br/> 1932-2011",
-		"startDate":"1932",
-        "text":"<p>The actress,renowned for her beauty, talent and eventful personal life, was one of the last stars left from Hollywood's golden age. A look at some of the milestones in her life.</p><p>This is demo prototype of this timeline tool. The test content orginates from The New York Time's interactive feature <br/><a href='http://www.nytimes.com/interactive/2011/03/23/movies/20110323-ELIZABETH-TAYLOR-TIMELINE.html' onclick = 'void(0)'>Elizabeth Taylor: 1932-2011</a>.</p>",
-        "type":"default",
-		"asset":
-        {
-            "media":"examples/taylor/born.jpg",
-            "credit":"",
-            "caption":""
-        },
-		"date": [
-            {
-                "startDate":"2011,3,23",
-                "headline":"Elizabeth Taylor Dies in Los Angeles",
-                "asset":
-                {
-                    "media":"examples/taylor/final.jpg",
-                    "credit":"",
-                    "caption":"She died of congestive heart failure at Cedars-Sinai Hospital in Los Angeles."
-                },
-                "tags":"Personal life"
+    "title": {
+            "text": {
+                "text":     "Samuel Langhorne Clemens (November 30, 1835 – April 21, 1910),[1] better known by his pen name Mark Twain, was an American author and humorist."
             },
-            {
-                "startDate":"2004,11,1",
-                "headline":"Reveals Congestive Heart Failure",
-                "text":"Ms. Taylor disclosed that she had congestive heart failure,a disorder in which the heart ",
-                "related":"",
-                "tags":"Personal life"
-            },
-            {
-                "startDate":"2003,1,1",
-                "headline":"Retires from Acting",
-                "text":"Ms. Taylor, whose output steadily decreased beginning in the 1980s, announced her retirement from acting in 2003, saying she preferred to focus on her AIDS charity work.",
-                "asset":
-                {
-                    "media":"examples/taylor/retire.jpg",
-                    "credit":"Robin Weiner\/Associated Press",
-                    "caption":"Elizabeth Taylor, with Earvin \"Magic\" Johnson, at an AIDS fundraiser in 1997."
-                },
-                "tags":"Career"
-            },
-            {
-                "startDate":"2002,1,1",
-                "headline":"Receives Kennedy Center Honor",
-                "text":"Ms. Taylor received a John F. Kennedy Center Honor in 2002.",
-                "asset":
-                {
-                    "media":"examples/taylor/kennedy.jpg",
-                    "credit":"Robin Weiner\/Associated Press",
-                    "caption":"Elizabeth Taylor, with Earvin \"Magic\" Johnson, at an AIDS fundraiser in 1997."
-                },
-                "tags":"Personal life, Career"
-            },
-            {
-                "startDate":"1999,12,1",
-                "headline":"Introducing Dame Elizabeth Taylor",
-                "text":"Ms. Taylor, a dual citizen of England and the United States, was appointed by Queen Elizabeth II as a Dame Commander of the Order of the British Empire.",
-                "asset":
-                {
-                    "media":"examples/taylor/dame.jpg",
-                    "credit":"Robin Weiner\/Associated Press",
-                    "caption":"Elizabeth Taylor, with Earvin \"Magic\" Johnson, at an AIDS fundraiser in 1997."
-                },
-                "tags":"Personal life, Career"
-            },
-            {
-                "startDate":"1999,1,1",
-                "headline":"Named a Top Hollywood Legend by AFI",
-                "text":"Ms. Taylor was listed seventh on the American Film Institute's list of the greatest American female screen legends.",
-                "tags":"Career"
-            },
-            {
-                "startDate":"1991,10,6",
-                "headline":"Marries Larry Fortensky",
-				"asset":
-                {
-                    "media":"examples/taylor/fortensky.jpg",
-                    "credit":"",
-                    "caption":"Ms. Taylor's eighth and final marriage was to Larry Fortensky"
-                },
-                "endDate":"1996,10,31",
-                "tags":"Marriages, Personal life"
-            },
-            {
-                "startDate":"1987,1,1",
-                "headline":"Debut of Perfume Line",
-                "text":"In the 1980s and 1990s, Ms. Taylor arguably became better known for her line of perfumes than her acting. Passion, her first licensed product, was released in 1987. White Diamonds followed in 1991.",
-                "asset":
-                {
-                    "media":"http://youtu.be/vjVfu8-Wp6s",
-                    "credit":"Robin Weiner\/Associated Press",
-                    "caption":"Elizabeth Taylor, with Earvin \"Magic\" Johnson, at an AIDS fundraiser in 1997."
-                },
-                "tags":"Career"
-            },
-            {
-                "startDate":"1985",
-                "headline":"AIDS Activism",
-                "text":"Ms. Taylor has been an energetic activist for AIDS-related causes.",
-                "asset":
-                {
-                    "media":"examples/taylor/aids.jpg",
-                    "credit":"Robin Weiner\/Associated Press",
-                    "caption":"Elizabeth Taylor, with Earvin \"Magic\" Johnson, at an AIDS fundraiser in 1997."
-                },
-                "endDate":"2011,2,16",
-                "tags":"Personal life"
-            },
-            {
-                "startDate":"1981",
-                "headline":"Makes Broadway Debut",
-                "text":"Ms. Taylor made her Broadway debut in a revival of \"The Little Foxes\" by Lillian Hellman.",
-                "asset":
-                {
-                    "media":"examples/taylor/broadway.jpg",
-                    "credit":"Robin Weiner\/Associated Press",
-                    "caption":"Elizabeth Taylor, with Earvin \"Magic\" Johnson, at an AIDS fundraiser in 1997."
-                },
-                "tags":"Career"
-            },
-            {
-                "startDate":"1976,12,4",
-                "headline":"Marriage to John W. Warner",
-                "asset":
-                {
-                    "media":"examples/taylor/warner.jpg",
-                    "credit":"",
-                    "caption":"Ms. Taylor's seventh marriage"
-                },
-                "endDate":"1982,11,7",
-                "tags":"Marriages, Personal life"
-            },
-            {
-                "startDate":"1975,10,10",
-                "headline":"Remarries Richard Burton",
-                "text":"The second installment of the couple's marriage lasted less than 10 months. Ms. Taylor was also linked to Ardeshir Zahedi, the Iranian ambassador to Washington, during this time.",
-                "asset":
-                {
-                    "media":"examples/taylor/burton-2.jpg",
-                    "credit":"Robin Weiner\/Associated Press",
-                    "caption":"Elizabeth Taylor, with Earvin \"Magic\" Johnson, at an AIDS fundraiser in 1997."
-                },
-                "endDate":"1976,7,29",
-                "tags":"Marriages, Personal life"
-            },
-            {
-                "startDate":"1966,1,1",
-                "headline":"Stars in 'Who's Afraid of Virginia Woolf?'",
-                "text":"Ms. Taylor won her second Academy Award for arguably her most acclaimed role.",
-                "asset":
-                {
-                    "media":"examples/taylor/woolfe.jpg",
-                    "credit":"Robin Weiner\/Associated Press",
-                    "caption":"Elizabeth Taylor, with Earvin \"Magic\" Johnson, at an AIDS fundraiser in 1997."
-                },
-                "tags":"Career"
-            },
-            {
-                "startDate":"1964,3,15",
-                "headline":"Marries Richard Burton",
-                "asset":
-                {
-                    "media":"examples/taylor/burton.jpg",
-                    "credit":"",
-                    "caption":"Ms. Taylor left Eddie Fisher and married the actor Richard Burton."
-                },
-                "endDate":"1974,6,26",
-                "tags":"Marriages, Personal life"
-            },
-            {
-                "startDate":"1963",
-                "headline":"Stars in 'Cleopatra'",
-                "asset":
-                {
-                    "media":"http://youtu.be/NGDyZHlHklo",
-                    "credit":"",
-                    "caption":"The opulent production was among the most expensive in cinematic history at the time."
-                },
-                "tags":"Career"
-            },
-            {
-                "startDate":"1961,4,17",
-                "headline":"Wins First Academy Award",
-                "text":"Ms. Taylor won her first Oscar for her role in \"Butterfield 8.\"",
-                "asset":
-                {
-                    "media":"examples/taylor/oscar.jpg",
-                    "credit":"Robin Weiner\/Associated Press",
-                    "caption":"Elizabeth Taylor, with Earvin \"Magic\" Johnson, at an AIDS fundraiser in 1997."
-                },
-                "tags":"Career"
-            },
-            {
-                "startDate":"1961,1,1",
-                "headline":"Stars in 'Butterfield 8'",
-                "text":"One of Ms. Taylor's most acclaimed roles was as a call girl in the 1960 film \"Butterfield 8.\"",
-                "asset":
-                {
-                    "media":"examples/taylor/butterfield.jpg",
-                    "credit":"Robin Weiner\/Associated Press",
-                    "caption":"Elizabeth Taylor, with Earvin \"Magic\" Johnson, at an AIDS fundraiser in 1997."
-                },
-                "endDate":"196002152034",
-                "tags":"Career"
-            },
-            {
-                "startDate":"1959,5,12",
-                "headline":"Marries Eddie Fisher",
-                "asset":
-                {
-                    "media":"examples/taylor/fisher.jpg",
-                    "credit":"",
-                    "caption":"Ms. Taylor's fourth marriage."
-                },
-                "endDate":"1964,3,6",
-                "tags":"Marriages"
-            },
-            {
-                "startDate":"1957",
-                "headline":"Nominated for an Oscar",
-                "text":"Ms. Taylor received her first Academy Award nomination with a best lead actress nod for \"Raintree County, \" but she did not win. She was also nominated for best actress in \"Cat on a Hot Tin Roof\" (1958); \"Suddenly, Last Summer\" (1959); \"Butterfield 8\" (1960); and \"Who's Afraid of Virginia Woolf?\" (1966).",
-                "asset":
-                {
-                    "media":"http://youtu.be/rDk0JtQHc0A",
-                    "credit":"Robin Weiner\/Associated Press",
-                    "caption":"Elizabeth Taylor, with Earvin \"Magic\" Johnson, at an AIDS fundraiser in 1997."
-                },
-                "tags":"Career"
-            },
-            {
-                "startDate":"1957,2,2",
-                "headline":"Marries Michael Todd",
-                "asset":
-                {
-                    "media":"examples/taylor/todd.jpg",
-                    "credit":"",
-                    "caption":"Ms. Taylor married Michael Todd,a film and theater producer."
-                },
-                "endDate":"1958,3,22",
-                "tags":"Marriages, Personal life"
-            },
-            {
-                "startDate":"1956",
-                "headline":"Stars in 'Giant'",
-                "text":"In another acclaimed early performance, Ms. Taylor starred opposite Rock Hudson and James Dean in George Stevens's epic set in Texas.",
-                "asset":
-                {
-                    "media":"examples/taylor/giant.jpg",
-                    "credit":"Robin Weiner\/Associated Press",
-                    "caption":"Elizabeth Taylor, with Earvin \"Magic\" Johnson, at an AIDS fundraiser in 1997."
-                },
-                "tags":"Career"
-            },
-            {
-                "startDate":"1954",
-                "headline":"A Ubiquitous Starlet",
-                "text":"Ms. Taylor's workload increased dramatically after \"A Place in the Sun.\" In 1954, her busiest year, she appeared in four films: \"Beau Brummell\"; \"Elephant Walk\"; \"The Last Time I Saw Paris\"; and \"Rhapsody.\"",
-                "asset":
-                {
-                    "media":"http://youtu.be/ebDVU2OjsSw",
-                    "credit":"Robin Weiner\/Associated Press",
-                    "caption":"Elizabeth Taylor, with Earvin \"Magic\" Johnson, at an AIDS fundraiser in 1997."
-                },
-                "tags":"Career"
-            },
-            {
-                "startDate":"1952",
-                "headline":"Marriage to Michael Wilding",
-                "text":"Ms. Taylor's second marriage, to Michael Wilding, an actor, also ended in divorce. They had two children: Michael Howard Wilding Jr. and Christopher Edward Wilding.",
-                "related":"",
-                "endDate":"1957,1,26",
-                "tags":"Marriages, Personal life"
-            },
-            {
-                "startDate":"1951",
-                "headline":"A Child Star Grows Up",
-                "text":"In the 1950s Ms. Taylor matured into adult roles and began to be considered one of the most beautiful women in the world. Her first acclaimed screen performance as an adult was as a socialite, opposite Montgomery Clift, in George Stevens's \"A Place in the Sun\" in 1951.",
-                "asset":
-                {
-                    "media":"examples/taylor/sun.jpg",
-                    "credit":"Robin Weiner\/Associated Press",
-                    "caption":"Elizabeth Taylor, with Earvin \"Magic\" Johnson, at an AIDS fundraiser in 1997."
-                },
-                "tags":"Career"
-            },
-            {
-                "startDate":"1950,5,6",
-                "headline":"Marriage to Conrad Hilton Jr.",
-                "asset":
-                {
-                    "media":"examples/taylor/hilton.jpg",
-                    "credit":"",
-                    "caption":"Ms. Taylor was married eight times to seven men."
-                },
-                "endDate":"1951,1,29",
-                "tags":"Marriages, Personal life"
-            },
-            {
-                "startDate":"1944",
-                "headline":"'National Velvet' Makes Her a Star",
-                "text":"Ms. Taylor became a child star after she played Velvet Brown in MGM's \"National Velvet.",
-                "asset":
-                {
-                    "media":"examples/taylor/velvet.jpg",
-                    "credit":"Robin Weiner\/Associated Press",
-                    "caption":"Elizabeth Taylor, with Earvin \"Magic\" Johnson, at an AIDS fundraiser in 1997."
-                },
-                "tags":"Career"
-            },
-            {
-                "startDate":"1942",
-                "headline":"Screen Debut",
-                "text":"Ms. Taylor signed her first movie contract with Universal Pictures in 1941 and made her screen debut, at age 9, the following year in \"There's One Born Every Minute.\"\nMs. Taylor signed with Metro-Goldwyn-Mayer later in 1942 after Universal canceled her contract. \"Lassie Come Home\" (1943) was her first film for MGM; the studio went on to produce most of Ms. Taylor's most notable films.",
-                "tags":"Career"
-            },
-            {
-                "startDate":"1932,2,27",
-                "headline":"Born in London",
-                "text":"<p>Elizabeth Rosemond Taylor was born in London to American parents, Sara Warmbrodt (the actress Sara Sothern) and Francis Taylor. Ms. Taylor was a dual citizen of England and the United States.\nIn 1939, when World War II began, the Taylors returned to America and eventually settled in Los Angeles.</p>",
-                "tags":"Personal life"
+            "media": {
+                "url": "https://en.wikipedia.org/wiki/Mark_Twain",
+                "thumbnail":    "https://upload.wikimedia.org/wikipedia/commons/thumb/2/25/Mark_Twain%2C_Brady-Handy_photo_portrait%2C_Feb_7%2C_1871%2C_cropped.jpg/153px-Mark_Twain%2C_Brady-Handy_photo_portrait%2C_Feb_7%2C_1871%2C_cropped.jpg"
             }
-        ]
-    }
+    },
+    "events": [
+        {
+            "start_date": {
+                "year":			"1908",
+                "month":		"05",
+                "day": 			"13"
+            },
+            "media": {
+                "caption": "Twain caricatured by Spy for Vanity Fair, 1908",
+                "credit": "Vanity Fair",
+                "url": "http://upload.wikimedia.org/wikipedia/commons/thumb/b/bc/Mark_Twain_Vanity_Fair_1908-05-13.jpeg/375px-Mark_Twain_Vanity_Fair_1908-05-13.jpeg",
+                "thumbnail": 	"http://upload.wikimedia.org/wikipedia/commons/thumb/b/bc/Mark_Twain_Vanity_Fair_1908-05-13.jpeg/375px-Mark_Twain_Vanity_Fair_1908-05-13.jpeg"
+            },
+            "text": {
+                "text": "Samuel Langhorne Clemens (November 30, 1835 \u2013 April 21, 1910), better known by his pen name Mark Twain, was an American author and humorist. He wrote The Adventures of Tom Sawyer (1876) and its sequel, Adventures of Huckleberry Finn (1885), the later often called \"the Great American Novel.\""
+            },
+            "type": "overview"
+        },
+        {
+            "start_date": {
+                "year":			"2000",
+                "month":		"01",
+                "day": 			"05",
+                "hour": 		"6",
+                "minute": 		"45",
+                "second": 		"56",
+                "millisecond": 	"",
+                "format": 		""
+            },
+            "location": {
+                "icon": "http://maps.gstatic.com/intl/en_us/mapfiles/ms/micons/blue-pushpin.png",
+                "lat": 39.491711,
+                "line": true,
+                "lon": -91.79326,
+                "name": "Florida, Missouri",
+                "zoom": 12
+            },
+            "media": {
+                "caption": "Mark Twain's birthplace, Florida, Missouri",
+                "credit": "",
+                "url": "https://twitter.com/MarkTwainQuote/status/441928360583643136"
+            },
+            "text": {
+                "headline": "Florida, Missouri",
+                "text": "Born in Florida, Missouri. Halley\u2019s comet visible from earth."
+            },
+            "unique_id": ""
+        },
+        {
+            "start_date": {
+                "year":			"1920",
+                "month":		"01",
+                "day": 			"05",
+                "hour": 		"6",
+                "minute": 		"45",
+                "second": 		"56",
+                "millisecond": 	"",
+                "format": 		""
+            },
+            "end_date": {
+                "year":			"1923",
+                "month":		"01",
+                "day": 			"05",
+                "hour": 		"6",
+                "minute": 		"45",
+                "second": 		"56",
+                "millisecond": 	"",
+                "format": 		""
+            },
+            "location": {
+                "icon": "http://maps.gstatic.com/intl/en_us/mapfiles/ms/micons/blue-pushpin.png",
+                "lat": 39.501711,
+                "line": true,
+                "lon": -91.94326,
+                "name": "Florida, Missouri",
+                "zoom": 12
+            },
+            "media": {
+                "caption": "Mark Twain's boyhood home in Hannibal, Missouri.",
+                "credit": "",
+                "url": "http://instagram.com/p/lEPdm4J20m/"
+            },
+            "text": {
+                "headline": "Hannibal, Missouri",
+                "text": "Moves to Hannibal, Missouri, which later serves as the model town for Tom Sawyer and Huckleberry Finn."
+            },
+            "unique_id": ""
+        },
+        {
+            "start_date": {
+                "year":         "1900",
+                "month":        "01",
+                "day":          "06",
+                "hour":         "6",
+                "minute":       "45",
+                "second":       "56",
+                "millisecond":  "",
+                "format":       ""
+            },
+            "location": {
+                "icon": "http://maps.gstatic.com/intl/en_us/mapfiles/ms/micons/blue-pushpin.png",
+                "lat": 39.710083,
+                "line": true,
+                "lon": -91.357441,
+                "zoom": 12
+            },
+            "media": {
+                "caption": "a Youtube video",
+                "credit": null,
+                "url": "http://www.youtube.com/watch?v=C-nTpGMMVjY"
+            },
+            "text": {
+                "headline": "",
+                "text": ""
+            },
+            "unique_id": ""
+        },
+        {
+            "start_date": {
+                "year":         "1900",
+                "month":        "01",
+                "day":          "06",
+                "hour":         "6",
+                "minute":       "45",
+                "second":       "56",
+                "millisecond":  "",
+                "format":       ""
+            },
+            "media": {
+                "caption": "a tweet",
+                "credit": null,
+                "url": "https://twitter.com/mattmansfield/status/613042417298731008"
+            },
+            "text": {
+                "headline": "",
+                "text": ""
+            },
+            "unique_id": ""
+        },
+        {
+            "start_date": {
+                "year":         "1900",
+                "month":        "01",
+                "day":          "06",
+                "hour":         "6",
+                "minute":       "45",
+                "second":       "56",
+                "millisecond":  "",
+                "format":       ""
+            },
+            "media": {
+                "caption": "another youtube video",
+                "credit": null,
+                "url": "http://www.youtube.com/watch?v=C-nTpGMMVjY"
+            },
+            "text": {
+                "headline": "",
+                "text": ""
+            },
+            "unique_id": ""
+        },
+        {
+            "start_date": {
+                "year":			"1915",
+                "month":		"01",
+                "day": 			"05",
+                "hour": 		"6",
+                "minute": 		"45",
+                "second": 		"56",
+                "millisecond": 	"",
+                "format": 		""
+            },
+            "location": {
+                "icon": "http://maps.gstatic.com/intl/en_us/mapfiles/ms/micons/blue-pushpin.png",
+                "lat": 40.714353,
+                "line": true,
+                "lon": -74.005973,
+                "zoom": 11
+            },
+            "media": {
+                "caption": null,
+                "credit": null,
+                "url": "https://vine.co/v/bjHh0zHdgZT"
+            },
+            "text": {
+                "headline": "Itinerant Printer",
+                "text": "Visits St. Louis, New York, and Philadelphia as an itinerant printer."
+            },
+            "unique_id": ""
+        },
+        {
+            "start_date": {
+                "year":         "1900",
+                "month":        "01",
+                "day":          "20",
+                "hour":         "6",
+                "minute":       "45",
+                "second":       "56",
+                "millisecond":  "",
+                "format":       ""
+            },
+            "location": {
+                "icon": "http://maps.gstatic.com/intl/en_us/mapfiles/ms/micons/blue-pushpin.png",
+                "lat": 39.309514,
+                "line": true,
+                "lon": -119.649979,
+                "zoom": 11
+            },
+            "media": {
+                "caption": "Mark Twain's desk when he was editor of the Territorial Enterprise. Mark Twain Territorial Enterprise Museum, Virginia City, NV.",
+                "credit": "",
+                "url": "http://en.wikipedia.org/wiki/Mark_Twain"
+            },
+            "text": {
+                "headline": "Virginia City Territorial Enterprise",
+                "text": "Travels around Nevada and California. Takes job as reporter for the Virginia City Territorial Enterprise."
+            },
+            "unique_id": ""
+        },
+        {
+            "background": {
+                "color": "#000000",
+                "opacity": 50,
+                "url": null
+            },
+            "start_date": {
+                "year":			"1960",
+                "month":		"01",
+                "day": 			"05",
+                "hour": 		"6",
+                "minute": 		"45",
+                "second": 		"56",
+                "millisecond": 	"",
+                "format": 		""
+            },
+            "location": {
+                "icon": "http://maps.gstatic.com/intl/en_us/mapfiles/ms/micons/blue-pushpin.png",
+                "lat": 37.774929,
+                "line": true,
+                "lon": -122.419416,
+                "zoom": 11
+            },
+            "media": {
+                "caption": "something",
+                "credit": "ETC",
+                "url": "http://2.bp.blogspot.com/-dxJbW0CG8Zs/TmkoMA5-cPI/AAAAAAAAAqw/fQpsz9GpFdo/s1600/voyage-dans-la-lune-1902-02-g.jpg"
+            },
+            "text": {
+                "headline": "San Francisco",
+                "text": "Forced to leave Nevada for breaking dueling laws. Prospects in Calaveras County, settles in San Francisco. Writes for magazines and newspapers."
+            },
+            "unique_id": ""
+        },
+        {
+            "start_date": {
+                "year":			"1963",
+                "month":		"01",
+                "day": 			"05",
+                "hour": 		"6",
+                "minute": 		"45",
+                "second": 		"56",
+                "millisecond": 	"",
+                "format": 		""
+            },
+            "location": {
+                "icon": "http://maps.gstatic.com/intl/en_us/mapfiles/ms/micons/blue-pushpin.png",
+                "lat": 19.896766,
+                "line": true,
+                "lon": -155.582782,
+                "zoom": 11
+            },
+            "media": {
+                "caption": "Wreck of USS Hornet.",
+                "credit": "",
+                "url": "http://photos.wikimapia.org/p/00/00/56/17/28_big.jpg"
+            },
+            "text": {
+                "headline": "Hawaii",
+                "text": "Takes trip to Hawaii as correspondent of the Sacramento Alta Californian. Reports on shipwreck of the Hornet. Gives first public lecture."
+            },
+            "unique_id": ""
+        },
+        {
+            "start_date": {
+                "year":			"1930",
+                "month":		"01",
+                "day": 			"05",
+                "hour": 		"6",
+                "minute": 		"45",
+                "second": 		"56",
+                "millisecond": 	"",
+                "format": 		""
+            },
+            "location": {
+                "icon": "http://maps.gstatic.com/intl/en_us/mapfiles/ms/micons/blue-pushpin.png",
+                "lat": 54.525961,
+                "line": true,
+                "lon": 15.255119,
+                "zoom": 11
+            },
+            "media": {
+                "caption": "",
+                "credit": "",
+                "url": "http://upload.wikimedia.org/wikipedia/commons/thumb/e/e1/1867._The_Celebrated_Jumping_Frog_of_Calaveras_County%2C_and_Other_Sketches.djvu/page1-395px-1867._The_Celebrated_Jumping_Frog_of_Calaveras_County%2C_and_Other_Sketches.djvu.jpg"
+            },
+            "text": {
+                "headline": "Travels",
+                "text": "Travels as correspondent to Europe and the Holy Land on the Quaker City. Sees a picture of Olivia Langdon (Livy). Publishes The Celebrated Jumping Frog of Calaveras County, and Other Sketches. Sales are light."
+            },
+            "unique_id": ""
+        },
+        {
+            "background": {
+                "color": "#000000",
+                "opacity": 50,
+                "url": null
+            },
+            "start_date": {
+                "year":			"1935",
+                "month":		"01",
+                "day": 			"05",
+                "hour": 		"6",
+                "minute": 		"45",
+                "second": 		"56",
+                "millisecond": 	"",
+                "format": 		""
+            },
+            "location": {
+                "icon": "http://maps.gstatic.com/intl/en_us/mapfiles/ms/micons/blue-pushpin.png",
+                "lat": 42.089796,
+                "line": true,
+                "lon": -76.807734,
+                "zoom": 11
+            },
+            "media": {
+                "caption": "something",
+                "credit": "ETC",
+                "url": "http://2.bp.blogspot.com/-dxJbW0CG8Zs/TmkoMA5-cPI/AAAAAAAAAqw/fQpsz9GpFdo/s1600/voyage-dans-la-lune-1902-02-g.jpg"
+            },
+            "text": {
+                "headline": "Livy",
+                "text": "Lectures across the United States. Meets and falls in love with Livy in Elmira, New York."
+            },
+            "unique_id": ""
+        },
+        {
+            "background": {
+                "color": "#000000",
+                "opacity": 50,
+                "url": null
+            },
+            "start_date": {
+                "year":			"1959",
+                "month":		"01",
+                "day": 			"05",
+                "hour": 		"6",
+                "minute": 		"45",
+                "second": 		"56",
+                "millisecond": 	"",
+                "format": 		""
+            },
+            "location": {
+                "icon": "http://maps.gstatic.com/intl/en_us/mapfiles/ms/micons/blue-pushpin.png",
+                "lat": 42.886447,
+                "lon": -78.878369,
+                "zoom": 11
+            },
+            "media": {
+                "caption": "something",
+                "credit": "ETC",
+                "url": "http://2.bp.blogspot.com/-dxJbW0CG8Zs/TmkoMA5-cPI/AAAAAAAAAqw/fQpsz9GpFdo/s1600/voyage-dans-la-lune-1902-02-g.jpg"
+            },
+            "text": {
+                "headline": "Married",
+                "text": "Marries Livy in Elmira. Her father buys them a house in Buffalo, New York. Son Langdon is born."
+            },
+            "unique_id": ""
+        },
+        {
+            "background": {
+                "color": "#000000",
+                "opacity": 50,
+                "url": null
+            },
+            "start_date": {
+                "year":			"1990",
+                "month":		"01",
+                "day": 			"05",
+                "hour": 		"6",
+                "minute": 		"45",
+                "second": 		"56",
+                "millisecond": 	"",
+                "format": 		""
+            },
+            "location": {
+                "icon": "http://maps.gstatic.com/intl/en_us/mapfiles/ms/micons/blue-pushpin.png",
+                "lat": 41.763711,
+                "line": true,
+                "lon": -72.685093,
+                "zoom": 11
+            },
+            "media": {
+                "caption": "something",
+                "credit": "ETC",
+                "url": "http://2.bp.blogspot.com/-dxJbW0CG8Zs/TmkoMA5-cPI/AAAAAAAAAqw/fQpsz9GpFdo/s1600/voyage-dans-la-lune-1902-02-g.jpg"
+            },
+            "text": {
+                "headline": "Roughing It",
+                "text": "Moves with Livy to Hartford. Publishes Roughing It. Daughter is born. Son Langdon dies."
+            },
+            "unique_id": ""
+        },
+        {
+            "background": {
+                "color": "#000000",
+                "opacity": 50,
+                "url": null
+            },
+            "start_date": {
+                "year":			"1991",
+                "month":		"01",
+                "day": 			"05",
+                "hour": 		"6",
+                "minute": 		"45",
+                "second": 		"56",
+                "millisecond": 	"",
+                "format": 		""
+            },
+            "location": {
+                "icon": "http://maps.gstatic.com/intl/en_us/mapfiles/ms/micons/blue-pushpin.png",
+                "lat": 54.525961,
+                "lon": 15.255119,
+                "zoom": 11
+            },
+            "media": {
+                "caption": "something",
+                "credit": "ETC",
+                "url": "http://2.bp.blogspot.com/-dxJbW0CG8Zs/TmkoMA5-cPI/AAAAAAAAAqw/fQpsz9GpFdo/s1600/voyage-dans-la-lune-1902-02-g.jpg"
+            },
+            "text": {
+                "headline": "Financial",
+                "text": "Leaves Hartford to live in Europe because of financial difficulties."
+            },
+            "unique_id": ""
+        },
+        {
+            "start_date": {
+                "year":         "1900",
+                "month":        "01",
+                "day":          "10",
+                "hour":         "6",
+                "minute":       "45",
+                "second":       "56",
+                "millisecond":  "",
+                "format":       ""
+            },
+            "media": {
+                "caption": "something",
+                "credit": "ETC",
+                "url": "https://www.google.com/maps/place/Medill+School+of+Journalism,+Media,+Integrated+Marketing+Communications+Office+of+Dean/@42.0509363,-87.6737809,18z/data=!4m2!3m1!1s0x0000000000000000:0x683bff755fbf8f0c"
+            },
+            "text": {
+                "headline": "Livy dies",
+                "text": "Livy dies. Begins dictating autobiography. Moves to New York City."
+            },
+            "unique_id": ""
+        },
+        {
+            "background": {
+                "color": null,
+                "opacity": 50,
+                "url": null
+            },
+            "start_date": {
+                "year":			"2014",
+                "month":		"",
+                "day": 			"",
+                "hour": 		"",
+                "minute": 		"",
+                "second": 		"",
+                "millisecond": 	"",
+                "thumbnail": 	"",
+                "format": 		""
+            },
+            "text": {
+                "headline": "Get started!",
+                "text": ""
+            },
+            "unique_id": ""
+        }
+    ]
 }
