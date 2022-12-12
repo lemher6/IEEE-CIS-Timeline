@@ -7,10 +7,16 @@
             "media": {
                 "url": "https://cis.ieee.org/images/files/template/cis-logo.png",
                 "credit": "<a href='https://cis.ieee.org/'>cis.ieee.org</a>"
-            }
+            },
+            "unique_id": "TITLE-001"
     },
     "events": [
         {
+            "background": {
+                "color": null,
+                "opacity": 50,
+                "url": null
+            },
             "start_date": {
                 "year":			"2018",
                 "month":		"07",
@@ -24,20 +30,24 @@
             "media": {
                 "caption": "IEEE World Congress on Computational Intelligence (WCCI)",
                 "credit": "",
-                "url": "https://ewh.ieee.org/conf/wcci/img/wcci2018.png"
+                "url": "https://ewh.ieee.org/conf/wcci/img/wcci2018.png",
+                "link": "https://ewh.ieee.org/conf/wcci/2018/wcci-2018-cfp.pdf"
+
             },
             "text": {
                 "headline": "2018 IEEE World Congress on Computational Intelligence",
                 "text": "July 8-13, 2018<br>Rio de Janeiro, Brazil<br>GCs: Marley Vellasco, Pablo Estevez<br>CCs: Teresa Ludermir, Fernando Gomide, Gary G. Yen"
             },
-            "group": "WCCI"
+            "group": "WCCI",
+            "unique_id": "WCCI20180708-001"
         },
         {
             "start_date": {
                 "year":			"2016",
                 "month":		"07",
                 "day": 			"24"
-            },"end_date":{
+            },
+            "end_date":{
                 "year":			"2016",
                 "month":		"07",
                 "day": 			"29"
@@ -45,13 +55,15 @@
             "media": {
               "caption": "IEEE World Congress on Computational Intelligence (WCCI)",
               "credit": "",
-              "url": "https://ewh.ieee.org/conf/wcci/img/wcci2016.png"
+              "url": "https://ewh.ieee.org/conf/wcci/img/wcci2016.png",
+              "link": "https://ewh.ieee.org/conf/wcci/2016/"
             },
             "text": {
                 "headline": "2016 IEEE World Congress on Computational Intelligence",
                 "text": "July 24-29, 2016<br>Vancouver, Canada<br>GCs: Kay Chen Tan, Gary G. Yen<br>CCs: Pablo A. Estevez, Oscar Cordon, Yew Soon Ong"
             },
-            "group": "WCCI"
+            "group": "WCCI",
+            "unique_id": "WCCI20160724-001"
         },
         {
             "background": {
@@ -62,12 +74,12 @@
             "start_date": {
                 "year":			"2011",
                 "month":		"01",
-                "day": 			"05",
-                "hour": 		"6",
-                "minute": 		"45",
-                "second": 		"56",
-                "millisecond": 	"",
-                "format": 		""
+                "day": 			"05"
+            },
+            "end_date": {
+                "year":			"2011",
+                "month":		"01",
+                "day": 			"06"
             },
             "location": {
                 "icon": "http://maps.gstatic.com/intl/en_us/mapfiles/ms/micons/blue-pushpin.png",
@@ -84,7 +96,8 @@
                 "headline": "Married",
                 "text": "Marries Livy in Elmira. Her father buys them a house in Buffalo, New York. Son Langdon is born."
             },
-            "unique_id": ""
+            "group": "WCCI",
+            "unique_id": "WCCI20110105-001"
         },
         {
             "background": {
@@ -95,12 +108,12 @@
             "start_date": {
                 "year":			"2000",
                 "month":		"01",
-                "day": 			"05",
-                "hour": 		"6",
-                "minute": 		"45",
-                "second": 		"56",
-                "millisecond": 	"",
-                "format": 		""
+                "day": 			"05"
+            },
+            "end_date": {
+                "year":			"2000",
+                "month":		"01",
+                "day": 			"05"
             },
             "location": {
                 "icon": "http://maps.gstatic.com/intl/en_us/mapfiles/ms/micons/blue-pushpin.png",
@@ -118,7 +131,8 @@
                 "headline": "Roughing It",
                 "text": "Moves with Livy to Hartford. Publishes Roughing It. Daughter is born. Son Langdon dies."
             },
-            "unique_id": ""
+            "group": "WCCI",
+            "unique_id": "WCCI20000105-001"
         },
         {
             "background": {
@@ -129,12 +143,12 @@
             "start_date": {
                 "year":			"2016",
                 "month":		"01",
-                "day": 			"05",
-                "hour": 		"6",
-                "minute": 		"45",
-                "second": 		"56",
-                "millisecond": 	"",
-                "format": 		""
+                "day": 			"05"
+            },
+            "end_date": {
+                "year":			"2016",
+                "month":		"01",
+                "day": 			"05"
             },
             "location": {
                 "icon": "http://maps.gstatic.com/intl/en_us/mapfiles/ms/micons/blue-pushpin.png",
@@ -151,18 +165,19 @@
                 "headline": "Financial",
                 "text": "Leaves Hartford to live in Europe because of financial difficulties."
             },
-            "unique_id": ""
+            "group": "WCCI",
+            "unique_id": "WCCI20160105-001"
         },
         {
             "start_date": {
                 "year":         "2002",
                 "month":        "01",
-                "day":          "10",
-                "hour":         "6",
-                "minute":       "45",
-                "second":       "56",
-                "millisecond":  "",
-                "format":       ""
+                "day":          "10"
+            },
+            "end_date": {
+                "year":         "2002",
+                "month":        "01",
+                "day":          "10"
             },
             "media": {
                 "caption": "something",
@@ -173,7 +188,8 @@
                 "headline": "Livy dies",
                 "text": "Livy dies. Begins dictating autobiography. Moves to New York City."
             },
-            "unique_id": ""
+            "group": "WCCI",
+            "unique_id": "WCCI20020110-001"
         },
         {
             "background": {
@@ -184,19 +200,19 @@
             "start_date": {
                 "year":			"2014",
                 "month":		"",
-                "day": 			"",
-                "hour": 		"",
-                "minute": 		"",
-                "second": 		"",
-                "millisecond": 	"",
-                "thumbnail": 	"",
-                "format": 		""
+                "day": 			""
+            },
+            "end_date": {
+                "year":			"2014",
+                "month":		"",
+                "day": 			""
             },
             "text": {
                 "headline": "Get started!",
                 "text": ""
             },
-            "unique_id": ""
+            "group": "WCCI",
+            "unique_id": "WCCI20140101-001"
         }
     ]
 }
