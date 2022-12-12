@@ -13,15 +13,15 @@
         <style>
           html,
           body {
-              height: 100%;
-              padding: 0px;
+              height: 90%;
+              padding: 1em;
               margin: 0px;
           }
       </style>
+
     </head>
 
     <body>
-      <h1>IEEE CIS TIMELINE</h1>
 
       <div id="timeline-embed" style="height: 100%;">
             <div id="timeline"></div>
@@ -32,7 +32,7 @@
        $(document).ready(function() {
            var embed = document.getElementById('timeline-embed');
            embed.style.height = getComputedStyle(document.body).height;
-           window.timeline = new TL.Timeline('timeline-embed', '/timeline3.JSON', {
+           window.timeline = new TL.Timeline('timeline-embed', './timeline.json', {
                hash_bookmark: false
            });
            window.addEventListener('resize', function() {

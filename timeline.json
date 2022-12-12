@@ -1,0 +1,202 @@
+{
+    "title": {
+            "text": {
+                "headline": "IEEE-CIS TIMELINE",
+                "text":     "Welcome to the Institute of Electrical and Electronics Engineers (IEEE) Computational Intelligence Society (CIS) Historical Timeline!"
+            },
+            "media": {
+                "url": "https://cis.ieee.org/images/files/template/cis-logo.png",
+                "credit": "<a href='https://cis.ieee.org/'>cis.ieee.org</a>"
+            }
+    },
+    "events": [
+        {
+            "start_date": {
+                "year":			"2018",
+                "month":		"07",
+                "day": 			"08"
+            },
+            "end_date":{
+                "year":			"2018",
+                "month":		"07",
+                "day": 			"13"
+            },
+            "media": {
+                "caption": "IEEE World Congress on Computational Intelligence (WCCI)",
+                "credit": "",
+                "url": "https://ewh.ieee.org/conf/wcci/img/wcci2018.png"
+            },
+            "text": {
+                "headline": "2018 IEEE World Congress on Computational Intelligence",
+                "text": "July 8-13, 2018<br>Rio de Janeiro, Brazil<br>GCs: Marley Vellasco, Pablo Estevez<br>CCs: Teresa Ludermir, Fernando Gomide, Gary G. Yen"
+            },
+            "group": "WCCI"
+        },
+        {
+            "start_date": {
+                "year":			"2016",
+                "month":		"07",
+                "day": 			"24"
+            },"end_date":{
+                "year":			"2016",
+                "month":		"07",
+                "day": 			"29"
+            },
+            "media": {
+              "caption": "IEEE World Congress on Computational Intelligence (WCCI)",
+              "credit": "",
+              "url": "https://ewh.ieee.org/conf/wcci/img/wcci2016.png"
+            },
+            "text": {
+                "headline": "2016 IEEE World Congress on Computational Intelligence",
+                "text": "July 24-29, 2016<br>Vancouver, Canada<br>GCs: Kay Chen Tan, Gary G. Yen<br>CCs: Pablo A. Estevez, Oscar Cordon, Yew Soon Ong"
+            },
+            "group": "WCCI"
+        },
+        {
+            "background": {
+                "color": "#000000",
+                "opacity": 50,
+                "url": null
+            },
+            "start_date": {
+                "year":			"2011",
+                "month":		"01",
+                "day": 			"05",
+                "hour": 		"6",
+                "minute": 		"45",
+                "second": 		"56",
+                "millisecond": 	"",
+                "format": 		""
+            },
+            "location": {
+                "icon": "http://maps.gstatic.com/intl/en_us/mapfiles/ms/micons/blue-pushpin.png",
+                "lat": 42.886447,
+                "lon": -78.878369,
+                "zoom": 11
+            },
+            "media": {
+                "caption": "something",
+                "credit": "ETC",
+                "url": "http://2.bp.blogspot.com/-dxJbW0CG8Zs/TmkoMA5-cPI/AAAAAAAAAqw/fQpsz9GpFdo/s1600/voyage-dans-la-lune-1902-02-g.jpg"
+            },
+            "text": {
+                "headline": "Married",
+                "text": "Marries Livy in Elmira. Her father buys them a house in Buffalo, New York. Son Langdon is born."
+            },
+            "unique_id": ""
+        },
+        {
+            "background": {
+                "color": "#000000",
+                "opacity": 50,
+                "url": null
+            },
+            "start_date": {
+                "year":			"2000",
+                "month":		"01",
+                "day": 			"05",
+                "hour": 		"6",
+                "minute": 		"45",
+                "second": 		"56",
+                "millisecond": 	"",
+                "format": 		""
+            },
+            "location": {
+                "icon": "http://maps.gstatic.com/intl/en_us/mapfiles/ms/micons/blue-pushpin.png",
+                "lat": 41.763711,
+                "line": true,
+                "lon": -72.685093,
+                "zoom": 11
+            },
+            "media": {
+                "caption": "something",
+                "credit": "ETC",
+                "url": "http://2.bp.blogspot.com/-dxJbW0CG8Zs/TmkoMA5-cPI/AAAAAAAAAqw/fQpsz9GpFdo/s1600/voyage-dans-la-lune-1902-02-g.jpg"
+            },
+            "text": {
+                "headline": "Roughing It",
+                "text": "Moves with Livy to Hartford. Publishes Roughing It. Daughter is born. Son Langdon dies."
+            },
+            "unique_id": ""
+        },
+        {
+            "background": {
+                "color": "#000000",
+                "opacity": 50,
+                "url": null
+            },
+            "start_date": {
+                "year":			"2016",
+                "month":		"01",
+                "day": 			"05",
+                "hour": 		"6",
+                "minute": 		"45",
+                "second": 		"56",
+                "millisecond": 	"",
+                "format": 		""
+            },
+            "location": {
+                "icon": "http://maps.gstatic.com/intl/en_us/mapfiles/ms/micons/blue-pushpin.png",
+                "lat": 54.525961,
+                "lon": 15.255119,
+                "zoom": 11
+            },
+            "media": {
+                "caption": "something",
+                "credit": "ETC",
+                "url": "http://2.bp.blogspot.com/-dxJbW0CG8Zs/TmkoMA5-cPI/AAAAAAAAAqw/fQpsz9GpFdo/s1600/voyage-dans-la-lune-1902-02-g.jpg"
+            },
+            "text": {
+                "headline": "Financial",
+                "text": "Leaves Hartford to live in Europe because of financial difficulties."
+            },
+            "unique_id": ""
+        },
+        {
+            "start_date": {
+                "year":         "2002",
+                "month":        "01",
+                "day":          "10",
+                "hour":         "6",
+                "minute":       "45",
+                "second":       "56",
+                "millisecond":  "",
+                "format":       ""
+            },
+            "media": {
+                "caption": "something",
+                "credit": "ETC",
+                "url": "https://www.google.com/maps/place/Medill+School+of+Journalism,+Media,+Integrated+Marketing+Communications+Office+of+Dean/@42.0509363,-87.6737809,18z/data=!4m2!3m1!1s0x0000000000000000:0x683bff755fbf8f0c"
+            },
+            "text": {
+                "headline": "Livy dies",
+                "text": "Livy dies. Begins dictating autobiography. Moves to New York City."
+            },
+            "unique_id": ""
+        },
+        {
+            "background": {
+                "color": null,
+                "opacity": 50,
+                "url": null
+            },
+            "start_date": {
+                "year":			"2014",
+                "month":		"",
+                "day": 			"",
+                "hour": 		"",
+                "minute": 		"",
+                "second": 		"",
+                "millisecond": 	"",
+                "thumbnail": 	"",
+                "format": 		""
+            },
+            "text": {
+                "headline": "Get started!",
+                "text": ""
+            },
+            "unique_id": ""
+        }
+    ]
+}

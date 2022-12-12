@@ -21,5 +21,5 @@
 
   Download the IEEE-CIS-Timeline folder from this repository.
   Open the IEEE-CIS-Timeline folder and open index.html with Chrome.
-  Select the options.s
+  Select the options.
   Close the web browser when you are done
