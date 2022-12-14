@@ -42,6 +42,11 @@
             "unique_id": "WCCI20180708-001"
         },
         {
+          "background": {
+              "color": "#042236",
+              "opacity": 50,
+              "url": null
+          },
             "start_date": {
                 "year":			"2016",
                 "month":		"07",
@@ -72,124 +77,85 @@
                 "url": null
             },
             "start_date": {
-                "year":			"2011",
-                "month":		"01",
+                "year":			"2019",
+                "month":		"06",
+                "day": 			"10"
+            },
+            "end_date": {
+                "year":			"2019",
+                "month":		"06",
+                "day": 			"13"
+            },
+            "media": {
+                "caption": "IEEE Congress on Evolutionary Computation (IEEE CEC)",
+                "credit": "",
+                "url": "/img/CEC20190610.JPG",
+                "link": "https://ewh.ieee.org/conf/cec/cec-2019-cfp.pdf"
+            },
+            "text": {
+                "headline": "2019 IEEE Congress on Evolutionary Computation",
+                "text": "June 10-13, 2019, Wellington, New Zealand<br>GCs: Mengjie Zhang, Kay Chen Tan<br>PC: Carlos A. Coello Coello"
+            },
+            "group": "CEC",
+            "unique_id": "CEC20190610-001"
+        },
+        {
+          "background": {
+              "color": "#000000",
+              "opacity": 50,
+              "url": null
+          },
+            "start_date": {
+                "year":			"2017",
+                "month":		"06",
                 "day": 			"05"
             },
             "end_date": {
-                "year":			"2011",
-                "month":		"01",
-                "day": 			"06"
-            },
-            "location": {
-                "icon": "http://maps.gstatic.com/intl/en_us/mapfiles/ms/micons/blue-pushpin.png",
-                "lat": 42.886447,
-                "lon": -78.878369,
-                "zoom": 11
+                "year":			"2017",
+                "month":		"06",
+                "day": 			"08"
             },
             "media": {
-                "caption": "something",
-                "credit": "ETC",
-                "url": "http://2.bp.blogspot.com/-dxJbW0CG8Zs/TmkoMA5-cPI/AAAAAAAAAqw/fQpsz9GpFdo/s1600/voyage-dans-la-lune-1902-02-g.jpg"
+                "caption": "Congress on Evolutionary Computation",
+                "credit": "",
+                "url": "/img/CEC20170605.JPG",
+                "link": "https://ewh.ieee.org/conf/cec/cec-2017.pdf"
             },
             "text": {
-                "headline": "Married",
-                "text": "Marries Livy in Elmira. Her father buys them a house in Buffalo, New York. Son Langdon is born."
+                "headline": "2017 IEEE Congress on Evolutionary Computation",
+                "text": " June 5-8, 2017, Donostia-San Sebastian, Spain<br>GC: Jose A. Lozano<br>PC: Carlos Coello"
             },
-            "group": "WCCI",
-            "unique_id": "WCCI20110105-001"
+            "group": "CEC",
+            "unique_id": "CEC20170605-001"
         },
         {
             "background": {
-                "color": "#000000",
+                "color": "#0074d1",
                 "opacity": 50,
                 "url": null
             },
             "start_date": {
-                "year":			"2000",
-                "month":		"01",
-                "day": 			"05"
+                "year":			"2017",
+                "month":		"07",
+                "day": 			"09"
             },
             "end_date": {
-                "year":			"2000",
-                "month":		"01",
-                "day": 			"05"
-            },
-            "location": {
-                "icon": "http://maps.gstatic.com/intl/en_us/mapfiles/ms/micons/blue-pushpin.png",
-                "lat": 41.763711,
-                "line": true,
-                "lon": -72.685093,
-                "zoom": 11
+                "year":			"2017",
+                "month":		"07",
+                "day": 			"12"
             },
             "media": {
-                "caption": "something",
-                "credit": "ETC",
-                "url": "http://2.bp.blogspot.com/-dxJbW0CG8Zs/TmkoMA5-cPI/AAAAAAAAAqw/fQpsz9GpFdo/s1600/voyage-dans-la-lune-1902-02-g.jpg"
+                "caption": "IEEE International Conference on Fuzzy Systems",
+                "credit": "",
+                "url": "/img/FUZZ20170709.JPG",
+                "link": "https://ewh.ieee.org/conf/fuzz/fuzz-2017.pdf"
             },
             "text": {
-                "headline": "Roughing It",
-                "text": "Moves with Livy to Hartford. Publishes Roughing It. Daughter is born. Son Langdon dies."
+                "headline": "2017 IEEE International Conference on Fuzzy Systems",
+                "text": "July 9-12, 2017, Naples, Italy<br>GCs: Giovanni Acampora, Bruno Siciliano<br>PCs: Hani Hagras, Francisco Herrera"
             },
-            "group": "WCCI",
-            "unique_id": "WCCI20000105-001"
-        },
-        {
-            "background": {
-                "color": "#000000",
-                "opacity": 50,
-                "url": null
-            },
-            "start_date": {
-                "year":			"2016",
-                "month":		"01",
-                "day": 			"05"
-            },
-            "end_date": {
-                "year":			"2016",
-                "month":		"01",
-                "day": 			"05"
-            },
-            "location": {
-                "icon": "http://maps.gstatic.com/intl/en_us/mapfiles/ms/micons/blue-pushpin.png",
-                "lat": 54.525961,
-                "lon": 15.255119,
-                "zoom": 11
-            },
-            "media": {
-                "caption": "something",
-                "credit": "ETC",
-                "url": "http://2.bp.blogspot.com/-dxJbW0CG8Zs/TmkoMA5-cPI/AAAAAAAAAqw/fQpsz9GpFdo/s1600/voyage-dans-la-lune-1902-02-g.jpg"
-            },
-            "text": {
-                "headline": "Financial",
-                "text": "Leaves Hartford to live in Europe because of financial difficulties."
-            },
-            "group": "WCCI",
-            "unique_id": "WCCI20160105-001"
-        },
-        {
-            "start_date": {
-                "year":         "2002",
-                "month":        "01",
-                "day":          "10"
-            },
-            "end_date": {
-                "year":         "2002",
-                "month":        "01",
-                "day":          "10"
-            },
-            "media": {
-                "caption": "something",
-                "credit": "ETC",
-                "url": "https://www.google.com/maps/place/Medill+School+of+Journalism,+Media,+Integrated+Marketing+Communications+Office+of+Dean/@42.0509363,-87.6737809,18z/data=!4m2!3m1!1s0x0000000000000000:0x683bff755fbf8f0c"
-            },
-            "text": {
-                "headline": "Livy dies",
-                "text": "Livy dies. Begins dictating autobiography. Moves to New York City."
-            },
-            "group": "WCCI",
-            "unique_id": "WCCI20020110-001"
+            "group": "FUZZ",
+            "unique_id": "FUZZ20170709-001"
         },
         {
             "background": {
@@ -198,21 +164,56 @@
                 "url": null
             },
             "start_date": {
-                "year":			"2014",
-                "month":		"",
-                "day": 			""
+                "year":			"2015",
+                "month":		"08",
+                "day": 			"02"
             },
             "end_date": {
-                "year":			"2014",
-                "month":		"",
-                "day": 			""
+                "year":			"2015",
+                "month":		"08",
+                "day": 			"05"
+            },
+              "media": {
+                "caption": "IEEE International Conference on Fuzzy Systems",
+                "credit": "",
+                "url": "/img/FUZZ20150802.JPG",
+                "link": "https://ewh.ieee.org/conf/fuzz/fuzz-2015.pdf"
             },
             "text": {
-                "headline": "Get started!",
-                "text": ""
+                "headline": "2015 IEEE International Conference on Fuzzy Systems",
+                "text": "August 2-5, 2015, Istanbul, Turkey<br>GCs: Adnan Yazici, Nikhil R. Pal<br>PC: Uzay Kaymak"
             },
-            "group": "WCCI",
-            "unique_id": "WCCI20140101-001"
+            "group": "FUZZ",
+            "unique_id": "FUZZ20150802-001"
+        },
+        {
+            "background": {
+                "color": null,
+                "opacity": 50,
+                "url": null
+            },
+            "start_date": {
+                "year":			"2015",
+                "month":		"07",
+                "day": 			"12"
+            },
+            "end_date": {
+                "year":			"2015",
+                "month":		"07",
+                "day": 			"17"
+            },
+              "media": {
+                "caption": "IEEE International Joint Conference on Neural Networks",
+                "credit": "",
+                "url": "/img/IJCNN20150712.JPG",
+                "link": "https://ewh.ieee.org/conf/ijcnn/2015/ijcnn-2015.pdf"
+            },
+            "text": {
+                "headline": "2015 International Joint Conference on Neural Networks",
+                "text": "July 12-17, 2015, Killarney, Ireland<br>GC: De-Shuang Huang<br>PC: Yoonsuck Choe"
+            },
+            "group": "IJCNN",
+            "unique_id": "IJCNN20150712-001"
         }
     ]
 }
