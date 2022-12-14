@@ -214,6 +214,35 @@
             },
             "group": "IJCNN",
             "unique_id": "IJCNN20150712-001"
+        },
+        {
+            "background": {
+                "color": "#faae01",
+                "opacity": 50,
+                "url": null
+            },
+            "start_date": {
+                "year":			"2018",
+                "month":		"11",
+                "day": 			"18"
+            },
+            "end_date": {
+                "year":			"2018",
+                "month":		"11",
+                "day": 			"21"
+            },
+              "media": {
+                "caption": "IEEE Symposium Series on Computational Intelligence",
+                "credit": "",
+                "url": "/img/SSCI20181118.JPG",
+                "link": "https://ewh.ieee.org/conf/ssci/2018/ssci-2018-cfp.pdf"
+            },
+            "text": {
+                "headline": "2018 IEEE Symposium Series on Computational Intelligence",
+                "text": "November 18-21, 2018,<br>Bengaluru, India<br>General Chair: N. R. Pal"
+            },
+            "group": "SSCI",
+            "unique_id": "SSCI20181118-001"
         }
     ]
 }
