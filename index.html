@@ -4,29 +4,33 @@
   <head>
     <title>IEEE-CIS TIMELINE HOME</title>
     <link rel="stylesheet" type="text/css" href="./css/style.css">
+
+    <style>
+      body{
+        margin: auto;
+        padding: 20px;
+        width: 80%;
+      }
+    </style>
   </head>
 
   <body>
-    <img src="https://cis.ieee.org/images/files/template/cis-logo.png" alt="(IEEE) Computational Intelligence Society">
-
-    <div style="text-align:center;">
-      <h1>IEEE CIS TIMELINE</h1>
+      <div class="logo">
+        <img src="https://cis.ieee.org/images/files/template/cis-logo.png" alt="(IEEE) Computational Intelligence Society">
+      </div>
+      <div class="bar">
+        <h1>IEEE CIS TIMELINE</h1>
+        <!--<button onclick="document.location='timeline-google-sheet.html'">Launch Timeline <br> using Google Sheets</button>-->
+        <button onclick="document.location='index.html'">Home Page</button>
+        <button onclick="document.location='edit-events.php'">Edit Events</button>
+        <button onclick="document.location='sandbox-timeline.html'">Launch Sandbox Timeline</button> <!-- Using JSON file -->
+        <button onclick="document.location='approve.html'">Approve Changes</button>
+        <button onclick="document.location='timeline-Launch.html'">Launch Production Timeline</button> <!-- Using JSON file -->
         <p>Welcome to the Institute of Electrical and Electronics Engineers <b>(IEEE)</b> Computational Intelligence Society <b>(CIS)</b> Historical Timeline!</p>
         <br>
         <br>
+      </div>
 
-        <div class="bar">
-          <p>Select an option to begin</p>
-          <br>
-          <!--<button onclick="document.location='timeline-google-sheet.html'">Launch Timeline <br> using Google Sheets</button>-->
-          <button onclick="document.location='index.html'">Home Page</button>
-          <button onclick="document.location='timeline-json.html'">Launch Timeline</button> <!-- Using JSON file -->
-          <button onclick="document.location='edit-title.php'">Edit Title Slide</button>
-          <button onclick="document.location='edit-eras.php'">Edit Eras</button>
-          <button onclick="document.location='edit-events.php'">Edit Events</button>
-          <button onclick="document.location='approve.html'">Approve Changes</button>
-        </div>
-    </div>
   </body>
 
 </html>

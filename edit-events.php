@@ -7,6 +7,11 @@
   </head>
 
   <style>
+    body{
+      margin: auto;
+      padding: 20px;
+      width: 80%;
+    }
     .iblock{
         padding: 1em;
     }
@@ -22,7 +27,19 @@
 
 
   <body>
-    <h2>EDIT TIMELINE EVENTS</h2>
+    <div class="logo">
+      <img src="https://cis.ieee.org/images/files/template/cis-logo.png" alt="(IEEE) Computational Intelligence Society">
+    </div>
+    <div class="bar">
+      <h1>EDIT TIMELINE EVENTS</h1>
+      <!--<button onclick="document.location='timeline-google-sheet.html'">Launch Timeline <br> using Google Sheets</button>-->
+      <button onclick="document.location='index.html'">Home Page</button>
+      <button onclick="document.location='edit-events.php'">Edit Events</button>
+      <button onclick="document.location='sandbox-timeline.html'">Launch Sandbox Timeline</button> <!-- Using JSON file -->
+      <button onclick="document.location='approve.html'">Approve Changes</button>
+      <button onclick="document.location='timeline-Launch.html'">Launch Production Timeline</button> <!-- Using JSON file -->
+    </div>
+    <br><br>
 
     <div style="text-align:right; padding:10px 30px;">
       <button onclick=\"document.location='event.html?opt=new'\">Create a New Event</button>
@@ -43,7 +60,7 @@
       $isEvent = 0;
 
       $jsonIterator = new RecursiveIteratorIterator(
-          new RecursiveArrayIterator(json_decode(file_get_contents("./timeline.json"), TRUE)),
+          new RecursiveArrayIterator(json_decode(file_get_contents("./sandbox-timeline.json"), TRUE)),
           RecursiveIteratorIterator::SELF_FIRST);
 
       foreach ($jsonIterator as $key => $val) {

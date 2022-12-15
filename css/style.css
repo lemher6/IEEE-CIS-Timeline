@@ -1,10 +1,4 @@
 
-body{
-  margin: auto;
-  padding: 20px;
-  width: 80%;
-}
-
 body,p {
   font-family: Tahoma, "Trebuchet MS", sans-serif;
   color: #666;
@@ -34,9 +28,15 @@ button:hover {
     background-color: #000!important;
 }
 
+.logo{
+  float: left;
+  width: 5%;
+  vertical-align: top;
+}
+
 .bar{
   display: inline-block;
-  width: 100%;
+  width: 95%;
   text-align: center!important;
   font-family: Tahoma, "Trebuchet MS", sans-serif;
 }
