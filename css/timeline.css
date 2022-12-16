@@ -1,14 +1,14 @@
 /*!
-	Timeline JS 3 
-	
+	Timeline JS 3
+
 	Designed and built by Zach Wise for the Northwestern University Knight Lab
-	
+
 	This Source Code Form is subject to the terms of the Mozilla Public
 	License, v. 2.0. If a copy of the MPL was not distributed with this
 	file, You can obtain one at https://mozilla.org/MPL/2.0/.
 
 */
-/* Includes 
+/* Includes
 ================================================== */
 /*	VARIABLES
 	BASE
@@ -551,7 +551,7 @@
   -o-user-select: none;
   user-select: none;
 }
-/* MenuBar 
+/* MenuBar
 ================================================== */
 .tl-menubar {
   position: absolute;
@@ -593,7 +593,7 @@
 	//.translucent-background(rgb(0,0,0), .5);
 	border-top: 2px solid #000;
 	animation: invertToBlack 1s;
-	-webkit-animation:invertToBlack 1s; 
+	-webkit-animation:invertToBlack 1s;
 }
 */
 @keyframes invertToBlack {
@@ -698,7 +698,7 @@
     background: #FFF;
   }
 }
-/* MESSAGE 
+/* MESSAGE
 ================================================== */
 .tl-message,
 .tl-message-full {
@@ -1087,7 +1087,7 @@
   position: absolute;
   bottom: 0;
   right: 0;
-  width: 100%;
+  width: 140%;
   height: 50%;
   background: -moz-linear-gradient(top, rgba(229, 229, 229, 0) 0%, #e5e5e5 50%);
   /* FF3.6+ */
