@@ -1,3 +1,8 @@
+<?php
+  ### IEEE-CIS TIMELINE PROJECT
+  ### 2022-11 AH
+?>
+
 <!DOCTYPE html>
 <html>
 
@@ -19,7 +24,7 @@
         <img src="https://cis.ieee.org/images/files/template/cis-logo.png" alt="(IEEE) Computational Intelligence Society">
       </div>
       <div class="bar">
-        <h1>IEEE CIS TIMELINE</h1>
+        <h1>TIMELINE EVENT</h1>
         <!--<button onclick="document.location='timeline-google-sheet.html'">Launch Timeline <br> using Google Sheets</button>-->
         <button onclick="document.location='index.html'">Home Page</button>
         <button onclick="document.location='edit-events.php'">Edit Events</button>
@@ -28,10 +33,36 @@
         <button onclick="document.location='timeline-Launch.html'">Launch Production Timeline</button> <!-- Using JSON file -->
         <p>Welcome to the Institute of Electrical and Electronics Engineers <b>(IEEE)</b> Computational Intelligence Society <b>(CIS)</b> Historical Timeline!</p>
         <br>
-        <a href="/sandbox-timeline.html">
-          <img src="/img/IEEE-CIS-TIMELINE.JPG" width="90%" style="box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);" title="Launch Sandbox Timeline">
-        </a>
+        <br>
       </div>
+
+
+      <?php
+        ########################################################################
+        ### DELETING AN EVENT
+        ########################################################################
+        if($_GET['opt'] == 'del' && $_GET['eve'] != ''){
+      ?>
+          <form method="post" action="event-manager.php">
+
+          </form>
+
+      <?php
+        }
+      ?>
+
+
+      <?php
+        ########################################################################
+        ### CREATING OR UPDATING AN EVENT
+        ########################################################################
+        if($_GET['opt'] == 'upd' || $_GET['opt'] == 'new'){
+      ?>
+
+
+      <?php
+        }
+      ?>
 
   </body>
 
