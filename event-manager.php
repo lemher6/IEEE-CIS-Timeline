@@ -36,9 +36,9 @@
                 if($key == 'unique_id'){
                   echo "\t\t<td style=\"text-align:center;\">$val</td>\n";
                   echo "\t\t<td  style=\"text-align:center;\">
-                              <button onclick=\"document.location='event.php?eve=$val&opt=upd'\">Update</button>
+                              <button onclick=\"document.location='event.php?eId=$val&opt=upd'\">Update</button>
                               &nbsp; &nbsp;
-                              <button onclick=\"document.location='event.php?eve=$val&opt=del'\">Delete</button>
+                              <button onclick=\"document.location='event.php?eId=$val&opt=del'\">Delete</button>
                             </td></tr>\n";
                 }
               }
@@ -50,41 +50,96 @@
 
 
   ##############################################################################
-  ### DISPLAYS EVENT INFORMATON
+  ### DISPLAYS EVENT INFORMATON BY EVENT ID
   ##############################################################################
-  function displayEvent(){
+  function displayEvent(string $eId){
 
     ### READS SANDBOX JSON TIMELINE FILE
     $jsonIterator = new RecursiveIteratorIterator(
       new RecursiveArrayIterator(json_decode(file_get_contents("./sandbox-timeline.json"), TRUE)),
       RecursiveIteratorIterator::SELF_FIRST);
 
-      $isEvent = 0;
+      $isEvent = $isBackground = $media = 0;
+      $color = $opacity = $backgroundURL = '';
+      $start_date = $end_date = '';
+      $caption =  $credit = $mediaURL = $mediaLINK = '';
+      $headline = $text = $group = '';
+      
       foreach ($jsonIterator as $key => $val) {
-          if(is_array($val)) {
-              if($key == 'events'){
-                $isEvent = 1;
-              }
-              echo "\n";
-          } else {
-              if($isEvent == 1){
+        if(is_array($val)) {
+            if($key == 'events'){
+              $isEvent = 1;
+            }
+            echo "\n";
+        } else {
+            if($isEvent == 1){
 
-                if($key == 'start_date'){ echo "\t<tr>\n"; }
-                if($key == 'year'){ echo "\t\t<td>$val\n"; }
-                if($key == 'month'){ echo "-$val-"; }
-                if($key == 'day'){ echo "$val</td>\n"; }
-                if($key == 'headline'){ echo "\t\t<td>$val</td>\n"; }
-                if($key == 'unique_id'){
-                  echo "\t\t<td style=\"text-align:center;\">$val</td>\n";
-                  echo "\t\t<td  style=\"text-align:center;\">
-                              <button onclick=\"document.location='event.php?eve=$val&opt=upd'\">Update</button>
-                              &nbsp; &nbsp;
-                              <button onclick=\"document.location='event.php?eve=$val&opt=del'\">Delete</button>
-                            </td></tr>\n";
-                }
+              if($key == 'background'){
+                $isBackground = 1;
+                $color = $opacity = $backgroundURL = '';
+                $start_date = $end_date = '';
+                $caption =  $credit = $mediaURL = $mediaLINK = '';
+                $headline = $text = $group = '';
               }
-          } // END else
-      }
+
+              if($key == 'color'){ $color = $val; }
+              if($key == 'opacity'){ $opacity = $val; }
+              if($key == 'url' && $isBackground == '1'){ $backgroundURL = $val; }
+
+              if($key == 'start_date'){
+                $isBackground = 0;
+                $start_date = '';
+              }
+
+              if($key == 'year'){ $start_date = $val.'/'; }
+              if($key == 'month'){ $start_date .= $val.'/'; }
+              if($key == 'day'){ $start_date .= $val; }
+
+              if($key == 'year'){ $end_date = $val.'/'; }
+              if($key == 'month'){ $end_date .= $val.'/'; }
+              if($key == 'day'){ $end_date .= $val; }
+
+              if($key == 'caption'){ $caption = ''; }
+              if($key == 'credit'){ $credit = $val; }
+              if($key == 'url' && $isBackground == 0){ $mediaURL = $val; }
+              if($key == 'link' && $isBackground == 0){ $mediaLINK = $val; }
+
+              if($key == 'headline'){ $headline = $val; }
+              if($key == 'text'){ $text = $val; }
+              if($key == 'group'){ $group = $val; }
+
+              if($key == 'unique_id'){
+                $unique_id = $val;
+                if($unique_id == $eId){
+
+                  echo "<label for='start_date'>Start Date</label><input type='text' name='color' value='$color' />";
+                  echo "<label for='start_date'>Start Date</label><input type='text' name='opacity' value='$opacity' />";
+                  echo "<label for='start_date'>Start Date</label><input type='text' name='url' value='$backgroundURL' />";
+
+                  echo "<label for='start_date'>Start Date</label><input type='text' name='start_date' value='$start_date' />";
+                  echo "<label for='start_date'>Start Date</label><input type='text' name='year' value='$start_date' />";
+                  echo "<label for='start_date'>Start Date</label><input type='text' name='month' value='$start_date ' />";
+                  echo "<label for='start_date'>Start Date</label><input type='text' name='day' value='$start_date ' />";
+
+                  echo "<label for='start_date'>Start Date</label><input type='text' name='year' value='$end_date' />";
+                  echo "<label for='start_date'>Start Date</label><input type='text' name='month' value='$end_date' />";
+                  echo "<label for='start_date'>Start Date</label><input type='text' name='day' value='$end_date' />";
+
+                  echo "<label for='start_date'>Start Date</label><input type='text' name='caption' value='$caption' />";
+                  echo "<label for='start_date'>Start Date</label><input type='text' name='credit' value='$credit' />";
+                  echo "<label for='start_date'>Start Date</label><input type='text' name='url' value='$mediaURL' />";
+                  echo "<label for='start_date'>Start Date</label><input type='text' name='link' value='$mediaLINK' />";
+
+                  echo "<label for='start_date'>Start Date</label><input type='text' name='headline' value='$headline' />";
+                  echo "<label for='start_date'>Start Date</label><input type='text' name='text' value='$text' />";
+                  echo "<label for='start_date'>Start Date</label><input type='text' name='group' value='$group' />";
+
+                } // if($unique_id == $eId)
+              } // if($key == 'unique_id')
+
+            } // if($isEvent == 1)
+        } // END else
+      } // END foreach
 
   } ###  END function displayEvent
 

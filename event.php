@@ -31,38 +31,63 @@
         <button onclick="document.location='sandbox-timeline.html'">Launch Sandbox Timeline</button> <!-- Using JSON file -->
         <button onclick="document.location='approve.html'">Approve Changes</button>
         <button onclick="document.location='timeline-Launch.html'">Launch Production Timeline</button> <!-- Using JSON file -->
-        <p>Welcome to the Institute of Electrical and Electronics Engineers <b>(IEEE)</b> Computational Intelligence Society <b>(CIS)</b> Historical Timeline!</p>
         <br>
         <br>
       </div>
 
 
-      <?php
-        ########################################################################
-        ### DELETING AN EVENT
-        ########################################################################
-        if($_GET['opt'] == 'del' && $_GET['eve'] != ''){
-      ?>
-          <form method="post" action="event-manager.php">
-
-          </form>
-
-      <?php
-        }
-      ?>
-
+      <form method="post" action="event-manager.php">
+        <label for='eId'>Event ID:</label><input type="text" name="eId" value="<?php echo $_GET['eId']; ?>" />
 
       <?php
         ########################################################################
-        ### CREATING OR UPDATING AN EVENT
+        ### IF AN EVENT ID IS PASSED
         ########################################################################
-        if($_GET['opt'] == 'upd' || $_GET['opt'] == 'new'){
+        if($_GET['eId'] != ''){
+          include ("./event-manager.php");
+          displayEvent($_GET['eId']);
+
+            ########################################################################
+            ### DELETING AN EVENT
+            ########################################################################
+            if($_GET['opt'] == 'del'){
       ?>
 
+                <p>Do you want to delete this event?</p>
+                <input type="text" name="opt" value="del" />
+                <input type="submit" value="Yes" />
+                <button type="button" onclick="document.location='edit-events.php'">Cancel</button>
 
-      <?php
-        }
-      ?>
+            <?php  } // END if($_GET['opt'] == 'del')  ?>
+
+
+            <?php
+              ########################################################################
+              ### CREATING OR UPDATING AN EVENT
+              ########################################################################
+              if($_GET['opt'] == 'upd'){
+            ?>
+                    <p>Update the event information and then click on submit button.</p>
+                      <input type="text" name="opt" value="upt" />
+                      <input type="submit" value="Submit" />
+
+            <?php  } // END if($_GET['opt'] == 'upd')  ?>
+
+
+            <?php
+              ########################################################################
+              ### CREATING OR UPDATING AN EVENT
+              ########################################################################
+              if($_GET['opt'] == 'new'){
+            ?>
+                  <p>Complete the event information and then click on submit button.</p>
+                  <input type="text" name="opt" value="new" />
+                  <input type="submit" value="Submit" />
+
+            <?php  } // END if($_GET['opt'] == 'new')  ?>
+
+        <?php  } // END if($_GET['eId'] != '') ?>
+    </form>
 
   </body>
 
