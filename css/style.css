@@ -7,7 +7,7 @@ body,p {
 
 h1 { padding: 25px 0; }
 
-button {
+button, input[type=submit] {
   border: none;
   display: inline-block;
   padding: 14px 12px;
@@ -21,9 +21,27 @@ button {
   font-size: large;
 }
 
-button:hover {
+button:hover, input[type=submit]:hover {
     color: #fff!important;
     background-color: #000!important;
+}
+
+label {
+  color:black;
+}
+
+input[type=text], select, textarea {
+  width: 98%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  margin-top: 0.5em;
+  margin-bottom: 2em;
+  margin-left:1em;
+  margin-right: 0.9em;
+  resize: vertical;
+  color: gray;
 }
 
 .logo{

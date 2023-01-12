@@ -14,18 +14,27 @@
   <style>
     body{
       margin: auto;
-      padding: 20px;
-      width: 80%;
+      padding: 1em;
     }
-    .iblock{
-        padding: 1em;
+    .rightBlock{
+      text-align:right;
     }
-    .info{
-        padding: 1em;
-        float: left;
+    .iBlock{
+        margin: auto;
+        text-align:center;
     }
-    .text{
-        padding: 1em;
+    @media only screen and (min-width: 768px) {
+    /* For desktop: */
+      body{
+        width: 80%;
+      }
+      .rightBlock{
+        padding:10px 30px;
+        width: 90%;
+      }
+      .iBlock{
+          width: 80%;
+      }
     }
 
   </style>
@@ -46,26 +55,29 @@
     </div>
     <br><br>
 
-    <div style="text-align:right; padding:10px 30px;">
+    <div class="rightBlock">
       <button onclick="document.location='event.php?opt=new'">Create a New Event</button>
     </div>
 
-    <table style="width:100%">
-      <tr>
-        <th>Start Date</th>
-        <th>End Date</th>
-        <th>Headline</th>
-        <th>Group</th>
-        <th style="text-align:center;">Options</th>
-      </tr>
-      <tr>
 
-    <?php
-      include ("./event-manager.php");
-      listBasicEvents();
-    ?>
-      </tr>
-    </table>
+    <div class="iBlock">
+        <table style="width:100%">
+          <tr>
+            <th>Start Date</th>
+            <th>End Date</th>
+            <th>Headline</th>
+            <th>Group</th>
+            <th style="text-align:center;">Options</th>
+          </tr>
+          <tr>
+
+        <?php
+          include ("./event-manager.php");
+          listBasicEvents();
+        ?>
+          </tr>
+        </table>
+    </div>
 
   </body>
 

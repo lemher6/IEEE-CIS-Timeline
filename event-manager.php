@@ -111,9 +111,23 @@
               if($key == 'unique_id'){
                 $unique_id = $val;
                 if($unique_id == $eId){
+                  echo "<div id='eventView' class='eventView' style='background-color:$color; background-image: url('$backgroundURL');'>
+                          <div class='floatLeft'>
+                              <a href='$mediaLINK' target='_blank'>
+                                <img alt='$caption' title='$caption' src='$mediaURL' width='200px' height:auto;>
+                              </a>
+                              $credit
+                          </div>
+                              <div class='floatRight'>
+                                  <br>
+                                  <span class='dates'>$start_date - $end_date</span><br>
+                                  <span class='title'>$headline</span><br>
+                                  <span class='details'>$text</span>
+                              </div>
+                        </div>";
 
                   echo "<label for='headline'>Event Title:</label><input type='text' name='headline' value='$headline' /><br>";
-                  echo "<label for='text'>Event Details:</label><input type='text' name='text' value='$text' /><br>";
+                  echo "<label for='text'>Event Details:</label><textarea name='text'>$text</textarea><br>";
                   echo "<label for='group'>Event Group:</label><input type='text' name='group' value='$group' /><br>";
                   echo "<label for='start_date'>Start Date:</label><input type='text' name='start_date' value='$start_date' /><br>";
                   echo "<label for='end_date'>End Date:</label><input type='text' name='end_date' value='$end_date' /><br>";
