@@ -55,7 +55,7 @@
         <th>Start Date</th>
         <th>End Date</th>
         <th>Headline</th>
-        <th style="text-align:center;">Group</th>
+        <th>Group</th>
         <th style="text-align:center;">Options</th>
       </tr>
       <tr>

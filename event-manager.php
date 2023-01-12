@@ -30,11 +30,11 @@
 
                 if($key == 'start_date'){ echo "\t<tr>\n"; }
                 if($key == 'year'){ echo "\t\t<td>$val\n"; }
-                if($key == 'month'){ echo "-$val-"; }
+                if($key == 'month'){ echo "/ $val / "; }
                 if($key == 'day'){ echo "$val</td>\n"; }
                 if($key == 'headline'){ echo "\t\t<td>$val</td>\n"; }
+                if($key == 'group'){ echo "\t\t<td>$val</td>\n"; }
                 if($key == 'unique_id'){
-                  echo "\t\t<td style=\"text-align:center;\">$val</td>\n";
                   echo "\t\t<td  style=\"text-align:center;\">
                               <button onclick=\"document.location='event.php?eId=$val&opt=upd'\">Update</button>
                               &nbsp; &nbsp;
@@ -64,7 +64,7 @@
       $start_date = $end_date = '';
       $caption =  $credit = $mediaURL = $mediaLINK = '';
       $headline = $text = $group = '';
-      
+
       foreach ($jsonIterator as $key => $val) {
         if(is_array($val)) {
             if($key == 'events'){
@@ -112,27 +112,19 @@
                 $unique_id = $val;
                 if($unique_id == $eId){
 
-                  echo "<label for='start_date'>Start Date</label><input type='text' name='color' value='$color' />";
-                  echo "<label for='start_date'>Start Date</label><input type='text' name='opacity' value='$opacity' />";
-                  echo "<label for='start_date'>Start Date</label><input type='text' name='url' value='$backgroundURL' />";
+                  echo "<label for='headline'>Event Title:</label><input type='text' name='headline' value='$headline' /><br>";
+                  echo "<label for='text'>Event Details:</label><input type='text' name='text' value='$text' /><br>";
+                  echo "<label for='group'>Event Group:</label><input type='text' name='group' value='$group' /><br>";
+                  echo "<label for='start_date'>Start Date:</label><input type='text' name='start_date' value='$start_date' /><br>";
+                  echo "<label for='end_date'>End Date:</label><input type='text' name='end_date' value='$end_date' /><br>";
 
-                  echo "<label for='start_date'>Start Date</label><input type='text' name='start_date' value='$start_date' />";
-                  echo "<label for='start_date'>Start Date</label><input type='text' name='year' value='$start_date' />";
-                  echo "<label for='start_date'>Start Date</label><input type='text' name='month' value='$start_date ' />";
-                  echo "<label for='start_date'>Start Date</label><input type='text' name='day' value='$start_date ' />";
+                  echo "<label for='color'>Slide Background Color:</label><input type='text' name='color' value='$color' /><br>";
+                  echo "<label for='backgroundURL'>Slide background URL:</label><input type='text' name='backgroundURL' value='$backgroundURL' /><br>";
 
-                  echo "<label for='start_date'>Start Date</label><input type='text' name='year' value='$end_date' />";
-                  echo "<label for='start_date'>Start Date</label><input type='text' name='month' value='$end_date' />";
-                  echo "<label for='start_date'>Start Date</label><input type='text' name='day' value='$end_date' />";
-
-                  echo "<label for='start_date'>Start Date</label><input type='text' name='caption' value='$caption' />";
-                  echo "<label for='start_date'>Start Date</label><input type='text' name='credit' value='$credit' />";
-                  echo "<label for='start_date'>Start Date</label><input type='text' name='url' value='$mediaURL' />";
-                  echo "<label for='start_date'>Start Date</label><input type='text' name='link' value='$mediaLINK' />";
-
-                  echo "<label for='start_date'>Start Date</label><input type='text' name='headline' value='$headline' />";
-                  echo "<label for='start_date'>Start Date</label><input type='text' name='text' value='$text' />";
-                  echo "<label for='start_date'>Start Date</label><input type='text' name='group' value='$group' />";
+                  echo "<label for='mediaURL'>Image URL:</label><input type='text' name='mediaURL' value='$mediaURL' /><br>";
+                  echo "<label for='mediaLINK'>Image Link:</label><input type='text' name='mediaLINK' value='$mediaLINK' /><br>";
+                  echo "<label for='caption'>Image Caption:</label><input type='text' name='caption' value='$caption' /><br>";
+                  echo "<label for='credit'>Image Credit:</label><input type='text' name='credit' value='$credit' /><br>";
 
                 } // if($unique_id == $eId)
               } // if($key == 'unique_id')

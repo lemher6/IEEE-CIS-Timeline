@@ -38,7 +38,7 @@
 
       <form method="post" action="event-manager.php">
         <label for='eId'>Event ID:</label><input type="text" name="eId" value="<?php echo $_GET['eId']; ?>" />
-
+        <br>
       <?php
         ########################################################################
         ### IF AN EVENT ID IS PASSED
@@ -54,7 +54,7 @@
       ?>
 
                 <p>Do you want to delete this event?</p>
-                <input type="text" name="opt" value="del" />
+                <input type="hidden" name="opt" value="del" />
                 <input type="submit" value="Yes" />
                 <button type="button" onclick="document.location='edit-events.php'">Cancel</button>
 
@@ -68,7 +68,7 @@
               if($_GET['opt'] == 'upd'){
             ?>
                     <p>Update the event information and then click on submit button.</p>
-                      <input type="text" name="opt" value="upt" />
+                      <input type="hidden" name="opt" value="upt" />
                       <input type="submit" value="Submit" />
 
             <?php  } // END if($_GET['opt'] == 'upd')  ?>
@@ -81,7 +81,7 @@
               if($_GET['opt'] == 'new'){
             ?>
                   <p>Complete the event information and then click on submit button.</p>
-                  <input type="text" name="opt" value="new" />
+                  <input type="hidden" name="opt" value="new" />
                   <input type="submit" value="Submit" />
 
             <?php  } // END if($_GET['opt'] == 'new')  ?>
