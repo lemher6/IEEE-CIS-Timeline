@@ -64,6 +64,7 @@
       $start_date = $end_date = '';
       $caption =  $credit = $mediaURL = $mediaLINK = '';
       $headline = $text = $group = '';
+      $groupIJCNN = $groupFUZZ = $groupWCCI = $groupCEC = $groupSSCI = '';
 
       foreach ($jsonIterator as $key => $val) {
         if(is_array($val)) {
@@ -91,12 +92,12 @@
                 $start_date = '';
               }
 
-              if($key == 'year'){ $start_date = $val.'/'; }
-              if($key == 'month'){ $start_date .= $val.'/'; }
+              if($key == 'year'){ $start_date = $val.'-'; }
+              if($key == 'month'){ $start_date .= $val.'-'; }
               if($key == 'day'){ $start_date .= $val; }
 
-              if($key == 'year'){ $end_date = $val.'/'; }
-              if($key == 'month'){ $end_date .= $val.'/'; }
+              if($key == 'year'){ $end_date = $val.'-'; }
+              if($key == 'month'){ $end_date .= $val.'-'; }
               if($key == 'day'){ $end_date .= $val; }
 
               if($key == 'caption'){ $caption = ''; }
@@ -111,6 +112,31 @@
               if($key == 'unique_id'){
                 $unique_id = $val;
                 if($unique_id == $eId){
+
+                  ### REMOVES THE BOLD TAG
+                  $eventDetails = str_replace("<b>","",$text);
+                  $eventDetails = str_replace("</b>","",$eventDetails);
+                  ### SPLIT THE TEXT INTO LINES
+                  $detail = explode("<br>", $eventDetails);
+
+                  ### CHECK WHICH GROUP SHOULD BY SELECTED
+                  if($group == 'IJCNN'){
+                    $groupIJCNN = 'selected';
+                    $groupFUZZ = $groupWCCI = $groupCEC = $groupSSCI = '';
+                  }elseif($group == 'FUZZ'){
+                    $groupFUZZ = 'selected';
+                    $groupIJCNN = $groupWCCI = $groupCEC = $groupSSCI = '';
+                  }elseif($group == 'WCCI'){
+                    $groupWCCI = 'selected';
+                    $groupIJCNN = $groupFUZZ = $groupCEC = $groupSSCI = '';
+                  }elseif($group == 'CEC'){
+                    $groupCEC = 'selected';
+                    $groupIJCNN = $groupFUZZ = $groupWCCI = $groupSSCI = '';
+                  }elseif($group == 'SSCI'){
+                    $groupCEC = 'selected';
+                    $groupIJCNN = $groupFUZZ = $groupWCCI = $groupCEC = '';
+                  }
+
                   echo "<div id='eventView' class='eventView' style='background-color:$color; background-image: url('$backgroundURL');'>
                           <div class='floatLeft'>
                               <a href='$mediaLINK' target='_blank'>
@@ -122,23 +148,51 @@
                                   <br>
                                   <span class='dates'>$start_date - $end_date</span><br>
                                   <span class='title'>$headline</span><br>
-                                  <span class='details'>$text</span>
+                                  <span class='details'>
+                        ";
+
+                  foreach ($detail as $key => $value) {
+                    if ($key == 0) {
+                      echo "<b>$value</b><br>";
+                    }else{
+                      echo "$value<br>";
+                    }
+                  }
+
+                  echo "</span>
                               </div>
-                        </div>";
+                        </div>
+                        <br>";
 
-                  echo "<label for='headline'>Event Title:</label><input type='text' name='headline' value='$headline' /><br>";
-                  echo "<label for='text'>Event Details:</label><textarea name='text'>$text</textarea><br>";
-                  echo "<label for='group'>Event Group:</label><input type='text' name='group' value='$group' /><br>";
-                  echo "<label for='start_date'>Start Date:</label><input type='text' name='start_date' value='$start_date' /><br>";
-                  echo "<label for='end_date'>End Date:</label><input type='text' name='end_date' value='$end_date' /><br>";
+                  echo "<label for='color'>Slide Background Color:</label> <input type='color' name='color' value='$color' /><br><br>";
+                  #echo "<label for='backgroundURL'>Slide background URL:</label><input type='text' name='backgroundURL' value='$backgroundURL' /><br>";
 
-                  echo "<label for='color'>Slide Background Color:</label><input type='text' name='color' value='$color' /><br>";
-                  echo "<label for='backgroundURL'>Slide background URL:</label><input type='text' name='backgroundURL' value='$backgroundURL' /><br>";
-
+                  echo "<hr>";
+                  echo "<label for='start_date'>Start Date:</label><input type='date' class='dateInput' name='start_date' value='$start_date' /><br>";
+                  echo "<label for='end_date'>End Date:</label><input type='date' class='dateInput' name='end_date' value='$end_date' /><br>";
+                  echo "<hr>";
                   echo "<label for='mediaURL'>Image URL:</label><input type='text' name='mediaURL' value='$mediaURL' /><br>";
                   echo "<label for='mediaLINK'>Image Link:</label><input type='text' name='mediaLINK' value='$mediaLINK' /><br>";
                   echo "<label for='caption'>Image Caption:</label><input type='text' name='caption' value='$caption' /><br>";
                   echo "<label for='credit'>Image Credit:</label><input type='text' name='credit' value='$credit' /><br>";
+                  echo "<hr>";
+
+                  echo "<label for='headline'>Event Title:</label><input type='text' name='headline' value='$headline' /><br>";
+
+                  foreach ($detail as $key => $value) {
+                    $detailNumber = 1 + $key ;
+                    echo "<label for='text$key'>Event Details $detailNumber:</label><input type='text' name='text$key' value='$value' /><br>";
+                  }
+
+                  echo "<hr>";
+                  echo "<label for='group'>Event Group:</label>
+                          <select name='group'>
+                            <option value='IJCNN' $groupIJCNN>IJCNN</option>
+                            <option value='FUZZ' $groupFUZZ>FUZZ</option>
+                            <option value='WCCI' $groupWCCI>WCCI</option>
+                            <option value='CEC' $groupCEC>CEC</option>
+                            <option value='SSCI' $groupSSCI>SSCI</option>
+                          </select>";
 
                 } // if($unique_id == $eId)
               } // if($key == 'unique_id')

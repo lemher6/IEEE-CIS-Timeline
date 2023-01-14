@@ -30,9 +30,9 @@ label {
   color:black;
 }
 
-input[type=text], select, textarea {
+input[type=text], select, textarea, .dateInput {
   width: 98%;
-  padding: 12px;
+  padding: 8px;
   border: 1px solid #ccc;
   border-radius: 4px;
   box-sizing: border-box;

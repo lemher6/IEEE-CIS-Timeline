@@ -31,7 +31,7 @@
         width: 80%;
         margin: auto;
         padding: 1em;
-        height: 200px;
+        height: 250px;
       }
       .floatLeft{
         float: left;
@@ -47,14 +47,14 @@
         vertical-align: middle;
       }
       .dates{
-        font-size: 0.8em;
+        font-size: 0.7em;
       }
       .title{
-        font-size: 1.8em;
+        font-size: 2.3em;
         font-weight: bold;
       }
       .details{
-        font-size: 0.9em;
+        font-size: 0.8em;
       }
 
       @media only screen and (min-width: 768px) {
