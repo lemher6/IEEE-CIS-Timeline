@@ -1,4 +1,4 @@
-<?php
+Media <?php
   ### IEEE-CIS TIMELINE PROJECT
   ### 2022-11 AH
   ### MANAGE EVENTS --> RETRIVE, CREATE, UPDATE OR DELETE TIMELINE EVENTS
@@ -171,10 +171,10 @@
                   echo "<label for='start_date'>Start Date:</label><input type='date' class='dateInput' name='start_date' value='$start_date' /><br>";
                   echo "<label for='end_date'>End Date:</label><input type='date' class='dateInput' name='end_date' value='$end_date' /><br>";
                   echo "<hr>";
-                  echo "<label for='mediaURL'>Image URL:</label><input type='text' name='mediaURL' value='$mediaURL' /><br>";
-                  echo "<label for='mediaLINK'>Image Link:</label><input type='text' name='mediaLINK' value='$mediaLINK' /><br>";
-                  echo "<label for='caption'>Image Caption:</label><input type='text' name='caption' value='$caption' /><br>";
-                  echo "<label for='credit'>Image Credit:</label><input type='text' name='credit' value='$credit' /><br>";
+                  echo "<label for='mediaURL'>Media URL:</label><input type='text' name='mediaURL' value='$mediaURL' /><br>";
+                  echo "<label for='mediaLINK'>Media Link:</label><input type='text' name='mediaLINK' value='$mediaLINK' /><br>";
+                  echo "<label for='caption'>Media Caption:</label><input type='text' name='caption' value='$caption' /><br>";
+                  echo "<label for='credit'>Media Credit:</label><input type='text' name='credit' value='$credit' /><br>";
                   echo "<hr>";
 
                   echo "<label for='headline'>Event Title:</label><input type='text' name='headline' value='$headline' /><br>";
