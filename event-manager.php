@@ -1,4 +1,4 @@
-Media <?php
+<?php
   ### IEEE-CIS TIMELINE PROJECT
   ### 2022-11 AH
   ### MANAGE EVENTS --> RETRIVE, CREATE, UPDATE OR DELETE TIMELINE EVENTS
@@ -120,21 +120,15 @@ Media <?php
                   $detail = explode("<br>", $eventDetails);
 
                   ### CHECK WHICH GROUP SHOULD BY SELECTED
-                  if($group == 'IJCNN'){
-                    $groupIJCNN = 'selected';
-                    $groupFUZZ = $groupWCCI = $groupCEC = $groupSSCI = '';
-                  }elseif($group == 'FUZZ'){
-                    $groupFUZZ = 'selected';
-                    $groupIJCNN = $groupWCCI = $groupCEC = $groupSSCI = '';
-                  }elseif($group == 'WCCI'){
-                    $groupWCCI = 'selected';
-                    $groupIJCNN = $groupFUZZ = $groupCEC = $groupSSCI = '';
-                  }elseif($group == 'CEC'){
-                    $groupCEC = 'selected';
-                    $groupIJCNN = $groupFUZZ = $groupWCCI = $groupSSCI = '';
-                  }elseif($group == 'SSCI'){
-                    $groupCEC = 'selected';
-                    $groupIJCNN = $groupFUZZ = $groupWCCI = $groupCEC = '';
+                  if($group == 'EC'){
+                    $groupEC = 'selected';
+                    $groupFuzzy = $groupNNs = '';
+                  }elseif($group == 'Fuzzy'){
+                    $groupFuzzy = 'selected';
+                    $groupNNs = $groupEC = '';
+                  }elseif($group == 'NNs'){
+                    $groupNNs = 'selected';
+                    $groupFuzzy = $groupEC = '';
                   }
 
                   echo "<div id='eventView' class='eventView' style='background-color:$color; background-image: url('$backgroundURL');'>
@@ -164,35 +158,46 @@ Media <?php
                         </div>
                         <br>";
 
+                  echo "<div class='iBlock'>";
+                  echo "<h2>Slide Background Color</h2>";
+                  echo "<p>Each event has a slide in the timeline and you can choose a different background color for it.
+                            The text color will be set to white automatically if the background color is dark. </p>";
                   echo "<label for='color'>Slide Background Color:</label> <input type='color' name='color' value='$color' /><br><br>";
                   #echo "<label for='backgroundURL'>Slide background URL:</label><input type='text' name='backgroundURL' value='$backgroundURL' /><br>";
+                  echo "</div>";
 
-                  echo "<hr>";
+                  echo "<div class='iBlock'>";
+                  echo "<h2>Events Dates</h2>";
+                  echo "<p>Every event must have a sart and end date. The date will be displayed in the </p>";
                   echo "<label for='start_date'>Start Date:</label><input type='date' class='dateInput' name='start_date' value='$start_date' /><br>";
                   echo "<label for='end_date'>End Date:</label><input type='date' class='dateInput' name='end_date' value='$end_date' /><br>";
-                  echo "<hr>";
+                  echo "</div>";
+
+                  echo "<div class='iBlock'>";
+                  echo "You can pull in media from a variety of sources. Twitter, Flickr, YouTube, Vimeo, Vine, Dailymotion, Google Maps, Wikipedia, SoundCloud, Document Cloud or just a simple Image.<br>";
                   echo "<label for='mediaURL'>Media URL:</label><input type='text' name='mediaURL' value='$mediaURL' /><br>";
                   echo "<label for='mediaLINK'>Media Link:</label><input type='text' name='mediaLINK' value='$mediaLINK' /><br>";
                   echo "<label for='caption'>Media Caption:</label><input type='text' name='caption' value='$caption' /><br>";
                   echo "<label for='credit'>Media Credit:</label><input type='text' name='credit' value='$credit' /><br>";
-                  echo "<hr>";
+                  echo "</div>";
 
+                  echo "<div class='iBlock'>";
                   echo "<label for='headline'>Event Title:</label><input type='text' name='headline' value='$headline' /><br>";
 
                   foreach ($detail as $key => $value) {
                     $detailNumber = 1 + $key ;
                     echo "<label for='text$key'>Event Details $detailNumber:</label><input type='text' name='text$key' value='$value' /><br>";
                   }
+                  echo "</div>";
 
-                  echo "<hr>";
+                  echo "<div class='iBlock'>";
                   echo "<label for='group'>Event Group:</label>
                           <select name='group'>
-                            <option value='IJCNN' $groupIJCNN>IJCNN</option>
-                            <option value='FUZZ' $groupFUZZ>FUZZ</option>
-                            <option value='WCCI' $groupWCCI>WCCI</option>
-                            <option value='CEC' $groupCEC>CEC</option>
-                            <option value='SSCI' $groupSSCI>SSCI</option>
+                            <option value='Fuzzy' $groupFuzzy>Fuzzy</option>
+                            <option value='EC' $groupEC>EC</option>
+                            <option value='NNs' $groupNNs>NNs</option>
                           </select>";
+                  echo "</div>";
 
                 } // if($unique_id == $eId)
               } // if($key == 'unique_id')

@@ -5,7 +5,7 @@
                 "text":     "Welcome to the Institute of Electrical and Electronics Engineers (IEEE) Computational Intelligence Society (CIS) Historical Timeline!"
             },
             "media": {
-                "url": "https://cis.ieee.org/images/files/template/cis-logo.png",
+                "url": "https://youtu.be/AvPK1J3FqA8",
                 "credit": "<a href='https://cis.ieee.org/'>cis.ieee.org</a>"
             },
             "unique_id": "TITLE-001"
@@ -38,8 +38,8 @@
                 "headline": "2018 IEEE WCCI",
                 "text": "<b>2018 IEEE World Congress on Computational Intelligence (WCCI)</b><br>July 8-13, 2018<br>Rio de Janeiro, Brazil<br>GCs: Marley Vellasco, Pablo Estevez<br>CCs: Teresa Ludermir, Fernando Gomide, Gary G. Yen"
             },
-            "group": "WCCI",
-            "unique_id": "WCCI20180708-001"
+            "group": "EC",
+            "unique_id": "EC20180708-001"
         },
         {
           "background": {
@@ -67,8 +67,8 @@
                 "headline": "2016 IEEE WCCI",
                 "text": "<b>2016 IEEE World Congress on Computational Intelligence (WCCI)</b><br>July 24-29, 2016<br>Vancouver, Canada<br>GCs: Kay Chen Tan, Gary G. Yen<br>CCs: Pablo A. Estevez, Oscar Cordon, Yew Soon Ong"
             },
-            "group": "WCCI",
-            "unique_id": "WCCI20160724-001"
+            "group": "EC",
+            "unique_id": "EC20160724-001"
         },
         {
             "background": {
@@ -96,8 +96,8 @@
                 "headline": "2019 IEEE CEC",
                 "text": "<b>2019 IEEE Congress on Evolutionary Computation (CEC)</b><br>June 10-13, 2019, Wellington, New Zealand<br>GCs: Mengjie Zhang, Kay Chen Tan<br>PC: Carlos A. Coello Coello"
             },
-            "group": "CEC",
-            "unique_id": "CEC20190610-001"
+            "group": "EC",
+            "unique_id": "EC20190610-001"
         },
         {
           "background": {
@@ -125,8 +125,8 @@
                 "headline": "2017 IEEE CEC",
                 "text": "<b>2017 IEEE Congress on Evolutionary Computation (CEC)</b><br>June 5-8, 2017, Donostia-San Sebastian, Spain<br>GC: Jose A. Lozano<br>PC: Carlos Coello"
             },
-            "group": "CEC",
-            "unique_id": "CEC20170605-001"
+            "group": "EC",
+            "unique_id": "EC20170605-001"
         },
         {
             "background": {
@@ -154,8 +154,8 @@
                 "headline": "2017 IEEE FUZZY",
                 "text": "<b>2017 IEEE International Conference on Fuzzy Systems</b><br>July 9-12, 2017, Naples, Italy<br>GCs: Giovanni Acampora, Bruno Siciliano<br>PCs: Hani Hagras, Francisco Herrera"
             },
-            "group": "FUZZ",
-            "unique_id": "FUZZ20170709-001"
+            "group": "Fuzzy",
+            "unique_id": "Fuzzy20170709-001"
         },
         {
             "background": {
@@ -183,8 +183,8 @@
                 "headline": "2015 IEEE FUZZY",
                 "text": "<b>2015 IEEE International Conference on Fuzzy Systems</b><br>August 2-5, 2015, Istanbul, Turkey<br>GCs: Adnan Yazici, Nikhil R. Pal<br>PC: Uzay Kaymak"
             },
-            "group": "FUZZ",
-            "unique_id": "FUZZ20150802-001"
+            "group": "Fuzzy",
+            "unique_id": "Fuzzy20150802-001"
         },
         {
             "background": {
@@ -205,15 +205,15 @@
               "media": {
                 "caption": "IEEE International Joint Conference on Neural Networks",
                 "credit": "",
-                "url": "/img/IJCNN20150712.JPG",
+                "url": "/img/NNs20150712.JPG",
                 "link": "https://ewh.ieee.org/conf/ijcnn/2015/ijcnn-2015.pdf"
             },
             "text": {
                 "headline": "2015 IEEE IJCNN",
                 "text": "<b>2015 International Joint Conference on Neural Networks (IJCNN)</b><br>July 12-17, 2015, Killarney, Ireland<br>GC: De-Shuang Huang<br>PC: Yoonsuck Choe"
             },
-            "group": "IJCNN",
-            "unique_id": "IJCNN20150712-001"
+            "group": "NNs",
+            "unique_id": "NNs20150712-001"
         },
         {
             "background": {
@@ -241,8 +241,8 @@
                 "headline": "2018 IEEE SSCI",
                 "text": "<b>2018 IEEE Symposium Series on Computational Intelligence (SSCI)</b><br>November 18-21, 2018,<br>Bengaluru, India<br>General Chair: N. R. Pal"
             },
-            "group": "SSCI",
-            "unique_id": "SSCI20181118-001"
+            "group": "EC",
+            "unique_id": "EC20181118-001"
         }
     ]
 }

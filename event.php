@@ -19,11 +19,11 @@
         text-align:right;
       }
       .iBlock{
-        margin: auto;
         text-align:left;
         border-radius: 5px;
-        background-color: #f2f2f2;
+        background-color: #f9f9f9;
         padding: 1em;
+        border: #dddcdc;
       }
       .eventView{
         border: 1px solid gray;
@@ -66,8 +66,12 @@
           padding:10px 30px;
           width: 90%;
         }
-        .iBlock{
+        .formBlock{
             width: 80%;
+            margin: auto;
+        }
+        .iBlock{
+          margin: 2em;
         }
 
       }
@@ -90,7 +94,7 @@
         <br>
       </div>
 
-      <div class="iBlock">
+      <div class="formBlock">
         <form method="post" action="event-manager.php">
           <input type="hidden" name="eId" value="<?php echo $_GET['eId']; ?>" />
         <?php
