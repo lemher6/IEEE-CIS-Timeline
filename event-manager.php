@@ -131,7 +131,11 @@
                     $groupFuzzy = $groupEC = '';
                   }
 
-                  echo "<div id='eventView' class='eventView' style='background-color:$color; background-image: url('$backgroundURL');'>
+                  if($color == ""){
+                    $color = "#ffffff";
+                  }
+
+                  echo "<div id='eventView' class='eventView' style='background-color:$color;'>
                           <div class='floatLeft'>
                               <a href='$mediaLINK' target='_blank'>
                                 <img alt='$caption' title='$caption' src='$mediaURL' width='200px' height:auto;>
@@ -168,13 +172,16 @@
 
                   echo "<div class='iBlock'>";
                   echo "<h2>Events Dates</h2>";
-                  echo "<p>Every event must have a sart and end date. The date will be displayed in the </p>";
-                  echo "<label for='start_date'>Start Date:</label><input type='date' class='dateInput' name='start_date' value='$start_date' /><br>";
-                  echo "<label for='end_date'>End Date:</label><input type='date' class='dateInput' name='end_date' value='$end_date' /><br>";
+                  echo "<p>Every event must have a sart and end date.</p>";
+                  echo "<label for='start_date'>Start Date:</label><input type='date' class='dateInput' name='start_date' value='$start_date' require/><br>";
+                  echo "<label for='end_date'>End Date:</label><input type='date' class='dateInput' name='end_date' value='$end_date' require/><br>";
                   echo "</div>";
 
                   echo "<div class='iBlock'>";
-                  echo "You can pull in media from a variety of sources. Twitter, Flickr, YouTube, Vimeo, Vine, Dailymotion, Google Maps, Wikipedia, SoundCloud, Document Cloud or just a simple Image.<br>";
+                  echo "<h2>Media</h2>";
+                  echo "<p>You can pull in media from a variety of sources: Twitter, Flickr, YouTube, Vimeo, Vine, Dailymotion,
+                        Google Maps, Wikipedia, SoundCloud, Document Cloud or an Image. The media link will be open in a new page
+                        and the media credit will be appered at the bottom of the media box.</p>";
                   echo "<label for='mediaURL'>Media URL:</label><input type='text' name='mediaURL' value='$mediaURL' /><br>";
                   echo "<label for='mediaLINK'>Media Link:</label><input type='text' name='mediaLINK' value='$mediaLINK' /><br>";
                   echo "<label for='caption'>Media Caption:</label><input type='text' name='caption' value='$caption' /><br>";
@@ -182,6 +189,8 @@
                   echo "</div>";
 
                   echo "<div class='iBlock'>";
+                  echo "<h2>Event Information</h2>";
+                  echo "<p>The title will be displayed after the date and each detail will be placed in a different line below the title.</p>";
                   echo "<label for='headline'>Event Title:</label><input type='text' name='headline' value='$headline' /><br>";
 
                   foreach ($detail as $key => $value) {

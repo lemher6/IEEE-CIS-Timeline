@@ -23,7 +23,7 @@
         border-radius: 5px;
         background-color: #f9f9f9;
         padding: 1em;
-        border: #dddcdc;
+        border: #dddcdc 1px solid;
       }
       .eventView{
         border: 1px solid gray;
@@ -97,6 +97,7 @@
       <div class="formBlock">
         <form method="post" action="event-manager.php">
           <input type="hidden" name="eId" value="<?php echo $_GET['eId']; ?>" />
+
         <?php
           ########################################################################
           ### IF AN EVENT ID IS PASSED
@@ -104,7 +105,25 @@
           if($_GET['eId'] != ''){
             include ("./event-manager.php");
             displayEvent($_GET['eId']);
+        ?>
 
+
+        <?php
+          ########################################################################
+          ### CREATING OR UPDATING AN EVENT
+          ########################################################################
+          if($_GET['opt'] == 'new'){
+        ?>
+            <div class="rightBlock">
+              <p>Complete the event information and then click on submit button.</p>
+              <input type="hidden" name="opt" value="new" />
+              <input type="submit" value="Submit" />
+            </div>
+
+        <?php  } // END if($_GET['opt'] == 'new')  ?>
+
+
+        <?php
               ########################################################################
               ### DELETING AN EVENT
               ########################################################################
@@ -134,19 +153,7 @@
               <?php  } // END if($_GET['opt'] == 'upd')  ?>
 
 
-              <?php
-                ########################################################################
-                ### CREATING OR UPDATING AN EVENT
-                ########################################################################
-                if($_GET['opt'] == 'new'){
-              ?>
-                  <div class="rightBlock">
-                    <p>Complete the event information and then click on submit button.</p>
-                    <input type="hidden" name="opt" value="new" />
-                    <input type="submit" value="Submit" />
-                  </div>
 
-              <?php  } // END if($_GET['opt'] == 'new')  ?>
 
           <?php  } // END if($_GET['eId'] != '') ?>
       </form>
