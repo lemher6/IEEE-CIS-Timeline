@@ -19,6 +19,7 @@ button, input[type=submit] {
   text-align: center;
   cursor: pointer;
   font-size: large;
+  border-radius: 4px;
 }
 
 button:hover, input[type=submit]:hover {
@@ -50,10 +51,30 @@ input[type=text], select, textarea, .dateInput {
   vertical-align: top;
 }
 
-.bar{
-  display: inline-block;
-  width: 95%;
+.pageTitle{
+  display: block;
+  width: 100%;
   text-align: center!important;
+  background-image: url(https://cis.ieee.org/images/files/template/cis-logo.png);
+  background-repeat: no-repeat;
+}
+
+.bar{
+  display: block;
+  width: 100%;
+  text-align: center!important;
+}
+
+.rightBlock{
+  text-align:right;
+}
+
+.leftBlock{
+  text-align:left;
+}
+
+.centerBlock{
+  text-align:center;
 }
 
 table {

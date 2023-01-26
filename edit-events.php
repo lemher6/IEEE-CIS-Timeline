@@ -41,19 +41,13 @@
 
 
   <body>
-    <div class="logo">
-      <img src="https://cis.ieee.org/images/files/template/cis-logo.png" alt="(IEEE) Computational Intelligence Society">
-    </div>
-    <div class="bar">
+
+    <div class="pageTitle">
       <h1>EDIT TIMELINE EVENTS</h1>
-      <!--<button onclick="document.location='timeline-google-sheet.html'">Launch Timeline <br> using Google Sheets</button>-->
-      <button onclick="document.location='index.html'">Home Page</button>
-      <button onclick="document.location='edit-events.php'">Edit Events</button>
-      <button onclick="document.location='sandbox-timeline.html'">Launch Sandbox Timeline</button> <!-- Using JSON file -->
-      <button onclick="document.location='approve.html'">Approve Changes</button>
-      <button onclick="document.location='timeline-Launch.html'">Launch Production Timeline</button> <!-- Using JSON file -->
     </div>
-    <br><br>
+
+    <?php include ("./menu.php"); ?>
+
 
     <div class="rightBlock">
       <button onclick="document.location='event.php?opt=new'">Create a New Event</button>
@@ -73,7 +67,8 @@
 
         <?php
           include ("./event-manager.php");
-          listBasicEvents();
+          printAllEvent();
+          #listBasicEvents();
         ?>
           </tr>
         </table>

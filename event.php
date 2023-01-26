@@ -15,9 +15,6 @@
         margin: auto;
         padding: 1em;
       }
-      .rightBlock{
-        text-align:right;
-      }
       .iBlock{
         text-align:left;
         border-radius: 5px;
@@ -59,40 +56,32 @@
 
       @media only screen and (min-width: 768px) {
       /* ==== For desktop: ===== */
-        body{
-          width: 80%;
-        }
-        .rightBlock{
-          padding:10px 30px;
-          width: 90%;
-        }
-        .formBlock{
+          body{
             width: 80%;
-            margin: auto;
-        }
-        .iBlock{
-          margin: 2em;
-        }
+          }
+          .rightBlock{
+            padding:10px 30px;
+            width: 90%;
+          }
+          .formBlock{
+              width: 80%;
+              margin: auto;
+          }
+          .iBlock{
+            margin: 2em;
+          }
 
       }
     </style>
   </head>
 
   <body>
-      <div class="logo">
-        <img src="https://cis.ieee.org/images/files/template/cis-logo.png" alt="(IEEE) Computational Intelligence Society">
-      </div>
-      <div class="bar">
+      <div class="pageTitle">
         <h1>TIMELINE EVENT</h1>
-        <!--<button onclick="document.location='timeline-google-sheet.html'">Launch Timeline <br> using Google Sheets</button>-->
-        <button onclick="document.location='index.html'">Home Page</button>
-        <button onclick="document.location='edit-events.php'">Edit Events</button>
-        <button onclick="document.location='sandbox-timeline.html'">Launch Sandbox Timeline</button> <!-- Using JSON file -->
-        <button onclick="document.location='approve.html'">Approve Changes</button>
-        <button onclick="document.location='timeline-Launch.html'">Launch Production Timeline</button> <!-- Using JSON file -->
-        <br>
-        <br>
       </div>
+
+      <?php include ("./menu.php"); ?>
+      
 
       <div class="formBlock">
         <form method="post" action="event-manager.php">

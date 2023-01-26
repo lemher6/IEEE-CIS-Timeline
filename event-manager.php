@@ -2,50 +2,77 @@
   ### IEEE-CIS TIMELINE PROJECT
   ### 2022-11 AH
   ### MANAGE EVENTS --> RETRIVE, CREATE, UPDATE OR DELETE TIMELINE EVENTS
-?>
 
-<?php
+
+  // Define the comparison function
+  function compare_start_date($a, $b)
+  {
+      $date1 = new DateTime($a['start_date']['year'] . '-' . $a['start_date']['month'] . '-' . $a['start_date']['day']);
+      $date2 = new DateTime($b['start_date']['year'] . '-' . $b['start_date']['month'] . '-' . $b['start_date']['day']);
+      return $date2 <=> $date1;
+  }
 
 
 
   ##############################################################################
-  ### LISTS EVENT'S BASIC INFORMATION
+  ### LISTS ALL SANDBOX EVENTS BASIC INFORMATON SORT BY EVENT START DATE
   ##############################################################################
-  function listBasicEvents(){
+  function printAllEvent(){
+      // Read the JSON file
+      $json = file_get_contents('./sandbox-timeline.json');
 
-    ### READS SANDBOX JSON TIMELINE FILE
-    $jsonIterator = new RecursiveIteratorIterator(
-      new RecursiveArrayIterator(json_decode(file_get_contents("./sandbox-timeline.json"), TRUE)),
-      RecursiveIteratorIterator::SELF_FIRST);
+      // Decode the JSON data into a PHP array
+      $data = json_decode($json, true);
 
-      $isEvent = 0;
-      foreach ($jsonIterator as $key => $val) {
-          if(is_array($val)) {
-              if($key == 'events'){
-                $isEvent = 1;
-              }
-              echo "\n";
-          } else {
-              if($isEvent == 1){
+      // Sort the events array
+      usort($data['events'], 'compare_start_date');
 
-                if($key == 'start_date'){ echo "\t<tr>\n"; }
-                if($key == 'year'){ echo "\t\t<td>$val\n"; }
-                if($key == 'month'){ echo "/ $val / "; }
-                if($key == 'day'){ echo "$val</td>\n"; }
-                if($key == 'headline'){ echo "\t\t<td>$val</td>\n"; }
-                if($key == 'group'){ echo "\t\t<td>$val</td>\n"; }
-                if($key == 'unique_id'){
-                  echo "\t\t<td  style=\"text-align:center;\">
-                              <button onclick=\"document.location='event.php?eId=$val&opt=upd'\">Update</button>
-                              &nbsp; &nbsp;
-                              <button onclick=\"document.location='event.php?eId=$val&opt=del'\">Delete</button>
-                            </td></tr>\n";
-                }
-              }
-          } // END else
+      // Search for the event object
+      foreach ($data['events'] as $event) {
+              #print_r($event);
+              echo "\n\t<tr>\n";
+              echo "\t\t<td>";
+              echo $event['start_date']['year'] ."/". $event['start_date']['month'] ."/". $event['start_date']['day'];
+              echo "</td>\n";
+              echo "\t\t<td>";
+              echo $event['end_date']['year'] ."/". $event['end_date']['month'] ."/". $event['end_date']['day'];
+              echo "</td>\n";
+              echo "\t\t<td>";
+              echo $event['text']['headline'];
+              echo "</td>\n";
+              echo "\t\t<td>";
+              echo $event['group'];
+              echo "</td>\n";
+              echo "\t\t<td  style=\"text-align:center;\"> <button onclick=\"document.location='event.php?eId=";
+              echo $event['unique_id'];
+              echo "&opt=upd'\">Update</button>";
+              echo "&nbsp; &nbsp;<button onclick=\"document.location='event.php?eId=";
+              echo $event['unique_id'];
+              echo "&opt=del'\">Delete</button>";
+              echo "</td>\n";
+              echo "</tr>\n";
       }
-  } ### END function listBasicEvents
 
+  } // END function printAllEvent()
+
+
+
+  function printAnEvent(){
+      // Read the JSON file
+      $json = file_get_contents('./sandbox-timeline.json');
+
+      // Decode the JSON data into a PHP array
+      $data = json_decode($json, true);
+
+      // Search for the event object
+      foreach ($data['events'] as $event) {
+          if ($event['unique_id'] == 'EC20160724-001') {
+              // Do something with the object
+              print_r($event);
+          }
+      }
+
+  }
 
 
 
