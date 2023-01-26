@@ -5,7 +5,7 @@
   Using TimelineJS tool from Knight Lab IEEE-CIS events will be displayed. Additional parts of this project are:
 
 
-  1) Create/Update events friendly using an entry form. TimelineJS uses a Google sheet or JSON.
+  1) Create/Update/Detele events friendly using an entry form. TimelineJS uses a Google sheet or JSON.
 
   2) Manage levels of users. Types of users:  
           a) general user, who can only see the timeline;
@@ -19,7 +19,9 @@
 
   Instructions:
 
+  This application needs PHP7 or up to work properly.
+
   Download the IEEE-CIS-Timeline folder from this repository.
-  Open the IEEE-CIS-Timeline folder and open index.html with Chrome.
+  Open the IEEE-CIS-Timeline folder and open index.php with Chrome.
   Select the options.
   Close the web browser when you are done
