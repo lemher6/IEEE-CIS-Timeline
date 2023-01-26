@@ -8,6 +8,9 @@
 
   <head>
     <title>IEEE-CIS TIMELINE HOME</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
     <link rel="stylesheet" type="text/css" href="./css/style.css">
 
     <style>
@@ -81,27 +84,38 @@
       </div>
 
       <?php include ("./menu.php"); ?>
-      
+
+      <?php
+        ########################################################################
+        ### IF AN EVENT ID IS PASSED
+        ########################################################################
+        if(isset($_GET['eId'])){
+          $eId = $_GET['eId'];
+        }else{
+          $eId = '';
+        }
+
+        if(isset($_GET['opt'])){
+          $opt = $_GET['opt'];
+        }else{
+          $opt = '';
+        }
+
+        include ("./event-manager.php");
+        displayEvent($eId,$opt);
+        ?>
 
       <div class="formBlock">
         <form method="post" action="event-manager.php">
-          <input type="hidden" name="eId" value="<?php echo $_GET['eId']; ?>" />
+          <input type="hidden" name="eId" value="<?php echo $eId; ?>" />
 
-        <?php
-          ########################################################################
-          ### IF AN EVENT ID IS PASSED
-          ########################################################################
-          if($_GET['eId'] != ''){
-            include ("./event-manager.php");
-            displayEvent($_GET['eId']);
-        ?>
 
 
         <?php
           ########################################################################
           ### CREATING OR UPDATING AN EVENT
           ########################################################################
-          if($_GET['opt'] == 'new'){
+          if($opt == 'new'){
         ?>
             <div class="rightBlock">
               <p>Complete the event information and then click on submit button.</p>
@@ -109,14 +123,14 @@
               <input type="submit" value="Submit" />
             </div>
 
-        <?php  } // END if($_GET['opt'] == 'new')  ?>
+        <?php  } // END if($op == 'new')  ?>
 
 
         <?php
               ########################################################################
               ### DELETING AN EVENT
               ########################################################################
-              if($_GET['opt'] == 'del'){
+              if($opt == 'del'){
         ?>
                 <div class="rightBlock">
                   <p>Do you want to delete this event?</p>
@@ -124,14 +138,14 @@
                   <input type="submit" value="Yes" />
                   <button type="button" onclick="document.location='edit-events.php'">Cancel</button>
                 </div>
-              <?php  } // END if($_GET['opt'] == 'del')  ?>
+              <?php  } // END if($op == 'del')  ?>
 
 
               <?php
                 ########################################################################
                 ### CREATING OR UPDATING AN EVENT
                 ########################################################################
-                if($_GET['opt'] == 'upd'){
+                if($opt == 'upd'){
               ?>
                   <div class="rightBlock">
                       <p>Update the event information and then click on submit button.</p>
@@ -139,12 +153,9 @@
                         <input type="submit" value="Submit" />
                   </div>
 
-              <?php  } // END if($_GET['opt'] == 'upd')  ?>
+              <?php  } // END if($op == 'upd')  ?>
 
 
-
-
-          <?php  } // END if($_GET['eId'] != '') ?>
       </form>
     </div>
 
