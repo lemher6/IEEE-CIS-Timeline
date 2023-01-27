@@ -5,7 +5,7 @@
 
 
 if(isset($_POST['opt'])){
-  changeEvent();
+  editEvent();
 }
 
   // Define the comparison function
@@ -59,49 +59,6 @@ if(isset($_POST['opt'])){
 
   } // END function printAllEvent()
 
-
-
-  function printAnEvent(){
-      // Read the JSON file
-      $json = file_get_contents('./sandbox-timeline.json');
-
-      // Decode the JSON data into a PHP array
-      $data = json_decode($json, true);
-
-      // Search for the event object
-      foreach ($data['events'] as $event) {
-          if ($event['unique_id'] == 'EC20160724-001') {
-              // Do something with the object
-              print_r($event);
-          }
-      }
-
-  }
-
-
-  ##############################################################################
-  ### DISPLAYS EVENT INFORMATON BY EVENT ID
-  ##############################################################################
-  function changeEvent(){
-    if ($_POST['eId'] != '') {
-      $user = 'USER123';
-      $fileName = './'.$user.'-'.date("ymdhis").'.json';
-      $changeDate = date("Y-m-d h:i");
-      $change = Array (
-                "change" => Array (
-                    "user" => $user,
-                    "date" => $changeDate,
-                    "action" => $_POST['opt'],
-                    "comment" => $_POST['comment']
-                ),
-
-            );
-            // encode array to json
-      $json = json_encode($change);
-      $bytes = file_put_contents($fileName, $json); //generate json file
-      echo "Here is the myfile data $bytes.";
-    } // END if ($_POST['eId'] != '')
-  }
 
 
 
@@ -213,8 +170,13 @@ if(isset($_POST['opt'])){
         } // END if($eId != '')
 
 
-          ### DISPLAYS EVENT INFORMATION INTO A FORM
+          ### CREATE AND HTML FORM FOR THE EVENT INFORMATION
+          ### FOR DELETING THE FORM IS HIDDEN
           if($opt != 'del'){
+            echo "<div>";
+          }else{
+            echo "<div style='display:none'>";
+          }
             echo "<div class='iBlock'>";
             echo "<h2>Slide Background Color</h2>";
             echo "<p>Each event has a slide in the timeline and you can choose a different background color for it.
@@ -263,11 +225,65 @@ if(isset($_POST['opt'])){
                       <option value='NNs' $groupNNs>NNs</option>
                     </select>";
             echo "</div>";
-          } // END if($opt == 'del')
-
+            echo "</div>";
 
   } ###  END function displayEvent
 
+
+
+
+  ##############################################################################
+  ### CREATE A NEW EVENT INSTANCE IN THE FILE EDITIONS FOR LATER APPROVAL
+  ##############################################################################
+  function editEvent(){
+    if ($_POST['eId'] != '') {
+
+      $user = 'USER123';
+
+      $change = Array (
+                "change" => Array (
+                    "user" => $user,
+                    "date" => date("Y-m-d h:i"),
+                    "action" => $_POST['opt'],
+                    "comment" => $_POST['comment']
+                ),
+                "background" => Array (
+                    "color" => $_POST['color'],
+                    "opacity" => 50,
+                    "url" => NULL
+                ),
+                "start_date" => Array (
+                    "year" => substr($_POST['start_date'],0,4),
+                    "month" => substr($_POST['start_date'],5,2),
+                    "day" => substr($_POST['start_date'],8,2)
+                ),
+                "end_date" => Array (
+                    "year" => substr($_POST['end_date'],0,4),
+                    "month" => substr($_POST['end_date'],5,2),
+                    "day" => substr($_POST['end_date'],8,2)
+                ),
+                "media" => Array (
+                    "caption" => $_POST['caption'],
+                    "credit" => $_POST['credit'],
+                    "url" => $_POST['url'],
+                    "link" => $_POST['link']
+                ),
+                "text" => Array (
+                    "headline" => $_POST['headline'],
+                    "text" => $_POST['credit']
+                ),
+                "group" => $_POST['group'],
+                "unique_id" => $_POST['eId'],
+            );
+      // encode array to json
+      $json = json_encode($change);
+      // Write the contents to the file,
+      // using the FILE_APPEND flag to append the content to the end of the file
+      // and the LOCK_EX flag to prevent anyone else writing to the file at the same time
+      $bytes = file_put_contents('./editions.json', $json, FILE_APPEND | LOCK_EX);
+      header("Location: ./edit-events.php");
+    } // END if ($_POST['eId'] != '')
+  }
 
 
 ?>
