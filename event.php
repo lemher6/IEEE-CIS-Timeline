@@ -85,6 +85,11 @@
 
       <?php include ("./menu.php"); ?>
 
+
+      <div class="formBlock">
+        <form method="post" action="event-manager.php">
+
+
       <?php
         ########################################################################
         ### IF AN EVENT ID IS PASSED
@@ -105,9 +110,13 @@
         displayEvent($eId,$opt);
         ?>
 
-      <div class="formBlock">
-        <form method="post" action="event-manager.php">
+        <div class='iBlock'>
           <input type="hidden" name="eId" value="<?php echo $eId; ?>" />
+          <input type="hidden" name="opt" value="<?php echo $opt; ?>" />
+
+          <label for="comment">Comments:</label>
+            <textarea name="comment"></textarea>
+          <br>
 
 
 
@@ -119,7 +128,6 @@
         ?>
             <div class="rightBlock">
               <p>Complete the event information and then click on submit button.</p>
-              <input type="hidden" name="opt" value="new" />
               <input type="submit" value="Submit" />
             </div>
 
@@ -134,7 +142,6 @@
         ?>
                 <div class="rightBlock">
                   <p>Do you want to delete this event?</p>
-                  <input type="hidden" name="opt" value="del" />
                   <input type="submit" value="Yes" />
                   <button type="button" onclick="document.location='edit-events.php'">Cancel</button>
                 </div>
@@ -149,13 +156,12 @@
               ?>
                   <div class="rightBlock">
                       <p>Update the event information and then click on submit button.</p>
-                        <input type="hidden" name="opt" value="upt" />
                         <input type="submit" value="Submit" />
                   </div>
 
               <?php  } // END if($op == 'upd')  ?>
 
-
+            </div>
       </form>
     </div>
 

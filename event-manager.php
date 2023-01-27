@@ -4,6 +4,10 @@
   ### MANAGE EVENTS --> RETRIVE, CREATE, UPDATE OR DELETE TIMELINE EVENTS
 
 
+if(isset($_POST['opt'])){
+  changeEvent();
+}
+
   // Define the comparison function
   function compare_start_date($a, $b)
   {
@@ -75,6 +79,31 @@
   }
 
 
+  ##############################################################################
+  ### DISPLAYS EVENT INFORMATON BY EVENT ID
+  ##############################################################################
+  function changeEvent(){
+    if ($_POST['eId'] != '') {
+      $user = 'USER123';
+      $fileName = './'.$user.'-'.date("ymdhis").'.json';
+      $changeDate = date("Y-m-d h:i");
+      $change = Array (
+                "change" => Array (
+                    "user" => $user,
+                    "date" => $changeDate,
+                    "action" => $_POST['opt'],
+                    "comment" => $_POST['comment']
+                ),
+
+            );
+            // encode array to json
+      $json = json_encode($change);
+      $bytes = file_put_contents($fileName, $json); //generate json file
+      echo "Here is the myfile data $bytes.";
+    } // END if ($_POST['eId'] != '')
+  }
+
+
 
   ##############################################################################
   ### DISPLAYS EVENT INFORMATON BY EVENT ID
@@ -129,15 +158,18 @@
 
 
               ### CHECK WHICH GROUP SHOULD BY SELECTED
-              if($group == 'EC'){
+              if($group == 'CIS'){
+                $groupCIS = 'selected';
+                $groupFuzzy = $groupEC =$groupNNs = '';
+              }elseif($group == 'EC'){
                 $groupEC = 'selected';
-                $groupFuzzy = $groupNNs = '';
+                $groupFuzzy = $groupCIS = $groupNNs = '';
               }elseif($group == 'Fuzzy'){
                 $groupFuzzy = 'selected';
-                $groupNNs = $groupEC = '';
+                $groupNNs = $groupCIS = $groupEC = '';
               }elseif($group == 'NNs'){
                 $groupNNs = 'selected';
-                $groupFuzzy = $groupEC = '';
+                $groupFuzzy = $groupCIS = $groupEC = '';
               }
 
 
@@ -225,6 +257,7 @@
             echo "<div class='iBlock'>";
             echo "<label for='group'>Event Group:</label>
                     <select name='group'>
+                      <option value='CIS' $groupCIS>CIS</option>
                       <option value='Fuzzy' $groupFuzzy>Fuzzy</option>
                       <option value='EC' $groupEC>EC</option>
                       <option value='NNs' $groupNNs>NNs</option>
@@ -232,6 +265,9 @@
             echo "</div>";
           } // END if($opt == 'del')
 
+
   } ###  END function displayEvent
+
+
 
 ?>
