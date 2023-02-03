@@ -1,6 +1,9 @@
 <?php
   ### IEEE-CIS TIMELINE PROJECT
   ### 2022-11 AH
+  session_start();
+  include('./check-login.php');
+  checkLogin('Ana','123','Admin');
 ?>
 
 <!DOCTYPE html>
@@ -53,7 +56,7 @@
 
 
     <div class="rightBlock">
-      <button onclick="document.location='event.php?opt=new'">Create a New Event</button>
+      <button onclick="document.location='event.php?opt=new&page=listEvents'">Create a New Event</button>
     </div>
 
 
@@ -70,8 +73,8 @@
 
         <?php
           include ("./event-manager.php");
+          listEditions();
           printAllEvent();
-          #listBasicEvents();
         ?>
           </tr>
         </table>

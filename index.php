@@ -1,3 +1,11 @@
+<?php
+  ### IEEE-CIS TIMELINE PROJECT
+  ### 2022-11 AH
+  session_start();
+  include('./check-login.php');
+  checkLogin('Ana','123','Admin');
+?>
+
 <!DOCTYPE html>
 <html>
 
@@ -5,7 +13,7 @@
     <title>IEEE-CIS TIMELINE HOME</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    
+
     <link rel="stylesheet" type="text/css" href="./css/style.css">
 
     <style>

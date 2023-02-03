@@ -1,6 +1,9 @@
 <?php
   ### IEEE-CIS TIMELINE PROJECT
   ### 2022-11 AH
+  session_start();
+  include('./check-login.php');
+  checkLogin('Ana','123','Admin');
 ?>
 
 <!DOCTYPE html>
@@ -80,7 +83,7 @@
 
   <body>
       <div class="pageTitle">
-        <h1>TIMELINE EVENT</h1>
+        <h1>EDIT A TIMELINE EVENT</h1>
       </div>
 
       <?php include ("./menu.php"); ?>
@@ -110,13 +113,12 @@
         displayEvent($eId,$opt);
         ?>
 
-        <div class='iBlock'>
+
           <input type="hidden" name="eId" value="<?php echo $eId; ?>" />
           <input type="hidden" name="opt" value="<?php echo $opt; ?>" />
+          <input type="hidden" name="page" value="editEvent" />
 
-          <label for="comment">Comments:</label>
-            <textarea name="comment"></textarea>
-          <br>
+
 
 
 
@@ -127,8 +129,8 @@
           if($opt == 'new'){
         ?>
             <div class="rightBlock">
-              <p>Complete the event information and then click on submit button.</p>
-              <input type="submit" value="Submit" />
+              <p>Complete the event information and then click on "Create" button.</p>
+              <input type="submit" value="Create" />
             </div>
 
         <?php  } // END if($op == 'new')  ?>
@@ -148,20 +150,35 @@
               <?php  } // END if($op == 'del')  ?>
 
 
-              <?php
-                ########################################################################
-                ### CREATING OR UPDATING AN EVENT
-                ########################################################################
-                if($opt == 'upd'){
-              ?>
-                  <div class="rightBlock">
-                      <p>Update the event information and then click on submit button.</p>
-                        <input type="submit" value="Submit" />
-                  </div>
-
-              <?php  } // END if($op == 'upd')  ?>
-
+        <?php
+          ########################################################################
+          ### CREATING OR UPDATING AN EVENT
+          ########################################################################
+          if($opt == 'upd'){
+        ?>
+            <div class="rightBlock">
+                <p>Update the event information and then click on "Update" button.</p>
+                  <input type="submit" value="Update" />
             </div>
+
+        <?php  } // END if($op == 'upd')  ?>
+
+
+        <?php
+          ########################################################################
+          ### CREATING OR UPDATING AN EVENT
+          ########################################################################
+          if($opt == 'edited'){
+        ?>
+            <div class="rightBlock">
+                <p>Update the event information and then click on "Update" button. Choose "Forget Edition" to remove any modifications done on this event.</p>
+                  <input type="submit" value="Update" />
+                  <button type="button" onclick="document.location='event-manager.php?eId=<?php echo $eId; ?>&opt=eDel&page=editEvent'">Forget Edition</button>
+            </div>
+
+        <?php  } // END if($op == 'upd')  ?>
+
+
       </form>
     </div>
 

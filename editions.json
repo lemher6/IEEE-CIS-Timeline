@@ -1,1 +1,74 @@
-{"change":{"user":"USER123","date":"2023-01-28 12:31","action":"upd","comment":"strong"},"background":{"color":"#000000","opacity":50,"url":null},"start_date":{"year":"2017","month":"06","day":"05"},"end_date":{"year":"2017","month":"06","day":"08"},"media":{"caption":"Congress on Evolutionary Computation","credit":"","url":null,"link":null},"text":{"headline":"2017 IEEE CEC","text":""},"group":"EC","unique_id":"EC20170605-001"}
+{
+    "events": [
+        {
+            "change": {
+                "user": "Ana",
+                "date": "2023-02-03 09:27",
+                "action": "edited",
+                "comment": "media url"
+            },
+            "background": {
+                "color": "#ffffff",
+                "opacity": 50,
+                "url": null
+            },
+            "start_date": {
+                "year": "2015",
+                "month": "07",
+                "day": "12"
+            },
+            "end_date": {
+                "year": "2015",
+                "month": "07",
+                "day": "17"
+            },
+            "media": {
+                "caption": "IEEE International Joint Conference on Neural Networks",
+                "credit": "",
+                "url": "\/img\/IJCNN20150712.JPG",
+                "link": "https:\/\/ewh.ieee.org\/conf\/ijcnn\/2015\/ijcnn-2015.pdf"
+            },
+            "text": {
+                "headline": "2015 IEEE IJCNN",
+                "text": "2015 International Joint Conference on Neural Networks (IJCNN)<br>July 12-17, 2015, Killarney, Ireland<br>GC: De-Shuang Huang<br>PC: Yoonsuck Choe<br>"
+            },
+            "group": "NNs",
+            "unique_id": "NNs20150712-001"
+        },
+        {
+            "change": {
+                "user": "TestUser",
+                "date": "2023-02-03 09:26",
+                "action": "new",
+                "comment": "new event"
+            },
+            "background": {
+                "color": "#ff80c0",
+                "opacity": 50,
+                "url": null
+            },
+            "start_date": {
+                "year": "2023",
+                "month": "01",
+                "day": "01"
+            },
+            "end_date": {
+                "year": "2023",
+                "month": "01",
+                "day": "05"
+            },
+            "media": {
+                "caption": "Publications",
+                "credit": "https:\/\/cis.ieee.org\/publications",
+                "url": "\/img\/itsAllHere.jfif",
+                "link": "https:\/\/cis.ieee.org\/publications"
+            },
+            "text": {
+                "headline": "CIS PUBLICATIONS",
+                "text": "Just Read<br><br><br><br>"
+            },
+            "group": "CIS",
+            "unique_id": "CIS20230203092603"
+        }
+    ]
+}
