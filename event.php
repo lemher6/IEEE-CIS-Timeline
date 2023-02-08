@@ -10,7 +10,7 @@
 <html>
 
   <head>
-    <title>IEEE-CIS TIMELINE HOME</title>
+    <title>IEEE-CIS HISTORICAL TIMELINE - EVENT</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -182,6 +182,9 @@
       </form>
     </div>
 
+    <div class="footer">
+      © Copyright 2023 IEEE – All rights reserved. A not-for-profit organization, IEEE is the world's largest technical professional organization dedicated to advancing technology for the benefit of humanity.
+    </div>
   </body>
 
 </html>

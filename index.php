@@ -10,7 +10,7 @@
 <html>
 
   <head>
-    <title>IEEE-CIS TIMELINE HOME</title>
+    <title>IEEE-CIS HISTORICAL TIMELINE - HOME</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -27,7 +27,7 @@
 
   <body>
     <div class="pageTitle">
-      <h1>EDIT TIMELINE EVENTS</h1>
+      <h1>IEEE-CIS HISTORICAL TIMELINE</h1>
     </div>
 
     <?php include ("./menu.php"); ?>
@@ -38,6 +38,10 @@
       <a href="/sandbox-timeline.html" target="_blank">
         <img src="/img/IEEE-CIS-TIMELINE.JPG" width="90%" style="box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);" title="Launch Sandbox Timeline">
       </a>
+    </div>
+
+    <div class="footer">
+      © Copyright 2023 IEEE – All rights reserved. A not-for-profit organization, IEEE is the world's largest technical professional organization dedicated to advancing technology for the benefit of humanity.
     </div>
 
   </body>

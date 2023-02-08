@@ -193,7 +193,7 @@
                         </div>
                   </div>
                   <br>";
-          }
+          } // END if($headline != '')
         } // END if($eId != '')
 
 
@@ -405,6 +405,136 @@
       header("Location: ./edit-events.php");
 
   }
+
+
+
+  ### ****************************************************************************
+  ### APPROVALS
+  ### ****************************************************************************
+
+    function displayForApproval(){
+
+      $editedEvents = array(); // for the unique_id of edited events
+
+      // Read the EDITIONS JSON file
+      $data = file_get_contents('./editions.json');
+
+      if($data){
+        // Decode the JSON data into a PHP array
+        $data = json_decode($data, true);
+
+        foreach ($data['events'] as $event) {
+              if($_SESSION['userRoll'] == 'Admin'){
+
+                  array_push($editedEvents, $event['unique_id']);
+
+                  if($event['change']['action'] == 'del'){
+                    $action = 'Deleted';
+                  }elseif($event['change']['action'] == 'new'){
+                    $action = 'Created';
+                  }else{
+                    $action = 'Updated';
+                  }
+                  $action .= ' on '.$event['change']['date'];
+
+
+                  $color = $event['background']['color'];
+                  $opacity = $event['background']['opacity'];
+                  $backgroundURL = $event['background']['url'];
+
+                  $start_date = $event['start_date']['year'] .'-'. $event['start_date']['month'] .'-'. $event['start_date']['day'];
+                  $end_date = $event['end_date']['year'] .'-'. $event['end_date']['month'] .'-'. $event['end_date']['day'];
+
+                  $caption = $event['media']['caption'];
+                  $credit = $event['media']['credit'];
+                  $mediaURL = $event['media']['url'];
+                  $mediaLINK = $event['media']['link'];
+
+                  $headline = $event['text']['headline'];
+                  $text = $event['text']['text'];
+
+                  $group = $event['group'];
+                  $unique_id = $event['unique_id'];
+
+
+                  ### REMOVES THE BOLD TAG
+                  $eventDetails = str_replace("<b>","",$text);
+                  $eventDetails = str_replace("</b>","",$eventDetails);
+                  ### SPLIT THE TEXT INTO LINES
+                  $detail = explode("<br>", $eventDetails);
+
+
+                  ### CHECK WHICH GROUP SHOULD BY SELECTED
+                  if($group == 'CIS'){
+                    $groupCIS = 'selected';
+                    $groupFuzzy = $groupEC =$groupNNs = '';
+                  }elseif($group == 'EC'){
+                    $groupEC = 'selected';
+                    $groupFuzzy = $groupCIS = $groupNNs = '';
+                  }elseif($group == 'Fuzzy'){
+                    $groupFuzzy = 'selected';
+                    $groupNNs = $groupCIS = $groupEC = '';
+                  }elseif($group == 'NNs'){
+                    $groupNNs = 'selected';
+                    $groupFuzzy = $groupCIS = $groupEC = '';
+                  }
+
+
+                  ### FIX COLOR WHEN IT IS DEFAULT NULL
+                  if($color == ""){
+                    $color = "#ffffff";
+                  }
+
+                  if(isset($event['change'])){
+                    $editUser = $event['change']['user'];
+                    $editDate = $event['change']['date'];
+                    $editAction = $event['change']['action'];
+                    $editComment = $event['change']['comment'];
+                  }
+
+
+
+
+                  ### CREATES EVENT VISUALIZATION
+                  echo "<div id='eventView' class='eventView' style='background-color:$color;'>
+                          <div class='floatLeft'>
+                              <a href='$mediaLINK' target='_blank'>
+                                <img alt='$caption' title='$caption' src='$mediaURL' width='200px' height:auto;>
+                              </a>
+                              <br>
+                              $credit
+                          </div>
+                              <div class='floatRight'>
+                                  <br>
+                                  <span class='dates'>$start_date - $end_date</span><br>
+                                  <span class='title'>$headline</span><br>
+                                  <span class='details'>
+                        ";
+
+                    for($x=0; $x<=4; $x++){
+                      if(!isset($detail[$x])){
+                        $detail[$x] = '';
+                      }
+                      echo "$detail[$x]<br>";
+                  }
+
+                  echo "</span>
+                              </div>
+                        </div>
+                        <br>";
+
+
+                  echo "<button onclick=\"document.location='event.php?eId=". $event['unique_id'] ."&opt=edited&page=listEvents'\">$action</button>";
+
+                  echo "<br><hr><br>\n";
+              } // END if($_SESSION['userRoll'] == 'Admin')
+          } // END foreach
+        } // END if($data)
+
+        $GLOBALS['editedIds'] = $editedEvents;
+
+    }
+
 
 
 ?>
