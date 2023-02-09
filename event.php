@@ -28,37 +28,7 @@
         padding: 1em;
         border: #dddcdc 1px solid;
       }
-      .eventView{
-        border: 1px solid gray;
-        display: block;
-        width: 80%;
-        margin: auto;
-        padding: 1em;
-        height: 250px;
-      }
-      .floatLeft{
-        float: left;
-        text-align: right;
-        width: 40%;
-        padding-right: 1em;
-      }
-      .floatRight{
-        float: right;
-        text-align: left;
-        width: 50%;
-        padding-left: 1em;
-        vertical-align: middle;
-      }
-      .dates{
-        font-size: 0.7em;
-      }
-      .title{
-        font-size: 2.3em;
-        font-weight: bold;
-      }
-      .details{
-        font-size: 0.8em;
-      }
+
 
       @media only screen and (min-width: 768px) {
       /* ==== For desktop: ===== */

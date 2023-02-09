@@ -1,6 +1,6 @@
 
 body,p {
-  font-family: gill sans, sans-serif;
+  font-family: Arial, Verdana, sans-serif;
   color: #666;
   font-size: 1em;
 }
@@ -17,7 +17,10 @@ body,p {
   padding: 1em;
 }
 
-h1 { padding: 25px 0; }
+h1 {
+  padding: 25px 0;
+  color: #000;
+}
 
 button, input[type=submit] {
   border: none;
@@ -115,4 +118,38 @@ th {
 /* IEEE CSI TIMELINE CHANGES THIS PARAMET TO FIT SHORT TITLE FROM THE ORIGINAL VERSION */
 .tl-timemarker .tl-timemarker-content-container {
   width: 125px !important;
+}
+
+.floatLeft{
+  float: left;
+  text-align: right;
+  width: 40%;
+  padding-right: 1em;
+}
+.floatRight{
+  float: right;
+  text-align: left;
+  width: 50%;
+  padding-left: 1em;
+  vertical-align: middle;
+}
+
+.eventView{
+  border: 1px solid gray;
+  display: block;
+  width: 80%;
+  margin: auto;
+  padding: 1em;
+  height: 210px;
+}
+
+.dates{
+  font-size: 0.7em;
+}
+.title{
+  font-size: 2.3em;
+  font-weight: bold;
+}
+.details{
+  font-size: 0.8em;
 }

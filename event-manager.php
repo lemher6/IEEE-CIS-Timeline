@@ -457,13 +457,6 @@
                   $unique_id = $event['unique_id'];
 
 
-                  ### REMOVES THE BOLD TAG
-                  $eventDetails = str_replace("<b>","",$text);
-                  $eventDetails = str_replace("</b>","",$eventDetails);
-                  ### SPLIT THE TEXT INTO LINES
-                  $detail = explode("<br>", $eventDetails);
-
-
                   ### CHECK WHICH GROUP SHOULD BY SELECTED
                   if($group == 'CIS'){
                     $groupCIS = 'selected';
@@ -492,8 +485,9 @@
                     $editComment = $event['change']['comment'];
                   }
 
+                  echo "<div class='iBlock'>";
 
-
+                  echo "<h3> $action By $editUser </h3>";
 
                   ### CREATES EVENT VISUALIZATION
                   echo "<div id='eventView' class='eventView' style='background-color:$color;'>
@@ -508,25 +502,18 @@
                                   <br>
                                   <span class='dates'>$start_date - $end_date</span><br>
                                   <span class='title'>$headline</span><br>
-                                  <span class='details'>
-                        ";
-
-                    for($x=0; $x<=4; $x++){
-                      if(!isset($detail[$x])){
-                        $detail[$x] = '';
-                      }
-                      echo "$detail[$x]<br>";
-                  }
-
-                  echo "</span>
+                                  <span class='details'>$text</span>
                               </div>
                         </div>
                         <br>";
 
+                  echo "<div class='rightBlock'>";
+                  echo "<button onclick=\"document.location='event.php?eId=". $event['unique_id'] ."&opt=edited&page=listEvents'\">Approve</button>";
+                  echo "&nbsp;&nbsp;&nbsp;&nbsp;";
+                  echo "<button onclick=\"document.location='event.php?eId=". $event['unique_id'] ."&opt=edited&page=listEvents'\">Discard</button>";
+                  echo "</div>";
 
-                  echo "<button onclick=\"document.location='event.php?eId=". $event['unique_id'] ."&opt=edited&page=listEvents'\">$action</button>";
-
-                  echo "<br><hr><br>\n";
+                  echo "</div>\n";
               } // END if($_SESSION['userRoll'] == 'Admin')
           } // END foreach
         } // END if($data)
