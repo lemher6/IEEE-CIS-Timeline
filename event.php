@@ -79,13 +79,20 @@
           $opt = '';
         }
 
+        if(isset($_REQUEST['status'])){
+          $status = $_REQUEST['status'];
+        }else{
+          $status = '';
+        }
+
         include ("./event-manager.php");
-        displayEvent($eId,$opt);
+        displayEvent($eId,$opt,$status);
         ?>
 
 
           <input type="hidden" name="eId" value="<?php echo $eId; ?>" />
           <input type="hidden" name="opt" value="<?php echo $opt; ?>" />
+          <input type="hidden" name="status" value="<?php echo $status; ?>" />
           <input type="hidden" name="page" value="editEvent" />
 
 
@@ -96,7 +103,7 @@
           ########################################################################
           ### CREATING OR UPDATING AN EVENT
           ########################################################################
-          if($opt == 'new'){
+          if($opt == 'new' && $status == ''){
         ?>
             <div class="rightBlock">
               <p>Complete the event information and then click on "Create" button.</p>
@@ -110,7 +117,7 @@
               ########################################################################
               ### DELETING AN EVENT
               ########################################################################
-              if($opt == 'del'){
+              if($opt == 'del' && $status == ''){
         ?>
                 <div class="rightBlock">
                   <p>Do you want to delete this event?</p>
@@ -124,7 +131,7 @@
           ########################################################################
           ### CREATING OR UPDATING AN EVENT
           ########################################################################
-          if($opt == 'upd'){
+          if($opt == 'upd' && $status == ''){
         ?>
             <div class="rightBlock">
                 <p>Update the event information and then click on "Update" button.</p>
@@ -138,7 +145,7 @@
           ########################################################################
           ### CREATING OR UPDATING AN EVENT
           ########################################################################
-          if($opt == 'edited'){
+          if($status == 'edited'){
         ?>
             <div class="rightBlock">
                 <p>Update the event information and then click on "Update" button. Choose "Forget Edition" to remove any modifications done on this event.</p>

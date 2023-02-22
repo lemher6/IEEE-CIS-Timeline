@@ -31,7 +31,7 @@
                 "caption": "IEEE World Congress on Computational Intelligence (WCCI)",
                 "credit": "",
                 "url": "https://ewh.ieee.org/conf/wcci/img/wcci2018.png",
-                "link": "https://ewh.ieee.org/conf/wcci/2018/wcci-2018-cfp.pdf"
+                "link": "https://entrepreneurship.ieee.org/session/2018_07_08_ieee-world-congress-computational-intelligence/"
 
             },
             "text": {
@@ -39,6 +39,9 @@
                 "text": "2018 IEEE World Congress on Computational Intelligence (WCCI)<br>July 8-13, 2018<br>Rio de Janeiro, Brazil<br>GCs: Marley Vellasco, Pablo Estevez<br>CCs: Teresa Ludermir, Fernando Gomide, Gary G. Yen"
             },
             "group": "EC",
+            "author": "Ana",
+            "created_on": "2022-12-01",
+            "last_modification": "2023-02-13",
             "unique_id": "EC20180708-001"
         },
         {
@@ -68,6 +71,9 @@
                 "text": "2016 IEEE World Congress on Computational Intelligence (WCCI)<br>July 24-29, 2016<br>Vancouver, Canada<br>GCs: Kay Chen Tan, Gary G. Yen<br>CCs: Pablo A. Estevez, Oscar Cordon, Yew Soon Ong"
             },
             "group": "EC",
+            "author": "Ana",
+            "created_on": "2022-12-01",
+            "last_modification": "2023-02-13",
             "unique_id": "EC20160724-001"
         },
         {
@@ -89,7 +95,7 @@
             "media": {
                 "caption": "IEEE Congress on Evolutionary Computation (CEC)",
                 "credit": "",
-                "url": "/img/CEC20190610.JPG",
+                "url": "https://vimeo.com/794617447",
                 "link": "https://ewh.ieee.org/conf/cec/cec-2019-cfp.pdf"
             },
             "text": {
@@ -97,6 +103,9 @@
                 "text": "2019 IEEE Congress on Evolutionary Computation (CEC)<br>June 10-13, 2019, Wellington, New Zealand<br>GCs: Mengjie Zhang, Kay Chen Tan<br>PC: Carlos A. Coello Coello"
             },
             "group": "EC",
+            "author": "Ana",
+            "created_on": "2022-12-01",
+            "last_modification": "2023-02-13",
             "unique_id": "EC20190610-001"
         },
         {
@@ -126,6 +135,9 @@
                 "text": "2017 IEEE Congress on Evolutionary Computation (CEC)<br>June 5-8, 2017, Donostia-San Sebastian, Spain<br>GC: Jose A. Lozano<br>PC: Carlos Coello"
             },
             "group": "EC",
+            "author": "Ana",
+            "created_on": "2022-12-01",
+            "last_modification": "2023-02-13",
             "unique_id": "EC20170605-001"
         },
         {
@@ -155,6 +167,9 @@
                 "text": "2017 IEEE International Conference on Fuzzy Systems<br>July 9-12, 2017, Naples, Italy<br>GCs: Giovanni Acampora, Bruno Siciliano<br>PCs: Hani Hagras, Francisco Herrera"
             },
             "group": "Fuzzy",
+            "author": "Ana",
+            "created_on": "2022-12-01",
+            "last_modification": "2023-02-13",
             "unique_id": "Fuzzy20170709-001"
         },
         {
@@ -184,6 +199,9 @@
                 "text": "2015 IEEE International Conference on Fuzzy Systems<br>August 2-5, 2015, Istanbul, Turkey<br>GCs: Adnan Yazici, Nikhil R. Pal<br>PC: Uzay Kaymak"
             },
             "group": "Fuzzy",
+            "author": "Ana",
+            "created_on": "2022-12-01",
+            "last_modification": "2023-02-13",
             "unique_id": "Fuzzy20150802-001"
         },
         {
@@ -213,6 +231,9 @@
                 "text": "2015 International Joint Conference on Neural Networks (IJCNN)<br>July 12-17, 2015, Killarney, Ireland<br>GC: De-Shuang Huang<br>PC: Yoonsuck Choe"
             },
             "group": "NNs",
+            "author": "Ana",
+            "created_on": "2022-12-01",
+            "last_modification": "2023-02-13",
             "unique_id": "NNs20150712-001"
         },
         {
@@ -234,7 +255,7 @@
               "media": {
                 "caption": "IEEE Symposium Series on Computational Intelligence",
                 "credit": "",
-                "url": "/img/SSCI20181118.JPG",
+                "url": "https://youtu.be/dOmDu-kxWBM",
                 "link": "https://ewh.ieee.org/conf/ssci/2018/ssci-2018-cfp.pdf"
             },
             "text": {
@@ -242,6 +263,9 @@
                 "text": "2018 IEEE Symposium Series on Computational Intelligence (SSCI)<br>November 18-21, 2018,<br>Bengaluru, India<br>General Chair: N. R. Pal"
             },
             "group": "EC",
+            "author": "Ana",
+            "created_on": "2022-12-01",
+            "last_modification": "2023-02-13",
             "unique_id": "EC20181118-001"
         }
     ]

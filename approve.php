@@ -38,7 +38,7 @@
           .rightBlock{
             padding:10px 30px;
             width: 90%;
-          }          
+          }
           .iBlock{
             margin: 2em;
           }
@@ -57,15 +57,24 @@
     <div class="leftBlock">
 
       <p class="leftBlock">
-        Click on the <b>"Approve"</b> button to move the edition to the production timeline. After approval, the event will be changed in the both sandbox and production file with the edited information.<br>       
-        Use the <b>"Discard"</b> button if you want to forget the changes done. The event will be removed from this list and neither sandbox nor production files will be modified.<br>
-        If any of the options are selected the edition will remain on this list and no changes will be done in Sandbox or Production. </p>
+        You can approve or deny a request that is pending approval only if you are a member of the necessary approval group.
+        <br><br>
+        First review the details of the edited record. Then, enter an approval or rejection reason and additional comments.
+        Click on the <b>"Approve"</b> button to move the edition to the production timeline or to reject the edition request, click on "Deny".
+        <br><br>
+        After approval, the event will be updated in the both sandbox and production timelines with the edited information.
+        After deny, the event will be removed from the edition list and neither sandbox nor production files will be modified.
+        If any of the options are selected the edition will remain on this list and no changes will be done in Sandbox or Production.
+      </p>
 
 
+      <form method="post" action="event-manager.php">
+        <input type="hidden" name="page" value="approveEvent" />
       <?php
         include ("./event-manager.php");
         displayForApproval();
       ?>
+    </form>
 
     </div>
 
