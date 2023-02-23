@@ -30,7 +30,6 @@
   }
 
 
-
   ##############################################################################
   ### LISTS ALL SANDBOX EVENTS BASIC INFORMATON SORT BY EVENT START DATE
   ##############################################################################
@@ -45,6 +44,7 @@
     usort($data['events'], 'compare_start_date');
 
     // Search for the event object
+    $counter = 1;
     foreach ($data['events'] as $event) {
 
         // If the event has been updated it is not displayed here as it is already displayed.
@@ -64,17 +64,16 @@
             echo "</td>\n";
             echo "\t\t<td  style=\"text-align:center;\"> <button onclick=\"document.location='event.php?eId=";
             echo $event['unique_id'];
-            echo "&opt=upd&page=listEvents'\">Update</button>";
+            echo "&opt=upd&page=listEvents&counter=$counter'\">Update</button>";
             echo "&nbsp; &nbsp;<button onclick=\"document.location='event.php?eId=";
             echo $event['unique_id'];
-            echo "&opt=del&page=listEvents'\">Delete</button>";
+            echo "&opt=del&page=listEvents&counter=$counter'\">Delete</button>";
             echo "</td>\n";
             echo "</tr>\n";
         } // END if(!in_array($event['unique_id'], $iseditedIds))
-
+      $counter++;
     } // END foreach
   }
-
 
 
   ##############################################################################
@@ -82,7 +81,7 @@
   ##############################################################################
   function displayEvent(string $eId, string $opt, string $status){
 
-      $isEvent = $isBackground = $media =  0;
+      $isEvent = $isBackground = $media = $counter = 0;
       $color = '#ffffff';
       $opacity = '50';
       $backgroundURL = '';
@@ -108,8 +107,9 @@
 
         // Search for the event object
         foreach ($data['events'] as $event) {
+            $counter++;
             if ($event['unique_id'] == $eId) {
-
+              $_REQUEST['counter'] = $counter;
               $color = $event['background']['color'];
               $opacity = $event['background']['opacity'];
               $backgroundURL = $event['background']['url'];
@@ -168,38 +168,9 @@
               }
 
             } // END if $event['unique_id']
+
           } // END foreach
 
-
-          ### CREATES EVENT VISUALIZATION
-          if($headline != ''){
-            echo "<div id='eventView' class='eventView' style='background-color:$color;'>
-                    <div class='floatLeft'>
-                        <a href='$mediaLINK' target='_blank'>
-                          <img alt='$caption' title='$caption' src='$mediaURL' width='200px' height:auto;>
-                        </a>
-                        <br>
-                        $credit
-                    </div>
-                        <div class='floatRight'>
-                            <br>
-                            <span class='dates'>$start_date - $end_date</span><br>
-                            <span class='title'>$headline</span><br>
-                            <span class='details'>
-                  ";
-
-              for($x=0; $x<=4; $x++){
-                if(!isset($detail[$x])){
-                  $detail[$x] = '';
-                }
-                echo "$detail[$x]<br>";
-            }
-
-            echo "</span>
-                        </div>
-                  </div>
-                  <br>";
-          } // END if($headline != '')
         } // END if($eId != '')
 
 
@@ -277,9 +248,6 @@
             echo "</div>";
 
   } ###  END function displayEvent
-
-
-
 
 
   ### ****************************************************************************
@@ -399,6 +367,18 @@
         }
 
 
+        ### create a JSON file just for this edition ***************************
+        $singleEventEdited = array("events" => $events);
+
+        // encode array to json
+        $json = json_encode($singleEventEdited,JSON_PRETTY_PRINT);
+        $filename = $_REQUEST['eId'].'.json';
+        // Write the contents to the file,
+        // using the FILE_APPEND flag to append the content to the end of the file
+        // and the LOCK_EX flag to prevent anyone else writing to the file at the same time
+        $bytes = file_put_contents($filename,$json, LOCK_EX);
+        ### ********************************************************************
+
 
       $edit_json = file_get_contents('./editions.json');
       if($edit_json){
@@ -424,7 +404,6 @@
       header("Location: ./edit-events.php");
 
   }
-
 
 
   ### ****************************************************************************
@@ -518,24 +497,23 @@
                     echo "Its last modification was done on $last_modification.<br>";
                   }
 
-                  ### CREATES EVENT VISUALIZATION
-                  echo "<br>
-                        <div id='eventView' class='eventView' style='background-color:$color;'>
-                          <div class='floatLeft'>
-                              <a href='$mediaLINK' target='_blank'>
-                                <img alt='$caption' title='$caption' src='$mediaURL' width='200px' height:auto;>
-                              </a>
-                              <br>
-                              $credit
-                          </div>
-                          <div class='floatRight'>
-                              <br>
-                              <span class='dates'>$start_date - $end_date</span><br>
-                              <span class='title'>$headline</span><br>
-                              <span class='details'>$text</span>
-                          </div>
-                        </div>
-                        <br>";
+                  echo "<div id='$unique_id' style='70%; height:500px;'></div>";
+
+                  echo "<script>
+                   $(document).ready(function() {
+                       var embed = document.getElementById('$unique_id');
+                       window.timeline = new TL.Timeline('$unique_id', './$unique_id.json', {
+                           hash_bookmark: false,
+                           font: 'fjalla-average',
+                           scale_factor: 1,
+                           initial_zoom: 1,
+                           zoom_sequence: [0.5, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89],
+                           timenav_height: 50,
+                           start_at_end: true
+                      });
+
+                   });
+                  </script>";
 
 
                   echo "<label for='comment'>Comments:</label>

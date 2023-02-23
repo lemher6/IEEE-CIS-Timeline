@@ -15,6 +15,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <link rel="stylesheet" type="text/css" href="./css/style.css">
+    <link title="timeline-styles" rel="stylesheet" href="/css/timeline.css">
+    <script src="/js/timeline-min.js"></script>
 
     <style>
       body{
@@ -59,7 +61,11 @@
       <?php include ("./menu.php"); ?>
 
 
+
       <div class="formBlock">
+        <div id="timeline-embed" style="border: 1px solid #ccc; width:100%; height:480px;">
+          <div id="timeline"></div>
+        </div>
         <form method="post" action="event-manager.php">
 
 
@@ -85,9 +91,17 @@
           $status = '';
         }
 
+
         include ("./event-manager.php");
         displayEvent($eId,$opt,$status);
-        ?>
+
+        if(isset($_REQUEST['counter'])){
+          $counter = $_REQUEST['counter'];
+        }else{
+          $counter = 0;
+        }
+
+      ?>
 
 
           <input type="hidden" name="eId" value="<?php echo $eId; ?>" />
@@ -119,6 +133,21 @@
               ########################################################################
               if($opt == 'del' && $status == ''){
         ?>
+
+                <script>
+                 $(document).ready(function() {
+                     var embed = document.getElementById('timeline-embed');
+                     window.timeline = new TL.Timeline('timeline-embed', './sandbox-timeline.json', {
+                         hash_bookmark: false, /* If set to true, TimelineJS will update the browser URL each time a slide advances, so that people can link directly to specific slides. */
+                         font: "fjalla-average",
+                         scale_factor: 1, /* How many screen widths wide the timeline should be at first presentation. */
+                         initial_zoom: 1, /* The position in the zoom_sequence series used to scale the Timeline when it is first created. Takes precedence over scale_factor. */
+                         zoom_sequence: [0.5, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89], /* Array of values for TimeNav zoom levels. Each value is a scale_factor, which means that at any given level, the full timeline would require that many screens to display all events. */
+                         start_at_slide: <?php echo $counter; ?>
+                    });
+                 });
+                </script>
+
                 <div class="rightBlock">
                   <p>Do you want to delete this event?</p>
                   <input type="submit" value="Yes" />
@@ -133,6 +162,21 @@
           ########################################################################
           if($opt == 'upd' && $status == ''){
         ?>
+
+        <script>
+         $(document).ready(function() {
+             var embed = document.getElementById('timeline-embed');
+             window.timeline = new TL.Timeline('timeline-embed', './sandbox-timeline.json', {
+                 hash_bookmark: false, /* If set to true, TimelineJS will update the browser URL each time a slide advances, so that people can link directly to specific slides. */
+                 font: "fjalla-average",
+                 scale_factor: 1, /* How many screen widths wide the timeline should be at first presentation. */
+                 initial_zoom: 1, /* The position in the zoom_sequence series used to scale the Timeline when it is first created. Takes precedence over scale_factor. */
+                 zoom_sequence: [0.5, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89], /* Array of values for TimeNav zoom levels. Each value is a scale_factor, which means that at any given level, the full timeline would require that many screens to display all events. */
+                 start_at_slide: <?php echo $counter; ?>
+            });
+         });
+        </script>
+
             <div class="rightBlock">
                 <p>Update the event information and then click on "Update" button.</p>
                   <input type="submit" value="Update" />
@@ -147,6 +191,21 @@
           ########################################################################
           if($status == 'edited'){
         ?>
+
+          <script>
+           $(document).ready(function() {
+               var embed = document.getElementById('timeline-embed');
+               window.timeline = new TL.Timeline('timeline-embed', './<?php echo $eId; ?>.json', {
+                   hash_bookmark: false, /* If set to true, TimelineJS will update the browser URL each time a slide advances, so that people can link directly to specific slides. */
+                   font: "fjalla-average",
+                   scale_factor: 1, /* How many screen widths wide the timeline should be at first presentation. */
+                   initial_zoom: 1, /* The position in the zoom_sequence series used to scale the Timeline when it is first created. Takes precedence over scale_factor. */
+                   zoom_sequence: [0.5, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89], /* Array of values for TimeNav zoom levels. Each value is a scale_factor, which means that at any given level, the full timeline would require that many screens to display all events. */
+                   start_at_slide: <?php echo $counter; ?>
+              });
+           });
+          </script>
+
             <div class="rightBlock">
                 <p>Update the event information and then click on "Update" button. Choose "Forget Edition" to remove any modifications done on this event.</p>
                   <input type="submit" value="Update" />

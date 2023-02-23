@@ -137,19 +137,19 @@ th {
 .eventView{
   border: 1px solid gray;
   display: block;
-  width: 80%;
+  width: 90%;
   margin: auto;
-  padding: 1em;
+  padding: 0.7em;
   height: 210px;
 }
 
 .dates{
-  font-size: 0.7em;
+  font-size: 0.8em;
 }
 .title{
-  font-size: 2.3em;
+  font-size: 2.2em;
   font-weight: bold;
 }
 .details{
-  font-size: 0.8em;
+  font-size: 0.9em;
 }
