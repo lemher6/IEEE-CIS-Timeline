@@ -60,18 +60,9 @@
 
       <?php include ("./menu.php"); ?>
 
-
-
-      <div class="formBlock">
-        <div id="timeline-embed" style="border: 1px solid #ccc; width:100%; height:480px;">
-          <div id="timeline"></div>
-        </div>
-        <form method="post" action="event-manager.php">
-
-
       <?php
         ########################################################################
-        ### IF AN EVENT ID IS PASSED
+        ###  GETTING HEADER PARAMETERS
         ########################################################################
         if(isset($_GET['eId'])){
           $eId = $_GET['eId'];
@@ -91,10 +82,27 @@
           $status = '';
         }
 
+      ?>
+
+      <div class="formBlock">
+
+        <?php if($opt != 'new' || $status == 'edited'){ // DISPLAYS TIMELINE IF IT IS NOT A NEW EVENT ?>
+          <div id="timeline-embed" style="border: 1px solid #ccc; width:100%; height:480px;">
+            <div id="timeline"></div>
+          </div>
+        <?php } // END display the div ?>
+
+        <form method="post" action="event-manager.php">
+
+
+
+
+      <?php
 
         include ("./event-manager.php");
         displayEvent($eId,$opt,$status);
 
+        ### GETTING THE COUNTER PARAMETER AFTER CALLING THE displayEvent FUNCTION BECAUSE THAT FUNCTION COULD UPDATE THE PARAMETER
         if(isset($_REQUEST['counter'])){
           $counter = $_REQUEST['counter'];
         }else{
@@ -167,11 +175,9 @@
          $(document).ready(function() {
              var embed = document.getElementById('timeline-embed');
              window.timeline = new TL.Timeline('timeline-embed', './sandbox-timeline.json', {
-                 hash_bookmark: false, /* If set to true, TimelineJS will update the browser URL each time a slide advances, so that people can link directly to specific slides. */
+                 hash_bookmark: true, /* If set to true, TimelineJS will update the browser URL each time a slide advances, so that people can link directly to specific slides. */
                  font: "fjalla-average",
-                 scale_factor: 1, /* How many screen widths wide the timeline should be at first presentation. */
                  initial_zoom: 1, /* The position in the zoom_sequence series used to scale the Timeline when it is first created. Takes precedence over scale_factor. */
-                 zoom_sequence: [0.5, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89], /* Array of values for TimeNav zoom levels. Each value is a scale_factor, which means that at any given level, the full timeline would require that many screens to display all events. */
                  start_at_slide: <?php echo $counter; ?>
             });
          });
@@ -196,7 +202,7 @@
            $(document).ready(function() {
                var embed = document.getElementById('timeline-embed');
                window.timeline = new TL.Timeline('timeline-embed', './<?php echo $eId; ?>.json', {
-                   hash_bookmark: false, /* If set to true, TimelineJS will update the browser URL each time a slide advances, so that people can link directly to specific slides. */
+                   hash_bookmark: true, /* If set to true, TimelineJS will update the browser URL each time a slide advances, so that people can link directly to specific slides. */
                    font: "fjalla-average",
                    scale_factor: 1, /* How many screen widths wide the timeline should be at first presentation. */
                    initial_zoom: 1, /* The position in the zoom_sequence series used to scale the Timeline when it is first created. Takes precedence over scale_factor. */

@@ -1,3 +1,118 @@
 {
-    "events": []
+    "events": [
+        {
+            "change": {
+                "user": "Ana",
+                "date": "2023-02-23 09:06",
+                "action": "upd",
+                "comment": "COLOR"
+            },
+            "background": {
+                "color": "#094c83",
+                "opacity": 50,
+                "url": null
+            },
+            "start_date": {
+                "year": "2015",
+                "month": "07",
+                "day": "12"
+            },
+            "end_date": {
+                "year": "2015",
+                "month": "07",
+                "day": "17"
+            },
+            "media": {
+                "caption": "IEEE International Joint Conference on Neural Networks",
+                "credit": "",
+                "url": "\/img\/NNs20150712.JPG",
+                "link": "https:\/\/ewh.ieee.org\/conf\/ijcnn\/2015\/ijcnn-2015.pdf"
+            },
+            "text": {
+                "headline": "2015 IEEE IJCNN",
+                "text": "2015 International Joint Conference on Neural Networks (IJCNN)<br>July 12-17, 2015, Killarney, Ireland<br>GC: De-Shuang Huang<br>PC: Yoonsuck Choe<br>"
+            },
+            "group": "NNs",
+            "author": "Ana",
+            "created_on": "2022-12-01",
+            "last_modification": "2023-02-13",
+            "unique_id": "NNs20150712-001"
+        },
+        {
+            "change": {
+                "user": "Ana",
+                "date": "2023-02-23 08:06",
+                "action": "del",
+                "comment": "This event should have a better image!"
+            },
+            "background": {
+                "color": "#000000",
+                "opacity": 50,
+                "url": null
+            },
+            "start_date": {
+                "year": "2017",
+                "month": "06",
+                "day": "05"
+            },
+            "end_date": {
+                "year": "2017",
+                "month": "06",
+                "day": "08"
+            },
+            "media": {
+                "caption": "Congress on Evolutionary Computation",
+                "credit": "",
+                "url": "\/img\/CEC20170605.JPG",
+                "link": "https:\/\/ewh.ieee.org\/conf\/cec\/cec-2017.pdf"
+            },
+            "text": {
+                "headline": "2017 IEEE CEC",
+                "text": "2017 IEEE Congress on Evolutionary Computation (CEC)<br>June 5-8, 2017, Donostia-San Sebastian, Spain<br>GC: Jose A. Lozano<br>PC: Carlos Coello<br>"
+            },
+            "group": "EC",
+            "author": "Ana",
+            "created_on": "2022-12-01",
+            "last_modification": "2023-02-13",
+            "unique_id": "EC20170605-001"
+        },
+        {
+            "change": {
+                "user": "Ana",
+                "date": "2023-02-23 07:56",
+                "action": "new",
+                "comment": "This is just a test."
+            },
+            "background": {
+                "color": "#06b8d0",
+                "opacity": 50,
+                "url": null
+            },
+            "start_date": {
+                "year": "2023",
+                "month": "03",
+                "day": "07"
+            },
+            "end_date": {
+                "year": "2023",
+                "month": "03",
+                "day": "10"
+            },
+            "media": {
+                "caption": "IEEE CIS",
+                "credit": "My New Event",
+                "url": "https:\/\/cis.ieee.org\/images\/files\/Branding\/logos\/color\/IEEE_CIS_logo_RGB_72ppi.jpg",
+                "link": ""
+            },
+            "text": {
+                "headline": "THE TEAL EVENT",
+                "text": "THIS IS AN AWESOME NEW EVENT<br>Give it a try!<br>Created by me :)<br>Sorry not links here<br>One more detail over here"
+            },
+            "group": "Fuzzy",
+            "author": "Ana",
+            "created_on": "2023-02-23 07:53",
+            "last_modification": "2023-02-23 07:53",
+            "unique_id": "CIS20230223075635"
+        }
+    ]
 }

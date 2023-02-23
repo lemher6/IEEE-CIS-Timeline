@@ -21,12 +21,20 @@
     editEvent();
   }
 
-  // Comparison function by start_date
+  // Comparison function by start_date. Return in descendent order
   function compare_start_date($a, $b)
   {
       $date1 = new DateTime($a['start_date']['year'] . '-' . $a['start_date']['month'] . '-' . $a['start_date']['day']);
       $date2 = new DateTime($b['start_date']['year'] . '-' . $b['start_date']['month'] . '-' . $b['start_date']['day']);
       return $date2 <=> $date1;
+  }
+
+  // Comparison function by start_date. Return in ascendent order
+  function compare_start_date_ASCENDENT($a, $b)
+  {
+      $date1 = new DateTime($a['start_date']['year'] . '-' . $a['start_date']['month'] . '-' . $a['start_date']['day']);
+      $date2 = new DateTime($b['start_date']['year'] . '-' . $b['start_date']['month'] . '-' . $b['start_date']['day']);
+      return $date1 <=> $date2;
   }
 
 
@@ -104,6 +112,9 @@
 
         // Decode the JSON data into a PHP array
         $data = json_decode($json, true);
+
+        // Sort the events array
+        usort($data['events'], 'compare_start_date_ASCENDENT');
 
         // Search for the event object
         foreach ($data['events'] as $event) {
@@ -240,11 +251,11 @@
                     </select>";
             echo "</div>";
 
+            echo "</div> <!-- END DIV FOR DISPLAYING FORM -->";
 
             echo "<div class='iBlock'>";
             echo "<label for='comment'>Comments:</label>
                     <textarea name='comment'>$editComment</textarea>";
-            echo "</div>";
             echo "</div>";
 
   } ###  END function displayEvent

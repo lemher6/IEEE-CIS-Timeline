@@ -1,0 +1,42 @@
+{
+    "events": [
+        {
+            "change": {
+                "user": "Ana",
+                "date": "2023-02-23 07:56",
+                "action": "new",
+                "comment": "This is just a test."
+            },
+            "background": {
+                "color": "#06b8d0",
+                "opacity": 50,
+                "url": null
+            },
+            "start_date": {
+                "year": "2023",
+                "month": "03",
+                "day": "07"
+            },
+            "end_date": {
+                "year": "2023",
+                "month": "03",
+                "day": "10"
+            },
+            "media": {
+                "caption": "IEEE CIS",
+                "credit": "My New Event",
+                "url": "https:\/\/cis.ieee.org\/images\/files\/Branding\/logos\/color\/IEEE_CIS_logo_RGB_72ppi.jpg",
+                "link": ""
+            },
+            "text": {
+                "headline": "THE TEAL EVENT",
+                "text": "THIS IS AN AWESOME NEW EVENT<br>Give it a try!<br>Created by me :)<br>Sorry not links here<br>One more detail over here"
+            },
+            "group": "Fuzzy",
+            "author": "Ana",
+            "created_on": "2023-02-23 07:53",
+            "last_modification": "2023-02-23 07:53",
+            "unique_id": "CIS20230223075635"
+        }
+    ]
+}
