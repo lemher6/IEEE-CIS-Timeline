@@ -1,0 +1,42 @@
+{
+    "events": [
+        {
+            "unique_id": "Fuzzy20170709-001",
+            "author": "Ana",
+            "created_on": "2022-12-01",
+            "last_modification": "2023-02-13",
+            "group": "Fuzzy",
+            "text": {
+                "headline": "2017 IEEE FUZZY",
+                "text": "2017 IEEE International Conference on Fuzzy Systems<br>July 9-12, 2017, Naples, Italy<br>GCs: Giovanni Acampora, Bruno Siciliano<br>PCs: Hani Hagras, Francisco Herrera<br>"
+            },
+            "start_date": {
+                "year": "2017",
+                "month": "07",
+                "day": "09"
+            },
+            "end_date": {
+                "year": "2017",
+                "month": "07",
+                "day": "12"
+            },
+            "media": {
+                "caption": "IEEE International Conference on Fuzzy Systems",
+                "credit": "",
+                "url": "\/img\/FUZZ20170709.JPG",
+                "link": "https:\/\/ewh.ieee.org\/conf\/fuzz\/fuzz-2017.pdf"
+            },
+            "background": {
+                "color": "#b5d7f2",
+                "opacity": 50,
+                "url": null
+            },
+            "change": {
+                "user": "Ana",
+                "date": "2023-02-28 19:28",
+                "action": "upd",
+                "comment": "changing color."
+            }
+        }
+    ]
+}

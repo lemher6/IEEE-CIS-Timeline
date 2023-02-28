@@ -3,6 +3,7 @@
   ### 2022-11 AH
   ### MANAGE EVENTS --> RETRIVE, CREATE, UPDATE OR DELETE TIMELINE EVENTS
   ###
+  ### ****************************************************************************
   ### FUNTIONS:
   #### compare_start_date($a, $b) // Comparison function by start_date
   #### printAllEvent() // LISTS ALL SANDBOX EVENTS BASIC INFORMATON SORT BY EVENT START DATE
@@ -10,6 +11,9 @@
   #### listEditions() // LISTS ALL EDITIED EVENTS BASIC INFORMATON
   #### editEvent() // CREATE A NEW EVENT INSTANCE IN THE FILE EDITIONS FOR LATER APPROVAL
   #### displayForApproval() // LIST EDITIONS AND ALLOW THE USER TO APPROVE OR DENY CHANGES
+  ### updateProdTimeline() // AFTER APPROVAL THE PRODUCTION TIMELINE JSON FILE IS UPDATED WITH THE NEW INFO.
+  ### ****************************************************************************
+
 
   if(session_id() == ''){
     session_start();
@@ -19,6 +23,10 @@
 
   if(isset($_REQUEST['opt']) && $_REQUEST['page'] == 'editEvent'){
     editEvent();
+  }
+
+  if(isset($_REQUEST['eId']) && $_REQUEST['page'] == 'approveEvent'){
+    updateProdTimeline();
   }
 
   // Comparison function by start_date. Return in descendent order
@@ -187,8 +195,8 @@
 
         if($opt == 'new'){
           $author = $_SESSION['user'];
-          $created_on = date("Y-m-d h:i");
-          $last_modification = date("Y-m-d h:i");
+          $created_on = date("Y-m-d H:i");
+          $last_modification = date("Y-m-d H:i");
         }
 
 
@@ -333,16 +341,14 @@
     if($_REQUEST['opt'] != 'eDel'){
 
         $changes = Array (
-                  "change" => Array (
-                      "user" => $_SESSION['user'],
-                      "date" => date("Y-m-d h:i"),
-                      "action" => $_POST['opt'],
-                      "comment" => $_POST['comment']
-                  ),
-                  "background" => Array (
-                      "color" => $_POST['color'],
-                      "opacity" => 50,
-                      "url" => NULL
+                  "unique_id" => $_REQUEST['eId'],
+                  "author" => $_POST['author'],
+                  "created_on" => $_POST['created_on'],
+                  "last_modification" => $_POST['last_modification'],
+                  "group" => $_POST['group'],
+                  "text" => Array (
+                      "headline" => $_POST['headline'],
+                      "text" => $_POST['text0'].'<br>'.$_POST['text1'].'<br>'.$_POST['text2'].'<br>'.$_POST['text3'].'<br>'.$_POST['text4'],
                   ),
                   "start_date" => Array (
                       "year" => substr($_POST['start_date'],0,4),
@@ -360,15 +366,17 @@
                       "url" => $_POST['mediaURL'],
                       "link" => $_POST['mediaLINK']
                   ),
-                  "text" => Array (
-                      "headline" => $_POST['headline'],
-                      "text" => $_POST['text0'].'<br>'.$_POST['text1'].'<br>'.$_POST['text2'].'<br>'.$_POST['text3'].'<br>'.$_POST['text4'],
+                  "background" => Array (
+                    "color" => $_POST['color'],
+                    "opacity" => 50,
+                    "url" => NULL
                   ),
-                  "group" => $_POST['group'],
-                  "author" => $_POST['author'],
-                  "created_on" => $_POST['created_on'],
-                  "last_modification" => $_POST['last_modification'],
-                  "unique_id" => $_REQUEST['eId'],
+                  "change" => Array (
+                      "user" => $_SESSION['user'],
+                      "date" => date("Y-m-d H:i"),
+                      "action" => $_POST['opt'],
+                      "comment" => $_POST['comment']
+                  ),
               );
 
             $events = array($changes);
@@ -422,6 +430,10 @@
   ### ****************************************************************************
     function displayForApproval(){
 
+      if($_SESSION['userRoll'] != 'Admin'){
+        echo "You can approve or deny a request that is pending approval only if you are a member of the timeline commitee. ";
+      }else{
+
       $editedEvents = array(); // for the unique_id of edited events
 
       // Read the EDITIONS JSON file
@@ -432,7 +444,6 @@
         $data = json_decode($data, true);
 
         foreach ($data['events'] as $event) {
-              if($_SESSION['userRoll'] == 'Admin'){
 
                   array_push($editedEvents, $event['unique_id']);
 
@@ -508,7 +519,7 @@
                     echo "Its last modification was done on $last_modification.<br>";
                   }
 
-                  echo "<div id='$unique_id' style='70%; height:500px;'></div>";
+                  echo "<br><div id='$unique_id' style='width:100%; height:450px;' padding: 0 10px 0 10px;></div><br>";
 
                   echo "<script>
                    $(document).ready(function() {
@@ -526,111 +537,132 @@
                    });
                   </script>";
 
-
-                  echo "<label for='comment'>Comments:</label>
-                          <textarea name='comment' placeholder='Enter here the approval or rejection reasons and/or additional comments.'></textarea>";
+                  echo "<form method='post' action='event-manager.php'>";
+                  echo "<label for='comment'>Approval or rejection reasons and/or comments:</label>
+                          <textarea name='comment' placeholder='Enter here the approval or rejection reasons and/or additional comments.' required></textarea>";
                   echo "<div class='rightBlock'>";
                   echo "<input type='hidden' name='eId' value='$unique_id' >";
                   echo "<input type='hidden' name='opt' value='$opt' >";
-                  echo "<input type='submit' name='approve' value='Approve' >";
+                  echo "<input type='hidden' name='page' value='approveEvent' />";
+                  echo "<input type='submit' name='submit' value='Approve' >";
                   echo "&nbsp;&nbsp;&nbsp;&nbsp;";
-                  echo "<input type='submit' name='deny' value='Deny' >";
+                  echo "<input type='submit' name='submit' value='Deny' >";
+                  echo "</form>";
                   echo "</div>";
 
                   echo "</div>\n";
-              } // END if($_SESSION['userRoll'] == 'Admin')
+
           } // END foreach
         } // END if($data)
 
         $GLOBALS['editedIds'] = $editedEvents;
-
+      } // END if($_SESSION['userRoll'] == 'Admin')
     }
 
 
   ### ****************************************************************************
-  ### AFTER APPROVAL THE PRODUCTION TIMELINE JSON FILE IS UPDATED WITH THE NEW INFO.
+  ### AFTER APPROVAL OR DENY OPTION
+  ### 1. GETS THE EVENT DATA FROM THE EDITIONS FILE. UPDATES LAST MODIFICATON DATE AND ADDS DECISION INFORMATION.
+  ### 2. ADDS THE DECISION TO THE DECISION LOG FILE.
+  ### 3. RECREATES THE EDITIONS JSON FILE WITHOUT THE (APPROVED OR DENIED) EVENT.
+  ### 4. IF APPROVE => IF OPTION IS NOT DELETE EVENT => A NEW TIMELINE JSON FILE IS CREATED WITH THE UPDATED EVENT + OLDER EVENTS.
+  ### 5. A CONFIRMATION EMAIL IS SENT.
   ### ****************************************************************************
     function updateProdTimeline(){
-      // Creates a new timeline json file with the updates + old records.
-      # for a new event the unique_id must be created
-      if ($_REQUEST['eId'] == '') {
-        $_REQUEST['eId'] = 'CIS'.date("Ymdhis");
-      }
 
-      # if the forget edition option was chosen the array is not included in the new editions.json file
-      if($_REQUEST['opt'] != 'eDel'){
+      // First checks user roll
+      if($_SESSION['userRoll'] != 'Admin'){
+        echo "You can approve or deny a request that is pending approval only if you are a member of the timeline commitee. ";
+      }else{
 
-          $changes = Array (
-                    "change" => Array (
-                        "user" => $_SESSION['user'],
-                        "date" => date("Y-m-d h:i"),
-                        "action" => $_POST['opt'],
-                        "comment" => $_POST['comment']
-                    ),
-                    "background" => Array (
-                        "color" => $_POST['color'],
-                        "opacity" => 50,
-                        "url" => NULL
-                    ),
-                    "start_date" => Array (
-                        "year" => substr($_POST['start_date'],0,4),
-                        "month" => substr($_POST['start_date'],5,2),
-                        "day" => substr($_POST['start_date'],8,2)
-                    ),
-                    "end_date" => Array (
-                        "year" => substr($_POST['end_date'],0,4),
-                        "month" => substr($_POST['end_date'],5,2),
-                        "day" => substr($_POST['end_date'],8,2)
-                    ),
-                    "media" => Array (
-                        "caption" => $_POST['caption'],
-                        "credit" => $_POST['credit'],
-                        "url" => $_POST['mediaURL'],
-                        "link" => $_POST['mediaLINK']
-                    ),
-                    "text" => Array (
-                        "headline" => $_POST['headline'],
-                        "text" => $_POST['text0'].'<br>'.$_POST['text1'].'<br>'.$_POST['text2'].'<br>'.$_POST['text3'].'<br>'.$_POST['text4'],
-                    ),
-                    "group" => $_POST['group'],
-                    "author" => $_POST['author'],
-                    "created_on" => $_POST['created_on'],
-                    "last_modification" => $_POST['last_modification'],
-                    "unique_id" => $_REQUEST['eId'],
-                );
+        $editedEvent = ''; // the edited event approved or denied
+        $events = array(); // array for the approved event + production events
+        $editions = array(); // array for the edited events - (approved/denied) event
 
-              $events = array($changes);
-          } // END if($_REQUEST['opt'] != 'eDel')
-          else{
-            $events = array();
-          }
+        ### ===========================================================================================================
+        ### 1. GETS THE EVENT DATA FROM THE EDITIONS FILE. UPDATES LAST MODIFICATON DATE AND ADDS DECISION INFORMATION.
+        ### ===========================================================================================================
+        $data = file_get_contents('./editions.json'); // Read the EDITIONS JSON file
+        if($data){
+          $data = json_decode($data, true); // Decode the JSON data into a PHP array
+
+          foreach ($data['events'] as $event) {
+              if($event['unique_id'] == $_REQUEST['eId']){
+                  $event['last_modification'] = date("Y-m-d H:i");
+                  ### adding the edited event to  decision log ===================
+                  $event['desicion'] =  Array (
+                                                "user" => $_SESSION['user'],
+                                                "date" => date("Y-m-d H:i"),
+                                                "action" => $_POST['submit'],
+                                                "comment" => $_POST['comment']
+                                                );
+
+                  $editedEvent = $event; // save the appreved or denied event in the variable for later.
+
+                  ### ===========================================================================================================
+                  ### 2. ADDS THE DECISION TO THE DECISION LOG FILE.
+                  ### ===========================================================================================================
+                  $json = json_encode($event,JSON_PRETTY_PRINT); // encode array to json
+                  $bytes = file_put_contents('./timeline-decisions-log.json', $json, FILE_APPEND | LOCK_EX); // Write the contents to the file, using the FILE_APPEND flag to append the content to the end of the file, and the LOCK_EX flag to prevent anyone else writing to the file at the same time
+
+                }else{
+                  ### add other edited events to the editions array=================
+                  array_push($editions, $event);
+                }
+              } // END foreach
 
 
+              ### ===========================================================================================================
+              ### 3. RECREATES THE EDITIONS JSON FILE WITHOUT THE (APPROVED OR DENIED) EVENT.
+              ### ===========================================================================================================
+              $timelineChanges = array("events" => $editions);
+              $json = json_encode($timelineChanges,JSON_PRETTY_PRINT); // encode array to json
+              $bytes = file_put_contents('./editions.json',$json, LOCK_EX); // Write the contents to the file, and the LOCK_EX flag to prevent anyone else writing to the file at the same time
 
-        $edit_json = file_get_contents('./timeline.json');
-        if($edit_json){
-          // Decode the JSON data into a PHP array
-          $edit_data = json_decode($edit_json, true);
+/*
 
-          foreach ($edit_data['events'] as $event) {
-            if($event['unique_id'] != $_REQUEST['eId']){ // avoiding duplicagtions if an edited event is re-edited
-              array_push($events, $event);
-            }
-          }
-        }
+                if($_REQUEST['submit'] == 'Approve'){
+
+                  ### adding the edited and approved event to the new file if the option is not delete =====
+                  ### ======================================================================================
+                  if($_REQUEST['opt'] != 'del'){
+                    array_push($events, $event);
+                  }
+
+                  ### adding old production events to the new file =============
+                  ### ==========================================================
+                    // Read the production timeline JSON file
+                    $dataT = file_get_contents('./timeline.json');
+                    if($dataT){
+                      // Decode the JSON data into a PHP array
+                      $dataT = json_decode($dataT, true);
+
+                      foreach ($dataT['events'] as $timelineE) {
+                        // In case the event already exist in production, the old version it is not included.
+                        if($timelineE['unique_id'] != $_REQUEST['eId']){
+                          array_push($events, $event);
+                        } // END if($event['unique_id'] != $_REQUEST['eId'])
+                      } // END foreach
+                    }// END sif($dataT)
+
+                    // Rename the production timeline json file.
+                    // Rename the new json file so it is the production file.
+                }else{
+                  echo "Denied";
+                }
 
 
-        $timelineChanges = array("events" => $events);
+          ### Creates a new timeline json file with the edition approved + old records.
+          ### ========================================================================
 
-        // encode array to json
-        $json = json_encode($timelineChanges,JSON_PRETTY_PRINT);
-        // Write the contents to the file,
-        // using the FILE_APPEND flag to append the content to the end of the file
-        // and the LOCK_EX flag to prevent anyone else writing to the file at the same time
-        $bytes = file_put_contents('./timeline-upd.json',$json, LOCK_EX);
-        header("Location: ./approve.php");
+*/
 
-      // Rename the production timeline json file.
-      // Rename the new json file so it is the production file.
-    }
+
+
+
+          header("Location: ./approve.php");
+
+          } // END if($data)
+      } // if user is not timeline commitee.
+  }
 ?>

@@ -67,7 +67,7 @@
             <th>End Date</th>
             <th>Headline</th>
             <th>Group</th>
-            <th style="text-align:center;">Options</th>
+            <th style="text-align:center;">Actions</th>
           </tr>
           <tr>
 

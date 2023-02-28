@@ -59,7 +59,7 @@
     <div class="leftBlock">
 
       <p class="leftBlock">
-        You can approve or deny a request that is pending approval only if you are a member of the necessary approval group.
+        You can approve or deny a request that is pending approval only if you are a member of the timeline commitee.
         <br><br>
         First review the details of the edited record. Then, enter an approval or rejection reason and additional comments.
         Click on the <b>"Approve"</b> button to move the edition to the production timeline or to reject the edition request, click on "Deny".
@@ -70,14 +70,12 @@
       </p>
 
 
-      <form method="post" action="event-manager.php">
-        <input type="hidden" name="page" value="approveEvent" />
+
       <?php
         include ("./event-manager.php");
         displayForApproval();
       ?>
-    </form>
-
+    
     </div>
 
       <br>
