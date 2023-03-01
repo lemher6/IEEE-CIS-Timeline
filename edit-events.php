@@ -2,7 +2,7 @@
   ### IEEE-CIS TIMELINE PROJECT
   ### 2022-11 AH
   session_start();
-  include('./check-login.php');
+  include('./src/check-login.php');
   checkLogin('Ana','123','Admin');
 ?>
 
@@ -52,7 +52,7 @@
       <h1>EDIT TIMELINE EVENTS</h1>
     </div>
 
-    <?php include ("./menu.php"); ?>
+    <?php include ("./src/menu.php"); ?>
 
 
     <div class="rightBlock">
@@ -72,7 +72,7 @@
           <tr>
 
         <?php
-          include ("./event-manager.php");
+          include ("./src/event-manager.php");
           listEditions();
           printAllEvent();
         ?>

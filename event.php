@@ -2,7 +2,7 @@
   ### IEEE-CIS TIMELINE PROJECT
   ### 2022-11 AH
   session_start();
-  include('./check-login.php');
+  include('./src/check-login.php');
   checkLogin('Ana','123','Admin');
 ?>
 
@@ -58,7 +58,7 @@
         <h1>EDIT A TIMELINE EVENT</h1>
       </div>
 
-      <?php include ("./menu.php"); ?>
+      <?php include ("./src/menu.php"); ?>
 
       <?php
         ########################################################################
@@ -99,7 +99,7 @@
 
       <?php
 
-        include ("./event-manager.php");
+        include ("./src/event-manager.php");
         displayEvent($eId,$opt,$status);
 
         ### GETTING THE COUNTER PARAMETER AFTER CALLING THE displayEvent FUNCTION BECAUSE THAT FUNCTION COULD UPDATE THE PARAMETER
@@ -145,7 +145,7 @@
                 <script>
                  $(document).ready(function() {
                      var embed = document.getElementById('timeline-embed');
-                     window.timeline = new TL.Timeline('timeline-embed', './sandbox-timeline.json', {
+                     window.timeline = new TL.Timeline('timeline-embed', './json/sandbox-timeline.json', {
                          hash_bookmark: false, /* If set to true, TimelineJS will update the browser URL each time a slide advances, so that people can link directly to specific slides. */
                          font: "fjalla-average",
                          scale_factor: 1, /* How many screen widths wide the timeline should be at first presentation. */
@@ -174,7 +174,7 @@
         <script>
          $(document).ready(function() {
              var embed = document.getElementById('timeline-embed');
-             window.timeline = new TL.Timeline('timeline-embed', './sandbox-timeline.json', {
+             window.timeline = new TL.Timeline('timeline-embed', './json/sandbox-timeline.json', {
                  hash_bookmark: true, /* If set to true, TimelineJS will update the browser URL each time a slide advances, so that people can link directly to specific slides. */
                  font: "fjalla-average",
                  initial_zoom: 1, /* The position in the zoom_sequence series used to scale the Timeline when it is first created. Takes precedence over scale_factor. */
@@ -201,7 +201,7 @@
           <script>
            $(document).ready(function() {
                var embed = document.getElementById('timeline-embed');
-               window.timeline = new TL.Timeline('timeline-embed', './<?php echo $eId; ?>.json', {
+               window.timeline = new TL.Timeline('timeline-embed', './json/<?php echo $eId; ?>.json', {
                    hash_bookmark: true, /* If set to true, TimelineJS will update the browser URL each time a slide advances, so that people can link directly to specific slides. */
                    font: "fjalla-average",
                    scale_factor: 1, /* How many screen widths wide the timeline should be at first presentation. */

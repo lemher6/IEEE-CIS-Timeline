@@ -27,7 +27,7 @@
         <h1>SANDBOX TIMELINE</h1>
       </div>
 
-      <?php include ("./menu.php"); ?>
+      <?php include ("./src/menu.php"); ?>
 
       <div id="timeline-embed" style="width:auto; height:100%;">
             <div id="timeline"></div>
@@ -38,7 +38,7 @@
        $(document).ready(function() {
            var embed = document.getElementById('timeline-embed');
            embed.style.height = getComputedStyle(document.body).height;
-           window.timeline = new TL.Timeline('timeline-embed', './editions.json', {
+           window.timeline = new TL.Timeline('timeline-embed', './json/editions.json', {
                hash_bookmark: false, /* If set to true, TimelineJS will update the browser URL each time a slide advances, so that people can link directly to specific slides. */
                font: "fjalla-average",
                scale_factor: 1, /* How many screen widths wide the timeline should be at first presentation. */

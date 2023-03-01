@@ -50,45 +50,47 @@
   ### LISTS ALL SANDBOX EVENTS BASIC INFORMATON SORT BY EVENT START DATE
   ##############################################################################
   function printAllEvent(){
-    // Read the SANDBOX JSON file
-    $json = file_get_contents('./sandbox-timeline.json');
 
-    // Decode the JSON data into a PHP array
-    $data = json_decode($json, true);
+    $json = file_get_contents('./json/timeline.json'); // Read the SANDBOX JSON file
+    if($json === FALSE){
+      echo "ERROR:20230301082101. Timeline file is empty. Please contact your administrator.";
+    }else{
+      $data = json_decode($json, true); // Decode the JSON data into a PHP array
 
-    // Sort the events array
-    usort($data['events'], 'compare_start_date');
+      // Sort the events array
+      usort($data['events'], 'compare_start_date');
 
-    // Search for the event object
-    $counter = 1;
-    foreach ($data['events'] as $event) {
+      // Search for the event object
+      $counter = 1;
+      foreach ($data['events'] as $event) {
 
-        // If the event has been updated it is not displayed here as it is already displayed.
-        if(!in_array($event['unique_id'], $GLOBALS['editedIds'])){
-            echo "\n\t<tr>\n";
-            echo "\t\t<td>";
-            echo $event['start_date']['year'] ."-". $event['start_date']['month'] ."-". $event['start_date']['day'];
-            echo "</td>\n";
-            echo "\t\t<td>";
-            echo $event['end_date']['year'] ."-". $event['end_date']['month'] ."-". $event['end_date']['day'];
-            echo "</td>\n";
-            echo "\t\t<td>";
-            echo $event['text']['headline'];
-            echo "</td>\n";
-            echo "\t\t<td>";
-            echo $event['group'];
-            echo "</td>\n";
-            echo "\t\t<td  style=\"text-align:center;\"> <button onclick=\"document.location='event.php?eId=";
-            echo $event['unique_id'];
-            echo "&opt=upd&page=listEvents&counter=$counter'\">Update</button>";
-            echo "&nbsp; &nbsp;<button onclick=\"document.location='event.php?eId=";
-            echo $event['unique_id'];
-            echo "&opt=del&page=listEvents&counter=$counter'\">Delete</button>";
-            echo "</td>\n";
-            echo "</tr>\n";
-        } // END if(!in_array($event['unique_id'], $iseditedIds))
-      $counter++;
-    } // END foreach
+          // If the event has been updated it is not displayed here as it is already displayed.
+          if(!in_array($event['unique_id'], $GLOBALS['editedIds'])){
+              echo "\n\t<tr>\n";
+              echo "\t\t<td>";
+              echo $event['start_date']['year'] ."-". $event['start_date']['month'] ."-". $event['start_date']['day'];
+              echo "</td>\n";
+              echo "\t\t<td>";
+              echo $event['end_date']['year'] ."-". $event['end_date']['month'] ."-". $event['end_date']['day'];
+              echo "</td>\n";
+              echo "\t\t<td>";
+              echo $event['text']['headline'];
+              echo "</td>\n";
+              echo "\t\t<td>";
+              echo $event['group'];
+              echo "</td>\n";
+              echo "\t\t<td  style=\"text-align:center;\"> <button onclick=\"document.location='event.php?eId=";
+              echo $event['unique_id'];
+              echo "&opt=upd&page=listEvents&counter=$counter'\">Update</button>";
+              echo "&nbsp; &nbsp;<button onclick=\"document.location='event.php?eId=";
+              echo $event['unique_id'];
+              echo "&opt=del&page=listEvents&counter=$counter'\">Delete</button>";
+              echo "</td>\n";
+              echo "</tr>\n";
+          } // END if(!in_array($event['unique_id'], $iseditedIds))
+        $counter++;
+      } // END foreach
+    } // END if
   }
 
 
@@ -113,83 +115,86 @@
 
         // Read the sandbox JSON file
         if($status == 'edited'){
-          $json = file_get_contents('./editions.json');
+          $json = file_get_contents('./json/editions.json');
         }else{
-          $json = file_get_contents('./sandbox-timeline.json');
+          $json = file_get_contents('./json/timeline.json');
         }
 
-        // Decode the JSON data into a PHP array
-        $data = json_decode($json, true);
+        if($json === FALSE){
+          echo "ERROR:20230301083301. File is empty. Please contact your administrator.";
+        }else{
 
-        // Sort the events array
-        usort($data['events'], 'compare_start_date_ASCENDENT');
+          $data = json_decode($json, true); // Decode the JSON data into a PHP array
 
-        // Search for the event object
-        foreach ($data['events'] as $event) {
-            $counter++;
-            if ($event['unique_id'] == $eId) {
-              $_REQUEST['counter'] = $counter;
-              $color = $event['background']['color'];
-              $opacity = $event['background']['opacity'];
-              $backgroundURL = $event['background']['url'];
+          // Sort the events array
+          usort($data['events'], 'compare_start_date_ASCENDENT');
 
-              $start_date = $event['start_date']['year'] .'-'. $event['start_date']['month'] .'-'. $event['start_date']['day'];
-              $end_date = $event['end_date']['year'] .'-'. $event['end_date']['month'] .'-'. $event['end_date']['day'];
+          // Search for the event object
+          foreach ($data['events'] as $event) {
+              $counter++;
+              if ($event['unique_id'] == $eId) {
+                $_REQUEST['counter'] = $counter;
+                $color = $event['background']['color'];
+                $opacity = $event['background']['opacity'];
+                $backgroundURL = $event['background']['url'];
 
-              $caption = $event['media']['caption'];
-              $credit = $event['media']['credit'];
-              $mediaURL = $event['media']['url'];
-              $mediaLINK = $event['media']['link'];
+                $start_date = $event['start_date']['year'] .'-'. $event['start_date']['month'] .'-'. $event['start_date']['day'];
+                $end_date = $event['end_date']['year'] .'-'. $event['end_date']['month'] .'-'. $event['end_date']['day'];
 
-              $headline = $event['text']['headline'];
-              $text = $event['text']['text'];
+                $caption = $event['media']['caption'];
+                $credit = $event['media']['credit'];
+                $mediaURL = $event['media']['url'];
+                $mediaLINK = $event['media']['link'];
 
-              $group = $event['group'];
-              $author = $event['author'];
-              $created_on = $event['created_on'];
-              $last_modification = $event['last_modification'];
-              $unique_id = $event['unique_id'];
+                $headline = $event['text']['headline'];
+                $text = $event['text']['text'];
 
-
-              ### REMOVES THE BOLD TAG
-              $eventDetails = str_replace("<b>","",$text);
-              $eventDetails = str_replace("</b>","",$eventDetails);
-              ### SPLIT THE TEXT INTO LINES
-              $detail = explode("<br>", $eventDetails);
+                $group = $event['group'];
+                $author = $event['author'];
+                $created_on = $event['created_on'];
+                $last_modification = $event['last_modification'];
+                $unique_id = $event['unique_id'];
 
 
-              ### CHECK WHICH GROUP SHOULD BY SELECTED
-              if($group == 'CIS'){
-                $groupCIS = 'selected';
-                $groupFuzzy = $groupEC =$groupNNs = '';
-              }elseif($group == 'EC'){
-                $groupEC = 'selected';
-                $groupFuzzy = $groupCIS = $groupNNs = '';
-              }elseif($group == 'Fuzzy'){
-                $groupFuzzy = 'selected';
-                $groupNNs = $groupCIS = $groupEC = '';
-              }elseif($group == 'NNs'){
-                $groupNNs = 'selected';
-                $groupFuzzy = $groupCIS = $groupEC = '';
-              }
+                ### REMOVES THE BOLD TAG
+                $eventDetails = str_replace("<b>","",$text);
+                $eventDetails = str_replace("</b>","",$eventDetails);
+                ### SPLIT THE TEXT INTO LINES
+                $detail = explode("<br>", $eventDetails);
 
 
-              ### FIX COLOR WHEN IT IS DEFAULT NULL
-              if($color == ""){
-                $color = "#ffffff";
-              }
+                ### CHECK WHICH GROUP SHOULD BY SELECTED
+                if($group == 'CIS'){
+                  $groupCIS = 'selected';
+                  $groupFuzzy = $groupEC =$groupNNs = '';
+                }elseif($group == 'EC'){
+                  $groupEC = 'selected';
+                  $groupFuzzy = $groupCIS = $groupNNs = '';
+                }elseif($group == 'Fuzzy'){
+                  $groupFuzzy = 'selected';
+                  $groupNNs = $groupCIS = $groupEC = '';
+                }elseif($group == 'NNs'){
+                  $groupNNs = 'selected';
+                  $groupFuzzy = $groupCIS = $groupEC = '';
+                }
 
-              if(isset($event['change'])){
-                $editUser = $event['change']['user'];
-                $editDate = $event['change']['date'];
-                $editAction = $event['change']['action'];
-                $editComment = $event['change']['comment'];
-              }
 
-            } // END if $event['unique_id']
+                ### FIX COLOR WHEN IT IS DEFAULT NULL
+                if($color == ""){
+                  $color = "#ffffff";
+                }
 
-          } // END foreach
+                if(isset($event['change'])){
+                  $editUser = $event['change']['user'];
+                  $editDate = $event['change']['date'];
+                  $editAction = $event['change']['action'];
+                  $editComment = $event['change']['comment'];
+                }
 
+              } // END if $event['unique_id']
+
+            } // END foreach
+          } // END if data in file
         } // END if($eId != '')
 
 
@@ -276,12 +281,11 @@
 
     $editedEvents = array(); // for the unique_id of edited events
 
-    // Read the EDITIONS JSON file
-    $data = file_get_contents('./editions.json');
-
-    if($data){
-      // Decode the JSON data into a PHP array
-      $data = json_decode($data, true);
+    $data = file_get_contents('./json/editions.json'); // Read the EDITIONS JSON file
+    if(!$data){
+      echo "ERROR:20230301081411. Editions file is empty. Please contact your administrator.";
+    }else{
+      $data = json_decode($data, true); // Decode the JSON data into a PHP array
 
       foreach ($data['events'] as $event) {
             if($event['change']['user'] == $_SESSION['user'] || $_SESSION['userRoll'] == 'Admin'){
@@ -399,7 +403,7 @@
         ### ********************************************************************
 
 
-      $edit_json = file_get_contents('./editions.json');
+      $edit_json = file_get_contents('./json/editions.json');
       if($edit_json){
         // Decode the JSON data into a PHP array
         $edit_data = json_decode($edit_json, true);
@@ -419,7 +423,7 @@
       // Write the contents to the file,
       // using the FILE_APPEND flag to append the content to the end of the file
       // and the LOCK_EX flag to prevent anyone else writing to the file at the same time
-      $bytes = file_put_contents('./editions.json',$json, LOCK_EX);
+      $bytes = file_put_contents('./json/editions.json',$json, LOCK_EX);
       header("Location: ./edit-events.php");
 
   }
@@ -436,12 +440,11 @@
 
       $editedEvents = array(); // for the unique_id of edited events
 
-      // Read the EDITIONS JSON file
-      $data = file_get_contents('./editions.json');
-
-      if($data){
-        // Decode the JSON data into a PHP array
-        $data = json_decode($data, true);
+      $data = file_get_contents('./json/editions.json'); // Read the EDITIONS JSON file
+      if(!$data){
+        echo "ERROR:20230301081520. Editions file is empty. Please contact your administrator.";
+      }else{
+        $data = json_decode($data, true);// Decode the JSON data into a PHP array
 
         foreach ($data['events'] as $event) {
 
@@ -524,7 +527,7 @@
                   echo "<script>
                    $(document).ready(function() {
                        var embed = document.getElementById('$unique_id');
-                       window.timeline = new TL.Timeline('$unique_id', './$unique_id.json', {
+                       window.timeline = new TL.Timeline('$unique_id', './json/$unique_id.json', {
                            hash_bookmark: false,
                            font: 'fjalla-average',
                            scale_factor: 1,
@@ -537,7 +540,7 @@
                    });
                   </script>";
 
-                  echo "<form method='post' action='event-manager.php'>";
+                  echo "<form method='post' action='/src/event-manager.php'>";
                   echo "<label for='comment'>Approval or rejection reasons and/or comments:</label>
                           <textarea name='comment' placeholder='Enter here the approval or rejection reasons and/or additional comments.' required></textarea>";
                   echo "<div class='rightBlock'>";
@@ -554,7 +557,9 @@
 
           } // END foreach
         } // END if($data)
-
+        if(count($editedEvents) == 0){
+          echo "<h2>No pending request found.</h2>";
+        }
         $GLOBALS['editedIds'] = $editedEvents;
       } // END if($_SESSION['userRoll'] == 'Admin')
     }
@@ -574,95 +579,125 @@
       if($_SESSION['userRoll'] != 'Admin'){
         echo "You can approve or deny a request that is pending approval only if you are a member of the timeline commitee. ";
       }else{
+        if(isset($_REQUEST['eId'])){
 
-        $editedEvent = ''; // the edited event approved or denied
-        $events = array(); // array for the approved event + production events
-        $editions = array(); // array for the edited events - (approved/denied) event
+          $eId = $_REQUEST['eId'];
+          $editedEvent = ''; // the edited event approved or denied
+          $events = array(); // array for the approved event + production events
+          $editions = array(); // array for the edited events - (approved/denied) event
 
-        ### ===========================================================================================================
-        ### 1. GETS THE EVENT DATA FROM THE EDITIONS FILE. UPDATES LAST MODIFICATON DATE AND ADDS DECISION INFORMATION.
-        ### ===========================================================================================================
-        $data = file_get_contents('./editions.json'); // Read the EDITIONS JSON file
-        if($data){
-          $data = json_decode($data, true); // Decode the JSON data into a PHP array
+          ### ===========================================================================================================
+          ### 1. GETS THE EVENT DATA FROM THE EDITIONS FILE. UPDATES LAST MODIFICATON DATE AND ADDS DECISION INFORMATION.
+          ### ===========================================================================================================
+          $data = file_get_contents('../json/editions.json'); // Read the EDITIONS JSON file
+          if(!$data){
+            echo "ERROR:20230301081255. Editions file is empty. Please contact your administrator.";
+          }else{
+            $data = json_decode($data, true); // Decode the JSON data into a PHP array
 
-          foreach ($data['events'] as $event) {
-              if($event['unique_id'] == $_REQUEST['eId']){
-                  $event['last_modification'] = date("Y-m-d H:i");
-                  ### adding the edited event to  decision log ===================
-                  $event['desicion'] =  Array (
-                                                "user" => $_SESSION['user'],
-                                                "date" => date("Y-m-d H:i"),
-                                                "action" => $_POST['submit'],
-                                                "comment" => $_POST['comment']
-                                                );
+            foreach ($data['events'] as $event) {
+                if($event['unique_id'] == $_REQUEST['eId']){
+                    $event['last_modification'] = date("Y-m-d H:i");
+                    ### adding the edited event to  decision log ===================
+                    $event['desicion'] =  Array (
+                                                  "user" => $_SESSION['user'],
+                                                  "date" => date("Y-m-d H:i"),
+                                                  "action" => $_POST['submit'],
+                                                  "comment" => $_POST['comment']
+                                                  );
 
-                  $editedEvent = $event; // save the appreved or denied event in the variable for later.
+                    $editedEvent = $event; // save the appreved or denied event in the variable for later.
 
-                  ### ===========================================================================================================
-                  ### 2. ADDS THE DECISION TO THE DECISION LOG FILE.
-                  ### ===========================================================================================================
-                  $json = json_encode($event,JSON_PRETTY_PRINT); // encode array to json
-                  $bytes = file_put_contents('./timeline-decisions-log.json', $json, FILE_APPEND | LOCK_EX); // Write the contents to the file, using the FILE_APPEND flag to append the content to the end of the file, and the LOCK_EX flag to prevent anyone else writing to the file at the same time
+                    ### ===========================================================================================================
+                    ### 2. ADDS THE DECISION TO THE DECISION LOG FILE.
+                    ### ===========================================================================================================
+                    $json = json_encode($event,JSON_PRETTY_PRINT); // encode array to json
+                    $bytes = file_put_contents('../json/timeline-decisions-log.json', $json, FILE_APPEND | LOCK_EX); // Write the contents to the file, using the FILE_APPEND flag to append the content to the end of the file, and the LOCK_EX flag to prevent anyone else writing to the file at the same time
 
-                }else{
-                  ### add other edited events to the editions array=================
-                  array_push($editions, $event);
-                }
-              } // END foreach
+                  }else{
+                    ### add other edited events to the editions array=================
+                    array_push($editions, $event);
+                  }
+                } // END foreach
 
 
-              ### ===========================================================================================================
-              ### 3. RECREATES THE EDITIONS JSON FILE WITHOUT THE (APPROVED OR DENIED) EVENT.
-              ### ===========================================================================================================
-              $timelineChanges = array("events" => $editions);
-              $json = json_encode($timelineChanges,JSON_PRETTY_PRINT); // encode array to json
-              $bytes = file_put_contents('./editions.json',$json, LOCK_EX); // Write the contents to the file, and the LOCK_EX flag to prevent anyone else writing to the file at the same time
+                ### ===========================================================================================================
+                ### 3. RECREATES THE EDITIONS JSON FILE WITHOUT THE (APPROVED OR DENIED) EVENT.
+                ### ===========================================================================================================
+                $timelineChanges = array("events" => $editions);
+                $json = json_encode($timelineChanges,JSON_PRETTY_PRINT); // encode array to json
+                $bytes = file_put_contents('../json/editions.json',$json, LOCK_EX); // Write the contents to the file, and the LOCK_EX flag to prevent anyone else writing to the file at the same time
 
-/*
 
+                ### ===========================================================================================================
+                ### 4. IF APPROVE => IF OPTION IS NOT DELETE EVENT => A NEW TIMELINE JSON FILE IS CREATED WITH THE UPDATED EVENT + OLDER EVENTS.
+                ### ===========================================================================================================
                 if($_REQUEST['submit'] == 'Approve'){
+                  ### Creates the title of the new Timeline JSON file
 
-                  ### adding the edited and approved event to the new file if the option is not delete =====
-                  ### ======================================================================================
                   if($_REQUEST['opt'] != 'del'){
-                    array_push($events, $event);
+                    array_push($events, $event); // adds the approved event to the array $events so it is included into the new file
                   }
 
                   ### adding old production events to the new file =============
-                  ### ==========================================================
-                    // Read the production timeline JSON file
-                    $dataT = file_get_contents('./timeline.json');
-                    if($dataT){
-                      // Decode the JSON data into a PHP array
-                      $dataT = json_decode($dataT, true);
-
+                  $dataT = file_get_contents('../json/timeline.json'); // Read the production timeline JSON file
+                  if(!$dataT){
+                    echo "ERROR:20230301081310. Timeline file is empty. Please contact your administrator.";
+                  }else{
+                      $dataT = json_decode($dataT, true); // Decode the JSON data into a PHP array
                       foreach ($dataT['events'] as $timelineE) {
                         // In case the event already exist in production, the old version it is not included.
                         if($timelineE['unique_id'] != $_REQUEST['eId']){
-                          array_push($events, $event);
+                          array_push($events, $timelineE);
                         } // END if($event['unique_id'] != $_REQUEST['eId'])
                       } // END foreach
-                    }// END sif($dataT)
+                  }// END sif($dataT)
+
+
+
+                  // adds the title to the new timeline and the events
+                  $newRecords = Array(
+                              "title" => Array(
+                                  "text"=> Array(
+                                    "headline" => "IEEE-CIS HISTORICAL TIMELINE",
+                                    "text" => "Welcome to the Institute of Electrical and Electronics Engineers (IEEE) Computational Intelligence Society (CIS) Historical Timeline!"
+                                  ),
+                                    "media" => Array(
+                                        "url"=> "https://cis.ieee.org/images/files/Branding/logos/color/IEEE_CIS_logo_RGB_72ppi.jpg",
+                                        "credit" => "<a href='https://cis.ieee.org/'>cis.ieee.org</a>"
+                                  ),
+                                  "unique_id" => "TITLE-001"
+                                ),
+                              "events" => $events);
+
+                  ### Creates a new timeline json file with the edition approved + old records.
+                  ### ========================================================================
+                  $json = json_encode($newRecords,JSON_PRETTY_PRINT); // encode array to json
+                  $bytes = file_put_contents("../json/timeline-update.json",$json, LOCK_EX); // Write the contents to the file, and the LOCK_EX flag to prevent anyone else writing to the file at the same time
+
 
                     // Rename the production timeline json file.
+                    $filename = '../json/timeline_BAK_'.date("YmdHi").'.json';
+                    rename("../json/timeline.json",$filename);
                     // Rename the new json file so it is the production file.
+                    rename("../json/timeline-update.json","../json/timeline.json");
+
+                    // Deletes the event edited json file
+                    unlink("../json/$eId.json");
                 }else{
                   echo "Denied";
                 }
 
 
-          ### Creates a new timeline json file with the edition approved + old records.
-          ### ========================================================================
-
-*/
 
 
 
+            header("Location: ../approve.php");
 
-          header("Location: ./approve.php");
-
-          } // END if($data)
+            } // END if($data)
+        } // END if(eId)
       } // if user is not timeline commitee.
   }
+
+
 ?>

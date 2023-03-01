@@ -2,7 +2,7 @@
   ### IEEE-CIS TIMELINE PROJECT
   ### 2022-11 AH
   session_start();
-  include('./check-login.php');
+  include('./src/check-login.php');
   checkLogin('Ana','123','Admin');
 ?>
 
@@ -30,7 +30,7 @@
       <h1>IEEE-CIS HISTORICAL TIMELINE</h1>
     </div>
 
-    <?php include ("./menu.php"); ?>
+    <?php include ("./src/menu.php"); ?>
 
     <div class="centerBlock">
       <p>Welcome to the Institute of Electrical and Electronics Engineers <b>(IEEE)</b> Computational Intelligence Society <b>(CIS)</b> Historical Timeline!</p>
