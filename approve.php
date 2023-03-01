@@ -32,6 +32,8 @@
       }
 
 
+
+
       @media only screen and (min-width: 768px) {
       /* ==== For desktop: ===== */
           body{
@@ -43,6 +45,22 @@
           }
           .iBlock{
             margin: 2em;
+          }
+
+          .flex-container {
+            display: flex;
+            justify-content: center;
+            width: 100%;
+          }
+
+          .flex-container > div {
+            background-color: #20b2e2;
+            color: #333;
+            width: 25%;
+            margin: 1em;
+            padding: 1em;
+            text-align: center;
+            vertical-align: middle;
           }
 
       }
@@ -58,20 +76,31 @@
 
     <div class="leftBlock">
 
-      <p class="leftBlock">
-        You can approve or deny a request that is pending approval only if you are a member of the timeline commitee.
-        <br><br>
-        First review the details of the edited record. Then, enter an approval or rejection reason and additional comments.
-        Click on the <b>"Approve"</b> button to move the edition to the production timeline or to reject the edition request, click on "Deny".
-        <br><br>
-        After approval, the event will be updated in the both sandbox and production timelines with the edited information.
-        After deny, the event will be removed from the edition list and neither sandbox nor production files will be modified.
-        If any of the options are selected the edition will remain on this list and no changes will be done in Sandbox or Production.
-      </p>
+      <div class="flex-container">
+        <div>
+          <br>You can approve or deny a request that is pending approval only if you are a member of the timeline commitee.<br><br>
+        </div>
+        <div>
+          <br>
+          1. Review the details of the edited record. <br>
+          2. Enter an approval or rejection reason.<br>
+          3. Click on the <b>"Approve"</b> or <b>"Deny"</b>button.
+          <br><br>
+        </div>
+        <div>
+          <br>
+          After approval or denial, the event will be removed from the edition list and the event will be updated in the production timelines.
+          <br><br>
+        </div>
+      </div>
+
 
 
 
       <?php
+        if(isset($_GET['msg'])){
+          echo '<div class="iBlock" style="text-align:center">'.$_GET['msg'].'</div>';
+        }
         include ("./src/event-manager.php");
         displayForApproval();
       ?>

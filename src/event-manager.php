@@ -47,7 +47,7 @@
 
 
   ##############################################################################
-  ### LISTS ALL SANDBOX EVENTS BASIC INFORMATON SORT BY EVENT START DATE
+  ### LISTS ALL EVENTS BASIC INFORMATON SORT BY EVENT START DATE
   ##############################################################################
   function printAllEvent(){
 
@@ -62,11 +62,15 @@
 
       // Search for the event object
       $counter = 1;
+      $counterDisplay = 1;
       foreach ($data['events'] as $event) {
 
           // If the event has been updated it is not displayed here as it is already displayed.
           if(!in_array($event['unique_id'], $GLOBALS['editedIds'])){
               echo "\n\t<tr>\n";
+              echo "\t\t<td>";
+              echo $counterDisplay;
+              echo "</td>\n";
               echo "\t\t<td>";
               echo $event['start_date']['year'] ."-". $event['start_date']['month'] ."-". $event['start_date']['day'];
               echo "</td>\n";
@@ -87,6 +91,7 @@
               echo "&opt=del&page=listEvents&counter=$counter'\">Delete</button>";
               echo "</td>\n";
               echo "</tr>\n";
+              $counterDisplay++;
           } // END if(!in_array($event['unique_id'], $iseditedIds))
         $counter++;
       } // END foreach
@@ -287,6 +292,7 @@
     }else{
       $data = json_decode($data, true); // Decode the JSON data into a PHP array
 
+      $counter = 1;
       foreach ($data['events'] as $event) {
             if($event['change']['user'] == $_SESSION['user'] || $_SESSION['userRoll'] == 'Admin'){
 
@@ -303,6 +309,9 @@
                 $opt = $event['change']['action'];
 
                 echo "\n\t<tr>\n";
+                echo "\t\t<td>";
+                echo $counter;
+                echo "</td>\n";
                 echo "\t\t<td>";
                 echo $event['start_date']['year'] ."-". $event['start_date']['month'] ."-". $event['start_date']['day'];
                 echo "</td>\n";
@@ -322,6 +331,7 @@
                 echo "</td>\n";
 
                 echo "</tr>\n";
+                $counter++;
             } // END if(user)
         } // END foreach
       } // END if($data)
@@ -582,6 +592,8 @@
         if(isset($_REQUEST['eId'])){
 
           $eId = $_REQUEST['eId'];
+          $eHeadline = ''; // saves the event's information for the confirmation
+          $eDesicionComment = $_POST['comment']; // saves the event's information for the confirmation
           $editedEvent = ''; // the edited event approved or denied
           $events = array(); // array for the approved event + production events
           $editions = array(); // array for the edited events - (approved/denied) event
@@ -597,6 +609,7 @@
 
             foreach ($data['events'] as $event) {
                 if($event['unique_id'] == $_REQUEST['eId']){
+                    $eHeadline = $event['text']['headline'];
                     $event['last_modification'] = date("Y-m-d H:i");
                     ### adding the edited event to  decision log ===================
                     $event['desicion'] =  Array (
@@ -677,20 +690,23 @@
 
 
                     // Rename the production timeline json file.
-                    $filename = '../json/timeline_BAK_'.date("YmdHi").'.json';
+                    $filename = '../json/timeline_BAK_'.date("m").'.json';
                     rename("../json/timeline.json",$filename);
                     // Rename the new json file so it is the production file.
                     rename("../json/timeline-update.json","../json/timeline.json");
 
-                    // Deletes the event edited json file
-                    unlink("../json/$eId.json");
+                    $message = 'The requested modification for the IEEE CIS Historical Timeline Event "'. $eHeadline .'" has been approved with the next comments:
+                                <br><br>'.$eDesicionComment.'<br><br>
+                                <a href="/index.php" target="_blank">Open the IEEE CIS Historical Timeline</a>';
+
                 }else{
-                  echo "Denied";
+                  $message = 'The requested modification for the IEEE CIS Historical Timeline Event "'. $eHeadline .'" has been denied for the next reasons:
+                                <br><br>'.$eDesicionComment.'<br><br>
+                                <a href="/index.php" target="_blank">Open the IEEE CIS Historical Timeline</a>';
                 }
 
-
-
-
+                // Deletes the single event edited json file
+                unlink("../json/$eId.json");
 
             header("Location: ../approve.php");
 
