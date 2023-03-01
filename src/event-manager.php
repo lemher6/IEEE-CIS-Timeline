@@ -395,7 +395,7 @@
 
         // encode array to json
         $json = json_encode($singleEventEdited,JSON_PRETTY_PRINT);
-        $filename = $_REQUEST['eId'].'.json';
+        $filename = '../json/'.$_REQUEST['eId'].'.json';
         // Write the contents to the file,
         // using the FILE_APPEND flag to append the content to the end of the file
         // and the LOCK_EX flag to prevent anyone else writing to the file at the same time
@@ -403,7 +403,7 @@
         ### ********************************************************************
 
 
-      $edit_json = file_get_contents('./json/editions.json');
+      $edit_json = file_get_contents('../json/editions.json');
       if($edit_json){
         // Decode the JSON data into a PHP array
         $edit_data = json_decode($edit_json, true);
@@ -423,8 +423,8 @@
       // Write the contents to the file,
       // using the FILE_APPEND flag to append the content to the end of the file
       // and the LOCK_EX flag to prevent anyone else writing to the file at the same time
-      $bytes = file_put_contents('./json/editions.json',$json, LOCK_EX);
-      header("Location: ./edit-events.php");
+      $bytes = file_put_contents('../json/editions.json',$json, LOCK_EX);
+      header("Location: /edit-events.php");
 
   }
 

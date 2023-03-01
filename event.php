@@ -92,7 +92,7 @@
           </div>
         <?php } // END display the div ?>
 
-        <form method="post" action="event-manager.php">
+        <form method="post" action="./src/event-manager.php">
 
 
 
@@ -159,7 +159,7 @@
                 <div class="rightBlock">
                   <p>Do you want to delete this event?</p>
                   <input type="submit" value="Yes" />
-                  <button type="button" onclick="document.location='edit-events.php'">Cancel</button>
+                  <button type="button" onclick="document.location='/edit-events.php'">Cancel</button>
                 </div>
               <?php  } // END if($op == 'del')  ?>
 
@@ -215,7 +215,7 @@
             <div class="rightBlock">
                 <p>Update the event information and then click on "Update" button. Choose "Forget Edition" to remove any modifications done on this event.</p>
                   <input type="submit" value="Update" />
-                  <button type="button" onclick="document.location='event-manager.php?eId=<?php echo $eId; ?>&opt=eDel&page=editEvent'">Forget Edition</button>
+                  <button type="button" onclick="document.location='./src/event-manager.php?eId=<?php echo $eId; ?>&opt=eDel&page=editEvent'">Forget Edition</button>
             </div>
 
         <?php  } // END if($op == 'upd')  ?>

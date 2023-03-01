@@ -1,0 +1,42 @@
+{
+    "events": [
+        {
+            "unique_id": "CIS20230301035130",
+            "author": "Ana",
+            "created_on": "2023-03-01 15:50",
+            "last_modification": "2023-03-01 15:50",
+            "group": "CIS",
+            "text": {
+                "headline": "IEEE Mobile Application Development Contest (madC)",
+                "text": "Director\/Motion Designer : Bassem Tariq<br>Client : IEEE MADC<br><br><br>"
+            },
+            "start_date": {
+                "year": "2023",
+                "month": "03",
+                "day": "20"
+            },
+            "end_date": {
+                "year": "2023",
+                "month": "03",
+                "day": "24"
+            },
+            "media": {
+                "caption": "IEEE CIS",
+                "credit": "IEEE Video in Vimeo",
+                "url": "https:\/\/vimeo.com\/205416680",
+                "link": "https:\/\/vimeo.com\/205416680"
+            },
+            "background": {
+                "color": "#24dbd8",
+                "opacity": 50,
+                "url": null
+            },
+            "change": {
+                "user": "Ana",
+                "date": "2023-03-01 15:51",
+                "action": "new",
+                "comment": "Vimeo video."
+            }
+        }
+    ]
+}

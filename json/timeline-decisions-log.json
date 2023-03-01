@@ -1,0 +1,130 @@
+{
+    "unique_id": "CIS20230301040241",
+    "author": "Ana",
+    "created_on": "2023-03-01 16:01",
+    "last_modification": "2023-03-01 16:06",
+    "group": "CIS",
+    "text": {
+        "headline": "IEEE Mobile Application Development Contest (madC)",
+        "text": "Director\/Motion Designer : Bassem Tariq<br>Client : IEEE MADC<br><br><br>"
+    },
+    "start_date": {
+        "year": "2023",
+        "month": "03",
+        "day": "17"
+    },
+    "end_date": {
+        "year": "2023",
+        "month": "03",
+        "day": "24"
+    },
+    "media": {
+        "caption": "",
+        "credit": "IEEE Video in Vimeo",
+        "url": "https:\/\/vimeo.com\/205416680",
+        "link": ""
+    },
+    "background": {
+        "color": "#25d0cd",
+        "opacity": 50,
+        "url": null
+    },
+    "change": {
+        "user": "Ana",
+        "date": "2023-03-01 16:02",
+        "action": "new",
+        "comment": "Vimeo video."
+    },
+    "desicion": {
+        "user": "Ana",
+        "date": "2023-03-01 16:06",
+        "action": "Approve",
+        "comment": "New event with Vimeo video approved."
+    }
+}{
+    "unique_id": "EC20170605-001",
+    "author": "Ana",
+    "created_on": "2022-12-01",
+    "last_modification": "2023-03-01 16:11",
+    "group": "EC",
+    "text": {
+        "headline": "2017 IEEE CEC",
+        "text": "2017 IEEE Congress on Evolutionary Computation (CEC)<br>June 5-8, 2017, Donostia-San Sebastian, Spain<br>GC: Jose A. Lozano<br>PC: Carlos Coello<br>"
+    },
+    "start_date": {
+        "year": "2017",
+        "month": "06",
+        "day": "05"
+    },
+    "end_date": {
+        "year": "2017",
+        "month": "06",
+        "day": "08"
+    },
+    "media": {
+        "caption": "Congress on Evolutionary Computation",
+        "credit": "",
+        "url": "\/img\/CEC20170605.JPG",
+        "link": "https:\/\/ewh.ieee.org\/conf\/cec\/cec-2017.pdf"
+    },
+    "background": {
+        "color": "#000000",
+        "opacity": 50,
+        "url": null
+    },
+    "change": {
+        "user": "Ana",
+        "date": "2023-03-01 16:10",
+        "action": "del",
+        "comment": "It is not a good image."
+    },
+    "desicion": {
+        "user": "Ana",
+        "date": "2023-03-01 16:11",
+        "action": "Approve",
+        "comment": "Delete approved."
+    }
+}{
+    "unique_id": "Fuzzy20170709-001",
+    "author": "Ana",
+    "created_on": "2022-12-01",
+    "last_modification": "2023-03-01 16:12",
+    "group": "Fuzzy",
+    "text": {
+        "headline": "2017 IEEE FUZZY",
+        "text": "2017 IEEE International Conference on Fuzzy Systems<br>July 9-12, 2017, Naples, Italy<br>GCs: Giovanni Acampora, Bruno Siciliano<br>PCs: Hani Hagras, Francisco Herrera<br>"
+    },
+    "start_date": {
+        "year": "2017",
+        "month": "07",
+        "day": "09"
+    },
+    "end_date": {
+        "year": "2017",
+        "month": "07",
+        "day": "12"
+    },
+    "media": {
+        "caption": "IEEE International Conference on Fuzzy Systems",
+        "credit": "",
+        "url": "\/img\/FUZZ20170709.JPG",
+        "link": "https:\/\/ewh.ieee.org\/conf\/fuzz\/fuzz-2017.pdf"
+    },
+    "background": {
+        "color": "#b1d1ec",
+        "opacity": 50,
+        "url": null
+    },
+    "change": {
+        "user": "Ana",
+        "date": "2023-03-01 16:06",
+        "action": "upd",
+        "comment": "changing color."
+    },
+    "desicion": {
+        "user": "Ana",
+        "date": "2023-03-01 16:12",
+        "action": "Approve",
+        "comment": "approved."
+    }
+}
