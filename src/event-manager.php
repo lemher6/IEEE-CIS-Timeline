@@ -10,7 +10,7 @@
   #### displayEvent(string $eId, string $satus) // DISPLAYS EVENT INFORMATON (IMAGE/FORM) BY EVENT ID
   #### listEditions() // LISTS ALL EDITIED EVENTS BASIC INFORMATON
   #### editEvent() // CREATE A NEW EVENT INSTANCE IN THE FILE EDITIONS FOR LATER APPROVAL
-  #### displayForApproval() // LIST EDITIONS AND ALLOW THE USER TO APPROVE OR DENY CHANGES
+  #### displayForApproval() // LIST EDITIONS AND ALLOW THE USER TO APPROVE OR REJECT CHANGES
   ### updateProdTimeline() // AFTER APPROVAL THE PRODUCTION TIMELINE JSON FILE IS UPDATED WITH THE NEW INFO.
   ### ****************************************************************************
 
@@ -445,7 +445,7 @@
     function displayForApproval(){
 
       if($_SESSION['userRoll'] != 'Admin'){
-        echo "You can approve or deny a request that is pending approval only if you are a member of the timeline commitee. ";
+        echo "You can approve or reject a request that is pending approval only if you are a member of the timeline commitee.";
       }else{
 
       $editedEvents = array(); // for the unique_id of edited events
@@ -559,7 +559,7 @@
                   echo "<input type='hidden' name='page' value='approveEvent' />";
                   echo "<input type='submit' name='submit' value='Approve' >";
                   echo "&nbsp;&nbsp;&nbsp;&nbsp;";
-                  echo "<input type='submit' name='submit' value='Deny' >";
+                  echo "<input type='submit' name='submit' value='Reject' >";
                   echo "</form>";
                   echo "</div>";
 
@@ -587,7 +587,7 @@
 
       // First checks user roll
       if($_SESSION['userRoll'] != 'Admin'){
-        echo "You can approve or deny a request that is pending approval only if you are a member of the timeline commitee. ";
+        echo "You can approve or reject a request that is pending approval only if you are a member of the timeline commitee. ";
       }else{
         if(isset($_REQUEST['eId'])){
 

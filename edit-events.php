@@ -54,12 +54,6 @@
 
     <?php include ("./src/menu.php"); ?>
 
-
-    <div class="rightBlock">
-      <button onclick="document.location='event.php?opt=new&page=listEvents'">Create a New Event</button>
-    </div>
-
-
     <div class="iBlock">
         <table style="width:100%">
           <tr>

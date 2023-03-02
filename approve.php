@@ -78,13 +78,13 @@
 
       <div class="flex-container">
         <div>
-          <br>You can approve or deny a request that is pending approval only if you are a member of the timeline commitee.<br><br>
+          <br>You can approve or reject a request that is pending approval only if you are a member of the timeline commitee.<br><br>
         </div>
         <div>
           <br>
           1. Review the details of the edited record. <br>
           2. Enter an approval or rejection reason.<br>
-          3. Click on the <b>"Approve"</b> or <b>"Deny"</b>button.
+          3. Click on the <b>"Approve"</b> or <b>"Reject"</b> button.
           <br><br>
         </div>
         <div>

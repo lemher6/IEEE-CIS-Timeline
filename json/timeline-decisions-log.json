@@ -514,4 +514,90 @@
         "action": "Approve",
         "comment": "This is so cool."
     }
+}{
+    "unique_id": "CIS20230301040241",
+    "author": "Ana",
+    "created_on": "2023-03-01 16:01",
+    "last_modification": "2023-03-02 05:16",
+    "group": "CIS",
+    "text": {
+        "headline": "IEEE Mobile Application Development Contest (madC)",
+        "text": "Director\/Motion Designer : Bassem Tariq<br>Client : IEEE MADC<br><br><br>"
+    },
+    "start_date": {
+        "year": "2023",
+        "month": "03",
+        "day": "17"
+    },
+    "end_date": {
+        "year": "2023",
+        "month": "03",
+        "day": "24"
+    },
+    "media": {
+        "caption": "",
+        "credit": "IEEE Video in Vimeo",
+        "url": "https:\/\/vimeo.com\/205416680",
+        "link": ""
+    },
+    "background": {
+        "color": "#9935bf",
+        "opacity": 50,
+        "url": null
+    },
+    "change": {
+        "user": "Ana",
+        "date": "2023-03-02 04:09",
+        "action": "del",
+        "comment": "Test"
+    },
+    "desicion": {
+        "user": "Ana",
+        "date": "2023-03-02 05:16",
+        "action": "Approve",
+        "comment": "agree."
+    }
+}{
+    "unique_id": "CIS20230302042201",
+    "author": "Ana",
+    "created_on": "2023-03-02 04:29",
+    "last_modification": "2023-03-02 05:17",
+    "group": "Fuzzy",
+    "text": {
+        "headline": "Test event on 03\/02\/2023",
+        "text": "Details 1<br>No more details<br>No more details<br>No more details<br>No more details"
+    },
+    "start_date": {
+        "year": "2023",
+        "month": "03",
+        "day": "02"
+    },
+    "end_date": {
+        "year": "2023",
+        "month": "03",
+        "day": "04"
+    },
+    "media": {
+        "caption": "Test",
+        "credit": "Test",
+        "url": "https:\/\/showme.missouri.edu\/wp-content\/uploads\/2020\/11\/ColumnsBanners.jpg",
+        "link": "https:\/\/en.wikipedia.org\/wiki\/Image#\/media\/File:Image_created_with_a_mobile_phone.png"
+    },
+    "background": {
+        "color": "#8686e3",
+        "opacity": 50,
+        "url": null
+    },
+    "change": {
+        "user": "Ana",
+        "date": "2023-03-02 04:30",
+        "action": "new",
+        "comment": "Testing"
+    },
+    "desicion": {
+        "user": "Ana",
+        "date": "2023-03-02 05:17",
+        "action": "Approve",
+        "comment": "purple."
+    }
 }
