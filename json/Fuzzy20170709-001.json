@@ -37,44 +37,6 @@
                 "action": "upd",
                 "comment": "color"
             }
-        },
-        {
-            "unique_id": "CIS20230302112841",
-            "author": "Ana",
-            "created_on": "2023-03-03 00:17",
-            "last_modification": "2023-03-03 00:17",
-            "group": "CIS",
-            "text": {
-                "headline": "(CAI 2023) IEEE Conference on Artificial Intelligence",
-                "text": "Location: Santa Clara, CA, USA<br><br><br><br>"
-            },
-            "start_date": {
-                "year": "2023",
-                "month": "06",
-                "day": "05"
-            },
-            "end_date": {
-                "year": "",
-                "month": "",
-                "day": ""
-            },
-            "media": {
-                "caption": "CAI 2023",
-                "credit": "",
-                "url": "\/img\/CAI_2023.jpg",
-                "link": "https:\/\/cai.ieee.org\/2023\/"
-            },
-            "background": {
-                "color": "#0b0c22",
-                "opacity": 50,
-                "url": null
-            },
-            "change": {
-                "user": "Ana",
-                "date": "2023-03-03 00:18",
-                "action": "new",
-                "comment": "The next conference."
-            }
         }
     ]
 }

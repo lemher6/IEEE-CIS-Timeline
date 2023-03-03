@@ -51,7 +51,7 @@
   ##############################################################################
   function printAllEvent(){
 
-    $json = file_get_contents('./json/timeline.json'); // Read the SANDBOX JSON file
+    $json = file_get_contents('../json/timeline.json'); // Read the SANDBOX JSON file
     if($json === FALSE){
       echo "ERROR:20230301082101. Timeline file is empty. Please contact your administrator.";
     }else{
@@ -83,12 +83,12 @@
               echo "\t\t<td>";
               echo $event['group'];
               echo "</td>\n";
-              echo "\t\t<td  style=\"text-align:center;\"> <button onclick=\"document.location='event.php?eId=";
+              echo "\t\t<td  style=\"text-align:center;\"> <button onclick=\"document.location='/src/event.php?eId=";
               echo $event['unique_id'];
               echo "&opt=upd&page=listEvents&counter=$counter'\">Update</button>";
-              echo "&nbsp; &nbsp;<button onclick=\"document.location='event.php?eId=";
+              echo "&nbsp; &nbsp;<button onclick=\"document.location='/src/event.php?eId=";
               echo $event['unique_id'];
-              echo "&opt=del&page=listEvents&counter=$counter'\">Delete</button>";
+              echo "&opt=del&page=listEvents&counter=$counter'\">Remove</button>";
               echo "</td>\n";
               echo "</tr>\n";
               $counterDisplay++;
@@ -120,9 +120,9 @@
 
         // Read the sandbox JSON file
         if($status == 'edited'){
-          $json = file_get_contents('./json/editions.json');
+          $json = file_get_contents('../json/editions.json');
         }else{
-          $json = file_get_contents('./json/timeline.json');
+          $json = file_get_contents('../json/timeline.json');
         }
 
         if($json === FALSE){
@@ -220,60 +220,70 @@
             echo "<input type='hidden' name='author' value='$author' />";
             echo "<input type='hidden' name='created_on' value='$created_on' />";
             echo "<input type='hidden' name='last_modification' value='$last_modification' />";
-            echo "<div class='iBlock'>";
-            echo "<h2>Slide Background Color</h2>";
-            echo "<p>Each event has a slide in the timeline and you can choose a different background color for it.
-                      The text color will be set to white automatically if the background color is dark. </p>";
-            echo "<label for='color'>Slide Background Color:</label> <input type='color' name='color' value='$color' /><br><br>";
-            #echo "<label for='backgroundURL'>Slide background URL:</label><input type='text' name='backgroundURL' value='$backgroundURL' /><br>";
-            echo "</div>";
-
-            echo "<div class='iBlock'>";
-            echo "<h2>Events Dates</h2>";
-            echo "<p>Every event must have a sart and end date.</p>";
-            echo "<label for='start_date'>Start Date:</label><input type='date' class='dateInput' name='start_date' value='$start_date' required/><br>";
-            echo "<label for='end_date'>End Date:</label><input type='date' class='dateInput' name='end_date' value='$end_date'/><br>";
-            echo "</div>";
-
-            echo "<div class='iBlock'>";
-            echo "<h2>Media</h2>";
-            echo "<p>You can pull in media from a variety of sources: Twitter, Flickr, YouTube, Vimeo, Vine, Dailymotion,
-                  Google Maps, Wikipedia, SoundCloud, Document Cloud or an Image. The media link will be open in a new page
-                  and the media credit will be appered at the bottom of the media box.</p>";
-            echo "<label for='mediaURL'>Media URL:</label><input type='text' name='mediaURL' value='$mediaURL' /><br>";
-            echo "<label for='mediaLINK'>Media Link:</label><input type='text' name='mediaLINK' value='$mediaLINK' /><br>";
-            echo "<label for='caption'>Media Caption:</label><input type='text' name='caption' value='$caption' /><br>";
-            echo "<label for='credit'>Media Credit:</label><input type='text' name='credit' value='$credit' /><br>";
-            echo "</div>";
-
-            echo "<div class='iBlock'>";
-            echo "<h2>Event Information</h2>";
-            echo "<p>The headline will be displayed after the date and each detail will be placed in a different line below the title.</p>";
-            echo "<label for='headline'>Event Headline:</label><input type='text' name='headline' value='$headline' required /><br>";
-
-
-            echo "<label for='text0'>Event Details 1:</label><input type='text' name='text0' value='$detail[0]' /><br>";
-            echo "<label for='text1'>Event Details 2:</label><input type='text' name='text1' value='$detail[1]' /><br>";
-            echo "<label for='text2'>Event Details 3:</label><input type='text' name='text2' value='$detail[2]' /><br>";
-            echo "<label for='text3'>Event Details 4:</label><input type='text' name='text3' value='$detail[3]' /><br>";
-            echo "<label for='text4'>Event Details 5:</label><input type='text' name='text4' value='$detail[4]' /><br>";
-            echo "</div>";
 
             echo "<div class='iBlock'>";
             echo "<label for='group'>Event Group:</label>
+                    By default will be set CIS group.
                     <select name='group'>
                       <option value='CIS' $groupCIS>CIS</option>
                       <option value='Fuzzy' $groupFuzzy>Fuzzy</option>
                       <option value='EC' $groupEC>EC</option>
                       <option value='NNs' $groupNNs>NNs</option>
                     </select>";
+
+            echo "<label for='color'>Slide Background Color:</label>
+                    Each event has a slide in the timeline and you can choose a different background color for it.
+                    <input type='color' name='color' value='$color' /><br><br>";
+            #echo "<label for='backgroundURL'>Slide background URL:</label><input type='text' name='backgroundURL' value='$backgroundURL' /><br>";
+            echo "</div>";
+
+            echo "<div class='iBlock'>";
+            echo "<h2>Event Information</h2>";
+            echo "<label for='headline'>Event Headline: *</label>
+                    The headline will be displayed below the dates in a large font size. It also will be display in the navegation bar. This field is required.
+                    <input type='text' name='headline' value='$headline' required /><br>";
+            echo "<label for='text0'>Event Detail 1:</label>
+                    Each detail will be placed in a different line below the title.
+                    <input type='text' name='text0' value='$detail[0]' /><br>";
+            echo "<label for='text1'>Event Detail 2:</label><input type='text' name='text1' value='$detail[1]' /><br>";
+            echo "<label for='text2'>Event Detail 3:</label><input type='text' name='text2' value='$detail[2]' /><br>";
+            echo "<label for='text3'>Event Detail 4:</label><input type='text' name='text3' value='$detail[3]' /><br>";
+            echo "<label for='text4'>Event Detail 5:</label><input type='text' name='text4' value='$detail[4]' /><br>";
+            echo "</div>";
+
+            echo "<div class='iBlock'>";
+            echo "<h2>Events Dates</h2>";
+            echo "<p></p>";
+            echo "<label for='start_date'>Start Date: <b>*</b></label>
+                    Month, day, and year when the event starts. Every event must have a sart and end date.
+                    <input type='date' class='dateInput' name='start_date' value='$start_date' required/><br>";
+            echo "<label for='end_date'>End Date:</label>
+                    Month, day, and year when the event ends.
+                    <input type='date' class='dateInput' name='end_date' value='$end_date'/><br>";
+            echo "</div>";
+
+            echo "<div class='iBlock'>";
+            echo "<h2>Media</h2>";
+            echo "<label for='mediaURL'>Media URL:</label>
+                    The media could be an Image, YouTube, Vimeo, or Google Maps. Example(https://cis.ieee.org/images/IEEE_CIS_logo.jpg)
+                    <input type='text' name='mediaURL' value='$mediaURL' /><br>";
+            echo "<label for='mediaLINK'>Media Link:</label>
+                     The media link will be open in a new page when the Media URL is clicked on. Example(https://cis.ieee.org/publications)
+                     <input type='text' name='mediaLINK' value='$mediaLINK' /><br>";
+            echo "<label for='caption'>Media Caption:</label>
+                    The caption will be displayed is the mouse is over the event image.
+                    <input type='text' name='caption' value='$caption' /><br>";
+            echo "<label for='credit'>Media Credit:</label>
+                    The media credit will be appered at the bottom of the media box.
+                    <input type='text' name='credit' value='$credit' /><br>";
             echo "</div>";
 
             echo "</div> <!-- END DIV FOR DISPLAYING FORM -->";
 
             echo "<div class='iBlock'>";
             echo "<label for='comment'>Comments:</label>
-                    <textarea name='comment'>$editComment</textarea>";
+                    Please include some comments about your updates for the approval commitee.
+                    <textarea name='comment'></textarea>";
             echo "</div>";
 
   } ###  END function displayEvent
@@ -286,7 +296,7 @@
 
     $editedEvents = array(); // for the unique_id of edited events
 
-    $data = file_get_contents('./json/editions.json'); // Read the EDITIONS JSON file
+    $data = file_get_contents('../json/editions.json'); // Read the EDITIONS JSON file
     if(!$data){
       echo "ERROR:20230301081411. Editions file is empty. Please contact your administrator.";
     }else{
@@ -326,7 +336,7 @@
                 echo "</td>\n";
 
                 echo "\t\t<td  style=\"text-align:center;\">";
-                echo "<button onclick=\"document.location='event.php?eId=". $event['unique_id'] ."&status=edited&opt=$opt&page=listEvents'\">$action</button>";
+                echo "<button onclick=\"document.location='/src/event.php?eId=". $event['unique_id'] ."&status=edited&opt=$opt&page=listEvents'\">$action</button>";
 
                 echo "</td>\n";
 
@@ -434,7 +444,7 @@
       // using the FILE_APPEND flag to append the content to the end of the file
       // and the LOCK_EX flag to prevent anyone else writing to the file at the same time
       $bytes = file_put_contents('../json/editions.json',$json, LOCK_EX);
-      header("Location: /edit-events.php");
+      header("Location: /src/edit-events.php");
 
   }
 
@@ -450,7 +460,7 @@
 
       $editedEvents = array(); // for the unique_id of edited events
 
-      $data = file_get_contents('./json/editions.json'); // Read the EDITIONS JSON file
+      $data = file_get_contents('../json/editions.json'); // Read the EDITIONS JSON file
       if(!$data){
         echo "ERROR:20230301081520. Editions file is empty. Please contact your administrator.";
       }else{
@@ -537,7 +547,7 @@
                   echo "<script>
                    $(document).ready(function() {
                        var embed = document.getElementById('$unique_id');
-                       window.timeline = new TL.Timeline('$unique_id', './json/$unique_id.json', {
+                       window.timeline = new TL.Timeline('$unique_id', '../json/$unique_id.json', {
                            hash_bookmark: false,
                            font: 'fjalla-average',
                            scale_factor: 1,
@@ -568,7 +578,7 @@
           } // END foreach
         } // END if($data)
         if(count($editedEvents) == 0){
-          echo "<h2>No pending request found.</h2>";
+          echo "<div style='text-align:center'><h2>No pending request found!</h2></div>";
         }
         $GLOBALS['editedIds'] = $editedEvents;
       } // END if($_SESSION['userRoll'] == 'Admin')
@@ -708,7 +718,7 @@
                 // Deletes the single event edited json file
                 unlink("../json/$eId.json");
 
-            header("Location: ../approve.php");
+            header("Location: /src/approve.php");
 
             } // END if($data)
         } // END if(eId)

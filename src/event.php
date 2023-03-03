@@ -2,7 +2,7 @@
   ### IEEE-CIS TIMELINE PROJECT
   ### 2022-11 AH
   session_start();
-  include('./src/check-login.php');
+  include('./check-login.php');
   checkLogin('Ana','123','Admin');
 ?>
 
@@ -14,9 +14,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <link rel="stylesheet" type="text/css" href="./css/style.css">
-    <link title="timeline-styles" rel="stylesheet" href="/css/timeline.css">
-    <script src="/js/timeline-min.js"></script>
+    <link rel="stylesheet" type="text/css" href="../css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <link title="timeline-styles" rel="stylesheet" href="../css/timeline.css">
+    <script src="../js/timeline-min.js"></script>
 
     <style>
       body{
@@ -58,7 +60,7 @@
         <h1>EDIT A TIMELINE EVENT</h1>
       </div>
 
-      <?php include ("./src/menu.php"); ?>
+      <?php include ("./menu.php"); ?>
 
       <?php
         ########################################################################
@@ -92,14 +94,14 @@
           </div>
         <?php } // END display the div ?>
 
-        <form method="post" action="./src/event-manager.php">
+        <form method="post" action="./event-manager.php">
 
 
 
 
       <?php
 
-        include ("./src/event-manager.php");
+        include ("./event-manager.php");
         displayEvent($eId,$opt,$status);
 
         ### GETTING THE COUNTER PARAMETER AFTER CALLING THE displayEvent FUNCTION BECAUSE THAT FUNCTION COULD UPDATE THE PARAMETER
@@ -145,7 +147,7 @@
                 <script>
                  $(document).ready(function() {
                      var embed = document.getElementById('timeline-embed');
-                     window.timeline = new TL.Timeline('timeline-embed', './json/timeline.json', {
+                     window.timeline = new TL.Timeline('timeline-embed', '../json/timeline.json', {
                          hash_bookmark: false, /* If set to true, TimelineJS will update the browser URL each time a slide advances, so that people can link directly to specific slides. */
                          font: "fjalla-average",
                          scale_factor: 1, /* How many screen widths wide the timeline should be at first presentation. */
@@ -159,7 +161,7 @@
                 <div class="rightBlock">
                   <p>Do you want to delete this event?</p>
                   <input type="submit" value="Yes" />
-                  <button type="button" onclick="document.location='/edit-events.php'">Cancel</button>
+                  <button type="button" onclick="document.location='/src/edit-events.php'">Cancel</button>
                 </div>
               <?php  } // END if($op == 'del')  ?>
 
@@ -174,7 +176,7 @@
         <script>
          $(document).ready(function() {
              var embed = document.getElementById('timeline-embed');
-             window.timeline = new TL.Timeline('timeline-embed', './json/timeline.json', {
+             window.timeline = new TL.Timeline('timeline-embed', '../json/timeline.json', {
                  hash_bookmark: true, /* If set to true, TimelineJS will update the browser URL each time a slide advances, so that people can link directly to specific slides. */
                  font: "fjalla-average",
                  initial_zoom: 1, /* The position in the zoom_sequence series used to scale the Timeline when it is first created. Takes precedence over scale_factor. */
@@ -201,7 +203,7 @@
           <script>
            $(document).ready(function() {
                var embed = document.getElementById('timeline-embed');
-               window.timeline = new TL.Timeline('timeline-embed', './json/<?php echo $eId; ?>.json', {
+               window.timeline = new TL.Timeline('timeline-embed', '../json/<?php echo $eId; ?>.json', {
                    hash_bookmark: true, /* If set to true, TimelineJS will update the browser URL each time a slide advances, so that people can link directly to specific slides. */
                    font: "fjalla-average",
                    scale_factor: 1, /* How many screen widths wide the timeline should be at first presentation. */
@@ -215,7 +217,7 @@
             <div class="rightBlock">
                 <p>Update the event information and then click on "Update" button. Choose "Forget Edition" to remove any modifications done on this event.</p>
                   <input type="submit" value="Update" />
-                  <button type="button" onclick="document.location='./src/event-manager.php?eId=<?php echo $eId; ?>&opt=eDel&page=editEvent'">Forget Edition</button>
+                  <button type="button" onclick="document.location='/src/event-manager.php?eId=<?php echo $eId; ?>&opt=eDel&page=editEvent'">Forget Edition</button>
             </div>
 
         <?php  } // END if($op == 'upd')  ?>

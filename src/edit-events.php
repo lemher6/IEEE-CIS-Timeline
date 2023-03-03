@@ -2,7 +2,7 @@
   ### IEEE-CIS TIMELINE PROJECT
   ### 2022-11 AH
   session_start();
-  include('./src/check-login.php');
+  include('./check-login.php');
   checkLogin('Ana','123','Admin');
 ?>
 
@@ -14,7 +14,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <link rel="stylesheet" type="text/css" href="./css/style.css">
+    <link rel="stylesheet" type="text/css" href="../css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
   </head>
 
   <style>
@@ -52,7 +54,7 @@
       <h1>EDIT TIMELINE EVENTS</h1>
     </div>
 
-    <?php include ("./src/menu.php"); ?>
+    <?php include ("./menu.php"); ?>
 
     <div class="iBlock">
         <table style="width:100%">
@@ -67,7 +69,7 @@
           <tr>
 
         <?php
-          include ("./src/event-manager.php");
+          include ("./event-manager.php");
           listEditions();
           printAllEvent();
         ?>

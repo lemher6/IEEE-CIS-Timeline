@@ -10,7 +10,6 @@ body,p {
   color: white;
   font-size: 0.7em;
   text-align: center;
-  position: fixed;
   left: 0;
   bottom: 0;
   width: 100%;
@@ -22,7 +21,8 @@ h1 {
   color: #000;
 }
 
-button, input[type=submit] {
+
+.bar button, input[type=submit] {
   border: none;
   display: inline-block;
   padding: 14px 12px;

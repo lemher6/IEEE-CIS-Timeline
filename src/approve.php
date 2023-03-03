@@ -2,7 +2,7 @@
   ### IEEE-CIS TIMELINE PROJECT
   ### 2022-11 AH
   session_start();
-  include('./src/check-login.php');
+  include('./check-login.php');
   checkLogin('Ana','123','Admin');
 ?>
 
@@ -14,9 +14,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <link rel="stylesheet" type="text/css" href="./css/style.css">
-    <link title="timeline-styles" rel="stylesheet" href="/css/timeline.css">
-    <script src="/js/timeline-min.js"></script>
+    <link rel="stylesheet" type="text/css" href="../css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link title="timeline-styles" rel="stylesheet" href="../css/timeline.css">
+    <script src="../js/timeline-min.js"></script>
 
     <style>
       body{
@@ -61,6 +62,7 @@
             padding: 1em;
             text-align: center;
             vertical-align: middle;
+            box-shadow: 0 2px 5px 0 rgb(0 0 0 / 16%), 0 2px 10px 0 rgb(0 0 0 / 12%);
           }
 
       }
@@ -72,7 +74,7 @@
       <h1>APPROVE EVENTS CHANGES</h1>
     </div>
 
-    <?php include ("./src/menu.php"); ?>
+    <?php include ("./menu.php"); ?>
 
     <div class="leftBlock">
 
@@ -101,7 +103,7 @@
         if(isset($_GET['msg'])){
           echo '<div class="iBlock" style="text-align:center">'.$_GET['msg'].'</div>';
         }
-        include ("./src/event-manager.php");
+        include ("./event-manager.php");
         displayForApproval();
       ?>
 

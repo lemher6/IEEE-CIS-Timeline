@@ -144,50 +144,6 @@
             }
         },
         {
-            "unique_id": "CIS20230301082414",
-            "author": "Ana",
-            "created_on": "2023-03-01 20:22",
-            "last_modification": "2023-03-01 20:24",
-            "group": "CIS",
-            "text": {
-                "headline": "A Special Day",
-                "text": "<br><br><br><br>"
-            },
-            "start_date": {
-                "year": "2023",
-                "month": "01",
-                "day": "12"
-            },
-            "end_date": {
-                "year": "2023",
-                "month": "01",
-                "day": "13"
-            },
-            "media": {
-                "caption": "",
-                "credit": "",
-                "url": "\/img\/itsAllHere.jfif",
-                "link": "https:\/\/cis.ieee.org\/"
-            },
-            "background": {
-                "color": "#408080",
-                "opacity": 50,
-                "url": null
-            },
-            "change": {
-                "user": "Ana",
-                "date": "2023-03-01 20:24",
-                "action": "new",
-                "comment": "Simple event"
-            },
-            "desicion": {
-                "user": "Ana",
-                "date": "2023-03-01 20:24",
-                "action": "Approve",
-                "comment": "Just because."
-            }
-        },
-        {
             "unique_id": "Fuzzy20170709-001",
             "author": "Ana",
             "created_on": "2022-12-01",
