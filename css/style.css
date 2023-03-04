@@ -21,8 +21,12 @@ h1 {
   color: #000;
 }
 
+.helpItem li{
+  line-height: 1.7em;
+}
 
-.bar button, input[type=submit] {
+
+.bar button, .iBlock button, input[type=submit] {
   border: none;
   display: inline-block;
   padding: 14px 12px;
@@ -37,7 +41,7 @@ h1 {
   border-radius: 4px;
 }
 
-button:hover, input[type=submit]:hover {
+.bar button:hover, .iBlock button:hover, input[type=submit]:hover {
     color: #fff!important;
     background-color: #000!important;
 }

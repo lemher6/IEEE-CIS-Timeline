@@ -56,35 +56,45 @@
   </head>
 
   <body>
+    <?php
+      ########################################################################
+      ###  GETTING HEADER PARAMETERS
+      ########################################################################
+      if(isset($_GET['eId'])){
+        $eId = $_GET['eId'];
+      }else{
+        $eId = '';
+      }
+
+      if(isset($_GET['opt'])){
+        $opt = $_GET['opt'];
+      }else{
+        $opt = '';
+      }
+
+      if(isset($_REQUEST['status'])){
+        $status = $_REQUEST['status'];
+      }else{
+        $status = '';
+      }
+
+      if($opt == 'new'){
+        $title = "CREATE A NEW EVENT";
+      }elseif($opt == 'del'){
+        $title = "REMOVE AN EVENT";
+      }else{
+        $title = "UPDATE AN EVENT";
+      }
+
+    ?>
+
       <div class="pageTitle">
-        <h1>EDIT A TIMELINE EVENT</h1>
+        <h1><?php echo $title; ?></h1>
       </div>
 
       <?php include ("./menu.php"); ?>
 
-      <?php
-        ########################################################################
-        ###  GETTING HEADER PARAMETERS
-        ########################################################################
-        if(isset($_GET['eId'])){
-          $eId = $_GET['eId'];
-        }else{
-          $eId = '';
-        }
 
-        if(isset($_GET['opt'])){
-          $opt = $_GET['opt'];
-        }else{
-          $opt = '';
-        }
-
-        if(isset($_REQUEST['status'])){
-          $status = $_REQUEST['status'];
-        }else{
-          $status = '';
-        }
-
-      ?>
 
       <div class="formBlock">
 

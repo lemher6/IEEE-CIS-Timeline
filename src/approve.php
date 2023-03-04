@@ -71,7 +71,7 @@
 
   <body>
     <div class="pageTitle">
-      <h1>APPROVE EVENTS CHANGES</h1>
+      <h1>APPROVE UPDATES</h1>
     </div>
 
     <?php include ("./menu.php"); ?>
