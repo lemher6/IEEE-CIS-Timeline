@@ -1,0 +1,42 @@
+{
+    "events": [
+        {
+            "unique_id": "EC20180708-001",
+            "author": "Ana",
+            "created_on": "2022-12-01",
+            "last_modification": "2023-02-13",
+            "group": "EC",
+            "text": {
+                "headline": "2018 IEEE WCCI",
+                "text": "2018 IEEE World Congress on Computational Intelligence (WCCI)<br>July 8-13, 2018<br>Rio de Janeiro, Brazil<br>GCs: Marley Vellasco, Pablo Estevez<br>CCs: Teresa Ludermir, Fernando Gomide, Gary G. Yen"
+            },
+            "start_date": {
+                "year": "2018",
+                "month": "07",
+                "day": "08"
+            },
+            "end_date": {
+                "year": "2018",
+                "month": "07",
+                "day": "13"
+            },
+            "media": {
+                "caption": "IEEE World Congress on Computational Intelligence (WCCI)",
+                "credit": "",
+                "url": "https:\/\/ewh.ieee.org\/conf\/wcci\/img\/wcci2018.png",
+                "link": "https:\/\/entrepreneurship.ieee.org\/session\/2018_07_08_ieee-world-congress-computational-intelligence\/"
+            },
+            "background": {
+                "color": "#ffffff",
+                "opacity": 50,
+                "url": null
+            },
+            "change": {
+                "user": "Ana",
+                "date": "2023-03-07 00:01",
+                "action": "del",
+                "comment": "del"
+            }
+        }
+    ]
+}

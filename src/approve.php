@@ -20,11 +20,8 @@
     <script src="../js/timeline-min.js"></script>
 
     <style>
-      body{
-        margin: auto;
-        padding: 1em;
-      }
-      .iBlock{
+
+      .aBlock{
         text-align:left;
         border-radius: 5px;
         background-color: #f9f9f9;
@@ -37,14 +34,14 @@
 
       @media only screen and (min-width: 768px) {
       /* ==== For desktop: ===== */
-          body{
+          .content{
             width: 80%;
           }
           .rightBlock{
             padding:10px 30px;
             width: 90%;
           }
-          .iBlock{
+          .aBlock{
             margin: 2em;
           }
 
@@ -70,51 +67,52 @@
   </head>
 
   <body>
-    <div class="pageTitle">
-      <h1>APPROVE UPDATES</h1>
-    </div>
-
-    <?php include ("./menu.php"); ?>
-
-    <div class="leftBlock">
-
-      <div class="flex-container">
-        <div>
-          <br>You can approve or reject a request that is pending approval only if you are a member of the timeline commitee.<br><br>
-        </div>
-        <div>
-          <br>
-          1. Review the details of the edited record. <br>
-          2. Enter an approval or rejection reason.<br>
-          3. Click on the <b>"Approve"</b> or <b>"Reject"</b> button.
-          <br><br>
-        </div>
-        <div>
-          <br>
-          After approval or denial, the event will be removed from the edition list and the event will be updated in the production timelines.
-          <br><br>
-        </div>
+    <div class="content">
+      <div class="pageTitle">
+        <h1>APPROVE UPDATES</h1>
       </div>
 
+      <?php include ("./menu.php"); ?>
+
+      <div class="leftBlock">
+
+        <div class="flex-container">
+          <div>
+            <br>You can approve or reject a request that is pending approval only if you are a member of the timeline commitee.<br><br>
+          </div>
+          <div>
+            <br>
+            1. Review the details of the edited record. <br>
+            2. Enter an approval or rejection reason.<br>
+            3. Click on the <b>"Approve"</b> or <b>"Reject"</b> button.
+            <br><br>
+          </div>
+          <div>
+            <br>
+            After approval or denial, the event will be removed from the edition list and the event will be updated in the production timelines.
+            <br><br>
+          </div>
+        </div>
 
 
 
-      <?php
-        if(isset($_GET['msg'])){
-          echo '<div class="iBlock" style="text-align:center">'.$_GET['msg'].'</div>';
-        }
-        include ("./event-manager.php");
-        displayForApproval();
-      ?>
 
-    </div>
+        <?php
+          if(isset($_GET['msg'])){
+            echo '<div class="iBlock" style="text-align:center">'.$_GET['msg'].'</div>';
+          }
+          include ("./event-manager.php");
+          displayForApproval();
+        ?>
 
-      <br>
-      <br>
-
-      <div class="footer">
-        © Copyright 2023 IEEE – All rights reserved. A not-for-profit organization, IEEE is the world's largest technical professional organization dedicated to advancing technology for the benefit of humanity.
       </div>
+
+        <br>
+        <br>
+    </div><!-- END DIV CONTENT -->
+    <div class="footer">
+      © Copyright 2023 IEEE – All rights reserved. A not-for-profit organization, IEEE is the world's largest technical professional organization dedicated to advancing technology for the benefit of humanity.
+    </div>
 
   </body>
 

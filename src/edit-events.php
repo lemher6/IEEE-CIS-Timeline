@@ -3,7 +3,6 @@
   ### 2022-11 AH
   session_start();
   include('./check-login.php');
-  checkLogin('Ana','123','Admin');
 ?>
 
 <!DOCTYPE html>
@@ -20,10 +19,7 @@
   </head>
 
   <style>
-    body{
-      margin: auto;
-      padding: 1em;
-    }
+
     .rightBlock{
       text-align:right;
     }
@@ -33,7 +29,7 @@
     }
     @media only screen and (min-width: 768px) {
     /* For desktop: */
-      body{
+      .content{
         width: 80%;
       }
       .rightBlock{
@@ -49,34 +45,35 @@
 
 
   <body>
+    <div class="content">
+      
+      <div class="pageTitle">
+        <h1>EDIT TIMELINE EVENTS</h1>
+      </div>
 
-    <div class="pageTitle">
-      <h1>EDIT TIMELINE EVENTS</h1>
-    </div>
+      <?php include ("./menu.php"); ?>
 
-    <?php include ("./menu.php"); ?>
+      <div class="iBlock">
+          <table style="width:100%">
+            <tr>
+              <th>No.</th>
+              <th>Start Date</th>
+              <th>End Date</th>
+              <th>Headline</th>
+              <th>Group</th>
+              <th style="text-align:center;">Actions</th>
+            </tr>
+            <tr>
 
-    <div class="iBlock">
-        <table style="width:100%">
-          <tr>
-            <th>No.</th>
-            <th>Start Date</th>
-            <th>End Date</th>
-            <th>Headline</th>
-            <th>Group</th>
-            <th style="text-align:center;">Actions</th>
-          </tr>
-          <tr>
-
-        <?php
-          include ("./event-manager.php");
-          listEditions();
-          printAllEvent();
-        ?>
-          </tr>
-        </table>
-    </div>
-
+          <?php
+            include ("./event-manager.php");
+            listEditions();
+            printAllEvent();
+          ?>
+            </tr>
+          </table>
+      </div>
+    </div><!-- END DIV CONTENT -->
     <div class="footer">
       © Copyright 2023 IEEE – All rights reserved. A not-for-profit organization, IEEE is the world's largest technical professional organization dedicated to advancing technology for the benefit of humanity.
     </div>

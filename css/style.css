@@ -3,6 +3,12 @@ body,p {
   font-family: Arial, Verdana, sans-serif;
   color: #666;
   font-size: 1em;
+  margin: auto;
+}
+
+.content{
+  margin: auto;
+  padding: 0.4em 1em 2em 1em;
 }
 
 .footer{
@@ -10,10 +16,13 @@ body,p {
   color: white;
   font-size: 0.7em;
   text-align: center;
+  padding: 1em;
+  margin-top: 1em;
+  position: fixed;
   left: 0;
   bottom: 0;
   width: 100%;
-  padding: 1em;
+  z-index: 15;
 }
 
 h1 {
@@ -26,7 +35,7 @@ h1 {
 }
 
 
-.bar button, .iBlock button, input[type=submit] {
+.bar button, .iBlock button, .rightBlock button, input[type=submit] {
   border: none;
   display: inline-block;
   padding: 14px 12px;
