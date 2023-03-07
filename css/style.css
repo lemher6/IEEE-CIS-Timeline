@@ -26,7 +26,7 @@ body,p {
 }
 
 h1 {
-  padding: 25px 0;
+  padding: 15px 0;
   color: #000;
 }
 
@@ -83,8 +83,6 @@ input[type=text], select, textarea, .dateInput {
   display: block;
   width: 100%;
   text-align: center!important;
-  background-image: url(https://cis.ieee.org/images/files/template/cis-logo.png);
-  background-repeat: no-repeat;
 }
 
 .bar{
@@ -165,4 +163,14 @@ th {
 }
 .details{
   font-size: 0.9em;
+}
+
+@media only screen and (min-width: 768px) {
+/* ==== For desktop: ===== */
+  body{
+    background-image: url(https://cis.ieee.org/images/files/template/cis-logo.png);
+    background-repeat: no-repeat;
+    background-position-x: 30px;
+    background-position-y: 30px;
+  }
 }

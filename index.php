@@ -27,13 +27,16 @@
   </head>
 
   <body>
-    <div class="content">
+    <div class="header">
 
       <div class="pageTitle">
         <h1>IEEE-CIS HISTORICAL TIMELINE</h1>
       </div>
+    </div>
 
-      <?php include ("./src/menu.php"); ?>
+    <?php include ("./src/menu.php"); ?>
+
+    <div class="content">
 
       <div class="centerBlock">
         <p>Welcome to the Institute of Electrical and Electronics Engineers <b>(IEEE)</b> Computational Intelligence Society <b>(CIS)</b> Historical Timeline!</p>

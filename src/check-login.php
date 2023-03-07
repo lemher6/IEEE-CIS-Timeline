@@ -13,8 +13,8 @@
 
   ### If session variables are not set the user must login.
   if(!isset($_SESSION['userRoll'])){
-    checkLogin('Ana','123','Admin');
-    #checkLogin('Ana','123','CIS');
+    #checkLogin('Ana','123','Admin');
+    checkLogin('Ana','123','CIS');
   }
 
   ### CHECKS THE PASSWORD AND SET SESSION VARIABLES

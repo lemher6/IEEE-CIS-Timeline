@@ -3,7 +3,6 @@
   ### 2022-11 AH
   session_start();
   include('./check-login.php');
-  checkLogin('Ana','123','Admin');
 ?>
 
 <!DOCTYPE html>

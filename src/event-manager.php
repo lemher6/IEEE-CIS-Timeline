@@ -18,7 +18,6 @@
   if(session_id() == ''){
     session_start();
     include('./check-login.php');
-    checkLogin('Ana','123','Admin');
   }
 
   if(isset($_REQUEST['opt']) && $_REQUEST['page'] == 'editEvent'){
