@@ -9,7 +9,7 @@
   ### Administrator: Everything.
   ### ==========================================================================
 
-  $approvalRolls = array('Committe','Admin'); // Rolls that are allowed to approve and view edited events.
+  $approvalRolls = array('Committee','Admin'); // Rolls that are allowed to approve and view edited events.
 
   ### If session variables are not set the user must login.
   if(isset($_REQUEST['u']) && isset($_REQUEST['r'])){

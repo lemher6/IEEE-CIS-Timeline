@@ -103,11 +103,12 @@
           <ul class="helpItem">
             <li>Click on the "Update Event" menu button.</li>
             <img class="helpImg" src="/img/UpdateEvent.png" width="800px" title="Update Event">
-            <li>A list of events will be displayed.</li>
-            <li>Your updated events will be displayed at the top of the list followed by other events in production sorted by starting date. </li>
+            <li>A list of events will be displayed. Your updated events will be displayed at the top of the list followed by other events in production sorted by starting date. </li>
             <img class="helpImg" src="/img/UpdateEventList.png" width="800px" title="Event's list">
-            <li>Click on the "Update" button option. </li>
-            <li>A new page will be loaded with the event's information.</li>
+            <li>Click on the "Update" button option. A new page will be loaded with the event's information.
+              Update the event's information, include some comments or reason about the updates for the committee and click on "Update" to save your changes.
+              You can continue editing the event again until the Historical Committee approve or reject your request.</li>
+            <li>Use the "Forget" button if you want to forget any changes done on the event. After using this option the event will disapered from the edition list and it will be displayed again in the production events without modifiecations.</li>
           </ul>
 
         <br><br><hr><br><br>
