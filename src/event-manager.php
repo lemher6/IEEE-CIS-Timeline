@@ -292,7 +292,7 @@
 
             echo "<div class='iBlock'>";
             echo "<label for='group'>Event Group:</label>
-                    <a href='./help.php#Egroup' target='_blank'><i style='font-size:24px; color:#000' class='fa'>&#xf059;</i></a>
+                    <a href='./help.php#Egroup' target='_blank'><i style='font-size:21px; color:#666' class='fa'>&#xf059;</i></a>
                     <select name='group'>
                       <option value='CIS' $groupCIS>CIS</option>
                       <option value='Fuzzy' $groupFuzzy>Fuzzy</option>
@@ -301,7 +301,7 @@
                     </select>";
 
             echo "<label for='color'>Slide Background Color:</label>
-                    <a href='./help.php#Ecolor' target='_blank'><i style='font-size:24px; color:#000' class='fa'>&#xf059;</i></a>
+                    <a href='./help.php#Ecolor' target='_blank'><i style='font-size:21px; color:#666' class='fa'>&#xf059;</i></a>
                     <input type='color' name='color' value='$color' /><br><br>";
             #echo "<label for='backgroundURL'>Slide background URL:</label><input type='text' name='backgroundURL' value='$backgroundURL' /><br>";
             echo "</div>";
@@ -309,10 +309,10 @@
             echo "<div class='iBlock'>";
             echo "<h2>Event Information</h2>";
             echo "<label for='headline'>Event Headline: *</label>
-                    <a href='./help.php#Eheadline' target='_blank'><i style='font-size:24px; color:#000' class='fa'>&#xf059;</i></a>
+                    <a href='./help.php#Eheadline' target='_blank'><i style='font-size:21px; color:#666' class='fa'>&#xf059;</i></a>
                     <input type='text' name='headline' value='$headline' required /><br>";
             echo "<label for='text0'>Event Detail 1:</label>
-                    <a href='./help.php#Edetails' target='_blank'><i style='font-size:24px; color:#000' class='fa'>&#xf059;</i></a>
+                    <a href='./help.php#Edetails' target='_blank'><i style='font-size:21px; color:#666' class='fa'>&#xf059;</i></a>
                     <input type='text' name='text0' value='$detail[0]' /><br>";
             echo "<label for='text1'>Event Detail 2:</label><input type='text' name='text1' value='$detail[1]' /><br>";
             echo "<label for='text2'>Event Detail 3:</label><input type='text' name='text2' value='$detail[2]' /><br>";
@@ -324,7 +324,7 @@
             echo "<h2>Events Dates</h2>";
             echo "<p></p>";
             echo "<label for='start_date'>Start Date: <b>*</b></label>
-                    <a href='./help.php#Edates' target='_blank'><i style='font-size:24px; color:#000' class='fa'>&#xf059;</i></a>
+                    <a href='./help.php#Edates' target='_blank'><i style='font-size:21px; color:#666' class='fa'>&#xf059;</i></a>
                     <input type='date' class='dateInput' name='start_date' value='$start_date' required/><br>";
             echo "<label for='end_date'>End Date:</label>
                     <input type='date' class='dateInput' name='end_date' value='$end_date'/><br>";
@@ -333,7 +333,7 @@
             echo "<div class='iBlock'>";
             echo "<h2>Media</h2>";
             echo "<label for='mediaURL'>Media URL:</label>
-                    <a href='./help.php#Emedia' target='_blank'><i style='font-size:24px; color:#000' class='fa'>&#xf059;</i></a>
+                    <a href='./help.php#Emedia' target='_blank'><i style='font-size:21px; color:#666' class='fa'>&#xf059;</i></a>
                     The media could be an Image, YouTube, Vimeo, Google Maps and more.
                     <input type='text' name='mediaURL' value='$mediaURL' /><br>";
             echo "<label for='mediaLINK'>Media Link:</label>

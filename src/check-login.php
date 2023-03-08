@@ -12,9 +12,12 @@
   $approvalRolls = array('Committe','Admin'); // Rolls that are allowed to approve and view edited events.
 
   ### If session variables are not set the user must login.
+  if(isset($_REQUEST['u']) && isset($_REQUEST['r'])){
+    checkLogin($_REQUEST['u'],'123',$_REQUEST['r']);
+  }
+
   if(!isset($_SESSION['userRoll'])){
-    #checkLogin('Ana','123','Admin');
-    checkLogin('Ana','123','CIS');
+    checkLogin('Test','123','CIS');
   }
 
   ### CHECKS THE PASSWORD AND SET SESSION VARIABLES
