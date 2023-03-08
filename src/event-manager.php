@@ -45,6 +45,69 @@
   }
 
 
+  ### ****************************************************************************
+  ### LISTS ALL EDITIED EVENTS BASIC INFORMATON
+  ### ****************************************************************************
+  function listEditions(){
+
+    $editedEvents = array(); // for the unique_id of edited events
+
+    $data = file_get_contents('../json/editions.json'); // Read the EDITIONS JSON file
+    if(!$data){
+      echo "ERROR:20230301081411. Editions file is empty. Please contact your administrator.";
+    }else{
+      $data = json_decode($data, true); // Decode the JSON data into a PHP array
+
+      $counter = 1;
+      foreach ($data['events'] as $event) {
+            if($event['change']['user'] == $_SESSION['user'] || in_array($_SESSION['userRoll'],$GLOBALS['approvalRolls'])){
+
+                array_push($editedEvents, $event['unique_id']);
+
+                if($event['change']['action'] == 'del'){
+                  $action = 'For removal';
+                }elseif($event['change']['action'] == 'new'){
+                  $action = 'Creating';
+                }else{
+                  $action = 'Updateding';
+                }
+                $opt = $event['change']['action'];
+
+                echo "\n\t<tr>\n";
+                echo "\t\t<td>";
+                echo $counter;
+                echo "</td>\n";
+                echo "\t\t<td>";
+                echo $event['start_date']['year'] ."-". $event['start_date']['month'] ."-". $event['start_date']['day'];
+                echo "</td>\n";
+                echo "\t\t<td>";
+                echo $event['end_date']['year'] ."-". $event['end_date']['month'] ."-". $event['end_date']['day'];
+                echo "</td>\n";
+                echo "\t\t<td style='text-align:left;'>";
+                echo $event['text']['headline'];
+                echo "</td>\n";
+                echo "\t\t<td style='text-align:left;'>";
+                echo $event['group'];
+                echo "</td>\n";
+                echo "\t\t<td style='text-align:left; title='On ". $event['change']['date'] ." By ". $event['change']['user'] ."'>";
+                echo $action;
+                echo "</td>\n";
+                echo "\t\t<td  style=\"text-align:left;\">";
+                echo "<button onclick=\"document.location='/src/event.php?eId=". $event['unique_id'] ."&status=edited&opt=$opt&page=listEvents'\" title='Keep Updating'>Update</button>";
+                echo "&nbsp; &nbsp;";
+                echo "<button onclick=\"document.location='/src/event-manager.php?eId=". $event['unique_id'] ."&opt=eDel&page=editEvent'\" title='Forget Changes'>Forget</button>";
+                echo "</td>\n";
+                echo "</tr>\n";
+                $counter++;
+            } // END if(user)
+        } // END foreach
+      } // END if($data)
+
+      $GLOBALS['editedIds'] = $editedEvents;
+
+  }
+
+
   ##############################################################################
   ### LISTS ALL EVENTS BASIC INFORMATON SORT BY EVENT START DATE
   ##############################################################################
@@ -62,32 +125,39 @@
       // Search for the event object
       $counter = 1;
       $counterDisplay = 1;
+      $tdClass = "class='borderLine'";
       foreach ($data['events'] as $event) {
 
+
+          if($counterDisplay > 1){ // making a break line between the edited events and the production events
+            $tdClass = '';
+          }
           // If the event has been updated it is not displayed here as it is already displayed.
           if(!in_array($event['unique_id'], $GLOBALS['editedIds'])){
+
               echo "\n\t<tr>\n";
-              echo "\t\t<td>";
+              echo "\t\t<td $tdClass>";
               echo $counterDisplay;
               echo "</td>\n";
-              echo "\t\t<td>";
+              echo "\t\t<td $tdClass>";
               echo $event['start_date']['year'] ."-". $event['start_date']['month'] ."-". $event['start_date']['day'];
               echo "</td>\n";
-              echo "\t\t<td>";
+              echo "\t\t<td $tdClass>";
               echo $event['end_date']['year'] ."-". $event['end_date']['month'] ."-". $event['end_date']['day'];
               echo "</td>\n";
-              echo "\t\t<td>";
+              echo "\t\t<td $tdClass style='text-align:left;'>";
               echo $event['text']['headline'];
               echo "</td>\n";
-              echo "\t\t<td>";
+              echo "\t\t<td $tdClass style='text-align:left;'>";
               echo $event['group'];
               echo "</td>\n";
-              echo "\t\t<td  style=\"text-align:center;\"> <button onclick=\"document.location='/src/event.php?eId=";
-              echo $event['unique_id'];
-              echo "&opt=upd&page=listEvents&counter=$counter'\">Update</button>";
-              echo "&nbsp; &nbsp;<button onclick=\"document.location='/src/event.php?eId=";
-              echo $event['unique_id'];
-              echo "&opt=del&page=listEvents&counter=$counter'\">Remove</button>";
+              echo "\t\t<td style='text-align:left' $tdClass>";
+              echo "Approved";
+              echo "</td>\n";
+              echo "\t\t<td $tdClass style=\"text-align:left;\">";
+              echo "<button onclick=\"document.location='/src/event.php?eId=". $event['unique_id'] ."&opt=upd&page=listEvents&counter=$counter'\">Update</button>";
+              echo "&nbsp; &nbsp;";
+              echo "<button onclick=\"document.location='/src/event.php?eId=". $event['unique_id']. "&opt=del&page=listEvents&counter=$counter'\">Remove</button>";
               echo "</td>\n";
               echo "</tr>\n";
               $counterDisplay++;
@@ -285,67 +355,6 @@
   } ###  END function displayEvent
 
 
-  ### ****************************************************************************
-  ### LISTS ALL EDITIED EVENTS BASIC INFORMATON
-  ### ****************************************************************************
-  function listEditions(){
-
-    $editedEvents = array(); // for the unique_id of edited events
-
-    $data = file_get_contents('../json/editions.json'); // Read the EDITIONS JSON file
-    if(!$data){
-      echo "ERROR:20230301081411. Editions file is empty. Please contact your administrator.";
-    }else{
-      $data = json_decode($data, true); // Decode the JSON data into a PHP array
-
-      $counter = 1;
-      foreach ($data['events'] as $event) {
-            if($event['change']['user'] == $_SESSION['user'] || $_SESSION['userRoll'] == 'Admin'){
-
-                array_push($editedEvents, $event['unique_id']);
-
-                if($event['change']['action'] == 'del'){
-                  $action = 'Deleted';
-                }elseif($event['change']['action'] == 'new'){
-                  $action = 'Created';
-                }else{
-                  $action = 'Updated';
-                }
-                $action = $event['change']['user'].' '.$action.' on '.$event['change']['date'];
-                $opt = $event['change']['action'];
-
-                echo "\n\t<tr>\n";
-                echo "\t\t<td>";
-                echo $counter;
-                echo "</td>\n";
-                echo "\t\t<td>";
-                echo $event['start_date']['year'] ."-". $event['start_date']['month'] ."-". $event['start_date']['day'];
-                echo "</td>\n";
-                echo "\t\t<td>";
-                echo $event['end_date']['year'] ."-". $event['end_date']['month'] ."-". $event['end_date']['day'];
-                echo "</td>\n";
-                echo "\t\t<td>";
-                echo $event['text']['headline'];
-                echo "</td>\n";
-                echo "\t\t<td>";
-                echo $event['group'];
-                echo "</td>\n";
-
-                echo "\t\t<td  style=\"text-align:center;\">";
-                echo "<button onclick=\"document.location='/src/event.php?eId=". $event['unique_id'] ."&status=edited&opt=$opt&page=listEvents'\">$action</button>";
-
-                echo "</td>\n";
-
-                echo "</tr>\n";
-                $counter++;
-            } // END if(user)
-        } // END foreach
-      } // END if($data)
-
-      $GLOBALS['editedIds'] = $editedEvents;
-
-  }
-
 
   ##############################################################################
   ### CREATE A NEW EVENT INSTANCE IN THE FILE EDITIONS FOR LATER APPROVAL
@@ -467,7 +476,7 @@
                   array_push($editedEvents, $event['unique_id']);
 
                   if($event['change']['action'] == 'del'){
-                    $action = 'Deleted';
+                    $action = 'Removed';
                   }elseif($event['change']['action'] == 'new'){
                     $action = 'Created';
                   }else{

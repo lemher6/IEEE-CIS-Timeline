@@ -46,7 +46,7 @@
 
   <body>
     <div class="content">
-      
+
       <div class="pageTitle">
         <h1>EDIT TIMELINE EVENTS</h1>
       </div>
@@ -61,6 +61,7 @@
               <th>End Date</th>
               <th>Headline</th>
               <th>Group</th>
+              <th>Status</th>
               <th style="text-align:center;">Actions</th>
             </tr>
             <tr>

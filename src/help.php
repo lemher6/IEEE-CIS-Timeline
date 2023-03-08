@@ -46,17 +46,17 @@
 
 
         <span id="navegation"> </span>
-          <h3>How To Navegate In The Timeline</h3>
-          <img class="helpImg" src="/img/Timeline-navegation.png" width="90%" title="Timeline">
+          <h2>How to Navigate The Timeline</h2>
+          <img class="helpImg" src="/img/Timeline-navegation.png" width="90%" title="How to navigate the Timeline.">
 
         <br><br><hr><br><br>
 
         <span id="creating"> </span>
-          <h3>How To Create a New Event</h3>
+          <h2>How To Create a New Event</h2>
           <ul class="helpItem">
             <li>Click on the "Create Event" menu button.</li>
             <img class="helpImg" src="/img/CreateEvent.png" width="800px" title="Create Option">
-            <li>Field the event information <a href="#Egroup"><i style="font-size:24px; color:#20b2e2" class="fa">&#xf059;</i></a>. Every event must have at least a title and a start date.</li>
+            <li>Field the event information <a href="#Enfio"><i style="font-size:24px; color:#20b2e2" class="fa">&#xf059;</i></a>. Every event must have at least a title and a start date.</li>
             <li>Include the comments/reason about the new event at the end of form and click on the "Create" button to submit the form.</li>
             <li>You can update the new event later after creating it. The new event will move to production when the Historical Committe aprove it. </li>
           </ul>
@@ -64,7 +64,8 @@
         <br><br><hr><br><br>
 
 
-          <h3>The Event Information</h3>
+          <span id="Enfio"> </span>
+          <h2>The Event Information</h2>
           <ol class="helpItem">
             <span id="Egroup"> </span>
             <li><b>Event Group:</b> By default will be set CIS group, but you can select any of the options (FUZZI,EC,NNs).</li>
@@ -98,26 +99,34 @@
         <br><br><hr><br><br>
 
         <span id="updating"> </span>
-          <h3>How To Update an Event</h3>
-          <img class="helpImg" src="/img/UpdateEvent.png" width="800px" title="Update Event">
+          <h2>How To Update an Event</h2>
+          <ul class="helpItem">
+            <li>Click on the "Update Event" menu button.</li>
+            <img class="helpImg" src="/img/UpdateEvent.png" width="800px" title="Update Event">
+            <li>A list of events will be displayed.</li>
+            <li>Your updated events will be displayed at the top of the list followed by other events in production sorted by starting date. </li>
+            <img class="helpImg" src="/img/UpdateEventList.png" width="800px" title="Event's list">
+            <li>Click on the "Update" button option. </li>
+            <li>A new page will be loaded with the event's information.</li>
+          </ul>
 
         <br><br><hr><br><br>
 
         <span id="removing"> </span>
-          <h3>How To Remove an Event</h3>
+          <h2>How To Remove an Event</h2>
           <img class="helpImg" src="/img/UpdateEvent.png" width="800px" title="Remove Event">
 
         <br><br><hr><br><br>
 
         <span id="approving"> </span>
-          <h3>How To Approve a Request</h3>
+          <h2>How To Approve a Request</h2>
           <img class="helpImg" src="/img/ApproveEvent.png" width="800px" title="Approve Request">
 
 
         <br><br><hr><br><br>
 
         <span id="sandbox"> </span>
-          <h3>The Sandbox Timeline</h3>
+          <h2>The Sandbox Timeline</h2>
           <img class="helpImg" src="/img/SandboxView.png" width="800px" title="Sandbox Timeline">
 
       </div>
