@@ -69,7 +69,7 @@
           <?php
             include ("./event-manager.php");
             listEditions();
-            printAllEvent();
+            #printAllEvent();
           ?>
             </tr>
           </table>

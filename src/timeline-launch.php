@@ -1,6 +1,7 @@
 <?php
   ### IEEE-CIS TIMELINE PROJECT
   ### 2022-11 AH
+  ### A new line was added to the Timeline-min.js file. document.getElementById("eId").value=this.data.unique_id): So the unique_id is set to the update event menu option.
   session_start();
   include('./check-login.php');
 ?>

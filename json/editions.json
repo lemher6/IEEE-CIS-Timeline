@@ -1,6 +1,82 @@
 {
     "events": [
         {
+            "unique_id": "CIS20230302042201",
+            "author": "Ana",
+            "created_on": "2023-03-02 04:29",
+            "last_modification": "2023-03-02 05:17",
+            "group": "Fuzzy",
+            "text": {
+                "headline": "Test event on 03\/02\/2023",
+                "text": "Details 1<br>No more details<br>No more details<br>No more details<br>No more details"
+            },
+            "start_date": {
+                "year": "2023",
+                "month": "03",
+                "day": "02"
+            },
+            "end_date": {
+                "year": "2023",
+                "month": "03",
+                "day": "04"
+            },
+            "media": {
+                "caption": "Test",
+                "credit": "Test",
+                "url": "https:\/\/showme.missouri.edu\/wp-content\/uploads\/2020\/11\/ColumnsBanners.jpg",
+                "link": "https:\/\/en.wikipedia.org\/wiki\/Image#\/media\/File:Image_created_with_a_mobile_phone.png"
+            },
+            "background": {
+                "color": "#8686e3",
+                "opacity": 50,
+                "url": null
+            },
+            "change": {
+                "user": "Ana Herrera",
+                "date": "2023-03-17 00:18",
+                "action": "del",
+                "comment": "it was just a test."
+            }
+        },
+        {
+            "unique_id": "Fuzzy20170709-001",
+            "author": "Ana",
+            "created_on": "2022-12-01",
+            "last_modification": "2023-03-01 16:12",
+            "group": "Fuzzy",
+            "text": {
+                "headline": "2017 IEEE FUZZY",
+                "text": "2017 IEEE International Conference on Fuzzy Systems<br>July 9-12, 2017, Naples, Italy<br>GCs: Giovanni Acampora, Bruno Siciliano<br>PCs: Hani Hagras, Francisco Herrera<br>"
+            },
+            "start_date": {
+                "year": "2017",
+                "month": "07",
+                "day": "09"
+            },
+            "end_date": {
+                "year": "2017",
+                "month": "07",
+                "day": "12"
+            },
+            "media": {
+                "caption": "IEEE International Conference on Fuzzy Systems",
+                "credit": "",
+                "url": "\/img\/FUZZ20170709.JPG",
+                "link": "https:\/\/ewh.ieee.org\/conf\/fuzz\/fuzz-2017.pdf"
+            },
+            "background": {
+                "color": "#d0e2fd",
+                "opacity": 50,
+                "url": null
+            },
+            "change": {
+                "user": "Ana Herrera",
+                "date": "2023-03-17 00:17",
+                "action": "upd",
+                "comment": ""
+            }
+        },
+        {
             "unique_id": "CIS20230301083119",
             "author": "Ana",
             "created_on": "2023-03-01 20:29",
@@ -8,12 +84,12 @@
             "group": "NNs",
             "text": {
                 "headline": "The Halloween Event",
-                "text": "Halloween Pumpkin Carving--IEEE style<br>Sponsor by The Monter<br>School of Engineering<br>Categories: scary, funny and IEEE spirit!<br>The pumpkins were illuminated from the inside using an LED circuit. "
+                "text": "Halloween Pumpkin Carving--IEEE style<br>Sponsor by The Monter<br><br><br>"
             },
             "start_date": {
                 "year": "2022",
                 "month": "10",
-                "day": "31"
+                "day": "30"
             },
             "end_date": {
                 "year": "2022",
@@ -21,7 +97,7 @@
                 "day": "31"
             },
             "media": {
-                "caption": "IEEE CIS Halloween Event",
+                "caption": "",
                 "credit": "Halloween Pumpkin Carving--IEEE style",
                 "url": "https:\/\/2.bp.blogspot.com\/-rt8D1urfesY\/VFgLfrRgxGI\/AAAAAAAAJQk\/VtxpVSOPx1s\/s1600\/pumpkin%2B12.jpg",
                 "link": "https:\/\/jacobsschoolofengineering.blogspot.com\/2014\/10\/pumpkins-ieee-style.html"
@@ -32,48 +108,10 @@
                 "url": null
             },
             "change": {
-                "user": "Test User",
-                "date": "2023-03-07 20:47",
+                "user": "GUI",
+                "date": "2023-03-08 21:50",
                 "action": "upd",
-                "comment": ""
-            }
-        },
-        {
-            "unique_id": "EC20180708-001",
-            "author": "Ana",
-            "created_on": "2022-12-01",
-            "last_modification": "2023-02-13",
-            "group": "EC",
-            "text": {
-                "headline": "2018 IEEE WCCI",
-                "text": "2018 IEEE World Congress on Computational Intelligence (WCCI)<br>July 8-13, 2018<br>Rio de Janeiro, Brazil<br>GCs: Marley Vellasco, Pablo Estevez<br>CCs: Teresa Ludermir, Fernando Gomide, Gary G. Yen"
-            },
-            "start_date": {
-                "year": "2018",
-                "month": "07",
-                "day": "08"
-            },
-            "end_date": {
-                "year": "2018",
-                "month": "07",
-                "day": "13"
-            },
-            "media": {
-                "caption": "IEEE World Congress on Computational Intelligence (WCCI)",
-                "credit": "",
-                "url": "https:\/\/ewh.ieee.org\/conf\/wcci\/img\/wcci2018.png",
-                "link": "https:\/\/entrepreneurship.ieee.org\/session\/2018_07_08_ieee-world-congress-computational-intelligence\/"
-            },
-            "background": {
-                "color": "#ffffff",
-                "opacity": 50,
-                "url": null
-            },
-            "change": {
-                "user": "Ana",
-                "date": "2023-03-07 00:01",
-                "action": "del",
-                "comment": "del"
+                "comment": "UPDATING DATES."
             }
         },
         {

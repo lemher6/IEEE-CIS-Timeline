@@ -1,3 +1,42 @@
 {
-    "events": []
+    "events": [
+        {
+            "unique_id": "CIS20230302042201",
+            "author": "Ana",
+            "created_on": "2023-03-02 04:29",
+            "last_modification": "2023-03-02 05:17",
+            "group": "Fuzzy",
+            "text": {
+                "headline": "Test event on 03\/02\/2023",
+                "text": "Details 1<br>No more details<br>No more details<br>No more details<br>No more details"
+            },
+            "start_date": {
+                "year": "2023",
+                "month": "03",
+                "day": "02"
+            },
+            "end_date": {
+                "year": "2023",
+                "month": "03",
+                "day": "04"
+            },
+            "media": {
+                "caption": "Test",
+                "credit": "Test",
+                "url": "https:\/\/showme.missouri.edu\/wp-content\/uploads\/2020\/11\/ColumnsBanners.jpg",
+                "link": "https:\/\/en.wikipedia.org\/wiki\/Image#\/media\/File:Image_created_with_a_mobile_phone.png"
+            },
+            "background": {
+                "color": "#8686e3",
+                "opacity": 50,
+                "url": null
+            },
+            "change": {
+                "user": "Ana Herrera",
+                "date": "2023-03-17 00:18",
+                "action": "del",
+                "comment": "it was just a test."
+            }
+        }
+    ]
 }

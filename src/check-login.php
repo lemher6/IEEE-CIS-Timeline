@@ -17,7 +17,7 @@
   }
 
   if(!isset($_SESSION['userRoll'])){
-    checkLogin('Test','123','CIS');
+    checkLogin('Public User','123','CIS');
   }
 
   ### CHECKS THE PASSWORD AND SET SESSION VARIABLES

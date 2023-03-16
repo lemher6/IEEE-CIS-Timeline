@@ -24,7 +24,7 @@
         text-align:left;
         border-radius: 5px;
         background-color: #f9f9f9;
-        padding: 1em;
+        padding: 1em 1em 0.3em 1em;
         border: #dddcdc 1px solid;
       }
 
@@ -43,7 +43,11 @@
               margin: auto;
           }
           .iBlock{
-            margin: 2em;
+            margin: 1.3em;
+          }
+
+          #timeline-embed{
+            margin-left: 1em;
           }
 
       }
@@ -56,14 +60,14 @@
           ########################################################################
           ###  GETTING HEADER PARAMETERS
           ########################################################################
-          if(isset($_GET['eId'])){
-            $eId = $_GET['eId'];
+          if(isset($_REQUEST['eId'])){
+            $eId = $_REQUEST['eId'];
           }else{
             $eId = '';
           }
 
-          if(isset($_GET['opt'])){
-            $opt = $_GET['opt'];
+          if(isset($_REQUEST['opt'])){
+            $opt = $_REQUEST['opt'];
           }else{
             $opt = '';
           }
@@ -95,7 +99,7 @@
           <div class="formBlock">
 
             <?php if($opt != 'new' || $status == 'edited'){ // DISPLAYS TIMELINE IF IT IS NOT A NEW EVENT ?>
-              <div id="timeline-embed" style="border: 1px solid #ccc; width:100%; height:480px;">
+              <div id="timeline-embed" style="border: 1px solid #ccc; width:97%; height:450px;">
                 <div id="timeline"></div>
               </div>
             <?php } // END display the div ?>
@@ -156,6 +160,7 @@
                          window.timeline = new TL.Timeline('timeline-embed', '../json/timeline.json', {
                              hash_bookmark: false, /* If set to true, TimelineJS will update the browser URL each time a slide advances, so that people can link directly to specific slides. */
                              font: "fjalla-average",
+                             timenav_height: 90,
                              scale_factor: 1, /* How many screen widths wide the timeline should be at first presentation. */
                              initial_zoom: 1, /* The position in the zoom_sequence series used to scale the Timeline when it is first created. Takes precedence over scale_factor. */
                              zoom_sequence: [0.5, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89], /* Array of values for TimeNav zoom levels. Each value is a scale_factor, which means that at any given level, the full timeline would require that many screens to display all events. */
@@ -185,6 +190,7 @@
                  window.timeline = new TL.Timeline('timeline-embed', '../json/timeline.json', {
                      hash_bookmark: true, /* If set to true, TimelineJS will update the browser URL each time a slide advances, so that people can link directly to specific slides. */
                      font: "fjalla-average",
+                     timenav_height: 90,
                      initial_zoom: 1, /* The position in the zoom_sequence series used to scale the Timeline when it is first created. Takes precedence over scale_factor. */
                      start_at_slide: <?php echo $counter; ?>
                 });
@@ -212,6 +218,7 @@
                    window.timeline = new TL.Timeline('timeline-embed', '../json/<?php echo $eId; ?>.json', {
                        hash_bookmark: true, /* If set to true, TimelineJS will update the browser URL each time a slide advances, so that people can link directly to specific slides. */
                        font: "fjalla-average",
+                       timenav_height: 90,
                        scale_factor: 1, /* How many screen widths wide the timeline should be at first presentation. */
                        initial_zoom: 1, /* The position in the zoom_sequence series used to scale the Timeline when it is first created. Takes precedence over scale_factor. */
                        zoom_sequence: [0.5, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89], /* Array of values for TimeNav zoom levels. Each value is a scale_factor, which means that at any given level, the full timeline would require that many screens to display all events. */

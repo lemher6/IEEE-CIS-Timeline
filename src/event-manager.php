@@ -348,7 +348,7 @@
 
             echo "<div class='iBlock'>";
             echo "<label for='comment'>Comments:</label>
-                    Please include some comments about your updates for the approval commitee.
+                    Please include some comments about your updates for the approval committee.
                     <textarea name='comment'></textarea>";
             echo "</div>";
 
@@ -460,7 +460,7 @@
     function displayForApproval(){
 
       if($_SESSION['userRoll'] != 'Admin'){
-        echo "You can approve or reject a request that is pending approval only if you are a member of the timeline commitee.";
+        echo "You can approve or reject a request that is pending approval only if you are a member of the timeline committee.";
       }else{
 
       $editedEvents = array(); // for the unique_id of edited events
@@ -602,7 +602,7 @@
 
       // First checks user roll
       if($_SESSION['userRoll'] != 'Admin'){
-        echo "You can approve or reject a request that is pending approval only if you are a member of the timeline commitee. ";
+        echo "You can approve or reject a request that is pending approval only if you are a member of the timeline committee. ";
       }else{
         if(isset($_REQUEST['eId'])){
 
@@ -727,7 +727,7 @@
 
             } // END if($data)
         } // END if(eId)
-      } // if user is not timeline commitee.
+      } // if user is not timeline committee.
   }
 
 
