@@ -34,7 +34,7 @@ if($filename == 'timeline-Launch.php'){
       <input type="hidden" name="page" value="listEvents" />
       <input type="hidden" name="counter" value="0" />
       <input type="submit" name="optUpd" onclick="setOpt('upd')" value="Update This" />
-      <input type="submit" name="optDel" onclick="setOpt('del')" value="Delete This" />
+      <input type="submit" name="optDel" onclick="setOpt('del')" value="Remove This" />
     </form>
 
       <script>

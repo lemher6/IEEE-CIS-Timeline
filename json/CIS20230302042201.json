@@ -27,15 +27,15 @@
                 "link": "https:\/\/en.wikipedia.org\/wiki\/Image#\/media\/File:Image_created_with_a_mobile_phone.png"
             },
             "background": {
-                "color": "#8686e3",
+                "color": "#f4d81f",
                 "opacity": 50,
                 "url": null
             },
             "change": {
-                "user": "Ana Herrera",
-                "date": "2023-03-17 00:18",
-                "action": "del",
-                "comment": "it was just a test."
+                "user": "Test",
+                "date": "2023-04-13 05:06",
+                "action": "upd",
+                "comment": "color"
             }
         }
     ]
