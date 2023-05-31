@@ -95,9 +95,14 @@
           <?php include ("./menu.php"); ?>
 
 
-
           <div class="formBlock">
 
+            <p>Please follow the <b>guidelines to contribute to the CIS History Timeline</b>
+            <a href="./help.php" target="_blank">
+                <i style="font-size:21px; color:#666" class="fa"></i>
+              </a>.
+            </p>
+            <br>
             <?php if($opt != 'new' || $status == 'edited'){ // DISPLAYS TIMELINE IF IT IS NOT A NEW EVENT ?>
               <div id="timeline-embed" style="border: 1px solid #ccc; width:97%; height:450px;">
                 <div id="timeline"></div>

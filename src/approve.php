@@ -16,6 +16,7 @@
 
     <link rel="stylesheet" type="text/css" href="../css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
     <link title="timeline-styles" rel="stylesheet" href="../css/timeline.css">
     <script src="../js/timeline-min.js"></script>
 
@@ -78,18 +79,26 @@
 
         <div class="flex-container">
           <div>
-            <br>You can approve or reject a request that is pending approval only if you are a member of the timeline commitee.<br><br>
+            <br>
+            <i class='fas fa-user-shield' style='font-size:48px;color:white;'></i>
+            <br>
+            <br>Only timeline commitee members can approve or reject requests.<br><br>
           </div>
           <div>
             <br>
-            1. Review the details of the edited record. <br>
-            2. Enter an approval or rejection reason.<br>
+            <i class='fas fa-book-reader' style='font-size:48px;color:white'></i>            
+            <br><br>
+            1. Review request. <br>
+            2. Inpupt your reasons or comments.<br>
             3. Click on the <b>"Approve"</b> or <b>"Reject"</b> button.
             <br><br>
           </div>
           <div>
             <br>
-            After approval or denial, the event will be removed from the edition list and the event will be updated in the production timelines.
+            <i class='fas fa-file-export' style='font-size:48px;color:white'></i>
+            <br>
+            <br>
+            After approval, the event will be moved from the waiting list to the production timeline.
             <br><br>
           </div>
         </div>

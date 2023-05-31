@@ -27,53 +27,15 @@
                 "link": "https:\/\/en.wikipedia.org\/wiki\/Image#\/media\/File:Image_created_with_a_mobile_phone.png"
             },
             "background": {
-                "color": "#f4d81f",
+                "color": "#8686e3",
                 "opacity": 50,
                 "url": null
             },
             "change": {
-                "user": "Test",
-                "date": "2023-04-13 05:06",
-                "action": "upd",
-                "comment": "color"
-            }
-        },
-        {
-            "unique_id": "Fuzzy20170709-001",
-            "author": "Ana",
-            "created_on": "2022-12-01",
-            "last_modification": "2023-03-01 16:12",
-            "group": "Fuzzy",
-            "text": {
-                "headline": "2017 IEEE FUZZY",
-                "text": "2017 IEEE International Conference on Fuzzy Systems<br>July 9-12, 2017, Naples, Italy<br>GCs: Giovanni Acampora, Bruno Siciliano<br>PCs: Hani Hagras, Francisco Herrera<br>"
-            },
-            "start_date": {
-                "year": "2017",
-                "month": "07",
-                "day": "09"
-            },
-            "end_date": {
-                "year": "2017",
-                "month": "07",
-                "day": "12"
-            },
-            "media": {
-                "caption": "IEEE International Conference on Fuzzy Systems",
-                "credit": "",
-                "url": "\/img\/FUZZ20170709.JPG",
-                "link": "https:\/\/ewh.ieee.org\/conf\/fuzz\/fuzz-2017.pdf"
-            },
-            "background": {
-                "color": "#d0e2fd",
-                "opacity": 50,
-                "url": null
-            },
-            "change": {
-                "user": "Ana Herrera",
-                "date": "2023-03-17 00:17",
-                "action": "upd",
-                "comment": ""
+                "user": "Jane Luca",
+                "date": "2023-05-31 20:21",
+                "action": "del",
+                "comment": "This event was created for testing purposes."
             }
         },
         {
@@ -84,12 +46,12 @@
             "group": "NNs",
             "text": {
                 "headline": "The Halloween Event",
-                "text": "Halloween Pumpkin Carving--IEEE style<br>Sponsor by The Monter<br><br><br>"
+                "text": "Halloween Pumpkin Carving--IEEE style<br>Sponsor by The Monter<br>Family friendly event<br>9:00 AM to 1:00 PM<br>"
             },
             "start_date": {
                 "year": "2022",
                 "month": "10",
-                "day": "30"
+                "day": "31"
             },
             "end_date": {
                 "year": "2022",
@@ -108,48 +70,10 @@
                 "url": null
             },
             "change": {
-                "user": "GUI",
-                "date": "2023-03-08 21:50",
+                "user": "Jhon Smith",
+                "date": "2023-05-31 20:13",
                 "action": "upd",
-                "comment": "UPDATING DATES."
-            }
-        },
-        {
-            "unique_id": "CIS20230302112841",
-            "author": "Ana",
-            "created_on": "2023-03-03 00:17",
-            "last_modification": "2023-03-03 00:17",
-            "group": "CIS",
-            "text": {
-                "headline": "(CAI 2023) IEEE Conference on Artificial Intelligence",
-                "text": "Location: Santa Clara, CA, USA<br><br><br><br>"
-            },
-            "start_date": {
-                "year": "2023",
-                "month": "06",
-                "day": "05"
-            },
-            "end_date": {
-                "year": "",
-                "month": "",
-                "day": ""
-            },
-            "media": {
-                "caption": "CAI 2023",
-                "credit": "",
-                "url": "\/img\/CAI_2023.jpg",
-                "link": "https:\/\/cai.ieee.org\/2023\/"
-            },
-            "background": {
-                "color": "#0b0c22",
-                "opacity": 50,
-                "url": null
-            },
-            "change": {
-                "user": "Ana",
-                "date": "2023-03-03 00:18",
-                "action": "new",
-                "comment": "The next conference."
+                "comment": "Adding details to the event."
             }
         }
     ]

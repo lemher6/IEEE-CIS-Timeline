@@ -349,7 +349,7 @@
             echo "<div class='iBlock'>";
             echo "<label for='comment'>Comments:</label>
                     Please include some comments about your updates for the approval committee.
-                    <textarea name='comment'></textarea>";
+                    <textarea name='comment'>$editComment</textarea>";
             echo "</div>";
 
   } ###  END function displayEvent
@@ -537,14 +537,12 @@
 
                   echo "<div class='aBlock'>";
 
-                  echo "<b>$action</b> on $change_date by $editUser";
-                  echo "<br><b>Editor's comments:</b> $editComment <br>";
                   if($opt != 'new'){
-                    echo "<br>This event was first created on $created_on by $author. ";
+                    echo "<br><b>Event created on</b>: $created_on &nbsp;&nbsp; <b>by</b>: $author<br>";
                   }
 
                   if($created_on != $last_modification){
-                    echo "Its last modification was done on $last_modification.<br>";
+                    echo "<b>Last modification</b>: $last_modification<br>";
                   }
 
                   echo "<br><div id='$unique_id' style='width:100%; height:450px;' padding: 0 10px 0 10px;></div><br>";
@@ -564,6 +562,15 @@
 
                    });
                   </script>";
+
+                  
+                  echo "<b>Request</b>: $action<br>";
+                  echo "<b>Requested on</b>: $change_date<br>";
+                  echo "<b>Requested by</b>: $editUser<br>";
+                  echo "<b>Request's comments:</b> $editComment <br><br><hr>";
+                  
+
+                  
 
                   echo "<form method='post' action='/src/event-manager.php'>";
                   echo "<label for='comment'>Approval or rejection reasons and/or comments:</label>
