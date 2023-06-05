@@ -78,10 +78,7 @@
                 echo $counter;
                 echo "</td>\n";
                 echo "\t\t<td>";
-                echo $event['start_date']['year'] ."-". $event['start_date']['month'] ."-". $event['start_date']['day'];
-                echo "</td>\n";
-                echo "\t\t<td>";
-                echo $event['end_date']['year'] ."-". $event['end_date']['month'] ."-". $event['end_date']['day'];
+                echo $event['change']['date'];
                 echo "</td>\n";
                 echo "\t\t<td style='text-align:left;'>";
                 echo $event['text']['headline'];
@@ -93,9 +90,9 @@
                 echo $action;
                 echo "</td>\n";
                 echo "\t\t<td  style=\"text-align:left;\">";
-                echo "<button onclick=\"document.location='/src/event.php?eId=". $event['unique_id'] ."&status=edited&opt=$opt&page=listEvents'\" title='Keep Updating'>Update</button>";
+                echo "<button onclick=\"document.location='/src/event.php?eId=". $event['unique_id'] ."&status=edited&opt=$opt&page=listEvents'\" title='Keep Updating'>Update Request</button>";
                 echo "&nbsp; &nbsp;";
-                echo "<button onclick=\"document.location='/src/event-manager.php?eId=". $event['unique_id'] ."&opt=eDel&page=editEvent'\" title='Forget Changes'>Forget</button>";
+                echo "<button onclick=\"document.location='/src/event-manager.php?eId=". $event['unique_id'] ."&opt=eDel&page=editEvent'\" title='Forget Changes'>Forget Request</button>";
                 echo "</td>\n";
                 echo "</tr>\n";
                 $counter++;
@@ -358,10 +355,16 @@
 
   ##############################################################################
   ### CREATE A NEW EVENT INSTANCE IN THE FILE EDITIONS FOR LATER APPROVAL
+  ### 1. CREATE A NEW ID FOR THE NEW EVENTS
+  ### 2. CREATE AN ARRAY AND A JSON FILE WITH THE NEW REQUESTS INFO 
+  ### 3. IF THE OPTION IS 'eDel = FORGOT REQUEST' THE OLD REQUEST FILE IS RENAMED
+  ### 4. ADD THE OLD REQUSTS TO THE ARRAY WITH THE NEW REQUEST.
+  ### 5. UPDATE THE editions.json FILE
+  ### 6. OPEN THE PAGE edit-events.php TO DISPLAY AGAIN THE NEW WAITING FOR APPROVAL LIST
   ##############################################################################
   function editEvent(){
 
-    # for a new event the unique_id must be created
+    ## for a new event the unique_id must be created
     if ($_REQUEST['eId'] == '') {
       $_REQUEST['eId'] = 'CIS'.date("Ymdhis");
     }
@@ -409,25 +412,35 @@
               );
 
             $events = array($changes);
+
+            ### create a JSON file just for this edition ***************************
+            $singleEventEdited = array("events" => $events);
+
+            // encode array to json
+            $json = json_encode($singleEventEdited,JSON_PRETTY_PRINT);
+            $filename = '../json/'.$_REQUEST['eId'].'.json';
+            // Write the contents to the file,
+            // using the FILE_APPEND flag to append the content to the end of the file
+            // and the LOCK_EX flag to prevent anyone else writing to the file at the same time
+            $bytes = file_put_contents($filename,$json, LOCK_EX);
+            ### ********************************************************************
+            
         } // END if($_REQUEST['opt'] != 'eDel')
-        else{
-          $events = array();
+        else{ // If forgot request
+          
+          ## rename file so the old request is forgot
+          $fileName = '../json/'.$_REQUEST['eId'].'.json';
+          $nowDate = date("ymdHi");
+          $fileRename = '../json/'.$_REQUEST['eId'].'-f'.$nowDate.'.json';          
+          rename ($fileName,$fileRename);
+
+          $events = array(); // not include any new records
+          
         }
 
+ 
 
-        ### create a JSON file just for this edition ***************************
-        $singleEventEdited = array("events" => $events);
-
-        // encode array to json
-        $json = json_encode($singleEventEdited,JSON_PRETTY_PRINT);
-        $filename = '../json/'.$_REQUEST['eId'].'.json';
-        // Write the contents to the file,
-        // using the FILE_APPEND flag to append the content to the end of the file
-        // and the LOCK_EX flag to prevent anyone else writing to the file at the same time
-        $bytes = file_put_contents($filename,$json, LOCK_EX);
-        ### ********************************************************************
-
-
+      ## Updates the editions file
       $edit_json = file_get_contents('../json/editions.json');
       if($edit_json){
         // Decode the JSON data into a PHP array
@@ -458,8 +471,7 @@
   ### LIST EDITIONS AND ALLOW THE USER TO APPROVE OR DENY CHANGES
   ### ****************************************************************************
     function displayForApproval(){
-
-      if($_SESSION['userRoll'] != 'Admin'){
+      if(!in_array($_SESSION['userRoll'],$GLOBALS['approvalRolls'])){
         echo "You can approve or reject a request that is pending approval only if you are a member of the timeline committee.";
       }else{
 

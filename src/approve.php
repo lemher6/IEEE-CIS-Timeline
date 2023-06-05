@@ -3,7 +3,6 @@
   ### 2022-11 AH
   session_start();
   include('./check-login.php');
-  checkLogin('Ana','123','Admin');
 ?>
 
 <!DOCTYPE html>
@@ -15,8 +14,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <link rel="stylesheet" type="text/css" href="../css/style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
+
+    <link rel="stylesheet" type="text/css" href="../css/fontawesome.css">
+    <script src='../js/fontawesome.js'></script>
+    <link rel="stylesheet" type="text/css" href="../css/brands.css">
+    <script src='../js/brands.js'></script>
+    <link rel="stylesheet" type="text/css" href="../css/solid.css">
+    <script src='../js/solid.js'></script>
+
     <link title="timeline-styles" rel="stylesheet" href="../css/timeline.css">
     <script src="../js/timeline-min.js"></script>
 

@@ -32,10 +32,10 @@
                 "url": null
             },
             "change": {
-                "user": "Jane Luca",
-                "date": "2023-05-31 20:21",
+                "user": "Test",
+                "date": "2023-06-05 17:13",
                 "action": "del",
-                "comment": "This event was created for testing purposes."
+                "comment": "Testing"
             }
         }
     ]

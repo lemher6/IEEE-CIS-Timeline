@@ -48,7 +48,7 @@
     <div class="content">
 
       <div class="pageTitle">
-        <h1>EDIT TIMELINE EVENTS</h1>
+        <h1>YOUR REQUESTS WAITING FOR APPROVAL</h1>
       </div>
 
       <?php include ("./menu.php"); ?>
@@ -57,11 +57,10 @@
           <table style="width:100%">
             <tr>
               <th>No.</th>
-              <th>Start Date</th>
-              <th>End Date</th>
+              <th>Requested On</th>
               <th>Headline</th>
               <th>Group</th>
-              <th>Status</th>
+              <th>Request Status</th>
               <th style="text-align:center;">Actions</th>
             </tr>
             <tr>
