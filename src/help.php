@@ -40,7 +40,7 @@
         <h1>IEEE-CIS HISTORICAL TIMELINE - HELP</h1>
       </div>
 
-      <?php include ("../src/menu.php"); ?>
+      <?php include ("./menu.php"); ?>
 
       <div class="leftBlock">
 
