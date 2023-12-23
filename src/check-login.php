@@ -11,6 +11,7 @@
 
   $committeeIDs = array('00930628'); // User IDs in the committee can approve and view edited events.
   $adminIDs = array('999999'); // Admin User are able to update committee members.
+  $approvalRolls = array('Committee','Admin');
 
 
   ## SET PUBLIC USER AS DEFAULT
