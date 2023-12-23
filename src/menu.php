@@ -14,11 +14,11 @@ if($filename == 'timeline-Launch.php'){
 
 <div class="userInfoBlock">
   <?php
-    if(isset($_SESSION['user'])){
-      echo $_SESSION['user'];
+    if(isset($_SESSION['tL_user_LN'])){
+      echo $_SESSION['tL_user_FN']." ".$_SESSION['tL_user_LN'];
     }
-    if(isset($_SESSION['userRoll'])){
-      echo ' - '.$_SESSION['userRoll'];
+    if(isset($_SESSION['tL_userRoll'])){
+      echo ' - '.$_SESSION['tL_userRoll'];
     }
   ?>
 </div>

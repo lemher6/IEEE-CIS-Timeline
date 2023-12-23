@@ -1,29 +1,61 @@
 <?php
   ### IEEE-CIS TIMELINE PROJECT
-  ### 2023-02 AH
-  ### CHECK USER LOGIN AND ROLL
+  ### 2023-12 AH
+  ### CHECK USER ROLL AND LOGIN
   ### ==========================================================================
-  ### Data Consumer: Production Timeline Viewer.
-  ### Editor: View Production, Create, Update and Remove.
-  ### Approver: View Sandbox and Production, Create, Updadte, Remove, and Approve.
-  ### Administrator: Everything.
+  ### Public: Production Timeline Viewer.
+  ### IEEE: View Production, Create, Update and Remove.
+  ### Committee: View Sandbox and Production, Create, Updadte, Remove, and Approve.
+  ### Admin: Everything.
   ### ==========================================================================
 
-  $approvalRolls = array('Committee','Admin'); // Rolls that are allowed to approve and view edited events.
+  $committeeIDs = array('00930628'); // User IDs in the committee can approve and view edited events.
+  $adminIDs = array('999999'); // Admin User are able to update committee members.
 
-  ### If session variables are not set the user must login.
-  if(isset($_REQUEST['u']) && isset($_REQUEST['r'])){
-    checkLogin($_REQUEST['u'],'123',$_REQUEST['r']);
+
+  ## SET PUBLIC USER AS DEFAULT
+  $_SESSION['tL_user_FN'] = '';
+  $_SESSION['tL_user_LN'] = '';
+  $_SESSION['tL_user_ID'] = '';
+  $_SESSION['tL_user_ORG'] = '';
+  $_SESSION['tL_userRoll'] = 'Public';
+
+  
+  ## READ HEADERS AND SET SESSION VARIABLES IF A IEEE USER IS LOGGED
+  foreach (getallheaders() as $name => $value) {
+    if($name == 'AM_SSO_FN')
+    {
+      $_SESSION['tL_user_FN'] = $value;
+    }
+    if($name == 'AM_SSO_LN')
+    {
+      $_SESSION['tL_user_LN'] = $value;
+    }
+    if($name == 'AM_SSO_ID')
+    {
+      $_SESSION['tL_user_ID'] = $value;
+    }
+    if($name == 'AM_SSO_ORG')
+    {
+      $_SESSION['tL_user_ORG'] = $value;
+    }
   }
 
-  if(!isset($_SESSION['userRoll'])){
-    checkLogin('Public User','123','CIS');
-  }
+    
+  ## SET ROLL
+  ### If heather variables are set -> Set session variables and check if it is committee or Admin.
+  if(isset($_SESSION['tL_user_ID']))
+  {
+    $_SESSION['tL_userRoll'] = 'IEEE';
+    if(in_array($_SESSION['tL_user_ID'], $committeeIDs))
+    {
+      $_SESSION['tL_userRoll'] = 'Committee';
+    }
+    if(in_array($_SESSION['tL_user_ID'], $adminIDs))
+    {
+      $_SESSION['tL_userRoll'] = 'Admin';
+    }
+  } 
 
-  ### CHECKS THE PASSWORD AND SET SESSION VARIABLES
-  function checkLogin(string $userID,string $password,string $userRoll){
-    $_SESSION['user'] = $userID;
-    $_SESSION['userRoll'] = $userRoll;
-
-  }
+    
 ?>
