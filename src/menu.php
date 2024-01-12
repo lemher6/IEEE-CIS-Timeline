@@ -25,14 +25,14 @@ if($filename == 'timeline-Launch.php'){
   <button onclick="document.location='/index.php'">Home Page</button>
   <button onclick="document.location='/src/timeline-launch.php'"  style="display:<?php echo $displayLaunch; ?>;" >Launch Timeline</button> <!-- Using JSON file -->
 
-  <form name="editEventForm" method="post" style="display:<?php echo $displayOpt; ?>;" action="./event.php">
+  <form name="editEventForm" method="post" style="display:<?php echo $displayOpt; ?>;" action="/src/event.php">
       <input type="hidden" name="opt"  id="opt"  value="" />
       <input type="hidden" name="eId"  id="eId"  value="" />
       <input type="hidden" name="page" value="listEvents" />
       <input type="hidden" name="counter" value="0" />
       <input type="submit" name="optUpd" onclick="setOpt('upd')" value="Update This" />
       <input type="submit" name="optDel" onclick="setOpt('del')" value="Remove This" />
-    </form>
+  </form>
 
       <script>
         function setOpt(opt){
@@ -40,7 +40,7 @@ if($filename == 'timeline-Launch.php'){
         }
       </script>
 
-  <form name="createEventForm" method="post" style="display:inline-block" action="./event.php">
+  <form name="createEventForm" method="post" style="display:inline-block" action="/src/event.php">
       <input type="hidden" name="opt"  id="opt"  value="new" />
       <input type="hidden" name="page" value="listEvents" />
       <input type="submit" name="optCreate" value="Create Event" />
