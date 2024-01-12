@@ -14,9 +14,6 @@ if($filename == 'timeline-Launch.php'){
 
 <div class="userInfoBlock">
   <?php
-    if(isset($_SESSION['tL_user_LN'])){
-      echo $_SESSION['tL_user_FN']." ".$_SESSION['tL_user_LN'];
-    }
     if(isset($_SESSION['tL_userRoll'])){
       echo ' - '.$_SESSION['tL_userRoll'];
     }
@@ -26,9 +23,9 @@ if($filename == 'timeline-Launch.php'){
 <div class="bar">
   <!--<button onclick="document.location='timeline-google-sheet.html'">Launch Timeline <br> using Google Sheets</button>-->
   <button onclick="document.location='/index.php'">Home Page</button>
-  <button onclick="document.location='/src/timeline-Launch.php'"  style="display:<?php echo $displayLaunch; ?>;" >Launch Timeline</button> <!-- Using JSON file -->
+  <button onclick="document.location='/src/timeline-launch.php'"  style="display:<?php echo $displayLaunch; ?>;" >Launch Timeline</button> <!-- Using JSON file -->
 
-  <form method="post" style="display:<?php echo $displayOpt; ?>;" action="./event.php">
+  <form name="editEventForm" method="post" style="display:<?php echo $displayOpt; ?>;" action="./event.php">
       <input type="hidden" name="opt"  id="opt"  value="" />
       <input type="hidden" name="eId"  id="eId"  value="" />
       <input type="hidden" name="page" value="listEvents" />
@@ -43,8 +40,11 @@ if($filename == 'timeline-Launch.php'){
         }
       </script>
 
-
-  <button onclick="document.location='/src/event.php?opt=new&page=listEvents'">Create Event</button>
+  <form name="createEventForm" method="post" action="./event.php">
+      <input type="hidden" name="opt"  id="opt"  value="new" />
+      <input type="hidden" name="page" value="listEvents" />
+      <input type="submit" name="optCreate" value="Create Event" />
+  </form>
   <button onclick="document.location='/src/edit-events.php'">Waiting Approval</button>
 
   <?php
