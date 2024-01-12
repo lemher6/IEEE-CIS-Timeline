@@ -15,7 +15,7 @@ if($filename == 'timeline-Launch.php'){
 <div class="userInfoBlock">
   <?php
     if(isset($_SESSION['tL_userRoll'])){
-      echo ' - '.$_SESSION['tL_userRoll'];
+      echo $_SESSION['tL_userRoll'];
     }
   ?>
 </div>
@@ -40,7 +40,7 @@ if($filename == 'timeline-Launch.php'){
         }
       </script>
 
-  <form name="createEventForm" method="post" action="./event.php">
+  <form name="createEventForm" method="post" style="display:inline-block" action="./event.php">
       <input type="hidden" name="opt"  id="opt"  value="new" />
       <input type="hidden" name="page" value="listEvents" />
       <input type="submit" name="optCreate" value="Create Event" />
