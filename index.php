@@ -47,9 +47,8 @@
       </div>
 
     </div><!-- END DIV CONTENT -->
-    <div class="footer">
-      © Copyright 2023 IEEE – All rights reserved. A not-for-profit organization, IEEE is the world's largest technical professional organization dedicated to advancing technology for the benefit of humanity.
-    </div>
+    
+    <?php include ("./src/footer.php"); ?>
 
   </body>
 
