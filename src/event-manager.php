@@ -60,7 +60,7 @@
 
       $counter = 1;
       foreach ($data['events'] as $event) {
-            if($event['change']['user'] == $_SESSION['user'] || in_array($_SESSION['userRoll'],$GLOBALS['approvalRolls'])){
+            if($event['change']['user'] == ($_SESSION['tL_user_LN'].'-'.$_SESSION['tL_user_ID']) || in_array($_SESSION['tL_userRoll'],$GLOBALS['approvalRolls'])){
 
                 array_push($editedEvents, $event['unique_id']);
 
@@ -270,7 +270,7 @@
 
 
         if($opt == 'new'){
-          $author = $_SESSION['user'];
+          $author = $_SESSION['tL_user_LN'].'-'.$_SESSION['tL_user_ID'];
           $created_on = date("Y-m-d H:i");
           $last_modification = date("Y-m-d H:i");
         }
@@ -404,7 +404,7 @@
                     "url" => NULL
                   ),
                   "change" => Array (
-                      "user" => $_SESSION['user'],
+                      "user" => $_SESSION['tL_user_LN'].'-'.$_SESSION['tL_user_ID'],
                       "date" => date("Y-m-d H:i"),
                       "action" => $_POST['opt'],
                       "comment" => $_POST['comment']
@@ -471,7 +471,7 @@
   ### LIST EDITIONS AND ALLOW THE USER TO APPROVE OR DENY CHANGES
   ### ****************************************************************************
     function displayForApproval(){
-      if(!in_array($_SESSION['userRoll'],$GLOBALS['approvalRolls'])){
+      if(!in_array($_SESSION['tL_userRoll'],$GLOBALS['approvalRolls'])){
         echo "You can approve or reject a request that is pending approval only if you are a member of the timeline committee.";
       }else{
 
@@ -605,7 +605,7 @@
           echo "<div style='text-align:center'><h2>No pending request found!</h2></div>";
         }
         $GLOBALS['editedIds'] = $editedEvents;
-      } // END if($_SESSION['userRoll'] == 'Admin')
+      } // END if($_SESSION['tL_userRoll'] == 'Admin')
     }
 
 
@@ -620,7 +620,7 @@
     function updateProdTimeline(){
 
       // First checks user roll
-      if($_SESSION['userRoll'] != 'Admin'){
+      if($_SESSION['tL_userRoll'] != 'Admin'){
         echo "You can approve or reject a request that is pending approval only if you are a member of the timeline committee. ";
       }else{
         if(isset($_REQUEST['eId'])){
@@ -647,7 +647,7 @@
                     $event['last_modification'] = date("Y-m-d H:i");
                     ### adding the edited event to  decision log ===================
                     $event['desicion'] =  Array (
-                                                  "user" => $_SESSION['user'],
+                                                  "user" => $_SESSION['tL_user_LN'].'-'.$_SESSION['tL_user_ID'],
                                                   "date" => date("Y-m-d H:i"),
                                                   "action" => $_POST['submit'],
                                                   "comment" => $_POST['comment']
