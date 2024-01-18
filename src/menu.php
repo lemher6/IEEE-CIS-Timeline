@@ -46,12 +46,7 @@
         ?>
     </form>
 
-    <script>
-      function setOpt(opt){
-        oFormObject = document.forms['editEventForm'];
-        oFormObject.elements["opt"].value = opt; /* opt = 'upd' , 'del' */
-      }
-    </script>
+    
 
     <form name="createEventForm" method="post" style="display:inline-block" action="/src/event.php">
         <input type="hidden" name="opt"  id="opt"  value="new" />
@@ -65,6 +60,17 @@
           } ### END ONLY LOGGED MEMBERS CAN SEE THESE OPTIONS
         ?>
     </form>
+
+
+    <script>
+      function setOpt(opt){
+        oFormObjectE = document.forms['editEventForm'];
+        oFormObjectE.elements["opt"].value = opt; /* opt = 'upd' , 'del' */
+        oFormObjectC = document.forms['createEventForm'];
+        oFormObjectC.elements["opt"].value = opt; /* opt = 'upd' , 'del' */
+      }
+    </script>
+    
 
     <?php
       ### ONLY LOGGED MEMBERS CAN SEE THESE OPTIONS
