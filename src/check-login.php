@@ -42,7 +42,7 @@
 
     } # END FOREACH 
 
-    
+ 
 
     # SET ROLL
     ### If heather variables are set 

@@ -20,11 +20,11 @@
     include('./check-login.php');
   }
 
-  if(isset($_REQUEST['opt']) && $_REQUEST['page'] == 'editEvent'){
+  if(isset($_POST['opt']) && $_POST['page'] == 'editEvent'){
     editEvent();
   }
 
-  if(isset($_REQUEST['eId']) && $_REQUEST['page'] == 'approveEvent'){
+  if(isset($_POST['eId']) && $_POST['page'] == 'approveEvent'){
     updateProdTimeline();
   }
 
@@ -64,7 +64,7 @@
 
                 array_push($editedEvents, $event['unique_id']);
 
-                if($event['change']['action'] == 'del'){
+                if($event['change']['action'] == 'dlt'){
                   $action = 'For removal';
                 }elseif($event['change']['action'] == 'new'){
                   $action = 'Creating';
@@ -204,7 +204,7 @@
           foreach ($data['events'] as $event) {
               $counter++;
               if ($event['unique_id'] == $eId) {
-                $_REQUEST['counter'] = $counter;
+                $_POST['counter'] = $counter;
                 $color = $event['background']['color'];
                 $opacity = $event['background']['opacity'];
                 $backgroundURL = $event['background']['url'];
@@ -278,7 +278,7 @@
 
           ### CREATE AND HTML FORM FOR THE EVENT INFORMATION
           ### FOR DELETING THE FORM IS HIDDEN
-          if($opt != 'del'){
+          if($opt != 'dlt'){
             echo "<div>";
           }else{
             echo "<div style='display:none'>";
@@ -365,15 +365,15 @@
   function editEvent(){
 
     ## for a new event the unique_id must be created
-    if ($_REQUEST['eId'] == '') {
-      $_REQUEST['eId'] = 'CIS'.date("Ymdhis");
+    if ($_POST['eId'] == '') {
+      $_POST['eId'] = 'CIS'.date("Ymdhis");
     }
 
     # if the forget edition option was chosen the array is not included in the new editions.json file
-    if($_REQUEST['opt'] != 'eDel'){
+    if($_POST['opt'] != 'eDel'){
 
         $changes = Array (
-                  "unique_id" => $_REQUEST['eId'],
+                  "unique_id" => $_POST['eId'],
                   "author" => $_POST['author'],
                   "created_on" => $_POST['created_on'],
                   "last_modification" => $_POST['last_modification'],
@@ -418,20 +418,20 @@
 
             // encode array to json
             $json = json_encode($singleEventEdited,JSON_PRETTY_PRINT);
-            $filename = '../json/'.$_REQUEST['eId'].'.json';
+            $filename = '../json/'.$_POST['eId'].'.json';
             // Write the contents to the file,
             // using the FILE_APPEND flag to append the content to the end of the file
             // and the LOCK_EX flag to prevent anyone else writing to the file at the same time
             $bytes = file_put_contents($filename,$json, LOCK_EX);
             ### ********************************************************************
             
-        } // END if($_REQUEST['opt'] != 'eDel')
+        } // END if($_POST['opt'] != 'eDel')
         else{ // If forgot request
           
           ## rename file so the old request is forgot
-          $fileName = '../json/'.$_REQUEST['eId'].'.json';
+          $fileName = '../json/'.$_POST['eId'].'.json';
           $nowDate = date("ymdHi");
-          $fileRename = '../json/'.$_REQUEST['eId'].'-f'.$nowDate.'.json';          
+          $fileRename = '../json/'.$_POST['eId'].'-f'.$nowDate.'.json';          
           rename ($fileName,$fileRename);
 
           $events = array(); // not include any new records
@@ -447,7 +447,7 @@
         $edit_data = json_decode($edit_json, true);
 
         foreach ($edit_data['events'] as $event) {
-          if($event['unique_id'] != $_REQUEST['eId']){ // avoiding duplicagtions if an edited event is re-edited
+          if($event['unique_id'] != $_POST['eId']){ // avoiding duplicagtions if an edited event is re-edited
             array_push($events, $event);
           }
         }
@@ -487,7 +487,7 @@
 
                   array_push($editedEvents, $event['unique_id']);
 
-                  if($event['change']['action'] == 'del'){
+                  if($event['change']['action'] == 'dlt'){
                     $action = 'Removed';
                   }elseif($event['change']['action'] == 'new'){
                     $action = 'Created';
@@ -623,9 +623,9 @@
       if($_SESSION['tL_userRoll'] != 'Admin'){
         echo "You can approve or reject a request that is pending approval only if you are a member of the timeline committee. ";
       }else{
-        if(isset($_REQUEST['eId'])){
+        if(isset($_POST['eId'])){
 
-          $eId = $_REQUEST['eId'];
+          $eId = $_POST['eId'];
           $eHeadline = ''; // saves the event's information for the confirmation
           $eDesicionComment = $_POST['comment']; // saves the event's information for the confirmation
           $editedEvent = ''; // the edited event approved or denied
@@ -642,7 +642,7 @@
             $data = json_decode($data, true); // Decode the JSON data into a PHP array
 
             foreach ($data['events'] as $event) {
-                if($event['unique_id'] == $_REQUEST['eId']){
+                if($event['unique_id'] == $_POST['eId']){
                     $eHeadline = $event['text']['headline'];
                     $event['last_modification'] = date("Y-m-d H:i");
                     ### adding the edited event to  decision log ===================
@@ -679,10 +679,10 @@
                 ### ===========================================================================================================
                 ### 4. IF APPROVE => IF OPTION IS NOT DELETE EVENT => A NEW TIMELINE JSON FILE IS CREATED WITH THE UPDATED EVENT + OLDER EVENTS.
                 ### ===========================================================================================================
-                if($_REQUEST['submit'] == 'Approve'){
+                if($_POST['submit'] == 'Approve'){
                   ### Creates the title of the new Timeline JSON file
 
-                  if($_REQUEST['opt'] != 'del'){
+                  if($_POST['opt'] != 'dlt'){
                     array_push($events, $event); // adds the approved event to the array $events so it is included into the new file
                   }
 
@@ -694,9 +694,9 @@
                       $dataT = json_decode($dataT, true); // Decode the JSON data into a PHP array
                       foreach ($dataT['events'] as $timelineE) {
                         // In case the event already exist in production, the old version it is not included.
-                        if($timelineE['unique_id'] != $_REQUEST['eId']){
+                        if($timelineE['unique_id'] != $_POST['eId']){
                           array_push($events, $timelineE);
-                        } // END if($event['unique_id'] != $_REQUEST['eId'])
+                        } // END if($event['unique_id'] != $_POST['eId'])
                       } // END foreach
                   }// END sif($dataT)
 

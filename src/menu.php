@@ -30,8 +30,10 @@
     <button onclick="document.location='/src/timeline-launch.php'"  style="display:<?php echo $displayLaunch; ?>;" >Launch Timeline</button> <!-- Using JSON file -->
 
     
+    
+
     <form name="editEventForm" id="editEventForm" method="post" style="display:<?php echo $displayOpt; ?>;" action="/src/event.php">
-        <input type="hidden" name="opt"  id="opt"  value="" />
+        <input type="hidden" name="opt"  id="opt"  value="upd" />
         <input type="hidden" name="eId"  id="eId"  value="" />
         <input type="hidden" name="page" value="listEvents" />
         <input type="hidden" name="counter" value="0" />
@@ -39,20 +41,27 @@
           ### ONLY LOGGED MEMBERS CAN SEE THESE OPTIONS
           if($_SESSION['tL_userRoll'] != 'Public'){
         ?>
-        <input type="submit" name="optUpd" onclick="setOpt('upd')" value="Update This" />
-        <input type="submit" name="optDel" onclick="setOpt('del')" value="Remove This" />
+        <input type="submit" name="optUpd" value="Update This" />
         <?php
           } ### END ONLY LOGGED MEMBERS CAN SEE THESE OPTIONS
         ?>
     </form>
 
 
-    <script>
-      function setOpt(opt){
-        oFormObjectE = document.forms['editEventForm'];
-        oFormObjectE.elements["opt"].value = opt; /* opt = 'upd' , 'del' */
-      }
-    </script>
+    <form name="deleteEventForm" id="editEventForm" method="post" style="display:<?php echo $displayOpt; ?>;" action="/src/event.php">
+        <input type="hidden" name="opt"  id="opt"  value="dlt" />
+        <input type="hidden" name="eId"  id="eId"  value="" />
+        <input type="hidden" name="page" value="listEvents" />
+        <input type="hidden" name="counter" value="0" />
+        <?php
+          ### ONLY LOGGED MEMBERS CAN SEE THESE OPTIONS
+          if($_SESSION['tL_userRoll'] != 'Public'){
+        ?>
+        <input type="submit" name="optDel" value="Remove This" />
+        <?php
+          } ### END ONLY LOGGED MEMBERS CAN SEE THESE OPTIONS
+        ?>
+    </form>
 
     
 

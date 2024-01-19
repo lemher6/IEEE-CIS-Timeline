@@ -60,27 +60,27 @@
           ########################################################################
           ###  GETTING HEADER PARAMETERS
           ########################################################################
-          if(isset($_REQUEST['eId'])){
-            $eId = $_REQUEST['eId'];
+          if(isset($_POST['eId'])){
+            $eId = $_POST['eId'];
           }else{
             $eId = '';
           }
 
-          if(isset($_REQUEST['opt'])){
-            $opt = $_REQUEST['opt'];
+          if(isset($_POST['opt'])){
+            $opt = $_POST['opt'];
           }else{
             $opt = '';
           }
 
-          if(isset($_REQUEST['status'])){
-            $status = $_REQUEST['status'];
+          if(isset($_POST['status'])){
+            $status = $_POST['status'];
           }else{
             $status = '';
           }
 
           if($opt == 'new'){
             $title = "CREATE A NEW EVENT";
-          }elseif($opt == 'del'){
+          }elseif($opt == 'dlt'){
             $title = "REMOVE AN EVENT";
           }else{
             $title = "UPDATE AN EVENT";
@@ -120,8 +120,8 @@
             displayEvent($eId,$opt,$status);
 
             ### GETTING THE COUNTER PARAMETER AFTER CALLING THE displayEvent FUNCTION BECAUSE THAT FUNCTION COULD UPDATE THE PARAMETER
-            if(isset($_REQUEST['counter'])){
-              $counter = $_REQUEST['counter'];
+            if(isset($_POST['counter'])){
+              $counter = $_POST['counter'];
             }else{
               $counter = 0;
             }
@@ -156,13 +156,13 @@
                   ########################################################################
                   ### DELETING AN EVENT
                   ########################################################################
-                  if($opt == 'del' && $status == ''){
+                  if($opt == 'dlt' && $status == ''){
             ?>
 
                     <script>
                      $(document).ready(function() {
                          var embed = document.getElementById('timeline-embed');
-                         window.timeline = new TL.Timeline('timeline-embed', '../json/timeline.json', {
+                         window.timeline = new TL.Timeline('timeline-embed', '/json/timeline.json', {
                              hash_bookmark: false, /* If set to true, TimelineJS will update the browser URL each time a slide advances, so that people can link directly to specific slides. */
                              font: "fjalla-average",
                              timenav_height: 90,
@@ -179,7 +179,7 @@
                       <input type="submit" value="Yes" />
                       <button type="button" onclick="document.location='/src/edit-events.php'">Cancel</button>
                     </div>
-                  <?php  } // END if($op == 'del')  ?>
+                  <?php  } // END if($op == 'dlt')  ?>
 
 
             <?php
@@ -192,7 +192,7 @@
             <script>
              $(document).ready(function() {
                  var embed = document.getElementById('timeline-embed');
-                 window.timeline = new TL.Timeline('timeline-embed', '../json/timeline.json', {
+                 window.timeline = new TL.Timeline('timeline-embed', '/json/timeline.json', {
                      hash_bookmark: true, /* If set to true, TimelineJS will update the browser URL each time a slide advances, so that people can link directly to specific slides. */
                      font: "fjalla-average",
                      timenav_height: 90,
@@ -220,7 +220,7 @@
               <script>
                $(document).ready(function() {
                    var embed = document.getElementById('timeline-embed');
-                   window.timeline = new TL.Timeline('timeline-embed', '../json/<?php echo $eId; ?>.json', {
+                   window.timeline = new TL.Timeline('timeline-embed', '/json/<?php echo $eId; ?>.json', {
                        hash_bookmark: true, /* If set to true, TimelineJS will update the browser URL each time a slide advances, so that people can link directly to specific slides. */
                        font: "fjalla-average",
                        timenav_height: 90,
