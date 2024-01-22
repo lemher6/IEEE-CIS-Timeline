@@ -26,8 +26,8 @@
 
   <div class="bar">
     <!--<button onclick="document.location='timeline-google-sheet.html'">Launch Timeline <br> using Google Sheets</button>-->
-    <button onclick="document.location='/index.php'">Home Page</button>
-    <button onclick="document.location='/src/timeline-launch.php'"  style="display:<?php echo $displayLaunch; ?>;" >Launch Timeline</button> <!-- Using JSON file -->
+    <button type="button"  onclick="document.location='/index.php'">Home Page</button>
+    <button type="button"  onclick="document.location='/src/timeline-launch.php'"  style="display:<?php echo $displayLaunch; ?>;" >Launch Timeline</button> <!-- Using JSON file -->
 
     
     
@@ -84,7 +84,7 @@
       ### ONLY LOGGED MEMBERS CAN SEE THESE OPTIONS
       if($_SESSION['tL_userRoll'] != 'Public'){
     ?>
-    <button onclick="document.location='/src/edit-events.php'">Waiting Approval</button>
+    <button type="button"  onclick="document.location='/src/edit-events.php'">Waiting Approval</button>
     <?php
       } ### END ONLY LOGGED MEMBERS CAN SEE THESE OPTIONS
     ?>
@@ -93,13 +93,13 @@
       ### ONLY COMMITTE AND ADMIN USERS CAN SEE THESE OPTIONS
       if(isset($_SESSION['tL_userRoll']) && in_array($_SESSION['tL_userRoll'],$approvalRolls)){
     ?>
-      <button onclick="document.location='/src/approve.php'">Approve Updates</button>
+      <button type="button"  onclick="document.location='/src/approve.php'">Approve Updates</button>
       <!-- <button onclick="document.location='/src/sandbox-timeline.php'">Sandbox View</button> -->
     <?php
       } // END if tL_userRoll
     ?>
 
-    <button onclick="document.location='/src/help.php'" style="padding: 10px 10px !important;"><i class="fa fa-info-circle" style="font-size:27px;"></i></button>
+    <button type="button" onclick="document.location='/src/help.php'" style="padding: 11px 10px;"><span class="iButton">i</span></button>
 
   </div>
   <br>

@@ -14,12 +14,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <link rel="stylesheet" type="text/css" href="../css/style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
     <link title="timeline-styles" rel="stylesheet" href="../css/timeline.css">
     <script src="../js/timeline-min.js"></script>
 
     <style>
+
       .iBlock{
         text-align:left;
         border-radius: 5px;
@@ -49,7 +49,6 @@
           #timeline-embed{
             margin-left: 1em;
           }
-
       }
     </style>
   </head>
@@ -97,10 +96,10 @@
 
           <div class="formBlock">
 
-            <p>Please follow the <b>guidelines to contribute to the CIS History Timeline</b>
-            <a href="./help.php" target="_blank">
-                <i style="font-size:21px; color:#666" class="fa"></i>
-              </a>.
+      
+            <p>
+              Please follow the <b>guidelines to contribute to the CIS History Timeline</b>
+              <button type="button" class="qButton" onclick="window.open('/src/help.php', '_blank');">?</button>
             </p>
             <br>
             <?php if($opt != 'new' || $status == 'edited'){ // DISPLAYS TIMELINE IF IT IS NOT A NEW EVENT ?>

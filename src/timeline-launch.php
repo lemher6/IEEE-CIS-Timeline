@@ -15,11 +15,10 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <link rel="stylesheet" type="text/css" href="../css/style.css">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" type="text/css" href="/css/style.css">
 
-        <link title="timeline-styles" rel="stylesheet" href="../css/timeline.css">
-        <script src="../js/timeline-min.js"></script>
+        <link title="timeline-styles" rel="stylesheet" href="/css/timeline.css">
+        <script src="/js/timeline-min.js"></script>
 
         <style>
           .content {
@@ -47,7 +46,7 @@
          $(document).ready(function() {
              var embed = document.getElementById('timeline-embed');
              embed.style.height = getComputedStyle(document.body).height;
-             window.timeline = new TL.Timeline('timeline-embed', '../json/timeline.json', {
+             window.timeline = new TL.Timeline('timeline-embed', '/json/timeline.json', {
                  hash_bookmark: true, /* If set to true, TimelineJS will update the browser URL each time a slide advances, so that people can link directly to specific slides. */
                  font: "fjalla-average",
                  scale_factor: 1, /* How many screen widths wide the timeline should be at first presentation. */

@@ -15,13 +15,6 @@
 
     <link rel="stylesheet" type="text/css" href="../css/style.css">
 
-    <link rel="stylesheet" type="text/css" href="../css/fontawesome.css">
-    <script src='../js/fontawesome.js'></script>
-    <link rel="stylesheet" type="text/css" href="../css/brands.css">
-    <script src='../js/brands.js'></script>
-    <link rel="stylesheet" type="text/css" href="../css/solid.css">
-    <script src='../js/solid.js'></script>
-
     <link title="timeline-styles" rel="stylesheet" href="../css/timeline.css">
     <script src="../js/timeline-min.js"></script>
 
@@ -85,13 +78,13 @@
         <div class="flex-container">
           <div>
             <br>
-            <i class='fas fa-user-shield' style='font-size:48px;color:white;'></i>
+            <img src="/img/icon-shield.gif" alt="Committee Member" style="width:68px;height:58px;">
             <br>
-            <br>Only timeline commitee members can approve or reject requests.<br><br>
+            <br>Only timeline committee members can approve or reject requests.<br><br>
           </div>
           <div>
             <br>
-            <i class='fas fa-book-reader' style='font-size:48px;color:white'></i>            
+            <img src="/img/icon-reader.gif" alt="Approval Steps" style="width:68px;height:66px;">
             <br><br>
             1. Review request. <br>
             2. Inpupt your reasons or comments.<br>
@@ -100,7 +93,7 @@
           </div>
           <div>
             <br>
-            <i class='fas fa-file-export' style='font-size:48px;color:white'></i>
+            <img src="/img/icon-export.gif" alt="What Next?" style="width:68px;height:58px;">
             <br>
             <br>
             After approval, the event will be moved from the waiting list to the production timeline.
