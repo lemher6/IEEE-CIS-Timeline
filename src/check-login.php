@@ -42,7 +42,8 @@
 
     } # END FOREACH 
 
-
+    $_SESSION['tL_user_ID'] = '00930628';
+    $_SESSION['tL_user_LN'] = 'Test';
 
     # SET ROLL
     ### If heather variables are set 

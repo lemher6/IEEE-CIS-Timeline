@@ -3,57 +3,13 @@
   ### 2022-11 AH
   session_start();
   include('./check-login.php');
+  
+  include('./header.php');
+  
+  include ('./menu.php'); 
 ?>
 
-<!DOCTYPE html>
-<html>
-
-  <head>
-    <title>IEEE-CIS HISTORICAL TIMELINE - EVENT</title>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    <link rel="stylesheet" type="text/css" href="../css/style.css">
-
-    <link title="timeline-styles" rel="stylesheet" href="../css/timeline.css">
-    <script src="../js/timeline-min.js"></script>
-
-    <style>
-
-      .iBlock{
-        text-align:left;
-        border-radius: 5px;
-        background-color: #f9f9f9;
-        padding: 1em 1em 0.3em 1em;
-        border: #dddcdc 1px solid;
-      }
-
-
-      @media only screen and (min-width: 768px) {
-      /* ==== For desktop: ===== */
-          .content{
-            width: 80%;
-          }
-          .rightBlock{
-            padding:10px 30px;
-            width: 90%;
-          }
-          .formBlock{
-              width: 80%;
-              margin: auto;
-          }
-          .iBlock{
-            margin: 1.3em;
-          }
-
-          #timeline-embed{
-            margin-left: 1em;
-          }
-      }
-    </style>
-  </head>
-
-  <body>
+   
     <div class="content">
         <?php
           ########################################################################
@@ -88,10 +44,8 @@
         ?>
 
           <div class="pageTitle">
-            <h1><?php echo $title; ?></h1>
+            <h2><?php echo $title; ?></h2>
           </div>
-
-          <?php include ("./menu.php"); ?>
 
 
           <div class="formBlock">
@@ -242,10 +196,7 @@
 
           </form>
         </div>
+
     </div><!-- END DIV CONTENT -->
     
     <?php include ("./footer.php"); ?>
-
-  </body>
-
-</html>

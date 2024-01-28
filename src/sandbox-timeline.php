@@ -3,19 +3,11 @@
   ### 2022-11 AH
   session_start();
   include('./check-login.php');
+
+  include('./header.php');
 ?>
 
-<!DOCTYPE html>
-
-<html lang="en">
-
-    <head>
         <title>IEEE-CIS TIMELINE</title>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-
-
-        <link rel="stylesheet" type="text/css" href="../css/style.css">
 
         <link title="timeline-styles" rel="stylesheet" href="../css/timeline.css">
         <script src="../js/timeline-min.js"></script>
@@ -61,7 +53,10 @@
              })
          });
         </script>
-      </div><!-- END DIV CONTENT -->
-    </body>
+      </div>
+      <!-- END DIV CONTENT -->
+    
+
+      </body>
 
 </html>

@@ -3,47 +3,22 @@
   ### 2022-11 AH
   session_start();
   include('./check-login.php');
+  
+  include('./header.php');
+  
+  include ('./menu.php'); 
 ?>
 
-<!DOCTYPE html>
-<html>
-
-  <head>
-    <title>IEEE-CIS HISTORICAL TIMELINE - HELP</title>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    <link rel="stylesheet" type="text/css" href="../css/style.css">
-
-    <style>
-      .helpImg{
-        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-      }
-      img{
-        margin: 1em;
-      }
-
-      @media only screen and (min-width: 768px) {
-      /* ==== For desktop: ===== */
-          .content{
-            width: 80%;
-          }
-      }
-    </style>
-  </head>
-
-  <body>
+  
     <div class="content">
 
       <div class="pageTitle">
-        <h1>IEEE-CIS HISTORICAL TIMELINE - HELP</h1>
+        <h2>HELP</h2>
       </div>
-
-      <?php include ("./menu.php"); ?>
 
       <div class="leftBlock">
 
-      <h2>Guideline to Contribute to the CIS History Timeline</h2>
+      <h3>Guideline to Contribute to the CIS History Timeline</h3>
 
         <b>This document provides a guideline on best practices while contributing to the CIS History Timeline (CIS-HT).</b>
         <br><br>
@@ -84,7 +59,7 @@
 
         <span id="navegation"> </span>
           <h2>How to Navigate the Timeline</h2>
-          <img class="helpImg" src="/img/Timeline-navegation.png" width="80%" title="How to navigate the Timeline.">
+          <img class="helpImg" src="/img/Timeline-navegation.png" width="90%" title="How to navigate the Timeline.">
 
         <br><br><hr><br><br>
 
@@ -92,7 +67,7 @@
           <h2>How To Create a New Event</h2>
           <ul class="helpItem">
             <li>Click on the "Create Event" menu button.</li>
-            <img class="helpImg" src="/img/CreateEvent.png" width="550px" title="Create Option">
+            <img class="helpImg" src="/img/CreateEvent.png" width="45%" title="Create Option">
             <li>Field the event information <a href="#Enfio"><i style="font-size:24px; color:#20b2e2" class="fa">&#xf059;</i></a>. Every event must have at least a title and a start date.</li>
             <li>Include the comments/reason about the new event at the end of form and click on the "Create" button to submit the form.</li>
             <li>You can update the new event later after creating it. The new event will move to production when the Historical Committee approve it. </li>
@@ -139,9 +114,9 @@
           <h2>How To Update an Event</h2>
           <ul class="helpItem">
             <li>Click on the "Launch Timeline" menu button.</li>
-            <img class="helpImg" src="/img/LaunchTimeline.png" width="550px" title="Launch Timeline">
+            <img class="helpImg" src="/img/LaunchTimeline.png" width="40%" title="Launch Timeline">
             <li>Look for the event you need to update in the Production Timeline. When the event to be updated is displayed on your screen, click on the menu option "Update This" to open the updating page.</li>
-            <img class="helpImg" src="/img/UpdateEvent.png" width="550px" title="Update This Event">
+            <img class="helpImg" src="/img/UpdateEvent.png" width="50%" title="Update This Event">
             <li>A new page will be loaded with the event's information.
               Update the event's information, and include some comments or reason about the updates for the committee. Click on "Update" to save your changes.
               You can continue editing the event again until the Historical Committee approve or reject your request.</li>
@@ -154,9 +129,9 @@
           <h2>How To Remove an Event</h2>
           <ul class="helpItem">
             <li>Click on the "Launch Timeline" menu button.</li>
-            <img class="helpImg" src="/img/LaunchTimeline.png" width="550px" title="Launch Timeline">
+            <img class="helpImg" src="/img/LaunchTimeline.png" width="40%" title="Launch Timeline">
             <li>Look for the event you want to remove in the Production Timeline. When the event to be removed is displayed on your screen, click on the menu option "Update This" to open the updating page.</li>
-            <img class="helpImg" src="/img/RemoveEvent.png" width="550px" title="Remove This Event">
+            <img class="helpImg" src="/img/RemoveEvent.png" width="50%" title="Remove This Event">
             <li>Include your comments or reason why the event should be removed for the committee. Click on "Yes" to request the removal.</li>
             <li>You can see and edit your updates and removals with the menu option "Waiting Approval."</li>
           </ul>
@@ -168,9 +143,9 @@
           <ul class="helpItem">
             <li>Only you and the CIS Timeline Committee can view, update or forgot/reject your requests.</li>
             <li>Click on the "Waiting Approval" menu button.</li>
-            <img class="helpImg" src="/img/WaitingApproval.png" width="550px" title="Waiting Approval">
+            <img class="helpImg" src="/img/WaitingApproval.png" width="50%" title="Waiting Approval">
             <li>In this page you will see a list of your requests: new, updated or removed events' requests.</li>
-            <img class="helpImg" src="/img/WaitingApprovalList.png" width="80%" title="Your Request List">
+            <img class="helpImg" src="/img/WaitingApprovalList.png" width="85%" title="Your Request List">
             <li>Select between the options "Update Request" or "Forget Request". A new page will be open for each case.</li>
             <li>If you selected the "Update Request" option, you will be presented with the current request information and all possible fields to be modified. Please make your modifications and update your comments about your request, then click Update.</li>
             <li>If you selected the "Forget Request" option, the request will be removed.</li>
@@ -183,7 +158,7 @@
           <ul class="helpItem">
             <li>Only CIS Timeline Committee can view, approve or reject requests.</li>
             <li>Click on the "Approve Request" menu button.</li>
-            <img class="helpImg" src="/img/ApproveEvent.png" width="850px" title="Approve Request">
+            <img class="helpImg" src="/img/ApproveEvent.png" width="80%" title="Approve Request">
             <li>You will see for each new, updated or removed event request its basic information, new look with the changes requested, and the request related information.</li>
             <img class="helpImg" src="/img/ApproveEventComments.png" width="80%" title="Approve Request Comments">
             <li>Type your approval or rejection reasons or any comments for the requester in the text area.</li>
@@ -197,7 +172,3 @@
     </div><!-- END DIV CONTENT -->
     
     <?php include ("./footer.php"); ?>
-
-  </body>
-
-</html>

@@ -4,40 +4,17 @@
   ### A new line was added to the Timeline-min.js file. document.getElementById("eId").value=this.data.unique_id): So the unique_id is set to the update event menu option.
   session_start();
   include('./check-login.php');
+  
+  include('./header.php');
+
+  include ('./menu.php'); 
 ?>
 
-<!DOCTYPE html>
+ 
+    
+      <div class="timeline-content">
 
-<html lang="en">
-
-    <head>
-        <title>IEEE-CIS TIMELINE</title>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-
-        <link rel="stylesheet" type="text/css" href="/css/style.css">
-
-        <link title="timeline-styles" rel="stylesheet" href="/css/timeline.css">
-        <script src="/js/timeline-min.js"></script>
-
-        <style>
-          .content {
-              height: 700px;
-              margin: auto;
-          }
-        </style>
-    </head>
-
-    <body>
-      <div class="content">
-
-        <div class="pageTitle">
-          <h1>PRODUCTION TIMELINE</h1>
-        </div>
-
-        <?php include ("../src/menu.php"); ?>
-
-        <div id="timeline-embed" style="width:auto; height:100%;">
+        <div id="timeline-embed">
               <div id="timeline"></div>
         </div>
 
@@ -61,7 +38,11 @@
              })
          });
         </script>
-      </div><!-- END DIV CONTENT -->
-    </body>
+        
+      </div>
+      <!-- END DIV CONTENT -->
+    
+
+      </body>
 
 </html>

@@ -1,21 +1,34 @@
 
-body,p {
+html,body,p {
   font-family: Arial, Verdana, sans-serif;
   color: #666;
-  font-size: 1em;
+  font-size: 16px;
   margin: auto;
+  width: 100%;
 }
 
-.content{
+.header{
+  margin-top: 2em;
+}
+
+/* Set the space for the timeline display */
+.timeline-content {
+  height: 700px;
   margin: auto;
   padding: 0.4em 1em 2em 1em;
 }
 
+
+.content{
+  margin: auto;
+  padding: 1.3em 1em 2em 1em;
+  width: 800px;
+}
+
+
+
 .footer{
-  background-color: black;
-  color: white;
-  font-size: 0.7em;
-  text-align: center;
+  background-color: black;  
   padding: 1em;
   margin-top: 1em;
   position: fixed;
@@ -25,8 +38,15 @@ body,p {
   z-index: 15;
 }
 
+.footer p{
+  font-size: 0.7em;
+  text-align: center;
+  margin:0.5em;
+  color: white;
+}
+
 .userInfoBlock{
-  position: fixed;
+  position: absolute;
   right: 0;
   top: 0;
   margin: 1em;
@@ -37,14 +57,24 @@ body,p {
 }
 
 h1 {
-  padding: 10px 0;
   color: #000;
+  margin: 0.5em;
+  font-size: 1.5em;
+}
+
+h2 {
+  color: #666;
+  margin: 0;
+  font-size: 1.3em;
 }
 
 .helpItem li{
   line-height: 1.7em;
 }
 
+
+
+/* MENU BAR RESPONSIVE */
 
 .bar button, .iBlock button, .rightBlock button, input[type=submit] {
   border: none;
@@ -66,22 +96,13 @@ h1 {
     background-color: #000!important;
 }
 
-.qButton{
-  border: none;
-  display: inline-block;
-  padding: 0.1em 0.4em !important;
-  vertical-align: middle;
-  overflow: hidden;
-  text-decoration: none;
-  color: white;
-  background-color: #20b2e2;
-  text-align: center;
-  cursor: pointer;
-  font-size: 1em !important;
-  font-weight: bolder;
-  border-radius: 15px !important;
-}
 
+.bar{
+  display: block;
+  width: 100%;
+  text-align: center!important;
+  margin-bottom: 1em;
+}
 
 .iButton{
   border: none;
@@ -99,6 +120,80 @@ h1 {
   font-weight: bolder;
   border-radius: 15px !important;
 }
+
+/* Hide the button that should open and close the topnav on small screens */
+.menuIcon {
+  display: none;
+  position: absolute;
+  right: 0.2em;
+  top: 3.1em;
+  border: 1px solid #e7e7e8;
+  padding: 0.5em 0.6em;
+  vertical-align: middle;
+  overflow: hidden;
+  text-decoration: none;
+  color: white;
+  background-color: #20b2e2;
+  text-align: center;
+  cursor: pointer;
+  font-size: large;
+  border-radius: 4px;
+  z-index: 15;
+}
+
+
+@media screen and (max-width: 790px) { /* RESPONSIVE MENU MOBILES */
+  .bar {
+    display: none;
+  }
+  .menuIcon {
+    display: block;
+  }
+
+  .bar.responsive {
+    display: block;
+    position: relative;
+    float: left;
+    background-color: #20b2e2;
+  }
+  
+  .bar.responsive button, form, input[type=submit] {
+    float: left;
+    text-align: left;
+    width: 100% !important;
+  }
+
+  .bar.responsive button:hover, .iBlock button:hover, input[type=submit]:hover, button:active, .iBlock button:active, input[type=submit]:active  {
+    color: #fff!important;
+    background-color: #000!important;
+}
+
+  .userInfoBlock{
+    display: none;
+  }
+}
+
+/* END MENU BAR RESPONSIVE */
+
+
+.qButton{
+  border: none;
+  display: inline-block;
+  padding: 0.1em 0.4em !important;
+  vertical-align: middle;
+  overflow: hidden;
+  text-decoration: none;
+  color: white;
+  background-color: #20b2e2;
+  text-align: center;
+  cursor: pointer;
+  font-size: 1em !important;
+  font-weight: bolder;
+  border-radius: 15px !important;
+}
+
+
+
 
 label {
   color:black;
@@ -130,11 +225,7 @@ input[type=text], select, textarea, .dateInput {
   text-align: center!important;
 }
 
-.bar{
-  display: block;
-  width: 100%;
-  text-align: center!important;
-}
+
 
 .rightBlock{
   text-align:right;
@@ -215,12 +306,134 @@ th {
   font-size: 0.9em;
 }
 
-@media only screen and (min-width: 768px) {
+
+#topBtn { /* GO TO THE TOP BUTTON */
+  display: none; /* Hidden by default */
+  position: fixed; /* Fixed/sticky position */
+  bottom: 5em; /* Place the button at the bottom of the page */
+  right: 1em; /* Place the button 30px from the right */
+  z-index: 99; /* Make sure it does not overlap */
+  border: solid 0.2em #e7e7e8; /* Add a border */
+  outline: none; /* Remove outline */
+  background-color: #20b2e2; /* Set a background color */
+  color: white; /* Text color */
+  cursor: pointer; /* Add a mouse pointer on hover */
+  padding: 0.6em; /* add padding */
+  border-radius: 6px; /* Rounded corners */
+  font-size: 1.1em; /* Increase font size */
+}
+
+#topBtn:hover {
+  background-color: black; /* Add a dark background on hover */
+}
+
+.helpImg{
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  min-width: 300px;
+  max-width: 90%;
+}
+
+.indexImg{
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.editBlock{
+  margin: auto;
+  text-align:center;
+  padding-top: 1em;
+}
+
+.iBlock{
+  text-align:left;
+  border-radius: 5px;
+  background-color: #f9f9f9;
+  padding: 1em 1em 0.3em 1em;
+  margin: 1.3em 0 1.3em 0;
+  border: #dddcdc 1px solid;
+}
+
+.formBlock{
+  padding: 1em 0 2em 0;
+}
+
+.aBlock{
+  text-align:left;
+  border-radius: 5px;
+  background-color: #f9f9f9;
+  padding: 1em;
+  border: #dddcdc 1px solid;
+}
+
+.flex-container > div {
+  background-color: #20b2e2;
+  color: #333;
+  margin: 1em;
+  padding: 1em;
+  vertical-align: middle;
+  box-shadow: 0 2px 5px 0 rgb(0 0 0 / 16%), 0 2px 10px 0 rgb(0 0 0 / 12%);
+}
+
+@media only screen and (min-width: 1230px) {
 /* ==== For desktop: ===== */
   body{
     background-image: url(https://cis.ieee.org/images/files/template/cis-logo.png);
     background-repeat: no-repeat;
-    background-position-x: 30px;
-    background-position-y: 30px;
+    background-position-x: 1em;
+    background-position-y: 1em;
   }
+
+  .content{
+    width: 70%;
+  }
+
 }
+
+@media only screen and (min-width: 790px) {
+  /* For desktop: */
+    .rightBlock{
+      padding:10px 30px;
+    }
+
+    .formBlock{
+      width: 80%;
+      margin: auto;
+      padding: 1em 0 1em 0;
+    }
+
+    #timeline-embed{
+      margin-left: 1em;
+      width: auto;
+      height:700px !important;
+    }
+
+    .aBlock{
+      margin: 2em;
+    }
+
+    .flex-container {
+      display: flex;
+      justify-content: center;
+      width: 100%;
+    }
+
+    .flex-container > div {
+      width: 25%;
+      text-align: center;
+    }
+
+    
+  }
+
+  @media screen and (max-width: 790px) { /* RESPONSIVE MENU MOBILES */
+    .timeline-content{
+      height: 670px !important;
+    }
+
+    #timeline-embed{
+      height:670px !important;
+    }
+
+    .content{
+      width: 90%;
+    }
+  }

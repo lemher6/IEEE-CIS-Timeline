@@ -90,9 +90,23 @@
                 echo $action;
                 echo "</td>\n";
                 echo "\t\t<td  style=\"text-align:left;\">";
-                echo "<button onclick=\"document.location='/src/event.php?eId=". $event['unique_id'] ."&status=edited&opt=$opt&page=listEvents'\" title='Keep Updating'>Update Request</button>";
+                
+                echo "<form method='post' style='display:inline-block' action='/src/event.php'>
+                        <input type='hidden' name='eId' value='". $event['unique_id'] ."' />
+                        <input type='hidden' name='status' value='edited' />
+                        <input type='hidden' name='opt' value='$opt' />
+                        <input type='hidden' name='page' value='listEvents' />
+                        <input type='submit' name='uptRequest' value='Update Request' />
+                      </form>";
+                
                 echo "&nbsp; &nbsp;";
-                echo "<button onclick=\"document.location='/src/event-manager.php?eId=". $event['unique_id'] ."&opt=eDel&page=editEvent'\" title='Forget Changes'>Forget Request</button>";
+                echo "<form method='post' style='display:inline-block' action='/src/event-manager.php'>
+                        <input type='hidden' name='eId' value='". $event['unique_id'] ."' />
+                        <input type='hidden' name='opt' value='eDel' />
+                        <input type='hidden' name='page' value='editEvent' />
+                        <input type='submit' name='forgetRequest' value='Forget Request' />
+                      </form>";
+
                 echo "</td>\n";
                 echo "</tr>\n";
                 $counter++;
@@ -112,7 +126,7 @@
 
     $json = file_get_contents('../json/timeline.json'); // Read the SANDBOX JSON file
     if($json === FALSE){
-      echo "ERROR:20230301082101. Timeline file is empty. Please contact your administrator.";
+      echo "No timeline events found.";
     }else{
       $data = json_decode($json, true); // Decode the JSON data into a PHP array
 
@@ -152,9 +166,26 @@
               echo "Approved";
               echo "</td>\n";
               echo "\t\t<td $tdClass style=\"text-align:left;\">";
-              echo "<button onclick=\"document.location='/src/event.php?eId=". $event['unique_id'] ."&opt=upd&page=listEvents&counter=$counter'\">Update</button>";
+              #echo "<button onclick=\"document.location='/src/event.php?eId=". $event['unique_id'] ."&opt=upd&page=listEvents&counter=$counter'\">Update</button>";
+
+              echo "<form method='post' style='display:inline-block' action='/src/event.php'>
+                        <input type='hidden' name='eId' value='". $event['unique_id'] ."' />
+                        <input type='hidden' name='opt' value='upd' />
+                        <input type='hidden' name='page' value='listEvents' />
+                        <input type='hidden' name='counter' value='$counter' />
+                        <input type='submit' name='uptEvent' value='Update' />
+                      </form>";
+
               echo "&nbsp; &nbsp;";
-              echo "<button onclick=\"document.location='/src/event.php?eId=". $event['unique_id']. "&opt=del&page=listEvents&counter=$counter'\">Remove</button>";
+              #echo "<button onclick=\"document.location='/src/event.php?eId=". $event['unique_id']. "&opt=del&page=listEvents&counter=$counter'\">Remove</button>";
+              echo "<form method='post' style='display:inline-block' action='/src/event.php'>
+                        <input type='hidden' name='eId' value='". $event['unique_id'] ."' />
+                        <input type='hidden' name='opt' value='dlt' />
+                        <input type='hidden' name='page' value='listEvents' />
+                        <input type='hidden' name='counter' value='$counter' />
+                        <input type='submit' name='dltEvent' value='Remove' />
+                      </form>";
+
               echo "</td>\n";
               echo "</tr>\n";
               $counterDisplay++;
@@ -595,6 +626,7 @@
                   echo "&nbsp;&nbsp;&nbsp;&nbsp;";
                   echo "<input type='submit' name='submit' value='Reject' >";
                   echo "</form>";
+                  
                   echo "</div>";
 
                   echo "</div>\n";
@@ -637,7 +669,7 @@
           ### ===========================================================================================================
           $data = file_get_contents('../json/editions.json'); // Read the EDITIONS JSON file
           if(!$data){
-            echo "ERROR:20230301081255. Editions file is empty. Please contact your administrator.";
+            echo "No requests found.";
           }else{
             $data = json_decode($data, true); // Decode the JSON data into a PHP array
 

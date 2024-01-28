@@ -24,7 +24,11 @@
   }
 ?>
 
-  <div class="bar">
+  <button type="button" class="menuIcon" onclick="menuIcon()">&#9776;</button> <!-- MOBILE ICON -->
+  <div class="bar" id="menuBar">
+
+    
+
     <!--<button onclick="document.location='timeline-google-sheet.html'">Launch Timeline <br> using Google Sheets</button>-->
     <button type="button"  onclick="document.location='/index.php'">Home Page</button>
     <button type="button"  onclick="document.location='/src/timeline-launch.php'"  style="display:<?php echo $displayLaunch; ?>;" >Launch Timeline</button> <!-- Using JSON file -->
@@ -102,6 +106,5 @@
     <button type="button" onclick="document.location='/src/help.php'" style="padding: 11px 10px;"><span class="iButton">i</span></button>
 
   </div>
-  <br>
-  <br>
+  
 <!-- END TIMELINE MENU OPTION  -->
