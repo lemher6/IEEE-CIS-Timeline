@@ -1,4 +1,4 @@
-# IEEE-CIS Timeline V 1.1
+# IEEE-CIS Timeline V 1.2
 
   Timeline project for IEEE-CIS
 
