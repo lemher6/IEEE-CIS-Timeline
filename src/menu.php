@@ -38,7 +38,7 @@
 
     <form name="editEventForm" id="editEventForm" method="post" style="display:<?php echo $displayOpt; ?>;" action="/src/event.php">
         <input type="hidden" name="opt"  id="opt"  value="upd" />
-        <input type="hidden" name="eId"  id="eId"  value="" />
+        <input type="hidden" name="eId"  id="eIdEdit"  value="" />
         <input type="hidden" name="page" value="listEvents" />
         <input type="hidden" name="counter" value="0" />
         <?php
@@ -54,7 +54,7 @@
 
     <form name="deleteEventForm" id="editEventForm" method="post" style="display:<?php echo $displayOpt; ?>;" action="/src/event.php">
         <input type="hidden" name="opt"  id="opt"  value="dlt" />
-        <input type="hidden" name="eId"  id="eId"  value="" />
+        <input type="hidden" name="eId"  id="eIdDlt"  value="" />
         <input type="hidden" name="page" value="listEvents" />
         <input type="hidden" name="counter" value="0" />
         <?php

@@ -1,7 +1,10 @@
 <?php
   ### IEEE-CIS TIMELINE PROJECT
   ### 2022-11 AH
-  ### A new line was added to the Timeline-min.js file. document.getElementById("eId").value=this.data.unique_id): So the unique_id is set to the update event menu option.
+  ### V1.1: A new line was added to the Timeline-min.js file. document.getElementById("eId").value=this.data.unique_id): So the unique_id is set to the update event menu option.
+  ### V.2.1 2024-01-02 AH Changing the javascript Timeline-min.js file element id. That element was split into two different form in order to make a POST form instead of GET.
+  ###                     document.getElementById("eIdEdit").value=this.data.unique_id,document.getElementById("eIdDlt").value=this.data.unique_id
+  
   session_start();
   include('./check-login.php');
   

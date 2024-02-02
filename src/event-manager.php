@@ -308,7 +308,7 @@
 
 
           ### CREATE AND HTML FORM FOR THE EVENT INFORMATION
-          ### FOR DELETING THE FORM IS HIDDEN
+          ### FOR DELETING THE EVENT FORM IS HIDDEN
           if($opt != 'dlt'){
             echo "<div>";
           }else{

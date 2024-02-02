@@ -99,7 +99,7 @@
             ?>
                 <div class="rightBlock">
                   <p>Complete the event information and then click on "Create" button.</p>
-                  <input type="submit" value="Create" />
+                  <input type="submit" id="eventNEW" value="Create" />
                 </div>
 
             <?php  } // END if($op == 'new')  ?>
@@ -129,7 +129,7 @@
 
                     <div class="rightBlock">
                       <p>Do you want to delete this event?</p>
-                      <input type="submit" value="Yes" />
+                      <input type="submit" id="eventDLT" value="Yes" />
                       <button type="button" onclick="document.location='/src/edit-events.php'">Cancel</button>
                     </div>
                   <?php  } // END if($op == 'dlt')  ?>
@@ -157,7 +157,7 @@
 
                 <div class="rightBlock">
                     <p>Update the event information and then click on "Update" button.</p>
-                      <input type="submit" value="Update" />
+                      <input type="submit" id="eventUPD" value="Update" />
                 </div>
 
             <?php  } // END if($op == 'upd')  ?>
@@ -187,7 +187,7 @@
 
                 <div class="rightBlock">
                     <p>Update the event information and then click on "Update" button. Choose "Forget Edition" to remove any modifications done on this event.</p>
-                      <input type="submit" value="Update" />
+                      <input type="submit" id="eventEDIT" value="Update" />
                       <button type="button" onclick="document.location='/src/event-manager.php?eId=<?php echo $eId; ?>&opt=eDel&page=editEvent'">Forget Edition</button>
                 </div>
 
