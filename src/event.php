@@ -188,7 +188,7 @@
                 <div class="rightBlock">
                     <p>Update the event information and then click on "Update" button. Choose "Forget Edition" to remove any modifications done on this event.</p>
                       <input type="submit" id="eventEDIT" value="Update" />
-                      <button type="button" onclick="document.location='/src/event-manager.php?eId=<?php echo $eId; ?>&opt=eDel&page=editEvent'">Forget Edition</button>
+                      <button type="button" onclick="document.location='/src/edit-events.php'">Cancel</button>
                 </div>
 
             <?php  } // END if($op == 'upd')  ?>

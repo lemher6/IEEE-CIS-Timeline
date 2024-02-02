@@ -1,0 +1,42 @@
+{
+    "events": [
+        {
+            "unique_id": "CIS20240202071643",
+            "author": "Test-00930628",
+            "created_on": "2024-02-02 07:15",
+            "last_modification": "2024-02-02 07:15",
+            "group": "CIS",
+            "text": {
+                "headline": "Event Headline:",
+                "text": "Event Detail 1: <br><br><br><br>"
+            },
+            "start_date": {
+                "year": "2024",
+                "month": "01",
+                "day": "01"
+            },
+            "end_date": {
+                "year": "2024",
+                "month": "02",
+                "day": "01"
+            },
+            "media": {
+                "caption": "",
+                "credit": "",
+                "url": "\/img\/CAI_2023.jpg",
+                "link": ""
+            },
+            "background": {
+                "color": "#8000ff",
+                "opacity": 50,
+                "url": null
+            },
+            "change": {
+                "user": "Test-00930628",
+                "date": "2024-02-02 07:16",
+                "action": "new",
+                "comment": "a new test"
+            }
+        }
+    ]
+}

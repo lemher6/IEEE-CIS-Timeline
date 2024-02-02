@@ -1,41 +1,79 @@
 {
     "events": [
         {
-            "unique_id": "CIS20230301083119",
-            "author": "Ana",
-            "created_on": "2023-03-01 20:29",
-            "last_modification": "2023-03-01 20:35",
-            "group": "NNs",
+            "unique_id": "CIS20240202071643",
+            "author": "Test-00930628",
+            "created_on": "2024-02-02 07:15",
+            "last_modification": "2024-02-02 07:15",
+            "group": "CIS",
             "text": {
-                "headline": "The Halloween Event",
-                "text": "Halloween Pumpkin Carving--IEEE style<br>Sponsor by The Monter<br><br><br>"
+                "headline": "Event Headline:",
+                "text": "Event Detail 1: <br><br><br><br>"
             },
             "start_date": {
-                "year": "2022",
-                "month": "10",
-                "day": "31"
+                "year": "2024",
+                "month": "01",
+                "day": "01"
             },
             "end_date": {
-                "year": "2022",
-                "month": "10",
-                "day": "31"
+                "year": "2024",
+                "month": "02",
+                "day": "01"
             },
             "media": {
                 "caption": "",
-                "credit": "Halloween Pumpkin Carving--IEEE style",
-                "url": "https:\/\/2.bp.blogspot.com\/-rt8D1urfesY\/VFgLfrRgxGI\/AAAAAAAAJQk\/VtxpVSOPx1s\/s1600\/pumpkin%2B12.jpg",
-                "link": "https:\/\/jacobsschoolofengineering.blogspot.com\/2014\/10\/pumpkins-ieee-style.html"
+                "credit": "",
+                "url": "\/img\/CAI_2023.jpg",
+                "link": ""
             },
             "background": {
-                "color": "#ff8000",
+                "color": "#8000ff",
                 "opacity": 50,
                 "url": null
             },
             "change": {
                 "user": "Test-00930628",
-                "date": "2024-02-02 06:54",
+                "date": "2024-02-02 07:16",
+                "action": "new",
+                "comment": "a new test"
+            }
+        },
+        {
+            "unique_id": "EC20190610-001",
+            "author": "Ana",
+            "created_on": "2022-12-01",
+            "last_modification": "2023-02-13",
+            "group": "EC",
+            "text": {
+                "headline": "2019 IEEE CEC",
+                "text": "2019 IEEE Congress on Evolutionary Computation (CEC)<br>June 10-13, 2019, Wellington, New Zealand<br>GCs: Mengjie Zhang, Kay Chen Tan<br>PC: Carlos A. Coello Coello<br>"
+            },
+            "start_date": {
+                "year": "2019",
+                "month": "06",
+                "day": "10"
+            },
+            "end_date": {
+                "year": "2019",
+                "month": "06",
+                "day": "13"
+            },
+            "media": {
+                "caption": "IEEE Congress on Evolutionary Computation (CEC)",
+                "credit": "",
+                "url": "https:\/\/vimeo.com\/794617447",
+                "link": "https:\/\/ewh.ieee.org\/conf\/cec\/cec-2019-cfp.pdf"
+            },
+            "background": {
+                "color": "#000000",
+                "opacity": 50,
+                "url": null
+            },
+            "change": {
+                "user": "Test-00930628",
+                "date": "2024-02-02 07:15",
                 "action": "dlt",
-                "comment": "Testing delete event.1t"
+                "comment": "Testing"
             }
         },
         {
