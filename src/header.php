@@ -8,7 +8,7 @@
     <meta name="author" content="IEEE-CIS">
     <meta name="application-name" content="IEEE-CIS HISTORICAL TIMELINE">
     <meta name="application-version" content="1.2.1">
-    <meta name="referrer" content="strict-origin-when-crossorigin">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
 
     <link rel="stylesheet" type="text/css" href="/css/style.css">
     <script src="/js/main.js"></script>  
