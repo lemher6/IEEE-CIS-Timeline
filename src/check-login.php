@@ -12,7 +12,7 @@
 
   $committeeIDs = array('00930628'); // User IDs in the committee can approve and view edited events.
   $adminIDs = array('999999'); // Admin User are able to update committee members.
-  $approvalRolls = array('Committee','Admin');
+  $approvalRolls = array('Committee','Admin'); // This array is NOT used in the event-manager module. This is just for reference.
 
 
   ### User NOT Set 
@@ -41,7 +41,6 @@
       }
 
     } # END FOREACH 
-
 
 
     # SET ROLL

@@ -502,7 +502,7 @@
   ### LIST EDITIONS AND ALLOW THE USER TO APPROVE OR DENY CHANGES
   ### ****************************************************************************
     function displayForApproval(){
-      if(!in_array($_SESSION['tL_userRoll'],$GLOBALS['approvalRolls'])){
+      if($_SESSION['tL_userRoll'] != 'Committee'){
         echo "You can approve or reject a request that is pending approval only if you are a member of the timeline committee.";
       }else{
 
@@ -652,7 +652,7 @@
     function updateProdTimeline(){
 
       // First checks user roll
-      if($_SESSION['tL_userRoll'] != 'Admin'){
+      if($_SESSION['tL_userRoll'] != 'Committee'){
         echo "You can approve or reject a request that is pending approval only if you are a member of the timeline committee. ";
       }else{
         if(isset($_POST['eId'])){
