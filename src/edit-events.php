@@ -16,6 +16,24 @@
           <h2>YOUR REQUEST WAITING FOR APPROVAL</h2>
       </div>
 
+      <?php
+          ########################################################################
+          ###  GETTING HEADER PARAMETERS
+          ########################################################################
+          if(!empty($_GET['dError'])){
+            echo "<p>
+                    <br><hr>
+                    <span class='alarm'>Sorry, your request couldn't be processed. <br><br>
+                    Some data was invalid. Please ensure that you only enter letters, digits, whitespace, and common punctuation marks such as hyphens, apostrophes, commas, periods, exclamation marks, colons, semicolons, and parentheses.
+                    <br>Check the field(s): ".$_GET['wD']."
+                    <br><br>If you have any questions, please contact the committee or the administrator.</span>
+                    <br><hr><br>
+                  </p>";
+          }else{
+            $eId = '';
+          }
+      ?>
+
       <div class="editBlock">
           <table style="width:100%">
             <tr>

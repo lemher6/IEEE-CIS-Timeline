@@ -68,6 +68,17 @@ h2 {
   font-size: 1.3em;
 }
 
+h3 {
+  color: #666;
+  margin: 0;
+  font-size: 1.2em;
+}
+
+.alarm {
+  color: #d1550d;
+  font-size: 1.1em;
+}
+
 .helpItem li{
   line-height: 1.7em;
 }
