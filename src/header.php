@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="author" content="IEEE-CIS">
     <meta name="application-name" content="IEEE-CIS HISTORICAL TIMELINE">
-    <meta name="application-version" content="1.2.1">
+    <meta name="application-version" content="1.2.2">
     <meta name="referrer" content="strict-origin-when-cross-origin">
 
     <link rel="stylesheet" type="text/css" href="/css/style.css">
