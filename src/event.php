@@ -130,7 +130,7 @@
                     <div class="rightBlock">
                       <p>Do you want to delete this event?</p>
                       <input type="submit" id="eventDLT" value="Yes" />
-                      <button type="button" onclick="document.location='/src/edit-events.php'">Cancel</button>
+                      <button type="button" id="dltCancel" onclick="document.location='/src/edit-events.php'">Cancel</button>
                     </div>
                   <?php  } // END if($op == 'dlt')  ?>
 
@@ -188,7 +188,7 @@
                 <div class="rightBlock">
                     <p>Update the event information and then click on "Update" button. Choose "Forget Edition" to remove any modifications done on this event.</p>
                       <input type="submit" id="eventEDIT" value="Update" />
-                      <button type="button" onclick="document.location='/src/edit-events.php'">Cancel</button>
+                      <button type="button" id="editCancel" onclick="document.location='/src/edit-events.php'">Cancel</button>
                 </div>
 
             <?php  } // END if($op == 'upd')  ?>

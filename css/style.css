@@ -2,13 +2,13 @@
 html,body,p {
   font-family: Arial, Verdana, sans-serif;
   color: #666;
-  font-size: 16px;
+  font-size: 14px;
   margin: auto;
   width: 100%;
 }
 
 .header{
-  margin-top: 2em;
+  margin-top: 3em;
 }
 
 /* Set the space for the timeline display */
@@ -21,29 +21,25 @@ html,body,p {
 
 .content{
   margin: auto;
-  padding: 1.3em 1em 2em 1em;
+  padding: 1em 1em 1em 1em;
   width: 800px;
 }
 
 
 
-.footer{
+.footerText{
   background-color: black;  
   padding: 1em;
   margin-top: 1em;
   position: fixed;
   left: 0;
   bottom: 0;
-  width: 100%;
   z-index: 15;
-}
-
-.footer p{
   font-size: 0.7em;
   text-align: center;
-  margin:0.5em;
   color: white;
 }
+
 
 .userInfoBlock{
   position: absolute;
@@ -56,19 +52,20 @@ html,body,p {
   border-radius: 4px;
 }
 
-h1 {
+.content h1 {
   color: #000;
   margin: 0.5em;
-  font-size: 1.5em;
+  font-size: 1.4em;
 }
 
-h2 {
+.pageTitle h2 {
   color: #666;
   margin: 0;
   font-size: 1.3em;
+  border-bottom: solid 1px gray;
 }
 
-h3 {
+.content h3 {
   color: #666;
   margin: 0;
   font-size: 1.2em;
@@ -100,6 +97,7 @@ h3 {
   cursor: pointer;
   font-size: large;
   border-radius: 4px;
+  margin-bottom: 0.1em;
 }
 
 .bar button:hover, .iBlock button:hover, input[type=submit]:hover {
@@ -136,10 +134,10 @@ h3 {
 .menuIcon {
   display: none;
   position: absolute;
-  right: 0.2em;
-  top: 3.1em;
+  right: 0.4em;
+  top: 0.2em;
   border: 1px solid #e7e7e8;
-  padding: 0.5em 0.6em;
+  padding: 0.2em 0.4em;
   vertical-align: middle;
   overflow: hidden;
   text-decoration: none;
@@ -181,6 +179,10 @@ h3 {
 
   .userInfoBlock{
     display: none;
+  }
+
+  .content{
+    margin-bottom: 3em;
   }
 }
 
@@ -432,6 +434,9 @@ th {
       text-align: center;
     }
 
+    .footerText{
+      width: 100%;
+    }  
     
   }
 
@@ -445,6 +450,11 @@ th {
     }
 
     .content{
-      width: 90%;
+      width: 90%;      
     }
+
+    #eventNEW, #eventUPD, #editCancel, #dltCancel, #rejectRqst{
+      margin-bottom: 5em;
+    }
+
   }

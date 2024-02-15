@@ -43,6 +43,7 @@
     } # END FOREACH 
 
 
+
     # SET ROLL
     ### If heather variables are set 
     if(isset($_SESSION['tL_user_ID']) && $_SESSION['tL_user_ID'] != '' && isset($_SESSION['tL_user_LN']))

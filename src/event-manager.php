@@ -630,7 +630,7 @@
                   echo "<input type='hidden' name='page' value='approveEvent' />";
                   echo "<input type='submit' name='submit' value='Approve' >";
                   echo "&nbsp;&nbsp;&nbsp;&nbsp;";
-                  echo "<input type='submit' name='submit' value='Reject' >";
+                  echo "<input type='submit' id='rejectRqst' name='submit' value='Reject' >";
                   echo "</form>";
                   
                   echo "</div>";
