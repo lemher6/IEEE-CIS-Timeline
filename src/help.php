@@ -17,8 +17,9 @@
       </div>
 
       <div class="leftBlock">
-
-      <h3>Guideline to Contribute to the CIS History Timeline</h3>
+        <br>
+        <h3>Guideline to Contribute to the CIS History Timeline</h3>
+        <br>
 
         <b>This document provides a guideline on best practices while contributing to the CIS History Timeline (CIS-HT).</b>
         <br><br>

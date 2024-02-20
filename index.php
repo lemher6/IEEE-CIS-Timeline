@@ -15,6 +15,7 @@
     <div class="content">
 
       <div class="centerBlock">
+        <br>
         <p>Welcome to the Institute of Electrical and Electronics Engineers <b>(IEEE)</b> Computational Intelligence Society <b>(CIS)</b> Historical Timeline!</p>
         <br>
         <a href="/src/timeline-launch.php" target="_blank">

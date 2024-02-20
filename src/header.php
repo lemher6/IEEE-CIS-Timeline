@@ -22,7 +22,7 @@
   <body>
     <div class="header">
 
-      <div class="pageTitle">
+      <div class="pageTitle appTitle">
         <h1>IEEE-CIS HISTORICAL TIMELINE</h1>
       </div>
   
