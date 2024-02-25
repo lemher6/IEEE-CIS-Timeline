@@ -817,7 +817,7 @@
 
     if (!empty($_POST["author"])) {
       $_POST["author"] = trim($_POST["author"]);
-      if(!preg_match_all($patternText, $_POST["eId"]))
+      if(!preg_match_all($patternText, $_POST["author"]))
       {
         $wrongData = ' <br>- Author Name ';
       }
@@ -856,7 +856,7 @@
     }
 
     if (!empty($_POST["text3"])) {
-      $_POST["text2"] = trim($_POST["text3"]);
+      $_POST["text3"] = trim($_POST["text3"]);
       $_POST["text3"] = htmlspecialchars( $_POST["text3"], ENT_SUBSTITUTE, 'UTF-8' );
     }
 
@@ -894,7 +894,7 @@
     }
 
     if (!empty($_POST["last_modification"])) {
-      $_POST["created_on"] = trim($_POST["last_modification"]);
+      $_POST["last_modification"] = trim($_POST["last_modification"]);
       if(!preg_match_all($patternDate, $_POST["last_modification"]))
       {
         $wrongData = ' <br>- Last Modification ';

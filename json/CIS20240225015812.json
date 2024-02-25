@@ -1,0 +1,42 @@
+{
+    "events": [
+        {
+            "unique_id": "CIS20240225015812",
+            "author": "Test-00930628",
+            "created_on": "2024-02-25 01:56",
+            "last_modification": "2024-02-25 01:56",
+            "group": "EC",
+            "text": {
+                "headline": "TEst",
+                "text": "<br>test<br><br>Detail 4<br>"
+            },
+            "start_date": {
+                "year": "2024",
+                "month": "02",
+                "day": "22"
+            },
+            "end_date": {
+                "year": "2024",
+                "month": "02",
+                "day": "22"
+            },
+            "media": {
+                "caption": "Test",
+                "credit": "Google",
+                "url": "https:\/\/www.gstatic.com\/webp\/gallery\/4.sm.jpg",
+                "link": "https:\/\/developers.google.com\/speed\/webp\/gallery"
+            },
+            "background": {
+                "color": "#ffffff",
+                "opacity": 50,
+                "url": null
+            },
+            "change": {
+                "user": "Test-00930628",
+                "date": "2024-02-25 01:58",
+                "action": "new",
+                "comment": "This is a test."
+            }
+        }
+    ]
+}
