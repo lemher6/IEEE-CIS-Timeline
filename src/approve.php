@@ -7,6 +7,8 @@
   include('./header.php');
 
   include ('./menu.php'); 
+
+  include_once('./sanitize.php');
 ?>
     
 

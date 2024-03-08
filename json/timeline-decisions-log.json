@@ -815,4 +815,47 @@
         "action": "Reject",
         "comment": "Test"
     }
+}{
+    "unique_id": "CIS20240308100532",
+    "author": "Test-00930628",
+    "created_on": "2024-03-08 22:05",
+    "last_modification": "2024-03-08 22:06",
+    "group": "Fuzzy",
+    "text": {
+        "headline": "Ese gato si sirvio",
+        "text": "let&#039;s try one more time.<br><br><br><br>"
+    },
+    "start_date": {
+        "year": "2023",
+        "month": "01",
+        "day": "01"
+    },
+    "end_date": {
+        "year": "",
+        "month": "",
+        "day": ""
+    },
+    "media": {
+        "caption": "",
+        "credit": "",
+        "url": "https:\/\/dyh28w2y3a9av.cloudfront.net\/public\/CISGOVPH0020\/CISGOVPH0020_thumbnail.webp",
+        "link": "https:\/\/developers.google.com\/speed\/webp\/gallery"
+    },
+    "background": {
+        "color": "#004080",
+        "opacity": 50,
+        "url": null
+    },
+    "change": {
+        "user": "Test-00930628",
+        "date": "2024-03-08 22:06",
+        "action": "new",
+        "comment": "I forgot the comment."
+    },
+    "desicion": {
+        "user": "Test-00930628",
+        "date": "2024-03-08 22:06",
+        "action": "Reject",
+        "comment": "You need more details."
+    }
 }

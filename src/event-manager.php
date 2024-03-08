@@ -12,22 +12,18 @@
   #### editEvent() // CREATE A NEW EVENT INSTANCE IN THE FILE EDITIONS FOR LATER APPROVAL
   #### displayForApproval() // LIST EDITIONS AND ALLOW THE USER TO APPROVE OR REJECT CHANGES
   ### updateProdTimeline() // AFTER APPROVAL THE PRODUCTION TIMELINE JSON FILE IS UPDATED WITH THE NEW INFO.
-  ### cleaningData() // VALIDATES AND CLEAN INPUT POST PARAMETERS AFTER UPDATE OR CREATE AN EVENT
   ### ****************************************************************************
+
 
 
   if(session_id() == ''){
     session_start();
     include('./check-login.php');
+    include_once('./sanitize.php');
   }
 
   if(isset($_POST['opt']) && $_POST['page'] == 'editEvent'){
-    $wrongDatas = cleaningData(); // First validate input data
-    if($wrongDatas == ''){ 
       editEvent(); // process the request if the validation passed
-    }else{
-      header("Location: /src/edit-events.php?dError=1&wD=$wrongDatas");  // if some data is invalid a message is displayed in that page.
-    }
   }
 
   if(isset($_POST['eId']) && $_POST['page'] == 'approveEvent'){
@@ -417,7 +413,7 @@
                   "group" => $_POST['group'],
                   "text" => Array (
                       "headline" => $_POST['headline'],
-                      "text" => $_POST['text0'].'<br>'.$_POST['text1'].'<br>'.$_POST['text2'].'<br>'.$_POST['text3'].'<br>'.$_POST['text4'],
+                      "text" => $_POST["text0"].'<br>'.$_POST['text1'].'<br>'.$_POST['text2'].'<br>'.$_POST['text3'].'<br>'.$_POST['text4'],
                   ),
                   "start_date" => Array (
                       "year" => substr($_POST['start_date'],0,4),
@@ -785,177 +781,6 @@
             } // END if($data)
         } // END if(eId)
       } // if user is not timeline committee.
-  }
-
-
-  ### ****************************************************************************
-  ### VALIDATES AND CLEAN INPUT POST PARAMETERS AFTER UPDATE OR CREATE AN EVENT
-  ### WITH trim Remove blank spaces
-  ### WITH htmlspecialchars Convert special characters to HTML entities
-  ### ****************************************************************************
-  function cleaningData(){
-    $wrongData = '';
-
-    $patternText = "/^[A-Za-z0-9\s\-',.!?:;&()]+$/"; // letters, digits, whitespace, and common punctuation marks such as hyphens, apostrophes, commas, periods, exclamation marks, colons, semicolons, and parentheses
-    $patternDate = "/^([0-9]{4})-([0-1][0-9])-([0-3][0-9])\s([0-2][0-9]):([0-5][0-9])$/"; // YYYY-MM-DD
-    $patternY = "/^(19|20)\d{2}$/"; // 19YY OR 20YY
-    $patternM = "/^(0[1-9]|1[0-2])$/"; // MM
-    $patternD = "/^([0-2][1-9]|3[0-1])$/"; // DD
-    $patternURL = "%^(?:(?:(?:https?|ftp):)?\/\/)(?:\S+(?::\S*)?@)?(?:(?!(?:10|127)(?:\.\d{1,3}){3})(?!(?:169\.254|192\.168)(?:\.\d{1,3}){2})(?!172\.(?:1[6-9]|2\d|3[0-1])(?:\.\d{1,3}){2})(?:[1-9]\d?|1\d\d|2[01]\d|22[0-3])(?:\.(?:1?\d{1,2}|2[0-4]\d|25[0-5])){2}(?:\.(?:[1-9]\d?|1\d\d|2[0-4]\d|25[0-4]))|(?:(?:[a-z0-9\x{00a1}-\x{ffff}][a-z0-9\x{00a1}-\x{ffff}_-]{0,62})?[a-z0-9\x{00a1}-\x{ffff}]\.)+(?:[a-z\x{00a1}-\x{ffff}]{2,}\.?))(?::\d{2,5})?(?:[/?#]\S*)?$%iuS"; // URLs that start with either "http://" or "https://", followed by any characters except whitespace, '/', '$', '?', '.', or '#', but it no longer includes the "ftp://" option.
-    $patternColor = "/^#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$/"; //string starts with '#' followed by either six hexadecimal characters ([A-Fa-f0-9]) representing the RGB values in pairs, or three hexadecimal characters for shorthand notation.
-
-
-    ### VALIDATE TEXT ################################################################
-
-    if (!empty($_POST["eId"])) {
-      $_POST["eId"] = trim($_POST["eId"]);
-      if(!preg_match_all($patternText, $_POST["eId"]))
-      {
-        $wrongData = ' <br>- Event ID ';
-      }  
-    }
-
-    if (!empty($_POST["author"])) {
-      $_POST["author"] = trim($_POST["author"]);
-      if(!preg_match_all($patternText, $_POST["author"]))
-      {
-        $wrongData = ' <br>- Author Name ';
-      }
-      $_POST["author"] = htmlspecialchars( $_POST["author"], ENT_SUBSTITUTE, 'UTF-8' );
-    }
-
-    if (!empty($_POST["group"])) {
-      $_POST["group"] = trim($_POST["group"]);
-      if(!preg_match_all($patternText, $_POST["group"]))
-      {
-        $wrongData = ' <br>- Group ';
-      }
-      $_POST["group"] = htmlspecialchars( $_POST["group"], ENT_SUBSTITUTE, 'UTF-8' );
-    }
-
-    if (!empty($_POST["headline"])) {
-      $_POST["headline"] = trim($_POST["headline"]);      
-      $_POST["headline"] = htmlspecialchars( $_POST["headline"], ENT_SUBSTITUTE, 'UTF-8' );
-    }
-
-    if (!empty($_POST["text0"]) AND $_POST["text0"] != '') {
-      $_POST["text0"] = trim($_POST["text0"]);
-      $_POST["text0"] = htmlspecialchars( $_POST["text0"], ENT_SUBSTITUTE, 'UTF-8' );
-    }
-
-
-    if (!empty($_POST["text1"])) {
-      $_POST["text1"] = trim($_POST["text1"]);
-      $_POST["text1"] = htmlspecialchars( $_POST["text1"], ENT_SUBSTITUTE, 'UTF-8' );
-    }
-
-
-    if (!empty($_POST["text2"])) {
-      $_POST["text2"] = trim($_POST["text2"]);
-      $_POST["text2"] = htmlspecialchars( $_POST["text2"], ENT_SUBSTITUTE, 'UTF-8' );
-    }
-
-    if (!empty($_POST["text3"])) {
-      $_POST["text3"] = trim($_POST["text3"]);
-      $_POST["text3"] = htmlspecialchars( $_POST["text3"], ENT_SUBSTITUTE, 'UTF-8' );
-    }
-
-
-    if (!empty($_POST["text4"])) {
-      $_POST["text4"] = trim($_POST["text4"]);
-      if(!preg_match_all($patternText, $_POST["text4"]))
-      $_POST["text4"] = htmlspecialchars( $_POST["text4"], ENT_SUBSTITUTE, 'UTF-8' );
-    }
-
-    if (!empty($_POST["caption"])) {
-      $_POST["caption"] = trim($_POST["caption"]);
-      $_POST["caption"] = htmlspecialchars( $_POST["caption"], ENT_SUBSTITUTE, 'UTF-8' );
-    }
-
-    if (!empty($_POST["credit"])) {
-      $_POST["credit"] = trim($_POST["credit"]);
-      $_POST["credit"] = htmlspecialchars( $_POST["credit"], ENT_SUBSTITUTE, 'UTF-8' );
-    }
-
-    if (!empty($_POST["comment"])) {
-      $_POST["comment"] = trim($_POST["comment"]);
-      $_POST["comment"] = htmlspecialchars( $_POST["comment"], ENT_SUBSTITUTE, 'UTF-8' );
-    }
-
-
-    ### VALIDATE DATES ####################################################################
-
-    if (!empty($_POST["created_on"])) {
-      $_POST["created_on"] = trim($_POST["created_on"]);
-      if(!preg_match_all($patternDate, $_POST["created_on"]))
-      {
-        $wrongData = ' <br>- Create Date ';
-      }      
-    }
-
-    if (!empty($_POST["last_modification"])) {
-      $_POST["last_modification"] = trim($_POST["last_modification"]);
-      if(!preg_match_all($patternDate, $_POST["last_modification"]))
-      {
-        $wrongData = ' <br>- Last Modification ';
-      }      
-    }
-
-
-    if (!empty($_POST["start_date"])) {
-      $cleanYear = substr($_POST['start_date'],0,4);
-      $cleanMonth = substr($_POST['start_date'],5,2);
-      $cleanDay = substr($_POST['start_date'],8,2);      
-      if( (!preg_match_all($patternY, $cleanYear)) || (!preg_match_all($patternM, $cleanMonth)) || (!preg_match_all($patternD, $cleanDay)) )
-      {
-        $wrongData = ' <br>- Start_date '.$_POST['start_date'];
-      }
-      $_POST['start_date'] = htmlspecialchars( $_POST['start_date'], ENT_SUBSTITUTE, 'UTF-8' );
-    }
-
-    if (!empty($_POST["end_date"])) {
-      $cleanYear = substr($_POST['end_date'],0,4);
-      $cleanMonth = substr($_POST['end_date'],5,2);
-      $cleanDay = substr($_POST['end_date'],8,2);
-      if( (!preg_match_all($patternY, $cleanYear)) || (!preg_match_all($patternM, $cleanMonth)) || (!preg_match_all($patternD, $cleanDay)) )
-      {
-        $wrongData = ' <br>- End_date '.$_POST['end_date'];
-      }
-      $_POST['end_date'] = htmlspecialchars( $_POST['end_date'], ENT_SUBSTITUTE, 'UTF-8' );
-    }
-
-    ### VALIDATES URL AND LINKS ##############################################################
-
-    if (!empty($_POST["mediaURL"])) {
-      $_POST["mediaURL"] = trim($_POST["mediaURL"]);
-      if(!preg_match_all($patternURL, $_POST["mediaURL"]))
-      {
-        $wrongData = ' <br>- Media URL ';
-      }  
-    }
-
-    if (!empty($_POST["mediaLINK"])) {
-      $_POST["mediaLINK"] = trim($_POST["mediaLINK"]);
-      if(!preg_match_all($patternURL, $_POST["mediaLINK"]))
-      {
-        $wrongData = ' <br>- Media Link ';
-      }  
-    }
-
-    ### VALIDATES COLOR IN HEXADECIMAL ##########################################################
-
-    if (!empty($_POST["color"])) {
-      $_POST["color"] = trim($_POST["color"]);
-      if(!preg_match_all($patternColor, $_POST["color"]))
-      {
-        $wrongData = ' <br>- Background Color ';
-      }  
-    }
-
-    $_POST['opt'] = htmlspecialchars( $_POST['opt'], ENT_SUBSTITUTE, 'UTF-8' );
-    
-
-    return $wrongData;
   }
 
 
