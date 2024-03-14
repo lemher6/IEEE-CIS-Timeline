@@ -1,11 +1,16 @@
 <!-- TIMELINE USER ROLL  -->
   <div class="userInfoBlock">
+  <a href='/src/logout.php' title='Log Out'>
     <?php
       ### DISPLAY USER'S ROLL
-      if(isset($_SESSION['tL_userRoll'])){
-        echo $_SESSION['tL_user_ORG'].' - '.$_SESSION['tL_userRoll'];
+      if(isset($_SESSION['tL_user_ORG'])){
+        echo $_SESSION['tL_user_ORG'];
+      }
+      if(isset($_SESSION['tL_userRoll']) && $_SESSION['tL_userRoll'] != 'Public'){
+        echo ' - '.$_SESSION['tL_userRoll'];
       }
     ?>
+    </a>
   </div>
 <!-- END TIMELINE USER ROLL  -->
 
@@ -13,15 +18,15 @@
 
 <!-- TIMELINE MENU OPTION  -->
 <?php
-  ### IF THE TIMELINE IS LAUNCH THE MENU OPTION IS CHANGED TO UPDATE EVENT
-  $filename = baseName($_SERVER['REQUEST_URI']);
-  if($filename == 'timeline-launch.php'){
-    $displayOpt = 'inline-block';
-    $displayLaunch = 'none';
-  }else{
-    $displayOpt = 'none';
-    $displayLaunch = 'inline-block';
-  }
+  ### IF THE TIMELINE IS LAUNCH THE MENU OPTION IS CHANGED TO UPDATE EVENT ONLY FOR CIS MEMBERS 
+    $filename = baseName($_SERVER['REQUEST_URI']);
+    if($filename == 'timeline-launch.php' && $_SESSION['tL_userRoll'] != 'Public'){
+      $displayOpt = 'inline-block';
+      $displayLaunch = 'none';
+    }else{
+      $displayOpt = 'none';
+      $displayLaunch = 'inline-block';
+    }
 ?>
 
   <button type="button" class="menuIcon" onclick="menuIcon()">&#9776;</button> <!-- MOBILE ICON -->
@@ -42,12 +47,12 @@
         <input type="hidden" name="page" value="listEvents" />
         <input type="hidden" name="counter" value="0" />
         <?php
-          ### ONLY LOGGED MEMBERS CAN SEE THESE OPTIONS
+          ### ONLY CIS MEMBERS CAN SEE THESE OPTIONS
           if($_SESSION['tL_userRoll'] != 'Public'){
         ?>
         <input type="submit" name="optUpd" value="Update This" />
         <?php
-          } ### END ONLY LOGGED MEMBERS CAN SEE THESE OPTIONS
+          } ### END ONLY CIS MEMBERS CAN SEE THESE OPTIONS
         ?>
     </form>
 
@@ -58,12 +63,12 @@
         <input type="hidden" name="page" value="listEvents" />
         <input type="hidden" name="counter" value="0" />
         <?php
-          ### ONLY LOGGED MEMBERS CAN SEE THESE OPTIONS
+          ### ONLY CIS MEMBERS CAN SEE THESE OPTIONS
           if($_SESSION['tL_userRoll'] != 'Public'){
         ?>
         <input type="submit" name="optDel" value="Remove This" />
         <?php
-          } ### END ONLY LOGGED MEMBERS CAN SEE THESE OPTIONS
+          } ### END ONLY CIS MEMBERS CAN SEE THESE OPTIONS
         ?>
     </form>
 
@@ -73,12 +78,12 @@
         <input type="hidden" name="opt"  id="opt"  value="new" />
         <input type="hidden" name="page" value="listEvents" />
         <?php
-          ### ONLY LOGGED MEMBERS CAN SEE THESE OPTIONS
+          ### ONLY CIS MEMBERS CAN SEE THESE OPTIONS
           if($_SESSION['tL_userRoll'] != 'Public'){
         ?>
         <input type="submit" name="optCreate" value="Create Event" />
         <?php
-          } ### END ONLY LOGGED MEMBERS CAN SEE THESE OPTIONS
+          } ### END ONLY CIS MEMBERS CAN SEE THESE OPTIONS
         ?>
     </form>
     
@@ -103,7 +108,18 @@
       } // END if tL_userRoll
     ?>
 
-    <button type="button" onclick="document.location='/src/help.php'" style="padding: 11px 10px;"><span class="iButton">i</span></button>
+<?php
+      ### ONLY CIS MEMBERS CAN SEE THESE OPTIONS
+      if($_SESSION['tL_userRoll'] != 'Public'){
+    ?>
+      <button type="button" onclick="document.location='/src/guidelines.php'" style="padding: 11px 10px;"><span class="iButton">i</span></button>
+    <?php
+      }else{
+    ?>
+      <button type="button" onclick="document.location='/src/help.php'" style="padding: 11px 10px;"><span class="iButton">i</span></button>
+    <?php
+      } ### END ONLY CIS MEMBERS CAN SEE THESE OPTIONS
+    ?>
 
   </div>
   
