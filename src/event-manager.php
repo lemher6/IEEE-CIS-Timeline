@@ -71,7 +71,7 @@
                 }elseif($event['change']['action'] == 'new'){
                   $action = 'Creating';
                 }else{
-                  $action = 'Updateding';
+                  $action = 'Updating';
                 }
                 $opt = $event['change']['action'];
 
@@ -85,28 +85,24 @@
                 echo "\t\t<td style='text-align:left;'>";
                 echo $event['text']['headline'];
                 echo "</td>\n";
-                echo "\t\t<td style='text-align:left;'>";
-                echo $event['group'];
-                echo "</td>\n";
                 echo "\t\t<td style='text-align:left; title='On ". $event['change']['date'] ." By ". $event['change']['user'] ."'>";
                 echo $action;
                 echo "</td>\n";
-                echo "\t\t<td  style=\"text-align:left;\">";
+                echo "\t\t<td  style=\"text-align:center;\">";
                 
                 echo "<form method='post' style='display:inline-block' action='/src/event.php'>
                         <input type='hidden' name='eId' value='". $event['unique_id'] ."' />
                         <input type='hidden' name='status' value='edited' />
                         <input type='hidden' name='opt' value='$opt' />
                         <input type='hidden' name='page' value='listEvents' />
-                        <input type='submit' name='uptRequest' value='Update Request' />
+                        <input type='submit' name='uptRequest' class='requestButton' value='Update Request' />
                       </form>";
                 
-                echo "&nbsp; &nbsp;";
                 echo "<form method='post' style='display:inline-block' action='/src/event-manager.php'>
                         <input type='hidden' name='eId' value='". $event['unique_id'] ."' />
                         <input type='hidden' name='opt' value='eDel' />
                         <input type='hidden' name='page' value='editEvent' />
-                        <input type='submit' name='forgetRequest' value='Forget Request' />
+                        <input type='submit' name='forgetRequest' class='requestButton' value='Forget Request' />
                       </form>";
 
                 echo "</td>\n";
@@ -687,7 +683,7 @@
                                                   "comment" => $_POST['comment']
                                                   );
 
-                    $editedEvent = $event; // save the appreved or denied event in the variable for later.
+                    $editedEvent = $event; // save the approved or denied event in the variable for later.
 
                     ### ===========================================================================================================
                     ### 2. ADDS THE DECISION TO THE DECISION LOG FILE.
@@ -717,7 +713,7 @@
                   ### Creates the title of the new Timeline JSON file
 
                   if($_POST['opt'] != 'dlt'){
-                    array_push($events, $event); // adds the approved event to the array $events so it is included into the new file
+                    array_push($events, $editedEvent); // adds the approved event to the array $events so it is included into the new file
                   }
 
                   ### adding old production events to the new file =============

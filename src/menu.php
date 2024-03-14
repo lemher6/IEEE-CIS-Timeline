@@ -3,7 +3,7 @@
     <?php
       ### DISPLAY USER'S ROLL
       if(isset($_SESSION['tL_userRoll'])){
-        echo $_SESSION['tL_userRoll'];
+        echo $_SESSION['tL_user_ORG'].' - '.$_SESSION['tL_userRoll'];
       }
     ?>
   </div>

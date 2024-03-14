@@ -28,7 +28,6 @@
               <th>No.</th>
               <th>Requested On</th>
               <th>Headline</th>
-              <th>Group</th>
               <th>Request Status</th>
               <th style="text-align:center;">Actions</th>
             </tr>

@@ -40,8 +40,9 @@
             </style>
             <br><br>
             <div class='errorBlock'>
-                <br><br>
-                <h1>Invalid Data</h1>
+                <br>
+                <h1>IEEE-CIS HISTORICAL TIMELINE</h1> 
+                <h3>Invalid Data</h3>
                 Sorry, your request couldn't be processed. <br><br>
                 Check the field(s): 
                 
@@ -167,7 +168,7 @@
             $field_to_validate = trim($_POST["headline"]);
             $description_of_field = 'Event Headline';
             $pattern_to_validate = $patternText;
-            $max_length = 60;                   
+            $max_length = 80;                   
             $field_to_validate = htmlspecialchars( $field_to_validate, ENT_QUOTES, 'UTF-8' );
             $_POST["headline"] = str_replace($tlUnsafeChars, $tlSafeChars, $field_to_validate);
             $wrongData .= validateField($field_to_validate, $description_of_field, $pattern_to_validate, $max_length);
@@ -230,7 +231,7 @@
             $field_to_validate = trim($_POST["caption"]);
             $description_of_field = 'Caption';
             $pattern_to_validate = $patternText;
-            $max_length = 50;            
+            $max_length = 80;            
             $field_to_validate = htmlspecialchars( $field_to_validate, ENT_QUOTES, 'UTF-8' );
             $_POST["caption"] = str_replace($tlUnsafeChars, $tlSafeChars, $field_to_validate);
             $wrongData .= validateField($field_to_validate, $description_of_field, $pattern_to_validate, $max_length);
@@ -240,7 +241,7 @@
             $field_to_validate = trim($_POST["credit"]);
             $description_of_field = 'Credit';
             $pattern_to_validate = $patternText;
-            $max_length = 50;
+            $max_length = 80;
             $field_to_validate = htmlspecialchars( $field_to_validate, ENT_QUOTES, 'UTF-8' );
             $_POST["credit"] = str_replace($tlUnsafeChars, $tlSafeChars, $field_to_validate);
             $wrongData .= validateField($field_to_validate, $description_of_field, $pattern_to_validate, $max_length);

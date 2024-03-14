@@ -12,50 +12,6 @@
     },
     "events": [
         {
-            "unique_id": "CIS20230301083119",
-            "author": "Ana",
-            "created_on": "2023-03-01 20:29",
-            "last_modification": "2024-03-14 18:01",
-            "group": "EC",
-            "text": {
-                "headline": "The Halloween Event",
-                "text": "Halloween Pumpkin Carving--IEEE style<br>Sponsor by The Monter<br><br><br>"
-            },
-            "start_date": {
-                "year": "2022",
-                "month": "10",
-                "day": "31"
-            },
-            "end_date": {
-                "year": "2022",
-                "month": "10",
-                "day": "31"
-            },
-            "media": {
-                "caption": "",
-                "credit": "Halloween Pumpkin Carving--IEEE style",
-                "url": "https:\/\/2.bp.blogspot.com\/-rt8D1urfesY\/VFgLfrRgxGI\/AAAAAAAAJQk\/VtxpVSOPx1s\/s1600\/pumpkin&percnt;2B12.jpg",
-                "link": "https:\/\/jacobsschoolofengineering.blogspot.com\/2014\/10\/pumpkins-ieee-style.html"
-            },
-            "background": {
-                "color": "#000000",
-                "opacity": 50,
-                "url": null
-            },
-            "change": {
-                "user": "Test-00930628",
-                "date": "2024-03-14 17:47",
-                "action": "upd",
-                "comment": "Adding details. updating color test."
-            },
-            "desicion": {
-                "user": "Test-00930628",
-                "date": "2024-03-14 18:01",
-                "action": "Approve",
-                "comment": "Looks spooky in black :)"
-            }
-        },
-        {
             "unique_id": "CIS20230302112841",
             "author": "Ana",
             "created_on": "2023-03-03 00:17",
@@ -106,7 +62,7 @@
             "last_modification": "2023-03-02 05:17",
             "group": "Fuzzy",
             "text": {
-                "headline": "MIZZOU Event",
+                "headline": "Test event on 03\/02\/2023",
                 "text": "Details 1<br>No more details<br>No more details<br>No more details<br>No more details"
             },
             "start_date": {
@@ -141,6 +97,50 @@
                 "date": "2023-03-02 05:17",
                 "action": "Approve",
                 "comment": "purple."
+            }
+        },
+        {
+            "unique_id": "CIS20230301083119",
+            "author": "Ana",
+            "created_on": "2023-03-01 20:29",
+            "last_modification": "2023-03-01 20:35",
+            "group": "NNs",
+            "text": {
+                "headline": "The Halloween Event",
+                "text": "Halloween Pumpkin Carving--IEEE style<br>Sponsor by The Monter<br><br><br>"
+            },
+            "start_date": {
+                "year": "2022",
+                "month": "10",
+                "day": "31"
+            },
+            "end_date": {
+                "year": "2022",
+                "month": "10",
+                "day": "31"
+            },
+            "media": {
+                "caption": "",
+                "credit": "Halloween Pumpkin Carving--IEEE style",
+                "url": "https:\/\/2.bp.blogspot.com\/-rt8D1urfesY\/VFgLfrRgxGI\/AAAAAAAAJQk\/VtxpVSOPx1s\/s1600\/pumpkin%2B12.jpg",
+                "link": "https:\/\/jacobsschoolofengineering.blogspot.com\/2014\/10\/pumpkins-ieee-style.html"
+            },
+            "background": {
+                "color": "#ff8000",
+                "opacity": 50,
+                "url": null
+            },
+            "change": {
+                "user": "Ana",
+                "date": "2023-03-01 20:34",
+                "action": "upd",
+                "comment": "Adding details."
+            },
+            "desicion": {
+                "user": "Ana",
+                "date": "2023-03-01 20:35",
+                "action": "Approve",
+                "comment": "This is so cool."
             }
         },
         {

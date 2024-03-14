@@ -858,4 +858,262 @@
         "action": "Reject",
         "comment": "You need more details."
     }
+}{
+    "unique_id": "CIS20230301082620",
+    "author": "Ana",
+    "created_on": "2023-03-01 20:24",
+    "last_modification": "2024-03-13 21:15",
+    "group": "EC",
+    "text": {
+        "headline": "Holidays&#039; Events",
+        "text": "Detail No. 1<br>Detail No. 2<br><br><br>"
+    },
+    "start_date": {
+        "year": "2022",
+        "month": "12",
+        "day": "24"
+    },
+    "end_date": {
+        "year": "2022",
+        "month": "12",
+        "day": "31"
+    },
+    "media": {
+        "caption": "",
+        "credit": "",
+        "url": "https:\/\/cis.ieee.org\/images\/files\/Branding\/logos\/color\/IEEE_CIS_logo_RGB_72ppi.jpg",
+        "link": ""
+    },
+    "background": {
+        "color": "#ffffff",
+        "opacity": 50,
+        "url": null
+    },
+    "change": {
+        "user": "Test-00930628",
+        "date": "2024-03-13 21:14",
+        "action": "upd",
+        "comment": "Test Event."
+    },
+    "desicion": {
+        "user": "Test-00930628",
+        "date": "2024-03-13 21:15",
+        "action": "Approve",
+        "comment": "Testing Event."
+    }
+}{
+    "unique_id": "CIS20230302112841",
+    "author": "Ana",
+    "created_on": "2023-03-03 00:17",
+    "last_modification": "2024-03-13 21:15",
+    "group": "CIS",
+    "text": {
+        "headline": "(CAI 2023) IEEE Conference on Artificial Intelligence",
+        "text": "Location: Santa Clara, CA, USA<br><br><br><br>"
+    },
+    "start_date": {
+        "year": "2023",
+        "month": "06",
+        "day": "05"
+    },
+    "end_date": {
+        "year": "2023",
+        "month": "06",
+        "day": "05"
+    },
+    "media": {
+        "caption": "CAI 2023",
+        "credit": "",
+        "url": "https:\/\/cis-historytimelineqa.ieee.org\/img\/CAI_2023.jpg",
+        "link": "https:\/\/cai.ieee.org\/2023\/"
+    },
+    "background": {
+        "color": "#0b0c22",
+        "opacity": 50,
+        "url": null
+    },
+    "change": {
+        "user": "Test-00930628",
+        "date": "2024-03-13 21:13",
+        "action": "upd",
+        "comment": "Testing events."
+    },
+    "desicion": {
+        "user": "Test-00930628",
+        "date": "2024-03-13 21:15",
+        "action": "Approve",
+        "comment": "Testing Event."
+    }
+}{
+    "unique_id": "CIS20230302112841",
+    "author": "Ana",
+    "created_on": "2023-03-03 00:17",
+    "last_modification": "2024-03-13 21:34",
+    "group": "CIS",
+    "text": {
+        "headline": "(CAI 2023) IEEE Conference on Artificial Intelligence",
+        "text": "Location: Santa Clara, CA, USA<br><br><br><br>"
+    },
+    "start_date": {
+        "year": "2023",
+        "month": "06",
+        "day": "05"
+    },
+    "end_date": {
+        "year": "",
+        "month": "",
+        "day": ""
+    },
+    "media": {
+        "caption": "CAI 2023",
+        "credit": "",
+        "url": "https:\/\/cis-historytimelineqa.ieee.org\/img\/CAI_2023.jpg",
+        "link": "https:\/\/cai.ieee.org\/2023\/"
+    },
+    "background": {
+        "color": "#0b0c22",
+        "opacity": 50,
+        "url": null
+    },
+    "change": {
+        "user": "Test-00930628",
+        "date": "2024-03-13 21:33",
+        "action": "upd",
+        "comment": "Test Update."
+    },
+    "desicion": {
+        "user": "Test-00930628",
+        "date": "2024-03-13 21:34",
+        "action": "Approve",
+        "comment": "Testing Approval."
+    }
+}{
+    "unique_id": "CIS20230302112841",
+    "author": "Ana",
+    "created_on": "2023-03-03 00:17",
+    "last_modification": "2024-03-13 22:41",
+    "group": "CIS",
+    "text": {
+        "headline": "CAI 2023",
+        "text": "IEEE Conference on Artificial Intelligence<br>Location: Santa Clara, CA, USA<br><br><br>"
+    },
+    "start_date": {
+        "year": "2023",
+        "month": "06",
+        "day": "05"
+    },
+    "end_date": {
+        "year": "2023",
+        "month": "06",
+        "day": "05"
+    },
+    "media": {
+        "caption": "CAI 2023",
+        "credit": "",
+        "url": "https:\/\/cis-historytimelineqa.ieee.org\/img\/CAI_2023.jpg",
+        "link": "https:\/\/cai.ieee.org\/2023\/"
+    },
+    "background": {
+        "color": "#0b0c22",
+        "opacity": 50,
+        "url": null
+    },
+    "change": {
+        "user": "Test-00930628",
+        "date": "2024-03-13 22:40",
+        "action": "upd",
+        "comment": "Conf 2023."
+    },
+    "desicion": {
+        "user": "Test-00930628",
+        "date": "2024-03-13 22:41",
+        "action": "Approve",
+        "comment": "Testing Approval."
+    }
+}{
+    "unique_id": "CIS20240309012444",
+    "author": "Test-00930628",
+    "created_on": "2024-03-13 21:05",
+    "last_modification": "2024-03-13 22:43",
+    "group": "CIS",
+    "text": {
+        "headline": "The Testing Event",
+        "text": "let&#039;s try one more time.<br><br><br><br>"
+    },
+    "start_date": {
+        "year": "2024",
+        "month": "03",
+        "day": "07"
+    },
+    "end_date": {
+        "year": "",
+        "month": "",
+        "day": ""
+    },
+    "media": {
+        "caption": "",
+        "credit": "",
+        "url": "",
+        "link": ""
+    },
+    "background": {
+        "color": "#ffffff",
+        "opacity": 50,
+        "url": null
+    },
+    "change": {
+        "user": "Test-00930628",
+        "date": "2024-03-13 21:05",
+        "action": "new",
+        "comment": ""
+    },
+    "desicion": {
+        "user": "Test-00930628",
+        "date": "2024-03-13 22:43",
+        "action": "Reject",
+        "comment": "Testing Reject."
+    }
+}{
+    "unique_id": "CIS20230301083119",
+    "author": "Ana",
+    "created_on": "2023-03-01 20:29",
+    "last_modification": "2024-03-14 18:01",
+    "group": "EC",
+    "text": {
+        "headline": "The Halloween Event",
+        "text": "Halloween Pumpkin Carving--IEEE style<br>Sponsor by The Monter<br><br><br>"
+    },
+    "start_date": {
+        "year": "2022",
+        "month": "10",
+        "day": "31"
+    },
+    "end_date": {
+        "year": "2022",
+        "month": "10",
+        "day": "31"
+    },
+    "media": {
+        "caption": "",
+        "credit": "Halloween Pumpkin Carving--IEEE style",
+        "url": "https:\/\/2.bp.blogspot.com\/-rt8D1urfesY\/VFgLfrRgxGI\/AAAAAAAAJQk\/VtxpVSOPx1s\/s1600\/pumpkin&percnt;2B12.jpg",
+        "link": "https:\/\/jacobsschoolofengineering.blogspot.com\/2014\/10\/pumpkins-ieee-style.html"
+    },
+    "background": {
+        "color": "#000000",
+        "opacity": 50,
+        "url": null
+    },
+    "change": {
+        "user": "Test-00930628",
+        "date": "2024-03-14 17:47",
+        "action": "upd",
+        "comment": "Adding details. updating color test."
+    },
+    "desicion": {
+        "user": "Test-00930628",
+        "date": "2024-03-14 18:01",
+        "action": "Approve",
+        "comment": "Looks spooky in black :)"
+    }
 }

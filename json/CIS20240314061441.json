@@ -1,0 +1,42 @@
+{
+    "events": [
+        {
+            "unique_id": "CIS20240314061441",
+            "author": "Test-00930628",
+            "created_on": "2024-03-14 18:12",
+            "last_modification": "2024-03-14 18:12",
+            "group": "Fuzzy",
+            "text": {
+                "headline": "THE TEAL EVENT",
+                "text": "THIS IS AN AWESOME NEW EVENT<br>Event detail number 2<br>Event detail number 3<br><br>detail 5"
+            },
+            "start_date": {
+                "year": "2024",
+                "month": "01",
+                "day": "15"
+            },
+            "end_date": {
+                "year": "2024",
+                "month": "01",
+                "day": "19"
+            },
+            "media": {
+                "caption": "Testing google page",
+                "credit": "Google",
+                "url": "https:\/\/www.gstatic.com\/webp\/gallery\/4.sm.jpg",
+                "link": "https:\/\/developers.google.com\/speed\/webp\/gallery"
+            },
+            "background": {
+                "color": "#141414",
+                "opacity": 50,
+                "url": null
+            },
+            "change": {
+                "user": "Test-00930628",
+                "date": "2024-03-14 18:14",
+                "action": "new",
+                "comment": "Creating a new event test."
+            }
+        }
+    ]
+}
