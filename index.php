@@ -18,7 +18,20 @@
         <br>
         <p>Welcome to the Institute of Electrical and Electronics Engineers <b>(IEEE)</b> Computational Intelligence Society <b>(CIS)</b> Historical Timeline!</p>
         <br>
-        <a href="/src/timeline-launch.php" target="_blank">
+        
+        <?php
+          ### ONLY CIS MEMBERS CAN SEE THESE OPTIONS
+          if($_SESSION['tL_userRoll'] != 'Public'){
+        ?>
+          <p>
+            Please follow the <a href="/src/guidelines.php">guidelines</a> to contribute to the CIS History Timeline.
+          </p>
+        <?php
+          } ### END ONLY CIS MEMBERS CAN SEE THESE OPTIONS
+        ?>
+
+        <br>        
+        <a href="/src/timeline-launch.php">
           <img class="indexImg" src="/img/IEEE-CIS-TIMELINE.JPG" width="90%" title="Launch Production Timeline">
         </a>
       </div>

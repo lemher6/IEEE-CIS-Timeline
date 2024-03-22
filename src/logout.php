@@ -27,6 +27,6 @@
         session_unset();
         session_destroy();
 
-    header('Location: https://cis.ieee.org/');
+    header('Location: https://services10qa.ieee.org/ext/ieeeresponsivelogout');
 
 ?>

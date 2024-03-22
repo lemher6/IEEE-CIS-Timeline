@@ -10,10 +10,10 @@
   ### Admin: Everything.
   ### ==========================================================================
 
-  $committeeIDs = array('00930628'); // User IDs in the committee can approve and view edited events.
-  $adminIDs = array('999999'); // Admin User are able to update committee members.
+  $committeeIDs = array('01535400','03612298'); // User IDs in the committee can approve and view edited events.
+  $adminIDs = array('00175729'); // Admin User are able to update committee members.
   $approvalRolls = array('Committee','Admin'); // This array is NOT used in the event-manager module. This is just for reference.
-
+  $headerGot = '';
 
   ### User NOT Set 
   if(!isset($_SESSION['tL_user_ID']))
@@ -27,6 +27,7 @@
     $_SESSION['tL_userRoll'] = 'Public';
 
 
+    
     ## READ HEADERS AND SET SESSION VARIABLES IF A IEEE USER IS LOGGED
     foreach (getallheaders() as $name => $value) 
     {
@@ -42,13 +43,13 @@
       {
         $_SESSION['tL_user_ID'] = $value;
       }
-      if($name == 'AM_SSO_ORG')
+      if($name == 'AM_SSO_ORG' && $value != '')
       {
         $_SESSION['tL_user_ORG'] = $value;
       }
+      $headerGot .= $name.': '.$value."\r\n";
     } # END FOREACH 
-
-
+    
 
 
     # SET ROLL

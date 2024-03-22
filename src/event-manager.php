@@ -374,7 +374,7 @@
 
             echo "<div class='iBlock'>";
             echo "<label for='comment'>Comments:</label>
-                    Please include some comments about your updates for the approval committee.
+                    Please provide the reason of your request for the approval committee.
                     <textarea name='comment'>$editComment</textarea>";
             echo "</div>";
 

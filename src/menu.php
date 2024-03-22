@@ -1,16 +1,20 @@
 <!-- TIMELINE USER ROLL  -->
   <div class="userInfoBlock">
-  <a href='/src/logout.php' title='Log Out'>
+    
     <?php
-      ### DISPLAY USER'S ROLL
-      if(isset($_SESSION['tL_user_ORG'])){
-        echo $_SESSION['tL_user_ORG'];
-      }
-      if(isset($_SESSION['tL_userRoll']) && $_SESSION['tL_userRoll'] != 'Public'){
-        echo ' - '.$_SESSION['tL_userRoll'];
-      }
-    ?>
+        #echo '<span style="display:none">'. $headerGot .'</span>';
+        ### DISPLAY USER'S ROLL
+        if(isset($_SESSION['tL_user_ORG'])){
+          echo $_SESSION['tL_user_ORG'];
+        }
+        if(isset($_SESSION['tL_userRoll']) && $_SESSION['tL_userRoll'] != 'Public'){
+          echo ' - '.$_SESSION['tL_userRoll'];
+        }
+      ?>
+    <a href='/src/logout.php' title='Log Out'>    
+      Log Out
     </a>
+    
   </div>
 <!-- END TIMELINE USER ROLL  -->
 
@@ -50,7 +54,7 @@
           ### ONLY CIS MEMBERS CAN SEE THESE OPTIONS
           if($_SESSION['tL_userRoll'] != 'Public'){
         ?>
-        <input type="submit" name="optUpd" value="Update This" />
+        <input type="submit" name="optUpd" value="Update This" title="Request an Update for This Event"/>
         <?php
           } ### END ONLY CIS MEMBERS CAN SEE THESE OPTIONS
         ?>
@@ -66,7 +70,7 @@
           ### ONLY CIS MEMBERS CAN SEE THESE OPTIONS
           if($_SESSION['tL_userRoll'] != 'Public'){
         ?>
-        <input type="submit" name="optDel" value="Remove This" />
+        <input type="submit" name="optDel" value="Remove This" title="Request the Removal of This Event"/>
         <?php
           } ### END ONLY CIS MEMBERS CAN SEE THESE OPTIONS
         ?>
@@ -81,7 +85,7 @@
           ### ONLY CIS MEMBERS CAN SEE THESE OPTIONS
           if($_SESSION['tL_userRoll'] != 'Public'){
         ?>
-        <input type="submit" name="optCreate" value="Create Event" />
+        <input type="submit" name="optCreate" value="Create Event" title="Request the Removal of This Event"/>
         <?php
           } ### END ONLY CIS MEMBERS CAN SEE THESE OPTIONS
         ?>

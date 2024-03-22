@@ -7,6 +7,18 @@ html,body,p {
   width: 100%;
 }
 
+.userInfoBlock a, .content a {
+  color: #20b2e2;
+  text-decoration: none;
+}
+
+
+.userInfoBlock a:hover, .userInfoBlock a:focus,
+.content a:hover, .content a:focus
+{
+  color: #000000;
+}
+
 .header{
   margin-top: 3em;
 }
