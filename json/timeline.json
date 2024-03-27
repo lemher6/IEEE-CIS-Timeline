@@ -166,7 +166,7 @@
             "media": {
                 "caption": "IEEE International Conference on Fuzzy Systems",
                 "credit": "",
-                "url": "\/img\/FUZZ20170709.JPG",
+                "url": "https:\/\/img\/FUZZ20170709.JPG",
                 "link": "https:\/\/ewh.ieee.org\/conf\/fuzz\/fuzz-2017.pdf"
             },
             "background": {
@@ -191,7 +191,7 @@
             "background": {
                 "color": null,
                 "opacity": 50,
-                "url": ""
+                "url": null
             },
             "start_date": {
                 "year": "2018",
@@ -338,7 +338,7 @@
             "media": {
                 "caption": "IEEE International Conference on Fuzzy Systems",
                 "credit": "",
-                "url": "\/img\/FUZZ20150802.JPG",
+                "url": "https:\/\/img\/FUZZ20150802.JPG",
                 "link": "https:\/\/ewh.ieee.org\/conf\/fuzz\/fuzz-2015.pdf"
             },
             "text": {
@@ -382,7 +382,7 @@
             "media": {
                 "caption": "IEEE International Joint Conference on Neural Networks",
                 "credit": "",
-                "url": "\/img\/NNs20150712.JPG",
+                "url": "https:\/\/img\/NNs20150712.JPG",
                 "link": "https:\/\/ewh.ieee.org\/conf\/ijcnn\/2015\/ijcnn-2015.pdf"
             },
             "text": {
