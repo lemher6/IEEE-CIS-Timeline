@@ -156,6 +156,11 @@
             <li>If you selected the "Forget Request" option, the request will be removed.</li>
           </ul>
 
+          <?php
+            ### ONLY COMMITTE AND ADMIN USERS CAN SEE THESE OPTIONS
+            if(isset($_SESSION['tL_userRoll']) && in_array($_SESSION['tL_userRoll'],$approvalRolls)){
+          ?>
+
         <br><br><hr><br><br>
 
         <span id="approving"> </span>
@@ -169,7 +174,11 @@
             <li>Type your approval or rejection reasons or any comments for the requester in the text area.</li>
             <li>Select between the options "Approve" or "Reject". A confirmation email will be sent after you submit it.</li>
             <li>In case of approval, the updates will be moved to the production timeline. In case of rejection, the request will be removed and no changes will be made to the current event.</li>
-          </ul>        
+          </ul>    
+          
+          <?php
+            } // END if tL_userRoll
+          ?>
 
       </div>
 
