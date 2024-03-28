@@ -43,7 +43,7 @@
                 <br>
                 <h1>IEEE-CIS HISTORICAL TIMELINE</h1> 
                 <h3>Invalid Data</h3>
-                Sorry, your request couldn't be processed. <br><br>
+                Sorry, your request couldn't be processed for the event". $_POST['eId'  ] ." <br><br>
                 Check the field(s): 
                 
                 $zanitize_result
@@ -74,7 +74,7 @@
         $patternDate = "/^([0-9]{4})-([0-1][0-9])-([0-3][0-9])\s([0-2][0-9]):([0-5][0-9])$/"; // YYYY-MM-DD
         $patternY = "/^(19|20)\d{2}$/"; // 19YY OR 20YY
         $patternM = "/^(0[1-9]|1[0-2])$/"; // MM
-        $patternD = "/^([0-2][1-9]|3[0-1])$/"; // DD
+        $patternD = "/^([0-2][0-9]|3[0-1])$/"; // DD
         $patternURL = "%^(?:(?:(?:https?|ftp):)?\/\/)(?:\S+(?::\S*)?@)?(?:(?!(?:10|127)(?:\.\d{1,3}){3})(?!(?:169\.254|192\.168)(?:\.\d{1,3}){2})(?!172\.(?:1[6-9]|2\d|3[0-1])(?:\.\d{1,3}){2})(?:[1-9]\d?|1\d\d|2[01]\d|22[0-3])(?:\.(?:1?\d{1,2}|2[0-4]\d|25[0-5])){2}(?:\.(?:[1-9]\d?|1\d\d|2[0-4]\d|25[0-4]))|(?:(?:[a-z0-9\x{00a1}-\x{ffff}][a-z0-9\x{00a1}-\x{ffff}_-]{0,62})?[a-z0-9\x{00a1}-\x{ffff}]\.)+(?:[a-z\x{00a1}-\x{ffff}]{2,}\.?))(?::\d{2,5})?(?:[/?#]\S*)?$%iuS"; // URLs that start with either "http://" or "https://", followed by any characters except whitespace, '/', '$', '?', '.', or '#', but it no longer includes the "ftp://" option.
         $patternColor = "/^#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$/"; //string starts with '#' followed by either six hexadecimal characters ([A-Fa-f0-9]) representing the RGB values in pairs, or three hexadecimal characters for shorthand notation.
 

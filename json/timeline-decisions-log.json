@@ -1116,4 +1116,563 @@
         "action": "Approve",
         "comment": "Looks spooky in black :)"
     }
+}{
+    "unique_id": "CIS20150712001235",
+    "author": "Ana",
+    "created_on": "2022-12-01 00:00",
+    "last_modification": "2024-03-27 22:29",
+    "group": "NNs",
+    "text": {
+        "headline": "2015 IEEE IJCNN",
+        "text": "2015 International Joint Conference on Neural Networks (IJCNN)<br>July 12-17, 2015, Killarney, Ireland<br>GC: De-Shuang Huang<br>PC: Yoonsuck Choe<br>"
+    },
+    "start_date": {
+        "year": "2015",
+        "month": "07",
+        "day": "12"
+    },
+    "end_date": {
+        "year": "2015",
+        "month": "07",
+        "day": "17"
+    },
+    "media": {
+        "caption": "IEEE International Joint Conference on Neural Networks",
+        "credit": "",
+        "url": "https:\/\/cis-historytimelineqa.ieee.org\/img\/NNs20150712.JPG",
+        "link": "https:\/\/ewh.ieee.org\/conf\/ijcnn\/2015\/ijcnn-2015.pdf"
+    },
+    "background": {
+        "color": "#f0efef",
+        "opacity": 50,
+        "url": null
+    },
+    "change": {
+        "user": "Committee Test-01535400",
+        "date": "2024-03-27 22:27",
+        "action": "upd",
+        "comment": "Testing"
+    },
+    "desicion": {
+        "user": "Committee Test-01535400",
+        "date": "2024-03-27 22:29",
+        "action": "Approve",
+        "comment": "New."
+    }
+}{
+    "unique_id": "CIS20230301083119",
+    "author": "Ana",
+    "created_on": "2023-03-01 20:29",
+    "last_modification": "2024-03-27 22:29",
+    "group": "NNs",
+    "text": {
+        "headline": "The Halloween Event",
+        "text": "Halloween Pumpkin Carving--IEEE style<br>Sponsor by The Monter<br><br><br>"
+    },
+    "start_date": {
+        "year": "2022",
+        "month": "10",
+        "day": "31"
+    },
+    "end_date": {
+        "year": "2022",
+        "month": "10",
+        "day": "31"
+    },
+    "media": {
+        "caption": "",
+        "credit": "Halloween Pumpkin Carving--IEEE style",
+        "url": "https:\/\/2.bp.blogspot.com\/-rt8D1urfesY\/VFgLfrRgxGI\/AAAAAAAAJQk\/VtxpVSOPx1s\/s1600\/pumpkin&percnt;2B12.jpg",
+        "link": "https:\/\/jacobsschoolofengineering.blogspot.com\/2014\/10\/pumpkins-ieee-style.html"
+    },
+    "background": {
+        "color": "#ee5700",
+        "opacity": 50,
+        "url": null
+    },
+    "change": {
+        "user": "Test-00930628",
+        "date": "2024-03-14 18:06",
+        "action": "upd",
+        "comment": "Orange is better."
+    },
+    "desicion": {
+        "user": "Committee Test-01535400",
+        "date": "2024-03-27 22:29",
+        "action": "Approve",
+        "comment": "Good."
+    }
+}{
+    "unique_id": "CIS20230302042201",
+    "author": "Ana",
+    "created_on": "2023-03-02 04:29",
+    "last_modification": "2024-03-27 22:29",
+    "group": "Fuzzy",
+    "text": {
+        "headline": "MIZZOU Event",
+        "text": "Details 1<br>No more details<br>No more details<br>No more details<br>No more details"
+    },
+    "start_date": {
+        "year": "2023",
+        "month": "03",
+        "day": "02"
+    },
+    "end_date": {
+        "year": "2023",
+        "month": "03",
+        "day": "04"
+    },
+    "media": {
+        "caption": "Test",
+        "credit": "Test",
+        "url": "https:\/\/showme.missouri.edu\/wp-content\/uploads\/2020\/11\/ColumnsBanners.jpg",
+        "link": "https:\/\/en.wikipedia.org\/wiki\/Image#\/media\/File:Image_created_with_a_mobile_phone.png"
+    },
+    "background": {
+        "color": "#8686e3",
+        "opacity": 50,
+        "url": null
+    },
+    "change": {
+        "user": "Test-00930628",
+        "date": "2024-03-14 18:12",
+        "action": "dlt",
+        "comment": "Removing event test."
+    },
+    "desicion": {
+        "user": "Committee Test-01535400",
+        "date": "2024-03-27 22:29",
+        "action": "Reject",
+        "comment": "not a good background color."
+    }
+}{
+    "unique_id": "CIS201508020431",
+    "author": "Ana",
+    "created_on": "2022-12-01 00:00",
+    "last_modification": "2024-03-27 22:41",
+    "group": "Fuzzy",
+    "text": {
+        "headline": "2015 IEEE FUZZY",
+        "text": "2015 IEEE International Conference on Fuzzy Systems<br>August 2-5, 2015, Istanbul, Turkey<br>GCs: Adnan Yazici, Nikhil R. Pal<br>PC: Uzay Kaymak<br>"
+    },
+    "start_date": {
+        "year": "2015",
+        "month": "08",
+        "day": "02"
+    },
+    "end_date": {
+        "year": "2015",
+        "month": "08",
+        "day": "05"
+    },
+    "media": {
+        "caption": "IEEE International Conference on Fuzzy Systems",
+        "credit": "",
+        "url": "https:\/\/cis-historytimelineqa.ieee.org\/img\/FUZZ20150802.JPG",
+        "link": "https:\/\/ewh.ieee.org\/conf\/fuzz\/fuzz-2015.pdf"
+    },
+    "background": {
+        "color": "#ffffff",
+        "opacity": 50,
+        "url": null
+    },
+    "change": {
+        "user": "Committee Test-01535400",
+        "date": "2024-03-27 22:32",
+        "action": "upd",
+        "comment": "Testing"
+    },
+    "desicion": {
+        "user": "Committee Test-01535400",
+        "date": "2024-03-27 22:41",
+        "action": "Approve",
+        "comment": "new"
+    }
+}{
+    "unique_id": "CIS201607243001",
+    "author": "Ana",
+    "created_on": "2022-12-01 00:00",
+    "last_modification": "2024-03-27 22:42",
+    "group": "EC",
+    "text": {
+        "headline": "2016 IEEE WCCI",
+        "text": "2016 IEEE World Congress on Computational Intelligence (WCCI)<br>July 24-29, 2016<br>Vancouver, Canada<br>GCs: Kay Chen Tan, Gary G. Yen<br>CCs: Pablo A. Estevez, Oscar Cordon, Yew Soon Ong"
+    },
+    "start_date": {
+        "year": "2016",
+        "month": "07",
+        "day": "24"
+    },
+    "end_date": {
+        "year": "2016",
+        "month": "07",
+        "day": "29"
+    },
+    "media": {
+        "caption": "IEEE World Congress on Computational Intelligence (WCCI)",
+        "credit": "",
+        "url": "https:\/\/ewh.ieee.org\/conf\/wcci\/img\/wcci2016.png",
+        "link": "https:\/\/ewh.ieee.org\/conf\/wcci\/2016\/"
+    },
+    "background": {
+        "color": "#042236",
+        "opacity": 50,
+        "url": null
+    },
+    "change": {
+        "user": "Committee Test-01535400",
+        "date": "2024-03-27 22:42",
+        "action": "upd",
+        "comment": "Testing"
+    },
+    "desicion": {
+        "user": "Committee Test-01535400",
+        "date": "2024-03-27 22:42",
+        "action": "Approve",
+        "comment": "new."
+    }
+}{
+    "unique_id": "CIS201707090012",
+    "author": "Ana",
+    "created_on": "2022-12-01 00:00",
+    "last_modification": "2024-03-27 22:43",
+    "group": "Fuzzy",
+    "text": {
+        "headline": "2017 IEEE FUZZY",
+        "text": "2017 IEEE International Conference on Fuzzy Systems<br>July 9-12, 2017, Naples, Italy<br>GCs: Giovanni Acampora, Bruno Siciliano<br>PCs: Hani Hagras, Francisco Herrera<br>"
+    },
+    "start_date": {
+        "year": "2017",
+        "month": "07",
+        "day": "09"
+    },
+    "end_date": {
+        "year": "2017",
+        "month": "07",
+        "day": "12"
+    },
+    "media": {
+        "caption": "IEEE International Conference on Fuzzy Systems",
+        "credit": "",
+        "url": "https:\/\/cis-historytimelineqa.ieee.org\/img\/FUZZ20170709.JPG",
+        "link": "https:\/\/ewh.ieee.org\/conf\/fuzz\/fuzz-2017.pdf"
+    },
+    "background": {
+        "color": "#b1d1ec",
+        "opacity": 50,
+        "url": null
+    },
+    "change": {
+        "user": "Committee Test-01535400",
+        "date": "2024-03-27 22:43",
+        "action": "upd",
+        "comment": "changing color."
+    },
+    "desicion": {
+        "user": "Committee Test-01535400",
+        "date": "2024-03-27 22:43",
+        "action": "Approve",
+        "comment": "new"
+    }
+}{
+    "unique_id": "CIS2018070800134",
+    "author": "Ana",
+    "created_on": "2022-12-01 00:00",
+    "last_modification": "2024-03-27 22:43",
+    "group": "EC",
+    "text": {
+        "headline": "2018 IEEE WCCI",
+        "text": "2018 IEEE World Congress on Computational Intelligence (WCCI)<br>July 8-13, 2018<br>Rio de Janeiro, Brazil<br>GCs: Marley Vellasco, Pablo Estevez<br>CCs: Teresa Ludermir, Fernando Gomide, Gary G. Yen"
+    },
+    "start_date": {
+        "year": "2018",
+        "month": "07",
+        "day": "08"
+    },
+    "end_date": {
+        "year": "2018",
+        "month": "07",
+        "day": "13"
+    },
+    "media": {
+        "caption": "IEEE World Congress on Computational Intelligence (WCCI)",
+        "credit": "",
+        "url": "https:\/\/ewh.ieee.org\/conf\/wcci\/img\/wcci2018.png",
+        "link": "https:\/\/entrepreneurship.ieee.org\/session\/2018_07_08_ieee-world-congress-computational-intelligence\/"
+    },
+    "background": {
+        "color": "#ffffff",
+        "opacity": 50,
+        "url": null
+    },
+    "change": {
+        "user": "Committee Test-01535400",
+        "date": "2024-03-27 22:43",
+        "action": "upd",
+        "comment": "Testing"
+    },
+    "desicion": {
+        "user": "Committee Test-01535400",
+        "date": "2024-03-27 22:43",
+        "action": "Approve",
+        "comment": "new"
+    }
+}{
+    "unique_id": "CIS20181118001567",
+    "author": "Ana",
+    "created_on": "2022-12-01 00:00",
+    "last_modification": "2024-03-27 22:44",
+    "group": "EC",
+    "text": {
+        "headline": "2018 IEEE SSCI",
+        "text": "2018 IEEE Symposium Series on Computational Intelligence (SSCI)<br>November 18-21, 2018,<br>Bengaluru, India<br>General Chair: N. R. Pal<br>"
+    },
+    "start_date": {
+        "year": "2018",
+        "month": "11",
+        "day": "18"
+    },
+    "end_date": {
+        "year": "2018",
+        "month": "11",
+        "day": "21"
+    },
+    "media": {
+        "caption": "IEEE Symposium Series on Computational Intelligence",
+        "credit": "",
+        "url": "https:\/\/youtu.be\/dOmDu-kxWBM",
+        "link": "https:\/\/ewh.ieee.org\/conf\/ssci\/2018\/ssci-2018-cfp.pdf"
+    },
+    "background": {
+        "color": "#0c6085",
+        "opacity": 50,
+        "url": null
+    },
+    "change": {
+        "user": "Committee Test-01535400",
+        "date": "2024-03-27 22:44",
+        "action": "upd",
+        "comment": "Testing"
+    },
+    "desicion": {
+        "user": "Committee Test-01535400",
+        "date": "2024-03-27 22:44",
+        "action": "Approve",
+        "comment": "new"
+    }
+}{
+    "unique_id": "CIS2019061000176",
+    "author": "Ana",
+    "created_on": "2022-12-01 00:00",
+    "last_modification": "2024-03-27 23:21",
+    "group": "EC",
+    "text": {
+        "headline": "2019 IEEE CEC",
+        "text": "2019 IEEE Congress on Evolutionary Computation (CEC)<br>June 10-13, 2019, Wellington, New Zealand<br>GCs: Mengjie Zhang, Kay Chen Tan<br>PC: Carlos A. Coello Coello<br>"
+    },
+    "start_date": {
+        "year": "2019",
+        "month": "06",
+        "day": "10"
+    },
+    "end_date": {
+        "year": "2019",
+        "month": "06",
+        "day": "13"
+    },
+    "media": {
+        "caption": "IEEE Congress on Evolutionary Computation (CEC)",
+        "credit": "",
+        "url": "https:\/\/vimeo.com\/794617447",
+        "link": "https:\/\/ewh.ieee.org\/conf\/cec\/cec-2019-cfp.pdf"
+    },
+    "background": {
+        "color": "#000000",
+        "opacity": 50,
+        "url": null
+    },
+    "change": {
+        "user": "Committee Test-01535400",
+        "date": "2024-03-27 23:21",
+        "action": "upd",
+        "comment": "Testing"
+    },
+    "desicion": {
+        "user": "Committee Test-01535400",
+        "date": "2024-03-27 23:21",
+        "action": "Approve",
+        "comment": "new"
+    }
+}{
+    "unique_id": "CIS20230301083119",
+    "author": "Ana",
+    "created_on": "2023-03-01 20:29",
+    "last_modification": "2024-03-27 23:22",
+    "group": "NNs",
+    "text": {
+        "headline": "The Halloween Event",
+        "text": "Halloween Pumpkin Carving--IEEE style<br>Sponsor by The Monter<br><br><br>"
+    },
+    "start_date": {
+        "year": "2022",
+        "month": "10",
+        "day": "31"
+    },
+    "end_date": {
+        "year": "2022",
+        "month": "10",
+        "day": "31"
+    },
+    "media": {
+        "caption": "",
+        "credit": "Halloween Pumpkin Carving--IEEE style",
+        "url": "https:\/\/2.bp.blogspot.com\/-rt8D1urfesY\/VFgLfrRgxGI\/AAAAAAAAJQk\/VtxpVSOPx1s\/s1600\/pumpkin&percnt;2B12.jpg",
+        "link": "https:\/\/jacobsschoolofengineering.blogspot.com\/2014\/10\/pumpkins-ieee-style.html"
+    },
+    "background": {
+        "color": "#ee5700",
+        "opacity": 50,
+        "url": null
+    },
+    "change": {
+        "user": "Committee Test-01535400",
+        "date": "2024-03-27 23:22",
+        "action": "upd",
+        "comment": "new."
+    },
+    "desicion": {
+        "user": "Committee Test-01535400",
+        "date": "2024-03-27 23:22",
+        "action": "Approve",
+        "comment": "new."
+    }
+}{
+    "unique_id": "CIS20230302042201",
+    "author": "Ana",
+    "created_on": "2023-03-02 04:29",
+    "last_modification": "2024-03-27 23:22",
+    "group": "Fuzzy",
+    "text": {
+        "headline": "MIZZOU Event",
+        "text": "Details 1<br>No more details<br>No more details<br>No more details<br>No more details"
+    },
+    "start_date": {
+        "year": "2023",
+        "month": "03",
+        "day": "02"
+    },
+    "end_date": {
+        "year": "2023",
+        "month": "03",
+        "day": "04"
+    },
+    "media": {
+        "caption": "Test",
+        "credit": "Test",
+        "url": "https:\/\/showme.missouri.edu\/wp-content\/uploads\/2020\/11\/ColumnsBanners.jpg",
+        "link": "https:\/\/en.wikipedia.org\/wiki\/Image#\/media\/File:Image_created_with_a_mobile_phone.png"
+    },
+    "background": {
+        "color": "#ecbc24",
+        "opacity": 50,
+        "url": null
+    },
+    "change": {
+        "user": "Committee Test-01535400",
+        "date": "2024-03-27 23:22",
+        "action": "upd",
+        "comment": "color."
+    },
+    "desicion": {
+        "user": "Committee Test-01535400",
+        "date": "2024-03-27 23:22",
+        "action": "Approve",
+        "comment": "new."
+    }
+}{
+    "unique_id": "CIS20230302042201",
+    "author": "Ana",
+    "created_on": "2023-03-02 04:29",
+    "last_modification": "2024-03-27 23:23",
+    "group": "Fuzzy",
+    "text": {
+        "headline": "MIZZOU Event",
+        "text": "Details 1<br>No more details<br>No more details<br>No more details<br>No more details"
+    },
+    "start_date": {
+        "year": "2023",
+        "month": "03",
+        "day": "02"
+    },
+    "end_date": {
+        "year": "2023",
+        "month": "03",
+        "day": "04"
+    },
+    "media": {
+        "caption": "Test",
+        "credit": "Test",
+        "url": "https:\/\/showme.missouri.edu\/wp-content\/uploads\/2020\/11\/ColumnsBanners.jpg",
+        "link": "https:\/\/en.wikipedia.org\/wiki\/Image#\/media\/File:Image_created_with_a_mobile_phone.png"
+    },
+    "background": {
+        "color": "#d49b0b",
+        "opacity": 50,
+        "url": null
+    },
+    "change": {
+        "user": "Committee Test-01535400",
+        "date": "2024-03-27 23:23",
+        "action": "upd",
+        "comment": "color."
+    },
+    "desicion": {
+        "user": "Committee Test-01535400",
+        "date": "2024-03-27 23:23",
+        "action": "Approve",
+        "comment": "new."
+    }
+}{
+    "unique_id": "CIS20230302112841",
+    "author": "Ana",
+    "created_on": "2023-03-03 00:17",
+    "last_modification": "2024-03-27 23:24",
+    "group": "CIS",
+    "text": {
+        "headline": "CAI 2023",
+        "text": "IEEE Conference on Artificial Intelligence<br>Location: Santa Clara, CA, USA<br><br><br>"
+    },
+    "start_date": {
+        "year": "2023",
+        "month": "06",
+        "day": "05"
+    },
+    "end_date": {
+        "year": "2023",
+        "month": "06",
+        "day": "05"
+    },
+    "media": {
+        "caption": "CAI 2023",
+        "credit": "",
+        "url": "https:\/\/cis-historytimelineqa.ieee.org\/img\/CAI_2023.jpg",
+        "link": "https:\/\/cai.ieee.org\/2023\/"
+    },
+    "background": {
+        "color": "#0b0c22",
+        "opacity": 50,
+        "url": null
+    },
+    "change": {
+        "user": "Committee Test-01535400",
+        "date": "2024-03-27 23:24",
+        "action": "upd",
+        "comment": "new."
+    },
+    "desicion": {
+        "user": "Committee Test-01535400",
+        "date": "2024-03-27 23:24",
+        "action": "Approve",
+        "comment": "new."
+    }
 }

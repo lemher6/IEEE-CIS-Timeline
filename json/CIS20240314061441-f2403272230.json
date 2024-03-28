@@ -2,9 +2,9 @@
     "events": [
         {
             "unique_id": "CIS20240314061441",
-            "author": "Test-00930628",
-            "created_on": "2024-03-14 18:12",
-            "last_modification": "2024-03-14 18:12",
+            "author": "Committee Test-01535400",
+            "created_on": "2024-03-27 22:30",
+            "last_modification": "2024-03-27 22:30",
             "group": "Fuzzy",
             "text": {
                 "headline": "THE TEAL EVENT",
@@ -27,13 +27,13 @@
                 "link": "https:\/\/developers.google.com\/speed\/webp\/gallery"
             },
             "background": {
-                "color": "#141414",
+                "color": "#04cdc0",
                 "opacity": 50,
                 "url": null
             },
             "change": {
-                "user": "Test-00930628",
-                "date": "2024-03-14 18:14",
+                "user": "Committee Test-01535400",
+                "date": "2024-03-27 22:30",
                 "action": "new",
                 "comment": "Creating a new event test."
             }
