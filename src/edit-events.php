@@ -17,6 +17,13 @@
       <div class="pageTitle">
           <h2>YOUR REQUEST WAITING FOR APPROVAL</h2>
       </div>
+      <br>
+      <p>
+        Your requests will be scrutinized by the CIS History Committee members, who will approve or reject the contributions according to the criteria indicated in the 
+        <a href='/src/guidelines.php' target='_blank'>guidelines</a>. <br>
+        Meanwhile, you can modify your requests using the 'Update Request' button or eliminate them using the 'Forget Request' button.
+      </p>
+      <br>
 
       <?php
             $eId = '';

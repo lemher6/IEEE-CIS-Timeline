@@ -1,3 +1,118 @@
 {
-    "events": []
+    "events": [
+        {
+            "unique_id": "CIS20230302042201",
+            "author": "Ana",
+            "created_on": "2023-03-02 04:29",
+            "last_modification": "2024-03-27 23:23",
+            "group": "Fuzzy",
+            "text": {
+                "headline": "MIZZOU Event",
+                "text": "Details 1<br>No more details<br>No more details<br>No more details<br>No more details"
+            },
+            "start_date": {
+                "year": "2023",
+                "month": "03",
+                "day": "02"
+            },
+            "end_date": {
+                "year": "2023",
+                "month": "03",
+                "day": "04"
+            },
+            "media": {
+                "caption": "Test",
+                "credit": "Test",
+                "url": "https:\/\/showme.missouri.edu\/wp-content\/uploads\/2020\/11\/ColumnsBanners.jpg",
+                "link": "https:\/\/en.wikipedia.org\/wiki\/Image#\/media\/File:Image_created_with_a_mobile_phone.png"
+            },
+            "background": {
+                "color": "#d49b0b",
+                "opacity": 50,
+                "url": null
+            },
+            "change": {
+                "user": "CIS Member Test-807501638",
+                "date": "2024-03-28 23:48",
+                "action": "dlt",
+                "comment": "This is not an IEEE event."
+            }
+        },
+        {
+            "unique_id": "CIS20230302112841",
+            "author": "Ana",
+            "created_on": "2023-03-03 00:17",
+            "last_modification": "2024-03-27 23:24",
+            "group": "CIS",
+            "text": {
+                "headline": "CAI 2023",
+                "text": "IEEE Conference on Artificial Intelligence<br>Location: Santa Clara<br>CA, USA<br><br>"
+            },
+            "start_date": {
+                "year": "2023",
+                "month": "06",
+                "day": "05"
+            },
+            "end_date": {
+                "year": "2023",
+                "month": "06",
+                "day": "05"
+            },
+            "media": {
+                "caption": "CAI 2023",
+                "credit": "IEEE",
+                "url": "https:\/\/cis-historytimelineqa.ieee.org\/img\/CAI_2023.jpg",
+                "link": "https:\/\/cai.ieee.org\/2023\/"
+            },
+            "background": {
+                "color": "#0b0c22",
+                "opacity": 50,
+                "url": null
+            },
+            "change": {
+                "user": "CIS Member Test-807501638",
+                "date": "2024-03-28 23:48",
+                "action": "upd",
+                "comment": "updating details."
+            }
+        },
+        {
+            "unique_id": "CIS20240328114723",
+            "author": "CIS Member Test-807501638",
+            "created_on": "2024-03-28 23:45",
+            "last_modification": "2024-03-28 23:45",
+            "group": "CIS",
+            "text": {
+                "headline": "The Testing Event",
+                "text": "Testing Event Detail 1<br>Testing Event Detail 2<br>Testing Detail 3<br>Detail 4<br>d5"
+            },
+            "start_date": {
+                "year": "2024",
+                "month": "03",
+                "day": "01"
+            },
+            "end_date": {
+                "year": "2024",
+                "month": "03",
+                "day": "02"
+            },
+            "media": {
+                "caption": "THIS IS a new Caption 4 Media",
+                "credit": "Google",
+                "url": "https:\/\/www.gstatic.com\/webp\/gallery\/4.sm.jpg",
+                "link": "https:\/\/developers.google.com\/speed\/webp\/gallery"
+            },
+            "background": {
+                "color": "#004080",
+                "opacity": 50,
+                "url": null
+            },
+            "change": {
+                "user": "CIS Member Test-807501638",
+                "date": "2024-03-28 23:47",
+                "action": "new",
+                "comment": "Testing &quot;Create a new event&quot;"
+            }
+        }
+    ]
 }

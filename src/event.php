@@ -56,7 +56,7 @@
         
               <p>
                 Please follow the <b>guidelines to contribute to the CIS History Timeline</b>
-                <button type="button" class="qButton" onclick="window.open('/src/help.php', '_blank');">?</button>
+                <button type="button" class="qButton" onclick="window.open('/src/guidelines.php', '_blank');">?</button>
               </p>
               <br>
               <?php if($opt != 'new' || $status == 'edited'){ // DISPLAYS TIMELINE IF IT IS NOT A NEW EVENT ?>
